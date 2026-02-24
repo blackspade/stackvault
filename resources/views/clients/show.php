@@ -130,7 +130,7 @@ $actionIcon = function(string $a): string {
                 <a href="#tab-domains" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-world me-1"></i>Domains
                     <?php if (count($domains)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($domains) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($domains) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -138,7 +138,7 @@ $actionIcon = function(string $a): string {
                 <a href="#tab-servers" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-server me-1"></i>Servers
                     <?php if (count($servers)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($servers) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($servers) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -146,7 +146,7 @@ $actionIcon = function(string $a): string {
                 <a href="#tab-credentials" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-key me-1"></i>Credentials
                     <?php if (count($credentials)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($credentials) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($credentials) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -154,7 +154,7 @@ $actionIcon = function(string $a): string {
                 <a href="#tab-applications" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-apps me-1"></i>Applications
                     <?php if (count($applications)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($applications) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($applications) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
