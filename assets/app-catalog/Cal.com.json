@@ -1,0 +1,73 @@
+{
+    "id": "com.cal.cloudronapp",
+    "creationDate": "2026-02-11T12:52:01.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-08-30T11:07:56.000Z",
+    "publishedAt": "2023-08-30T11:07:56.000Z",
+    "manifest": {
+        "id": "com.cal.cloudronapp",
+        "title": "Cal.com",
+        "tagline": "Event-juggling scheduler for everyone",
+        "author": "Cal.com authors",
+        "description": "## Overview\n\nCal.com is a fully customizable scheduling software for individuals, businesses taking calls and developers building scheduling platforms where users meet users. Focus on meeting, not making meetings. Free for individuals.\n\n## Features\n\n* Connect your calendars - Cal reads your availability from all your existing calendars ensuring you never get double booked!\n* Set your availability - Set repeating schedules for the times of the day and week that you want people to be able to book you.\n* Share your link - Share your short cal.com personal link and make it incredibly easy for people to book a meeting at a time that works for both of you!\n* Let people book when it works for both of you\n",
+        "version": "2.12.13",
+        "upstreamVersion": "6.1.140",
+        "tags": [
+            "meetings",
+            "scheduler",
+            "events",
+            "calendly",
+            "calendars"
+        ],
+        "website": "https://cal.com",
+        "documentationUrl": "https://docs.cloudron.io/packages/calcom/",
+        "forumUrl": "https://forum.cloudron.io/category/174/cal-com",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* Update cal.com to 6.1.14\n* [Full Changelog](https://github.com/calcom/cal.com/releases/tag/v6.1.14)\n* fix: (booking-audit) Remove IS\\_PRODUCTION gate and add feature flag check in producer by [@&#8203;hariombalhara](https://github.com/hariombalhara) in [#&#8203;26524](https://github.com/calcom/cal.com/pull/26524)\n* fix: allow unmarking host as no-show by [@&#8203;hariombalhara](https://github.com/hariombalhara) in [#&#8203;27694](https://github.com/calcom/cal.com/pull/27694)\n* feat: show routing trace dialog on assignment reason badge click by [@&#8203;joeauyeung](https://github.com/joeauyeung) in [#&#8203;27629](https://github.com/calcom/cal.com/pull/27629)\n* feat: add routing trace seeding to seed-insights by [@&#8203;hariombalhara](https://github.com/hariombalhara) in [#&#8203;27782](https://github.com/calcom/cal.com/pull/27782)\n* fix: hide cal branding on platform workflows by [@&#8203;supalarry](https://github.com/supalarry) in [#&#8203;27385](https://github.com/calcom/cal.com/pull/27385)\n* refactor: Stop using Unkey for IP-based rate limiting by [@&#8203;keithwillcode](https://github.com/keithwillcode) in [#&#8203;27674](https://github.com/calcom/cal.com/pull/27674)\n* perf: add composite index on (formId, createdAt) for App\\_RoutingForms\\_FormResponse by [@&#8203;keithwillcode](https://github.com/keithwillcode) in [#&#8203;27252](https://github.com/calcom/cal.com/pull/27252)\n* chore: Use IF NOT EXISTS for index of App\\_RoutingForms\\_FormResponse by [@&#8203;keithwillcode](https://github.com/keithwillcode) in [#&#8203;27814](https://github.com/calcom/cal.com/pull/27814)\n* fix: remove duplicate \"Name\" label on team creation page by [@&#8203;CarinaWolli](https://github.com/CarinaWolli) in [#&#8203;27803](https://github.com/calcom/cal.com/pull/27803)\n* fix: add isCompanyEmail check to organization upgrade path by [@&#8203;sean-brydon](https://github.com/sean-brydon) in [#&#8203;27813](https://github.com/calcom/cal.com/pull/27813)\n",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "httpPorts": {
+            "API_SERVER_DOMAIN": {
+                "title": "API Server Domain",
+                "description": "The domain name for API requests",
+                "containerPort": 5555,
+                "defaultValue": "calcom-api"
+            }
+        },
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, register yourself as admin to start using the app"
+            },
+            "admin-2fa": {
+                "message": "Setup 2FA for the admin account to be able to install apps"
+            }
+        },
+        "runtimeDirs": [
+            "/app/code/calcom/apps/web/.next",
+            "/app/code/calcom/apps/web/public",
+            "/app/code/calcom/node_modules/.cache"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.cal.cloudronapp/calcom-01.png"
+        ],
+        "memoryLimit": 2147483648,
+        "minBoxVersion": "8.0.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/com.cal.cloudronapp:202602101539460000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.cal.cloudronapp/versions/2.12.13/icon",
+    "featured": false,
+    "ranking": 0
+}

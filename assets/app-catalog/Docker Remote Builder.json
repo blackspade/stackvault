@@ -1,0 +1,53 @@
+{
+    "id": "io.cloudron.buildservice",
+    "creationDate": "2025-11-06T07:31:34.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-11-01T18:07:06.000Z",
+    "publishedAt": "2019-11-01T18:07:06.000Z",
+    "manifest": {
+        "id": "io.cloudron.buildservice",
+        "title": "Docker Remote Builder",
+        "author": "Cloudron Developers",
+        "description": "The Cloudron Build Service App allows you to build and install\ncustom app packages.\n",
+        "changelog": "* Update moby to 28.5.2\n",
+        "tagline": "Build Docker images remotely",
+        "version": "2.10.1",
+        "healthCheckPath": "/healthcheck",
+        "httpPort": 3000,
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/api/v1/login-callback"
+            },
+            "localstorage": [],
+            "docker": []
+        },
+        "memoryLimit": 1073741824,
+        "manifestVersion": 2,
+        "website": "https://cloudron.io",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "documentationUrl": "https://docs.cloudron.io/apps/docker-builder/",
+        "tags": [
+            "build",
+            "docker"
+        ],
+        "checklist": {
+            "configure-docker-registry": {
+                "message": "Configure the docker registry in `/app/data/docker.json`."
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.cloudron.buildservice/cloudron_build_service_01.png"
+        ],
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/74/build-service",
+        "upstreamVersion": "null",
+        "dockerImage": "cloudron/io.cloudron.buildservice:202511060621210000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.cloudron.buildservice/versions/2.10.1/icon",
+    "featured": false,
+    "ranking": 0
+}

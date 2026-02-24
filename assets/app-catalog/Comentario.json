@@ -1,0 +1,61 @@
+{
+    "id": "app.comentario.cloudronapp",
+    "creationDate": "2026-01-23T07:55:17.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-06-07T17:14:27.000Z",
+    "publishedAt": "2024-06-07T17:14:27.000Z",
+    "manifest": {
+        "id": "app.comentario.cloudronapp",
+        "version": "1.7.0",
+        "upstreamVersion": "3.16.0",
+        "minBoxVersion": "8.1.0",
+        "title": "Comentario",
+        "author": "Comentario Team",
+        "description": "## About\n\nComentario is an open-source web comment engine, which adds discussion functionality to plain, boring web pages.\n\nYou can embed it in your website to allow your readers to add comments. It’s fast, powerful, flexible, and easy to use. Have a look at our live demo to see it in action!\n\n## Features in a nutshell\n\n* Privacy by design\n* Multilingual\n* Role-based access\n* Multiple login options\n* Hierarchical comments\n* Markdown formatting\n* Thread locking\n* Sticky comments\n* Comment editing and deletion\n* Comment voting\n* Live comment updates\n* Custom user avatars\n* Email notifications\n* Multiple domains in one UI\n* Flexible moderation rules\n* Extensions\n* Statistics\n* Data import/export\n\n",
+        "tagline": "Comments. Easy.",
+        "website": "https://comentario.app/en/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.comentario.cloudronapp/comments.png",
+            "https://screenshots.cloudron.io/app.comentario.cloudronapp/admin-ui-2.png",
+            "https://screenshots.cloudron.io/app.comentario.cloudronapp/admin-ui-3.png",
+            "https://screenshots.cloudron.io/app.comentario.cloudronapp/admin-ui-4.png"
+        ],
+        "httpPort": 8000,
+        "tags": [
+            "comments",
+            "disqus",
+            "blog"
+        ],
+        "changelog": "* Update comentario to 3.16.0\n* [Full Changelog](https://gitlab.com/comentario/comentario/-/releases/v3.16.0)\n* Per-page email notifications ([#209](https://github.com/comentario/comentario/issues/209)) - [`abae9cf`](https://github.com/comentario/comentario/commit/abae9cf5), [`12c20cd`](https://github.com/comentario/comentario/commit/12c20cdb), [`cd5e8b2`](https://github.com/comentario/comentario/commit/cd5e8b27), [`f0aed95`](https://github.com/comentario/comentario/commit/f0aed95e), [`bac6b97`](https://github.com/comentario/comentario/commit/bac6b97f)\n* AdminUI: fix base href when deployed on a non-root path ([#217](https://github.com/comentario/comentario/issues/217)) - [`7d8e292`](https://github.com/comentario/comentario/commit/7d8e292a)\n* Backend: Resolve repeated notifications - [`cd5e8b2`](https://github.com/comentario/comentario/commit/cd5e8b27)\n* Backend: use correct paths in site.webmanifest - [`7d8e292`](https://github.com/comentario/comentario/commit/7d8e292a)\n* Docs: add explicit mentions of Edit domain page ([#210](https://github.com/comentario/comentario/issues/210)) - [`6e53611`](https://github.com/comentario/comentario/commit/6e536114)\n* I18n: improve logging for missing messages, add contribute page link - [`257753b`](https://github.com/comentario/comentario/commit/257753b6)\n* I18n: DE: add missing messages - [`1e9bc35`](https://github.com/comentario/comentario/commit/1e9bc35e)\n",
+        "postInstallMessage": "<sso>\nCloudron users have [Commenter](https://docs.comentario.app/en/kb/permissions/roles/) role default. You can give a user\n`superuser` permissions inside Comentario admin dashboard.\n</sso>\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/comentario/",
+        "forumUrl": "https://forum.cloudron.io/category/190/comentario",
+        "optionalSso": true,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/api/oauth/oidc:cloudron/callback"
+            }
+        },
+        "checklist": {
+            "signup-admin-user": {
+                "message": "Sign up in the app to create the superadmin"
+            }
+        },
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/app.comentario.cloudronapp:202601230520260000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.comentario.cloudronapp/versions/1.7.0/icon",
+    "featured": false,
+    "ranking": 0
+}

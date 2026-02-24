@@ -1,0 +1,99 @@
+{
+    "id": "com.sftpgo.cloudronapp",
+    "creationDate": "2025-11-06T09:10:15.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-02-25T16:21:31.000Z",
+    "publishedAt": "2025-02-25T16:21:31.000Z",
+    "manifest": {
+        "id": "com.sftpgo.cloudronapp",
+        "title": "SFTPGo",
+        "author": "SFTPGo Authors",
+        "contactEmail": "support@cloudron.io",
+        "tagline": "Bring your file transfers anywhere",
+        "description": "### About\n\nFull-featured and highly configurable event-driven file transfer solution. Server protocols: SFTP, HTTP/S, FTP/S, WebDAV. Storage backends: local filesystem, encrypted local filesystem, S3 (compatible) Object Storage, Google Cloud Storage, Azure Blob Storage, other SFTP servers.\n\n### Features\n\n* SFTPGo is an event-driven SFTP, FTP/S, HTTP/S and WebDAV server.\n* WebAdmin\n* WebClient\n* Both local and cloud-based accounts can be restricted to a certain base path.\n* Per-user and per-directory virtual permissions.\n* Public key, password and certificates authentication.\n* Multi-factor and multi-step authentication.\n* Active Directory/LDAP authentication.\n* Custom workflows based on server events such as uploads, downloads or schedules.\n* Disk quota and bandwidth throttling.\n* REST API for integrating with other systems.\n* You can obtain and automatically renew free Let's encrypt TLS certificates for HTTPS and FTPS/FTPES.\n* The web UIs support both light and dark modes and can be customized to match your brand.\n* Auto-blocking policy to help to prevent DoS (Denial of Service) and brute force password guessing.\n* Per-user and global IP filters.\n* Geo-IP filtering.\n* Per-protocol rate limiting.\n* Delegate user administration via roles.\n* Infrastructure as Code (IaC) support using the Terraform provider.\n* Multiple nodes/pods are supported to provide high availability/scalability.\n* Extensible via plugins.\n\n### Support Plans\n\n[SFTPGo.com](https://sftpgo.com/) offers commercial support, guarantees, and advice for your SFTPGo installation. With [plans](https://sftpgo.com/plans) from SFTPGo.com, you will purchase a supported copy of SFTPGo that you can safely install and use in professional environments. \n\n",
+        "upstreamVersion": "2.7.0",
+        "version": "1.4.0",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "tags": [
+            "sftp",
+            "s3",
+            "file browser",
+            "ftp",
+            "webdav"
+        ],
+        "memoryLimit": 1342177280,
+        "httpPort": 8080,
+        "configurePath": "/web/admin/login",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password"
+            }
+        },
+        "httpPorts": {
+            "WEBDAVD_PORT": {
+                "title": "WebDAV",
+                "description": "The subdomain for webdav connections",
+                "containerPort": 8888,
+                "defaultValue": "sftpgo-webdav"
+            }
+        },
+        "tcpPorts": {
+            "SFTPD_PORT": {
+                "title": "SFTPd",
+                "description": "The SFTPd Port for SFTP/SSH Connections",
+                "defaultValue": 2022,
+                "portCount": 1,
+                "enabledByDefault": true
+            },
+            "FTPD_PORT": {
+                "title": "FTPd",
+                "description": "The FTPd Port for FTP Connections",
+                "defaultValue": 2121,
+                "portCount": 1,
+                "enabledByDefault": false
+            },
+            "FTPD_PASSIVE_PORT": {
+                "title": "FTPd Passive",
+                "description": "The FTPd Passive Port for FTP Connections",
+                "defaultValue": 20000,
+                "portCount": 101,
+                "enabledByDefault": false
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "9.0.0",
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/web/oidc/redirect, /web/admin/oidclogin, /web/client/oidclogin",
+                "logoutRedirectUri": "/",
+                "tokenSignatureAlgorithm": "RS256"
+            },
+            "tls": []
+        },
+        "logPaths": [
+            "/run/sftpgo/sftpgo.log"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.sftpgo.cloudronapp/webadmin.png",
+            "https://screenshots.cloudron.io/com.sftpgo.cloudronapp/webclient.png"
+        ],
+        "website": "https://sftpgo.com/",
+        "changelog": "* Make ports optional\n",
+        "postInstallMessage": "The initial admin credentials are:\n\n**Username**: admin<br/>\n**Password**: admin<br/>\n\n",
+        "forumUrl": "https://forum.cloudron.io/category/204/sftpgo",
+        "documentationUrl": "https://docs.cloudron.io/packages/sftpgo/",
+        "dockerImage": "cloudron/com.sftpgo.cloudronapp:202511060857060000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.sftpgo.cloudronapp/versions/1.4.0/icon",
+    "featured": false,
+    "ranking": 0
+}

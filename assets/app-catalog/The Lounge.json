@@ -1,0 +1,53 @@
+{
+    "id": "io.github.thelounge",
+    "creationDate": "2025-07-31T18:39:29.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-10-16T07:20:37.000Z",
+    "publishedAt": "2016-10-16T07:20:37.000Z",
+    "manifest": {
+        "id": "io.github.thelounge",
+        "title": "The Lounge",
+        "author": "Lounge Authors",
+        "description": "The Lounge is a web IRC client that you host on your own server.\n\n### Features\n\n* Multiple user support\n* Stays connected even when you close the browser\n* Connect from multiple devices at once\n* Responsive layout — works well on your smartphone\n* .. and more!\n\n",
+        "changelog": "* checklist added to manifest\n",
+        "tagline": "IRC always connected.",
+        "version": "1.22.1",
+        "upstreamVersion": "4.4.3",
+        "healthCheckPath": "/",
+        "httpPort": 9000,
+        "addons": {
+            "localstorage": [],
+            "ldap": []
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "sso": false,
+                "message": "Change the admin password immediately."
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://thelounge.chat/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "postInstallMessage": "<nosso>\n\nThis app is pre-setup with an account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\nSee the [docs](https://cloudron.io/documentation/apps/thelounge) on how to add more users.\n\n</nosso>\n",
+        "tags": [
+            "irc",
+            "chat",
+            "messaging"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.github.thelounge/example_css.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/67/the-lounge",
+        "documentationUrl": "https://docs.cloudron.io/packages/thelounge/",
+        "dockerImage": "cloudron/io.github.thelounge:202507311214170000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.github.thelounge/versions/1.22.1/icon",
+    "featured": false,
+    "ranking": 0
+}

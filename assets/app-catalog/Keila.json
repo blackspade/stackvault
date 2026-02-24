@@ -1,0 +1,62 @@
+{
+    "id": "io.keila.cloudronapp",
+    "creationDate": "2026-01-05T09:17:36.000Z",
+    "publishState": "approved",
+    "userId": "bfa555ee-8db7-4027-94f6-7409feafd4cb",
+    "visibility": "listed",
+    "releaseState": "unstable",
+    "ts": "2025-10-11T10:58:18.000Z",
+    "publishedAt": "2025-10-11T10:58:18.000Z",
+    "manifest": {
+        "manifestVersion": 2,
+        "id": "io.keila.cloudronapp",
+        "version": "0.3.0",
+        "upstreamVersion": "0.18.0",
+        "title": "Keila",
+        "author": "Pentacent",
+        "description": "## About\n\nOpen-source email newsletters for creators and businesses. Keila is a reliable, self-hosted, and easy-to-use email marketing platform.\n\n## Features\n\nKeila is constantly evolving. Here are some completed and planned features:\n\n* Visual block editor with support for multi-column layouts\n* Fully custom responsive email layouts with MJML\n* Hybrid HTML & Plain text campaigns with Markdown (with and without WYSIWYG)\n* First-class plain text email support\n* Automatic bounce and complaint handling\n* Form protection with hCaptcha and Friendly Captcha\n* Double-Opt-In (Confirmed Opt-In)\n* Email analytics with click & open tracking\n* Form builder with custom fields\n* Advanced templating with Shopify’s Liquid template language\n* JSON data for contacts and campaigns\n* Powerful segmentation features\n* Full-featured API\n* CSV import & export\n* Fully managed Send with Keila option with excellent deliverability\n* Bring your own email with SMTP, AWS SES, Mailgun, Postmark, Sendgrid \n",
+        "tagline": "Newsletter Tool",
+        "website": "https://www.keila.io/",
+        "icon": "file://logo.png",
+        "contactEmail": "apps@cloudron.io",
+        "healthCheckPath": "/",
+        "memoryLimit": 536870912,
+        "httpPort": 4000,
+        "addons": {
+            "postgresql": [],
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password immediately"
+            },
+            "disable-registration": {
+                "message": "Disable the open user registration in `/app/data/env.sh` by setting `DISABLE_REGISTRATION` to `true`."
+            }
+        },
+        "tags": [
+            "newsletter",
+            "Mailchimp",
+            "sendinblue",
+            "listmonk"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.keila.cloudronapp/1.webp",
+            "https://screenshots.cloudron.io/io.keila.cloudronapp/2.webp",
+            "https://screenshots.cloudron.io/io.keila.cloudronapp/3.webp",
+            "https://screenshots.cloudron.io/io.keila.cloudronapp/4.webp"
+        ],
+        "minBoxVersion": "8.1.0",
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: changeme123<br/>\n",
+        "forumUrl": "https://forum.cloudron.io/category/211/keila",
+        "documentationUrl": "https://docs.cloudron.io/packages/keila/",
+        "changelog": "* Update keila to 0.18.0\n* [Full Changelog](https://github.com/pentacent/keila/releases/tag/0.18.0)\n* Added public archive links for campaigns  \n* Added ability to review sent campaigns  \n* Added `$empty` operator to Contact query language and segment editor  \n* Added segment filtering based on campaign interactions  \n* Added text color tool to Block Editor  \n* Added social media icons block to Block Editor (see [#444](https://github.com/pentacent/keila/issues/444))  \n* `success_url` in contact forms is now processed with Liquid, allowing personalized redirects  \n* Added support for `id_type` in API Contact deletion endpoint  \n* Preview emails are now prefixed with \"[Preview]\"  \n* Added Spanish translation (thanks [@PedroMartpico](https://github.com/PedroMartpico))\n",
+        "dockerImage": "cloudron/io.keila.cloudronapp:202601050852410000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.keila.cloudronapp/versions/0.3.0/icon",
+    "featured": false,
+    "ranking": 0
+}

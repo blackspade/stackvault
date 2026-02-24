@@ -1,0 +1,61 @@
+{
+    "id": "app.twofauth.cloudronapp",
+    "creationDate": "2026-01-14T20:54:43.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-03-07T15:11:49.000Z",
+    "publishedAt": "2024-03-07T15:11:49.000Z",
+    "manifest": {
+        "id": "app.twofauth.cloudronapp",
+        "title": "2FAuth",
+        "author": "Bubka",
+        "description": "## About\n\n2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.\n\nIt aims to ease you perform your 2FA authentication steps whatever the device you handle, with a clean and suitable interface.\n\n## Features\n\n* Manage your 2FA accounts and organize them using Groups\n* Scan and decode any QR code to add account in no time\n* Add custom account without QR code thanks to an advanced form\n* Edit accounts, even the imported ones\n* Generate TOTP and HOTP security codes and Steam Guard codes\n",
+        "changelog": "* Update 2FAuth to 6.0.0\n* [Full Changelog](https://github.com/Bubka/2FAuth/releases/tag/v6.0.0)\n* 2FAuth can now fetch icons from offline icon packs. Visit the new [Icon documentation page](https://docs.2fauth.app/usage/icons) to learn how to set them up ([#203](https://github.com/Bubka/2FAuth/issues/203)).\n* The sort order of 2FA accounts is saved to user preferences when changed from the Manage mode. This allows the account list to be reordered automatically after a new account is registered. ([#377](https://github.com/Bubka/2FAuth/issues/377)).\n* Groups can be reordered (manually, from the Group management view) ([#419](https://github.com/Bubka/2FAuth/issues/419)).\n* A new filter is available to only show 2FA accounts that do not belong to any group ([#430](https://github.com/Bubka/2FAuth/issues/430)).\n* The Import feature now supports Bitwarden export ([#501](https://github.com/Bubka/2FAuth/issues/501)).\n* Group names now accept single quote ([#465](https://github.com/Bubka/2FAuth/issues/465)).\n* Upon logging out, users are now redirected to the last login form they used: Password, SSO or Webauthn. ([#478](https://github.com/Bubka/2FAuth/issues/478)).\n* Catchable errors that occur during the sending of a test email are now displayed in the UI to help you understand what's going on.\n* [issue #447](https://github.com/Bubka/2FAuth/issues/447) Unable to import Google Authenticator.\n* [issue #464](https://github.com/Bubka/2FAuth/issues/464) Import error not correctly reported in the GUI.\n",
+        "tagline": "Two-Factor Authentication (2FA)",
+        "version": "1.8.0",
+        "upstreamVersion": "6.0.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "redis": {
+                "noPassword": true
+            },
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/socialite/callback/openid"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "change-default-site-owner": {
+                "message": "Change `SITE_OWNER` in `/app/data/env`"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "website": "https://2fauth.app/",
+        "contactEmail": "support@cloudron.io",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.twofauth.cloudronapp/dark.png",
+            "https://screenshots.cloudron.io/app.twofauth.cloudronapp/light.png"
+        ],
+        "icon": "logo.png",
+        "tags": [
+            "2FA",
+            "Two-Factor Authentication"
+        ],
+        "postInstallMessage": "The first account is automatically the administrator.\n\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/184/2fauth",
+        "documentationUrl": "https://docs.cloudron.io/packages/2fauth/",
+        "dockerImage": "cloudron/app.twofauth.cloudronapp:202601142019070000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.twofauth.cloudronapp/versions/1.8.0/icon",
+    "featured": false,
+    "ranking": 0
+}

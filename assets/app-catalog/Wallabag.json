@@ -1,0 +1,61 @@
+{
+    "id": "org.wallabag.cloudronapp2",
+    "creationDate": "2025-10-07T16:47:13.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-01-19T09:37:13.000Z",
+    "publishedAt": "2021-01-19T09:37:13.000Z",
+    "manifest": {
+        "id": "org.wallabag.cloudronapp2",
+        "title": "Wallabag",
+        "author": "Wallabag developers",
+        "tagline": "Saving web pages to read later",
+        "version": "2.5.6",
+        "upstreamVersion": "2.6.14",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "manifestVersion": 2,
+        "website": "https://www.wallabag.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "memoryLimit": 536870912,
+        "addons": {
+            "postgresql": [],
+            "redis": [],
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password immediately."
+            }
+        },
+        "tags": [
+            "pocket",
+            "readlater",
+            "weblog",
+            "Readability",
+            "Instapaper"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.wallabag.cloudronapp2/img00.png",
+            "https://screenshots.cloudron.io/org.wallabag.cloudronapp2/img01.png",
+            "https://screenshots.cloudron.io/org.wallabag.cloudronapp2/img02.png",
+            "https://screenshots.cloudron.io/org.wallabag.cloudronapp2/img03.png"
+        ],
+        "description": "### About\n\nWallabag is a read-it-later application: it saves a web page by keeping content only.\nElements like navigation or ads are removed.\n\n### Features\n\n**Comfortable reading**\n\nWallabag extracts the article's content (and only its content!) and displays it in a comfortable view.\nMoreover, wallabag is responsive: you can read your articles on your smartphone or your tablet.\n\n**Migrate from other services**\n\nIf you already have an account on Pocket©, Readability©, Instapaper© or even wallabag, you can import your data into wallabag.\n\n**Retrieve your articles easily thanks to filters**\n\nWallabag provides a powerful tool to filter your saved articles. It's so easy to look for them.\n\n**Keep your data**\n\nAll your data belongs to you. You can download all your articles in many formats: PDF, ePUB, .mobi, JSON, CSV, txt or HTML.\n\n### Apps\n\nWallabag comes with addons for Firefox and Chrome. Mobile apps are available for\nAndroid, iOS and Windows Phone.\n",
+        "changelog": "* Update wallabag to 2.6.14\n* [Full Changelog](https://github.com/wallabag/wallabag/releases/tag/2.6.14)\n* Change version in wallabag.yml by [@nicosomb](https://github.com/nicosomb) in [#8251](https://github.com/wallabag/wallabag/pull/8251)  \n* Fix deprecation by [@j0k3r](https://github.com/j0k3r) in [#8267](https://github.com/wallabag/wallabag/pull/8267)  \n* Add annotations filter to entries API endpoint by [@skn](https://github.com/skn) in [#8346](https://github.com/wallabag/wallabag/pull/8346)  \n* Update dependencies by [@yguedidi](https://github.com/yguedidi) in [#8435](https://github.com/wallabag/wallabag/pull/8435)  \n* Bump deps (mostly for siteconfig) by [@j0k3r](https://github.com/j0k3r) in [#8489](https://github.com/wallabag/wallabag/pull/8489)  \n* Fix reading time computation for short entries by [@andreadecorte](https://github.com/andreadecorte) in [#8332](https://github.com/wallabag/wallabag/pull/8332)  \n* Fix `urls` parameter when sending many urls to be stored using the API by [@j0k3r](https://github.com/j0k3r) in [#8488](https://github.com/wallabag/wallabag/pull/8488)  \n* Prepare 2.6.14 by [@j0k3r](https://github.com/j0k3r) in [#8494](https://github.com/wallabag/wallabag/pull/8494)\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: wallabag<br/>\n**Password**: wallabag<br/>\n\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/44/wallabag",
+        "documentationUrl": "https://docs.cloudron.io/packages/wallabag/",
+        "dockerImage": "cloudron/org.wallabag.cloudronapp2:202510071516370000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.wallabag.cloudronapp2/versions/2.5.6/icon",
+    "featured": false,
+    "ranking": 0
+}

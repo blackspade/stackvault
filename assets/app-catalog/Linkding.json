@@ -1,0 +1,56 @@
+{
+    "id": "link.linkding.cloudronapp",
+    "creationDate": "2026-01-12T17:51:14.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-07-05T13:04:40.000Z",
+    "publishedAt": "2023-07-05T13:04:40.000Z",
+    "manifest": {
+        "id": "link.linkding.cloudronapp",
+        "title": "Linkding",
+        "tagline": "Minimal, fast, and easy Bookmark manager",
+        "version": "1.26.1",
+        "upstreamVersion": "1.45.0",
+        "description": "### About\n\nLinkding is a bookmark manager that is designed be to be minimal, fast, and easy to host yourself.\n\nThe name comes from:\n\n* link which is often used as a synonym for URLs and bookmarks in common language\n* Ding which is German for thing\n* ...so basically something for managing your links\n\n### Feature Overview:\n\n* Clean UI optimized for readability\n* Organize bookmarks with tags\n* Add notes using Markdown\n* Read it later functionality\n* Share bookmarks with other users\n* Bulk editing\n* Automatically provides titles, descriptions and icons of bookmarked websites\n* Automatically creates snapshots of bookmarked websites on the Internet Archive Wayback Machine\n* Import and export bookmarks in Netscape HTML format\n* Extensions for Firefox and Chrome, as well as a bookmarklet\n* Light and dark themes\n* REST API for developing 3rd party apps\n* Admin panel for user self-service and raw data access\n* Easy setup using Docker and a SQLite database, with PostgreSQL as an option\n\n",
+        "author": "Sascha Ißbrücker",
+        "website": "https://github.com/sissbruecker/linkding",
+        "healthCheckPath": "/",
+        "icon": "logo.png",
+        "httpPort": 9090,
+        "memoryLimit": 536870912,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/oidc/callback/"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "contactEmail": "support@cloudron.io",
+        "postInstallMessage": "This app is pre-setup with a superuser account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n",
+        "changelog": "* oidc: add env template to optionally disable login form\n",
+        "minBoxVersion": "8.1.0",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/link.linkding.cloudronapp/main.png"
+        ],
+        "tags": [
+            "productivity",
+            "bookmark",
+            "bookmark-manager"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/linkding/",
+        "forumUrl": "https://forum.cloudron.io/category/170/linkding",
+        "dockerImage": "cloudron/link.linkding.cloudronapp:202601121503210000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/link.linkding.cloudronapp/versions/1.26.1/icon",
+    "featured": false,
+    "ranking": 0
+}

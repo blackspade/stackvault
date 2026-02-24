@@ -1,0 +1,51 @@
+{
+    "id": "io.hackmd.cloudronapp",
+    "creationDate": "2026-02-04T22:26:32.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2018-06-21T19:12:15.000Z",
+    "publishedAt": "2018-06-21T19:12:15.000Z",
+    "manifest": {
+        "id": "io.hackmd.cloudronapp",
+        "title": "HedgeDoc",
+        "author": "HedgeDoc authors",
+        "description": "HedgeDoc lets you create realtime collaborative markdown notes on all\nplatforms. Inspired by Hackpad, with more focus on speed and flexibility.\n\n## Features\n\n* Documentation Collaborated\n* Context Captured\n* Native Markdown\n* Knowledge Net\n* Technical Sharing and Presentation\n* Turn Notes into Slides\n* Better Conference Experience\n* Questions Polling\n\n",
+        "changelog": "* Update hedgedoc to 1.10.6\n* [Full Changelog](https://github.com/hedgedoc/hedgedoc/releases/tag/1.10.6)\n* [GHSA-x74j-jmf9-534w](https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-x74j-jmf9-534w) reports a bug where security headers for upload files were not set correctly.\n* [GHSA-672m-p72w-gw28](https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-672m-p72w-gw28) reports potential security issues with limited script execution in uploaded SVG files.\n",
+        "tagline": "Ideas grow better together",
+        "version": "1.21.3",
+        "upstreamVersion": "1.10.6",
+        "healthCheckPath": "/status",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/oauth2/callback"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "website": "https://hedgedoc.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "markdown",
+            "wiki",
+            "document",
+            "collaboration",
+            "notes"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.hackmd.cloudronapp/screenshot.png"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/hedgedoc/",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/38/hedgedoc",
+        "dockerImage": "cloudron/io.hackmd.cloudronapp:202602042143420000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.hackmd.cloudronapp/versions/1.21.3/icon",
+    "featured": false,
+    "ranking": 0
+}

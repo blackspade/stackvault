@@ -1,0 +1,52 @@
+{
+    "id": "com.collaboraoffice.coudronapp",
+    "creationDate": "2026-02-07T07:46:48.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2018-08-05T08:22:52.000Z",
+    "publishedAt": "2018-08-05T08:22:52.000Z",
+    "manifest": {
+        "id": "com.collaboraoffice.coudronapp",
+        "title": "Collabora Online",
+        "author": "Collabora Productivity Ltd.",
+        "description": "Collabora Online is an office suite for NextCloud.\n\n### Overview\n\nCollabora Online is a powerful LibreOffice-based online office that supports all major document, spreadsheet and presentation file formats, which you can integrate in your own infrastructure.\n\nIt allows collaborative editing with excellent office file format support.\n\n### Key features\n\n- View and edit text documents, spreadsheets, presentations & more\n- Collaborative editing features\n- Long Term Support and signed security updates\n- Works in any modern browser – no plugin needed\n\n### Document support\n\n- Preservation of layout and formatting of documents\n- text documents (odt, docx, doc,…)\n- spreadsheets (ods, xlsx, xls, …)\n- presentations (odp, pptx, ppt,…)\n",
+        "changelog": "* Update code to 25.04.8.3.1\n",
+        "tagline": "Collabora Online Developer Edition",
+        "version": "1.43.0",
+        "upstreamVersion": "25.04.8.3.1",
+        "healthCheckPath": "/api/healthcheck",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/api/login-callback"
+            }
+        },
+        "manifestVersion": 2,
+        "memoryLimit": 1073741824,
+        "website": "https://www.collaboraoffice.com/code/",
+        "documentationUrl": "https://cloudron.io/documentation/packages/collabora/",
+        "forumUrl": "https://forum.cloudron.io/category/57/collabora-office",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "office",
+            "nextcloud",
+            "collaboration",
+            "document",
+            "docs"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.collaboraoffice.coudronapp/screenshot_0.png",
+            "https://screenshots.cloudron.io/com.collaboraoffice.coudronapp/screenshot_1.png",
+            "https://screenshots.cloudron.io/com.collaboraoffice.coudronapp/screenshot_2.png"
+        ],
+        "minBoxVersion": "7.1.2",
+        "dockerImage": "cloudron/com.collaboraoffice.coudronapp:202602070520270000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.collaboraoffice.coudronapp/versions/1.43.0/icon",
+    "featured": false,
+    "ranking": 0
+}

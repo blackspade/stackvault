@@ -1,0 +1,82 @@
+{
+    "id": "org.discourse.cloudronapp",
+    "creationDate": "2026-01-29T10:05:33.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-07-13T17:16:44.000Z",
+    "publishedAt": "2019-07-13T17:16:44.000Z",
+    "manifest": {
+        "id": "org.discourse.cloudronapp",
+        "title": "Discourse",
+        "author": "Discourse Team",
+        "description": "## About\n\nDiscourse is the 100% open source discussion platform built for the next decade of the Internet.\n\nUse it as a:\n\n* mailing list\n* discussion forum\n* long-form chat room\n\nTo learn more about the philosophy and goals of the project, visit discourse.org.\n\n",
+        "changelog": "* Update discourse to 3.5.4\n",
+        "tagline": "Civilized discussion",
+        "version": "2.9.4",
+        "upstreamVersion": "3.5.4",
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "memoryLimit": 4294967296,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/oidc/callback"
+            },
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "recvmail": []
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "website": "https://www.discourse.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "forum",
+            "collaboration",
+            "community",
+            "discourse",
+            "bb"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            },
+            "change-root-account-email": {
+                "message": "Change the root account email following the [docs](https://cloudron.io/documentation/apps/discourse/#changing-root-account-email)"
+            }
+        },
+        "postInstallMessage": "The initial admin credentials are:\n\n**Email**: root@cloudron.local<br/>\n**Password**: changeme123<br/>\n",
+        "runtimeDirs": [
+            "/app/code/.git",
+            "/app/code/public",
+            "/app/code/app/assets/generated",
+            "/app/code/app/assets/javascripts/plugins",
+            "/app/code/app/assets/javascripts/discourse/dist",
+            "/app/code/app/assets/javascripts/discourse/node_modules"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.discourse.cloudronapp/howtogeek.png",
+            "https://screenshots.cloudron.io/org.discourse.cloudronapp/boingboing.png",
+            "https://screenshots.cloudron.io/org.discourse.cloudronapp/twitter.png",
+            "https://screenshots.cloudron.io/org.discourse.cloudronapp/turtlerockstudios.png"
+        ],
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/33/discourse",
+        "documentationUrl": "https://docs.cloudron.io/packages/discourse/",
+        "logPaths": [
+            "/run/discourse/log/production.log",
+            "/run/discourse/log/unicorn.stderr.log",
+            "/run/discourse/log/unicorn.stdout.log"
+        ],
+        "dockerImage": "cloudron/org.discourse.cloudronapp:202601281752240000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.discourse.cloudronapp/versions/2.9.4/icon",
+    "featured": false,
+    "ranking": 0
+}

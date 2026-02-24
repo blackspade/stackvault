@@ -1,0 +1,59 @@
+{
+    "id": "app.xbackbone.cloudronapp",
+    "creationDate": "2025-07-31T18:40:51.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-06-12T01:50:07.000Z",
+    "publishedAt": "2022-06-12T01:50:07.000Z",
+    "manifest": {
+        "id": "app.xbackbone.cloudronapp",
+        "title": "XBackBone",
+        "author": "XBackBone Community",
+        "description": "## About\n\nXBackBone is a simple, self-hosted, lightweight PHP file manager that support the instant sharing tool ShareX and \\*NIX systems. It supports uploading and displaying images, GIF, video, code, formatted text, and file downloading and uploading. Also have a web UI with multi user management, past uploads history and search support.\n\n## Main Features\n\n* Supports every upload type from ShareX.\n* Config generator for ShareX.\n* Low memory footprint.\n* Multiple backends support: Local storage, AWS S3, Google Cloud, Azure Blob Storage, Dropbox, FTP(s).\n* Web file upload.\n* Code uploads syntax highlighting.\n* Video and audio uploads webplayer.\n* PDF viewer.\n* Files preview page.\n* Bootswatch themes support.\n* Responsive theme for mobile use.\n* Multi language support.\n* User management, multi user features, roles and disk quota.\n* Public and private uploads.\n* Logging system.\n* Share to Telegram.\n* Linux supported via a per-user custom generated script (server and desktop).\n* Direct downloads using curl or wget commands.\n* Direct images links support on Discord, Telegram, Facebook, etc.\n* System updates without FTP or CLI.\n* Easy web installer.\n* LDAP authentication.\n* Registration system.\n* Automatic uploads tagging system.\n",
+        "tagline": "Lightweight file manager with full ShareX support",
+        "version": "1.4.1",
+        "upstreamVersion": "3.8.1",
+        "minBoxVersion": "8.1.0",
+        "website": "https://xbackbone.app",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "addons": {
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "localstorage": [],
+            "ldap": [],
+            "mysql": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password immediately."
+            }
+        },
+        "manifestVersion": 2,
+        "optionalSso": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.xbackbone.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/app.xbackbone.cloudronapp/2.png"
+        ],
+        "tags": [
+            "sharex",
+            "screencloud",
+            "pastebin",
+            "imagebin",
+            "filemanager"
+        ],
+        "changelog": "* checklist added to manifest\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n**Email**: admin@cloudron.local<br/>\n\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/xbackbone/",
+        "forumUrl": "https://forum.cloudron.io/category/147/xbackbone",
+        "dockerImage": "cloudron/app.xbackbone.cloudronapp:202507311227540000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.xbackbone.cloudronapp/versions/1.4.1/icon",
+    "featured": false,
+    "ranking": 0
+}

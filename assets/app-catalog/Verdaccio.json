@@ -1,0 +1,50 @@
+{
+    "id": "org.eggertsson.verdaccio",
+    "creationDate": "2026-02-01T10:43:08.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-02-24T13:02:27.000Z",
+    "publishedAt": "2017-02-24T13:02:27.000Z",
+    "manifest": {
+        "id": "org.eggertsson.verdaccio",
+        "title": "Verdaccio",
+        "author": "Verdaccio developers",
+        "description": "### About\n\nVerdaccio is a private/caching npm repository server\n\nVerdaccio allows you to have a local npm registry with zero configuration. You don't have to install and replicate an entire CouchDB database. Verdaccio keeps its own small database and, if a package doesn't exist there, it asks npmjs.org for it keeping only those packages you use.\n\n- [Verdaccio Git](https://github.com/verdaccio/verdaccio)\n- [Package maintainer](https://www.eggertsson.org)\n\n",
+        "tagline": "Private npm repository server",
+        "version": "1.72.6",
+        "upstreamVersion": "6.2.5",
+        "healthCheckPath": "/",
+        "httpPort": 4873,
+        "manifestVersion": 2,
+        "website": "https://verdaccio.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "memoryLimit": 314572800,
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/-/oauth/callback, /-/oauth/callback/cli"
+            },
+            "localstorage": []
+        },
+        "tags": [
+            "npm",
+            "repository",
+            "git",
+            "artifactory"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.eggertsson.verdaccio/img1.png"
+        ],
+        "postInstallMessage": "**npm/yarn/pnpm authentication**: username/password authentication will\nnot work in CLI tools. Instead, login to the Verdaccio Web UI and paste\nthe commands from `Settings` -> `Configuration` -> `Package Managers` .\n",
+        "changelog": "* Update verdaccio to 6.2.5\n* [Full Changelog](https://github.com/verdaccio/verdaccio/releases/tag/v6.2.5)\n* fix: update express v4.22.1 by [@&#8203;juanpicado](https://github.com/juanpicado) in [#&#8203;5557](https://github.com/verdaccio/verdaccio/pull/5557)\n",
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/43/verdaccio",
+        "documentationUrl": "https://docs.cloudron.io/packages/verdaccio",
+        "dockerImage": "cloudron/org.eggertsson.verdaccio:202602010021390000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.eggertsson.verdaccio/versions/1.72.6/icon",
+    "featured": false,
+    "ranking": 0
+}

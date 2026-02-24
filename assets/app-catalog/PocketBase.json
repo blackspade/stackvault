@@ -1,0 +1,66 @@
+{
+    "id": "io.pocketbase.cloudronapp",
+    "creationDate": "2026-02-11T13:41:16.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-05-14T17:20:26.000Z",
+    "publishedAt": "2024-05-14T17:20:26.000Z",
+    "manifest": {
+        "id": "io.pocketbase.cloudronapp",
+        "title": "PocketBase",
+        "author": "PocketBase developpers",
+        "description": "## About\n\nPocketBase is an open source backend consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.\n\n## Features\n\n### Realtime database\nEmbedded performant database with schema builder, data validations, realtime subscriptions and easy to use REST api.\n\n### Authentication\nManage your app users and handle email/password and OAuth2 sign ups (Google, Facebook, GitHub, GitLab) without the hassle.\n\n### File storage\nSanely store files locally or in a S3 storage. Easily attach media to your database records and generate thumbs on the fly.\n\n### Extendable\nUse as a standalone app OR as a framework, that you can extend via Go and JavaScript hooks to create your own custom portable backend.",
+        "changelog": "* Use the Cloudron mail STARTTLS port in the startup instead of fixed 587\n",
+        "tagline": "Backend for your next SaaS in 1 file",
+        "version": "1.14.3",
+        "configurePath": "/_/",
+        "upstreamVersion": "0.36.2",
+        "healthCheckPath": "/",
+        "httpPort": 8090,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/pb_data/data.db"
+                    ]
+                }
+            },
+            "sendmail": {
+                "requiresValidCertificate": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://pocketbase.io",
+        "contactEmail": "support@pocketbase.io",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.pocketbase.cloudronapp/main.png",
+            "https://screenshots.cloudron.io/io.pocketbase.cloudronapp/admin.png"
+        ],
+        "icon": "logo.png",
+        "tags": [
+            "cms",
+            "sql",
+            "api",
+            "contentful",
+            "strapi",
+            "netlify",
+            "no-code",
+            "nocode"
+        ],
+        "postInstallMessage": "**Important:** Please keep in mind that PocketBase is still under active development and full backward compatibility is not guaranteed before reaching v1.0.0.\n\nThis app is pre-setup with an admin account. The initial credentials are:\n\n**Email**: admin@cloudron.local<br/>\n**Password**: changeme123<br/>\n\n",
+        "forumUrl": "https://forum.cloudron.io/category/189/pocketbase",
+        "documentationUrl": "https://docs.cloudron.io/packages/pocketbase",
+        "minBoxVersion": "9.0.0",
+        "dockerImage": "cloudron/io.pocketbase.cloudronapp:202602111248240000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.pocketbase.cloudronapp/versions/1.14.3/icon",
+    "featured": false,
+    "ranking": 0
+}

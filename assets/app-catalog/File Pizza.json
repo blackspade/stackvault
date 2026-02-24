@@ -1,0 +1,49 @@
+{
+    "id": "pizza.file.cloudronapp",
+    "creationDate": "2026-02-01T11:34:57.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-04-17T14:56:13.000Z",
+    "publishedAt": "2020-04-17T14:56:13.000Z",
+    "manifest": {
+        "id": "pizza.file.cloudronapp",
+        "title": "File Pizza",
+        "author": "Alex Kern & Neeraj Baid",
+        "description": "FilePizza enables fast and private peer-to-peer file transfers in your web browser.\n\n### About\n\nUsing WebRTC, FilePizza eliminates the initial upload step required by other web-based file sharing services. Because data is never stored in an intermediary server, the transfer is fast, private, and secure.\n\n## Features\n\n* A new UI with dark mode support, now built on modern browser technologies.\n* Works on most mobile browsers, including Mobile Safari.\n* Transfers are now directly from the uploader to the downloader's browser (WebRTC without WebTorrent) with faster handshakes.\n* Uploaders can monitor the progress of the transfer and stop it if they want.\n* Better security and safety measures with password protection and reporting.\n* Support for uploading multiple files at once, which downloaders receive as a zip file.\n* Streaming downloads with a Service Worker.\n* Out-of-process storage of server state using Redis.\n\n## FAQ\n\n**Where are my files sent?** Your files never touch our server. Instead, they are sent\ndirectly from the uploader's browser to the downloader's browser using WebTorrent and WebRTC.\nThis requires that the uploader leave their browser window open until the transfer is complete.\n\n**Can multiple people download my file at once?** Yes! Just send them your tempalink.\n\n**How big can my files be?** Chrome has issues supporting files >500 MB. Firefox does not have\nany issues with large files, however.\n\n**What happens when I close my browser?** The tempalink is invalidated. If a downloader has\ncompleted the transfer, that downloader will continue to seed to incomplete downloaders, but no\nnew downloads may be initiated.\n\n**Are my files encrypted?** Yes, all WebRTC communications are automatically encrypted using\npublic-key cryptography.\n\n**My files are sending slowly!** Transfer speed is dependent on your network connection.\n\n",
+        "tagline": "Peer-to-peer file sharing",
+        "version": "1.16.0",
+        "upstreamVersion": "NewVersionIsNotSet",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "turn": [],
+            "proxyAuth": []
+        },
+        "manifestVersion": 2,
+        "website": "http://file.pizza",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/pizza.file.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/pizza.file.cloudronapp/2.png"
+        ],
+        "tags": [
+            "p2p",
+            "file",
+            "sharing",
+            "collaboration",
+            "fun"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/66/filepizza",
+        "minBoxVersion": "7.1.0",
+        "optionalSso": true,
+        "changelog": "* Update filepizza to 3258673\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/filepizza/",
+        "dockerImage": "cloudron/pizza.file.cloudronapp:202602011047450000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/pizza.file.cloudronapp/versions/1.16.0/icon",
+    "featured": false,
+    "ranking": 0
+}

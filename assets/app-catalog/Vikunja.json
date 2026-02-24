@@ -1,0 +1,61 @@
+{
+    "id": "io.vikunja.cloudronapp",
+    "creationDate": "2026-02-10T15:40:52.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-03-02T02:00:59.000Z",
+    "publishedAt": "2021-03-02T02:00:59.000Z",
+    "manifest": {
+        "id": "io.vikunja.cloudronapp",
+        "title": "Vikunja",
+        "author": "Vikunja Developers",
+        "description": "## About\n\nVikunja is an Open-Source, self-hosted To-Do list application for all platforms. It is licensed under the GPLv3.\n\nThink of Vikunja like the notebook you have with all your things to keep track of.\nBut better.\n\n## Features\n\n* Stay organized - Organize your tasks in lists, organize lists in namespaces.\n* Tasks - Tasks are not only simple tasks. You can let Vikunja remind you of tasks when they're due. Never miss an important deadline again!\n* Collaboration - Ever wished you could just share that grocery list with your roomate instead of having to send dozens of texts on your way to the supermarket? With Vikunja, you can. Simply share a list (or a namespace with all its lists) to another user. Don't want your roommate to add new things to the grocery list and only do the shopping? You can also share a list with read-only access!\n*  Share links - You can share a list with a link so that others can directly see or edit all tasks on a list but don't need to create an account. Share links have all the same rights management as sharing with users or teams. \n* Labels - Effortlessly mark tasks with a colorful label to find and group relevant tasks with a click! \n\n",
+        "changelog": "* Update vikunja to 1.1.0\n* [Full Changelog](https://github.com/go-vikunja/vikunja/releases/tag/v1.1.0)\n* *(auth)* Remove unnecessary fields from JWT token payloads\n* *(backgrounds)* Enforce max file size for unsplash downloads\n* *(backgrounds)* Avoid integer overflow in max size calculation\n* *(backgrounds)* Stream unsplash download to temp file instead of memory\n* *(build)* Add osusergo tag to prevent SIGFPE crash under systemd\n* *(build)* Normalize comma-separated TAGS to prevent build failure\n* *(dump)* Stream files during restore to avoid memory pressure\n* *(dump)* Limit copy size to prevent decompression bombs\n* *(files)* Require io.ReadSeeker for S3 uploads, remove temp file fallback\n* *(files)* Update all callers to provide seekable readers for S3 uploads\n",
+        "tagline": "The to-do app to organize your life.",
+        "version": "1.19.0",
+        "upstreamVersion": "1.1.0",
+        "healthCheckPath": "/api/v1/info",
+        "httpPort": 3456,
+        "optionalSso": true,
+        "addons": {
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/openid/cloudron"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "http://vikunja.io",
+        "minBoxVersion": "7.5.1",
+        "documentationUrl": "https://cloudron.io/documentation/packages/vikunja/",
+        "forumUrl": "https://forum.cloudron.io/category/127/vikunja",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "todo",
+            "organize",
+            "kanban",
+            "trello",
+            "planning",
+            "project",
+            "asana",
+            "evernote",
+            "tasks"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.vikunja.cloudronapp/list.jpg",
+            "https://screenshots.cloudron.io/io.vikunja.cloudronapp/kanban.jpg",
+            "https://screenshots.cloudron.io/io.vikunja.cloudronapp/tasks.png"
+        ],
+        "postInstallMessage": "<nosso>\nOn first visit, register yourself and sign in. External registration is enabled by default.\n</nosso>\n\n",
+        "dockerImage": "cloudron/io.vikunja.cloudronapp:202602100850020000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.vikunja.cloudronapp/versions/1.19.0/icon",
+    "featured": false,
+    "ranking": 0
+}

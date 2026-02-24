@@ -1,0 +1,73 @@
+{
+    "id": "org.moodle.cloudronapp",
+    "creationDate": "2026-02-12T09:18:37.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-20T05:40:51.000Z",
+    "publishedAt": "2020-11-20T05:40:51.000Z",
+    "manifest": {
+        "id": "org.moodle.cloudronapp",
+        "title": "Moodle",
+        "author": "Moodle developers",
+        "description": "## About\n\nMoodle is the world's most popular learning management system. Start creating your online learning site in minutes!\n\nWith hundreds of millions of users worldwide, more organisations choose us to support their education and training\nneeds than any other platform around the world.\n\n## Features\n\n* Open Source - You’re in control. From data ownership, privacy and security to setting up the look & feel of your Moodle site and adding extra functionality to it. Open source means you decide what happens, and how, in your platform.\n\n* Flexible Learning - Blended learning, fully remote, collaborative group activities, self-paced courses… Moodle supports all types of teaching and provides tools to measure and recognise progress for you and for your learners.\n\n* Mobile Learning - With the Moodle App, learners can access all your content, submit activities and complete assignments from their mobile devices - and can continue learning even if they are offline.\n\n* Accessible for all - We develop Moodle following WCAG 2.1 accessibility standards. Our integrated content accessibility checkers help you build courses with full support for all learners.\n\n* Security & Privacy - As an open source project, we have many people looking at our code and making it completely secure. When it comes to privacy, our built-in tools allow you to manage privacy policies and data to meet your local legislation requirements, including GDPR compliance.\n\n* Easy Integration - The Moodle LMS connects seamlessly with third-party platforms and services; from plagiarism detection to content repositories. We follow open standards like SCORM and AICC, IMS-LTI for external apps, RSS, LDAP, and more.\n\n",
+        "tagline": "The world's most popular learning management system",
+        "version": "4.0.3",
+        "upstreamVersion": "5.1.3",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "memoryLimit": 524288000,
+        "manifestVersion": 2,
+        "website": "https://moodle.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "addons": {
+            "postgresql": [],
+            "localstorage": [],
+            "sendmail": {
+                "optional": true,
+                "supportsDisplayName": false
+            },
+            "ldap": [],
+            "oidc": {
+                "loginRedirectUri": "/admin/oauth2callback.php"
+            },
+            "redis": [],
+            "scheduler": {
+                "periodic": {
+                    "schedule": "*/1 * * * *",
+                    "command": "echo '==> Run cron script' && /usr/local/bin/gosu www-data:www-data /usr/bin/php /app/data/moodle/admin/cli/cron.php --keep-alive=0 >/dev/null"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password and email"
+            }
+        },
+        "optionalSso": true,
+        "tags": [
+            "moodle",
+            "learning",
+            "lms",
+            "canvas",
+            "blackboard",
+            "edutech"
+        ],
+        "changelog": "* Update moodle to 5.1.3\n* [Full Changelog](https://moodledev.io/general/releases/5.1/5.1.3)\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n**Email**: admin@cloudron.local<br/>\n\n#### Important note on updates\n\nMoodle is a complex application with a complicated upgrade procedure. It supports\nover 25 different [types of plugins](https://docs.moodle.org/dev/Plugin_types) each\nlocated in a different location in the source code. While we have automated the upgrade,\ndo not use any more plugins than necessary to reduce update issues. On the same note,\ndo not edit the source code of core moodle since it will be overwritten on an update.\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.moodle.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.moodle.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.moodle.cloudronapp/3.jpg"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/102/moodle",
+        "documentationUrl": "https://docs.cloudron.io/packages/moodle/",
+        "dockerImage": "cloudron/org.moodle.cloudronapp:202602120020410000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.moodle.cloudronapp/versions/4.0.3/icon",
+    "featured": false,
+    "ranking": 0
+}

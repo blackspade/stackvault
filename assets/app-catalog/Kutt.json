@@ -1,0 +1,58 @@
+{
+    "id": "it.kutt.cloudronapp",
+    "creationDate": "2025-07-29T16:21:47.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-07T01:55:20.000Z",
+    "publishedAt": "2020-11-07T01:55:20.000Z",
+    "manifest": {
+        "id": "it.kutt.cloudronapp",
+        "title": "Kutt",
+        "author": "Kutt Community",
+        "description": "## About\n\nKutt is a modern URL shortener with support for custom domains. Shorten URLs, manage your links and view the click rate statistics.\n\n## Features\n\n* Free and open source.\n* Custom domain support.\n* Custom URLs for shortened links\n* Set password for links.\n* Set description for links.\n* Expiration time for links.\n* Private statistics for shortened URLs.\n* View, edit, delete and manage your links.\n* Admin account to view, delete and ban links.\n* Ability to disable registration and anonymous link creation for private use.\n* RESTful API.\n\n\n",
+        "tagline": "Modern URL Shortener",
+        "version": "2.4.1",
+        "upstreamVersion": "3.2.3",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://kutt.it",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "memoryLimit": 1073741824,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/it.kutt.cloudronapp/callout.png"
+        ],
+        "tags": [
+            "bitly",
+            "url",
+            "shortener",
+            "polr",
+            "yourls"
+        ],
+        "changelog": "* Set supportsDisplayName to false in manifest\n",
+        "checklist": {
+            "create-admin": {
+                "message": "Create admin account by visiting the app"
+            }
+        },
+        "documentationUrl": "https://docs.cloudron.io/packages/kutt/",
+        "minBoxVersion": "8.2.0",
+        "multiDomain": true,
+        "forumUrl": "https://forum.cloudron.io/category/111/kutt",
+        "dockerImage": "cloudron/it.kutt.cloudronapp:202507291217410000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/it.kutt.cloudronapp/versions/2.4.1/icon",
+    "featured": false,
+    "ranking": 0
+}

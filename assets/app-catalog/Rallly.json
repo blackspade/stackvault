@@ -1,0 +1,58 @@
+{
+    "id": "co.rallly.cloudronapp",
+    "creationDate": "2026-02-12T17:12:12.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-12-19T15:43:28.000Z",
+    "publishedAt": "2022-12-19T15:43:28.000Z",
+    "manifest": {
+        "id": "co.rallly.cloudronapp",
+        "title": "Rallly",
+        "author": "Luke Vella",
+        "description": "## About\n\nSelf-hostable doodle poll alternative. Find the best date for a meeting with your colleagues or friends without the back and forth emails. \n",
+        "tagline": "Schedule meetings with ease",
+        "version": "2.7.2",
+        "upstreamVersion": "4.7.3",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "oidc": {
+                "loginRedirectUri": "/api/auth/callback/oidc"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/co.rallly.cloudronapp/rallly_01.png",
+            "https://screenshots.cloudron.io/co.rallly.cloudronapp/rallly_02.png",
+            "https://screenshots.cloudron.io/co.rallly.cloudronapp/rallly_03.png"
+        ],
+        "memoryLimit": 2147483648,
+        "manifestVersion": 2,
+        "website": "https://rallly.co/",
+        "forumUrl": "https://forum.cloudron.io/category/154/rallly",
+        "documentationUrl": "https://docs.cloudron.io/packages/rallly/",
+        "postInstallMessage": "Anyone can sign up and use the app. To restrict who can sign up, set `ALLOWED_EMAILS` in `/app/data/env` to the\nlist of allowed emails.\n\n",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "doodle",
+            "appointment",
+            "schedule",
+            "meeting",
+            "calendar"
+        ],
+        "changelog": "* Update rallly to 4.7.3\n* [Full Changelog](https://github.com/lukevella/rallly/releases/tag/v4.7.3)\n* Removed corepack and pnpm from the runtime image. Reducing image size and runtime dependencies.\n* Remove corepack dependency from docker image by [@&#8203;lukevella](https://github.com/lukevella) in [#&#8203;2181](https://github.com/lukevella/rallly/pull/2181)\n",
+        "optionalSso": true,
+        "minBoxVersion": "8.1.0",
+        "dockerImage": "cloudron/co.rallly.cloudronapp:202602121207290000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/co.rallly.cloudronapp/versions/2.7.2/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,70 @@
+{
+    "id": "com.paperlessng.cloudronapp",
+    "creationDate": "2026-01-31T10:52:09.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-01-10T11:39:57.000Z",
+    "publishedAt": "2022-01-10T11:39:57.000Z",
+    "manifest": {
+        "id": "com.paperlessng.cloudronapp",
+        "title": "Paperless-ngx",
+        "author": "Paperless-ngx Team",
+        "description": "### About\n\nPaperless-ngx is an application that manages your personal documents. With the help of a document scanner (see Scanner recommendations),\npaperless transforms your wieldy physical document binders into a searchable archive and provides many utilities for finding and managing your documents.\n\n### Why This Exists\n\nPaper is a nightmare. Environmental issues aside, there’s no excuse for it in the 21st century.\nIt takes up space, collects dust, doesn’t support any form of a search feature, indexing is tedious, it’s heavy and prone to damage & loss.\n\nI wrote this to make “going paperless” easier. I do not have to worry about finding stuff again.\nI feed documents right from the post box into the scanner and then shred them. Perhaps you might find it useful too.\n\n### Paperless-ngx\n\nPaperless-ngx forked from paperless-ng to continue the great work and distribute responsibility of supporting and advancing the project among a team of people.\n\n",
+        "tagline": "Scan, index and archive documents",
+        "version": "1.47.1",
+        "upstreamVersion": "2.20.6",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "minBoxVersion": "8.0.0",
+        "addons": {
+            "localstorage": {
+                "ftp": {
+                    "uid": 1000,
+                    "uname": "cloudron"
+                }
+            },
+            "redis": {
+                "noPassword": true
+            },
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/accounts/oidc/cloudron/login/callback/"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "optionalSso": true,
+        "memoryLimit": 1000000000,
+        "manifestVersion": 2,
+        "website": "https://docs.paperless-ngx.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "document",
+            "ocr",
+            "pdf",
+            "archive"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.paperlessng.cloudronapp/dashboard.png",
+            "https://screenshots.cloudron.io/com.paperlessng.cloudronapp/documents-smallcards.png",
+            "https://screenshots.cloudron.io/com.paperlessng.cloudronapp/documents-table.png"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n**Email**: admin@cloudron.local<br/>\n\n<sso>\nBy default, Cloudron users have no permissions. Users will only see a Loading screen. This can be changed by the Paperless-ngx admin in the `Users & Groups` tab.\n\nMinimal permissions to let users to login:\n**Add UISettings**\n**View UISettings**\n</sso>\n",
+        "changelog": "* Update paperless-ngx to 2.20.6\n* [Full Changelog](https://github.com/paperless-ngx/paperless-ngx/releases/tag/v2.20.6)\n* Fix: extract all ids for nested tags [@shamoon](https://github.com/shamoon) ([#11888](https://github.com/paperless-ngx/paperless-ngx/pull/11888))\n* Fix: prevent note deletion outside doc [@shamoon](https://github.com/shamoon) [`e4b861d`](https://github.com/paperless-ngx/paperless-ngx/commit/e4b861d76f2da302136cd2b10c26fcf2f213b974)\n* Performance: improve treenode inefficiencies [@shamoon](https://github.com/shamoon) ([#11606](https://github.com/paperless-ngx/paperless-ngx/issues/11606))\n* Fixhancement: change date calculation for 'this year' to include future documents [@shamoon](https://github.com/shamoon) ([#11884](https://github.com/paperless-ngx/paperless-ngx/pull/11884))\n* Fix: Running management scripts under rootless could fail [@stumpylog](https://github.com/stumpylog) ([#11870](https://github.com/paperless-ngx/paperless-ngx/pull/11870))\n* Fix: use correct field id for overrides [@shamoon](https://github.com/shamoon) ([#11869](https://github.com/paperless-ngx/paperless-ngx/pull/11869))\n",
+        "forumUrl": "https://forum.cloudron.io/category/137/paperless-ng",
+        "documentationUrl": "https://docs.cloudron.io/packages/paperless-ngx",
+        "dockerImage": "cloudron/com.paperlessng.cloudronapp:202601310938070000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.paperlessng.cloudronapp/versions/1.47.1/icon",
+    "featured": false,
+    "ranking": 0
+}

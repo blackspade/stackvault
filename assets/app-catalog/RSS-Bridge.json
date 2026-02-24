@@ -1,0 +1,50 @@
+{
+    "id": "com.rssbridgeapp.cloudronapp",
+    "creationDate": "2025-08-06T04:42:20.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-05-25T22:27:55.000Z",
+    "publishedAt": "2021-05-25T22:27:55.000Z",
+    "manifest": {
+        "id": "com.rssbridgeapp.cloudronapp",
+        "title": "RSS-Bridge",
+        "author": "RSS Bridge Authors",
+        "description": "## Abut\n\nThe RSS feed for websites missing it.\n\nRSS-Bridge is a PHP project capable of generating RSS and Atom feeds for websites that don't have one. It can be used on webservers or as a stand-alone application in CLI mode.\n\n## Supported sites/pages (examples)\n\n* `Bandcamp` : Returns last release from [bandcamp](https://bandcamp.com/) for a tag\n* `Cryptome` : Returns the most recent documents from [Cryptome.org](http://cryptome.org/)\n* `DansTonChat`: Most recent quotes from [danstonchat.com](http://danstonchat.com/)\n* `DuckDuckGo`: Most recent results from [DuckDuckGo.com](https://duckduckgo.com/)\n* `Facebook` : Returns the latest posts on a page or profile on [Facebook](https://facebook.com/)\n* `FlickrExplore` : [Latest interesting images](http://www.flickr.com/explore) from Flickr\n* `GoogleSearch` : Most recent results from Google Search\n* `Identi.ca` : Identica user timeline (Should be compatible with other Pump.io instances)\n* `Instagram`: Most recent photos from an Instagram user\n* `OpenClassrooms`: Lastest tutorials from [fr.openclassrooms.com](http://fr.openclassrooms.com/)\n* `Pinterest`: Most recent photos from user or search\n* `ScmbBridge`: Newest stories from [secouchermoinsbete.fr](http://secouchermoinsbete.fr/)\n* `ThePirateBay` : Returns the newest indexed torrents from [The Pirate Bay](https://thepiratebay.se/) with keywords\n* `Twitter` : Return keyword/hashtag search or user timeline\n* `Wikipedia`: highlighted articles from [Wikipedia](https://wikipedia.org/) in English, German, French or Esperanto\n* `YouTube` : YouTube user channel, playlist or search\n\n## Output format\n\nRSS-Bridge is capable of producing several output formats:\n\n* `Atom` : Atom feed, for use in feed readers\n* `Html` : Simple HTML page\n* `Json` : JSON, for consumption by other applications\n* `Mrss` : MRSS feed, for use in feed readers\n* `Plaintext` : Raw text, for consumption by other applications\n",
+        "changelog": "* Update rss-bridge to 2025-08-05\n* [Full Changelog](https://github.com/RSS-Bridge/rss-bridge/releases/tag/2025-08-05)\n* \\[FabBridge] Pull 100% discounted items via Fab API by [@thefranke](https://github.com/thefranke) in https://github.com/RSS-Bridge/rss-bridge/pull/4584  \n* \\[GoComicsBridge] Fix for JSON being removed by [@TReKiE](https://github.com/TReKiE) in https://github.com/RSS-Bridge/rss-bridge/pull/4585  \n* \\[IdealoBridge] Bypass bot protection by [@sysadminstory](https://github.com/sysadminstory) in https://github.com/RSS-Bridge/rss-bridge/pull/4588  \n* \\[GoComicsBridge] Add fallback when link to current comic is missing by [@TReKiE](https://github.com/TReKiE) in https://github.com/RSS-Bridge/rss-bridge/pull/4589  \n* \\[GolemBridge] Add tables to content by [@Mynacol](https://github.com/Mynacol) in https://github.com/RSS-Bridge/rss-bridge/pull/4613  \n* \\[ZeitBridge] Improvements by [@Mynacol](https://github.com/Mynacol) in https://github.com/RSS-Bridge/rss-bridge/pull/4617  \n* \\[NasestrechaBridge] Add bridge  by [@pprenghy](https://github.com/pprenghy) in https://github.com/RSS-Bridge/rss-bridge/pull/4591  \n* \\[WaggaCouncilBridge] Add bridge by [@Scrub000](https://github.com/Scrub000) in https://github.com/RSS-Bridge/rss-bridge/pull/4593  \n* \\[HeiseBridge] removes language-info-text, add archive.is link for people without subscription by [@Tone866](https://github.com/Tone866) in https://github.com/RSS-Bridge/rss-bridge/pull/4594  \n* \\[CentreFranceBridge] Fix parser following website update by [@quent1-fr](https://github.com/quent1-fr) in https://github.com/RSS-Bridge/rss-bridge/pull/4596  \n",
+        "tagline": "The RSS feed for websites missing it",
+        "version": "1.15.0",
+        "upstreamVersion": "2025-08-05",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": []
+        },
+        "manifestVersion": 2,
+        "website": "https://github.com/RSS-Bridge/rss-bridge",
+        "icon": "file://logo.png",
+        "tags": [
+            "rss",
+            "bridge"
+        ],
+        "contactEmail": "support@cloudron.io",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password immediately by editing `/app/data/config.ini.php`. These credentials are used to access the site as well as each feed."
+            }
+        },
+        "minBoxVersion": "8.1.0",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n  \n**Username**: admin<br/>\n**Password**: changeme123<br/>\n\nThe admin password can be changed by editing `/app/data/config.ini.php`.\nThese credentials are used to access the site as well as each feed.\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/rss-bridge/",
+        "forumUrl": "https://forum.cloudron.io/category/131/rss-bridge",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.rssbridgeapp.cloudronapp/welcome.png",
+            "https://screenshots.cloudron.io/com.rssbridgeapp.cloudronapp/twitterbridge_atom.png"
+        ],
+        "dockerImage": "cloudron/com.rssbridgeapp.cloudronapp:202508060020520000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.rssbridgeapp.cloudronapp/versions/1.15.0/icon",
+    "featured": false,
+    "ranking": 0
+}

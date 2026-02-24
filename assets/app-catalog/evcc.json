@@ -1,0 +1,114 @@
+{
+    "id": "io.evcc.cloudronapp",
+    "creationDate": "2026-01-31T16:02:36.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-09-02T14:58:59.000Z",
+    "publishedAt": "2024-09-02T14:58:59.000Z",
+    "manifest": {
+        "id": "io.evcc.cloudronapp",
+        "title": "evcc",
+        "author": "evcc Team",
+        "tagline": "Solar charging. Super simple.",
+        "website": "https://evcc.io",
+        "version": "1.16.6",
+        "upstreamVersion": "0.300.8",
+        "postInstallMessage": "[Web Terminal](https://docs.cloudron.io/apps/#web-terminal)\n\nThe app starts in demo mode and has to be configured with `evcc configure`\nvia webterminal to exit demo mode.\n \n",
+        "contactEmail": "support@cloudron.io",
+        "minBoxVersion": "9.0.0",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "description": "### Overview\n\nSolar charging. Super simple.\n\nevcc is an energy management system with a focus on electromobility. The software controls your EV charger or smart plug.\nIt communicates with your vehicle, inverter or home storage to make intelligent charging decisions. The software is open source and community-driven.\n",
+        "httpPort": 7070,
+        "udpPorts": {
+            "MDNS_PORT": {
+                "title": "mDNS Port",
+                "description": "mDNS port",
+                "defaultValue": 5353,
+                "containerPort": 5353,
+                "readOnly": true,
+                "enabledByDefault": false
+            },
+            "KEBA_PORT": {
+                "title": "KEBA Port",
+                "description": "KEBA charger port",
+                "defaultValue": 7090,
+                "containerPort": 7090,
+                "readOnly": true,
+                "enabledByDefault": false
+            },
+            "MODBUS_PORT": {
+                "title": "Modbus Port",
+                "description": "Modbus port",
+                "defaultValue": 8899,
+                "containerPort": 8899,
+                "readOnly": true,
+                "enabledByDefault": false
+            },
+            "SMA_PORT": {
+                "title": "SMA Energy Manager Port",
+                "description": "SMA energy manager port",
+                "defaultValue": 9522,
+                "containerPort": 9522,
+                "readOnly": true,
+                "enabledByDefault": false
+            }
+        },
+        "tcpPorts": {
+            "EEBUS_PORT": {
+                "title": "EEBus Port",
+                "description": "EEBus Port",
+                "defaultValue": 4712,
+                "containerPort": 4712,
+                "readOnly": true,
+                "enabledByDefault": false
+            },
+            "OCPP_PORT": {
+                "title": "OCPP Port",
+                "description": "OCPP charger port",
+                "defaultValue": 8887,
+                "containerPort": 8887,
+                "readOnly": true,
+                "enabledByDefault": false
+            }
+        },
+        "changelog": "* Update evcc to 0.300.8\n* [Full Changelog](https://github.com/evcc-io/evcc/releases/tag/0.300.8)\n* [`c563112`](https://github.com/evcc-io/evcc/commit/c5631123c3a129bf6d8bc60245400e49fb55c3db) Add HomeAssistant charger ([#27103](https://github.com/evcc-io/evcc/issues/27103))\n* [`725af06`](https://github.com/evcc-io/evcc/commit/725af06baba0b5305373ab9b0a048feac8262338) ChargeX: fix register decoding ([#27110](https://github.com/evcc-io/evcc/issues/27110))\n* [`44dcd03`](https://github.com/evcc-io/evcc/commit/44dcd038880caf88daf75f6a96e225d2b403136e) MQTT: fix namespace clash (revert [#26999](https://github.com/evcc-io/evcc/issues/26999))\n",
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/evcc.db"
+                    ]
+                }
+            }
+        },
+        "checklist": {
+            "set-password": {
+                "message": "On first visit, set a password"
+            },
+            "create-initial-config": {
+                "message": "[Configure app](https://docs.cloudron.io/packages/evcc#configuration) using the CLI or the experimental UI"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.evcc.cloudronapp/evcc_01.png",
+            "https://screenshots.cloudron.io/io.evcc.cloudronapp/evcc_02.png"
+        ],
+        "tags": [
+            "ev",
+            "charging",
+            "car",
+            "solar",
+            "homeautomation"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/evcc/",
+        "forumUrl": "https://forum.cloudron.io/category/194/evcc",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/io.evcc.cloudronapp:202601311336110000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.evcc.cloudronapp/versions/1.16.6/icon",
+    "featured": false,
+    "ranking": 0
+}

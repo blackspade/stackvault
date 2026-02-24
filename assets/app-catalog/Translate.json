@@ -1,0 +1,47 @@
+{
+    "id": "com.libretranslate.cloudronapp",
+    "creationDate": "2026-02-04T07:29:47.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-01-18T16:11:41.000Z",
+    "publishedAt": "2023-01-18T16:11:41.000Z",
+    "manifest": {
+        "id": "com.libretranslate.cloudronapp",
+        "title": "Translate",
+        "tagline": "Breaking Language Barriers",
+        "author": "Translate Developers",
+        "description": "### Overview\n\nFree and Open Source Machine Translation API, entirely self-hosted.\n\nThe app comes preinstalled with those languages: en,ar,az,ca,zh,cs,da,nl,eo,fi,fr,de,el,he,hi,hu,id,ga,it,ja,ko,fa,pl,pt,ru,sk,es,sv,tr,uk\n\n**The app image is around 16Gb large due to the machine learning models**\n\nThis package is proudly built from [LibreTranslate](https://libretranslate.com/)'s [open source software](https://github.com/LibreTranslate/LibreTranslate).\n\n#### No affiliation or endorsement\n\nPlease note that Cloudron has no affiliation with LibreTranslate and this package is not endorsed by them.\n\n",
+        "version": "2.6.3",
+        "upstreamVersion": "1.8.4",
+        "tags": [
+            "translation",
+            "translate",
+            "deepl"
+        ],
+        "website": "https://git.cloudron.io/packages/translate-app/",
+        "documentationUrl": "https://docs.cloudron.io/packages/translate",
+        "forumUrl": "https://forum.cloudron.io/category/156/translate",
+        "contactEmail": "support@cloudron.io",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.libretranslate.cloudronapp/translate01.png",
+            "https://screenshots.cloudron.io/com.libretranslate.cloudronapp/translate02.png"
+        ],
+        "changelog": "* Update libretranslate to 1.8.4\n* [Full Changelog](https://github.com/LibreTranslate/LibreTranslate/releases/tag/v1.8.4)\n* Add --translation-cache by [@pierotofy](https://github.com/pierotofy) in [#912](https://github.com/LibreTranslate/LibreTranslate/pull/912)\n* Update argos-translate, use MINISBD by [@pierotofy](https://github.com/pierotofy) in [#928](https://github.com/LibreTranslate/LibreTranslate/pull/928)\n",
+        "postInstallMessage": "By default, `en` and `de` language packs are pre-installed. To add more languages, see the [documentation](https://docs.cloudron.io/packages/translate/#languages).\n\nBy default, the API can be used without a key by anyone. [Generate a key](https://docs.cloudron.io/apps/libretranslate/#api) to lock the app.\n\n",
+        "memoryLimit": 1073741824,
+        "healthCheckPath": "/",
+        "httpPort": 5000,
+        "addons": {
+            "localstorage": []
+        },
+        "minBoxVersion": "7.3.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/com.libretranslate.cloudronapp:202602040621410000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.libretranslate.cloudronapp/versions/2.6.3/icon",
+    "featured": false,
+    "ranking": 0
+}

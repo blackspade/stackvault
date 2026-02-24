@@ -1,0 +1,60 @@
+{
+    "id": "net.minecraftforge.cloudronapp",
+    "creationDate": "2025-11-20T08:36:16.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-02-12T10:55:02.000Z",
+    "publishedAt": "2021-02-12T10:55:02.000Z",
+    "manifest": {
+        "id": "net.minecraftforge.cloudronapp",
+        "title": "Minecraft Forge Server",
+        "author": "LexManos",
+        "description": "### Overview\n\n**Please consider supporting the maintainer of Forge here: https://www.patreon.com/LexManos**.\n\nMinecraft is a game about breaking and placing blocks. At first, people built structures to protect against nocturnal monsters, but as the game grew players worked together to create wonderful, imaginative things.\n\nMods can be added by downloading the appropriate .jar files and uploading them to /app/data/mods. This step requires a re-load.\n\nCompatible Mods: https://www.curseforge.com/minecraft/mc-mods?filter-game-version=2020709689%3A7498&filter-sort=4\nAdding Mods to your Minecraft Client: https://mcforge.readthedocs.io/en/latest/\n\n### User Management\n\nThe Cloudron user management options only apply to the server dashboard. Minecraft clients login through the Minecraft accounts.\n",
+        "icon": "file://logo.png",
+        "changelog": "* Update minecraft-forge to 1.21.10-60.1.0\n",
+        "postInstallMessage": "**Please consider supporting the maintainer of Forge here**: https://www.patreon.com/LexManos\n\n",
+        "tagline": "Multiplayer Server for Minecraft Forge",
+        "version": "1.15.0",
+        "upstreamVersion": "1.21.10-60.1.0 (for minecraft 1.21.1)",
+        "healthCheckPath": "/api/healthcheck",
+        "tags": [
+            "game",
+            "multiplayer"
+        ],
+        "memoryLimit": 2147483648,
+        "httpPort": 3000,
+        "tcpPorts": {
+            "SERVER_PORT": {
+                "title": "Server Port",
+                "description": "Server Port where Minecraft clients connect",
+                "defaultValue": 25565
+            },
+            "RCON_PORT": {
+                "title": "RCON Port",
+                "description": "Port for remote configuration clients",
+                "defaultValue": 25575
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "7.4.3",
+        "website": "https://www.patreon.com/LexManos",
+        "contactEmail": "support@cloudron.io",
+        "documentationUrl": "https://docs.cloudron.io/packages/minecraft/",
+        "forumUrl": "https://forum.cloudron.io/category/49/minecraft",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/net.minecraft.cloudronapp/minecraft-01.png"
+        ],
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/api/oidc/callback"
+            }
+        },
+        "dockerImage": "cloudron/net.minecraftforge.cloudronapp:202511200421270000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/net.minecraftforge.cloudronapp/versions/1.15.0/icon",
+    "featured": false,
+    "ranking": 0
+}

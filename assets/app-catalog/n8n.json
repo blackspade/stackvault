@@ -1,0 +1,58 @@
+{
+    "id": "io.n8n.cloudronapp",
+    "creationDate": "2026-02-12T09:18:09.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-04-27T21:53:21.000Z",
+    "publishedAt": "2021-04-27T21:53:21.000Z",
+    "manifest": {
+        "id": "io.n8n.cloudronapp",
+        "title": "n8n",
+        "author": "n8n GmbH",
+        "description": "### About\n\nn8n is an extendable workflow automation tool. n8n's node-based approach makes it highly versatile, enabling you to connect anything to everything.\n\n### Available integrations\n\nn8n has 200+ different nodes to automate workflows. The list can be found on: https://n8n.io/nodes\n\n### Features\n\n* Open - Thanks to our fair-code license, run n8n locally, or the cloud. Decide who gets access and where your data is stored.\n* Extendable - Easy to augment with custom functions logic, and apps with minimal engineering effort.\n* Powerful - n8n's node based editor lets you map anything to everything and go beyond basic ETL. \n\n",
+        "tagline": "Free and Open Workflow Automation Tool",
+        "version": "4.6.0",
+        "upstreamVersion": "2.7.4",
+        "healthCheckPath": "/healthz",
+        "httpPort": 5678,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "redis": {
+                "optional": true
+            }
+        },
+        "runtimeDirs": [
+            "/app/code"
+        ],
+        "manifestVersion": 2,
+        "memoryLimit": 536870912,
+        "website": "https://n8n.io",
+        "contactEmail": "support@clourdon.io",
+        "tags": [
+            "automation",
+            "no-code",
+            "nocode",
+            "zapier"
+        ],
+        "changelog": "* Update n8n to 2.7.4\n* [Full Changelog](https://github.com/n8n-io/n8n/releases/tag/n8n%402.7.4)\n* **core:** Revert the fix for execution history when flow includes wait node ([#&#8203;25610](https://github.com/n8n-io/n8n/issues/25610)) ([697903b](https://github.com/n8n-io/n8n/commit/697903bfcb996136cd0a03f079c6f89f1b183446))\n* **editor:** Fixes after N8nInput refactoring ([#&#8203;25375](https://github.com/n8n-io/n8n/issues/25375)) ([4c61862](https://github.com/n8n-io/n8n/commit/4c61862142264363016782b66a8fb2c4935d32f3))\n* Fix status overwrite for donePromise ([#&#8203;24897](https://github.com/n8n-io/n8n/issues/24897)) ([67639ed](https://github.com/n8n-io/n8n/commit/67639edc7e8ed9db45530dde81e89a6de4330c51))\n* Refine webhook conflict checks to ignore waiting webhooks ([#&#8203;25395](https://github.com/n8n-io/n8n/issues/25395)) ([198e0f0](https://github.com/n8n-io/n8n/commit/198e0f0c3155c16edfbc7b6209bf7faf11bc2dd1))\n* Disallow usage of unsupported protocols in oauth fields ([#&#8203;25170](https://github.com/n8n-io/n8n/issues/25170)) ([1e87cd1](https://github.com/n8n-io/n8n/commit/1e87cd1d755f85b6bfe41097955a8529fc0dea6d))\n* **Kafka Trigger Node:** Refactoring and fixes ([#&#8203;25088](https://github.com/n8n-io/n8n/issues/25088)) ([4c7b23a](https://github.com/n8n-io/n8n/commit/4c7b23a7264786598c9568dc979642369eecb69c))\n* **core:** Prevent SQL syntax error when filtering users with empty ids array ([#&#8203;25284](https://github.com/n8n-io/n8n/issues/25284)) ([e90a385](https://github.com/n8n-io/n8n/commit/e90a38523b8f3f1927b14e6312098fcaac25eced))\n* **core:** Wrong pagination argument order for sqlite in copyTables helper ([#&#8203;25301](https://github.com/n8n-io/n8n/issues/25301)) ([d7db629](https://github.com/n8n-io/n8n/commit/d7db62943bc5afa242aff29f95445c5d40dcac6f))\n* **editor:** Sidebar labels are not visible ([#&#8203;25186](https://github.com/n8n-io/n8n/issues/25186)) ([0e33eba](https://github.com/n8n-io/n8n/commit/0e33eba08bc7b8aabd0c9a61754ad83739ab3074))\n* **AI Agent Node:** Fix gemini thought signatures for parallel tool calls ([#&#8203;24982](https://github.com/n8n-io/n8n/issues/24982)) ([3dbca3e](https://github.com/n8n-io/n8n/commit/3dbca3e0dfc4c482420af72c5ff932c88526872c))\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/n8n/",
+        "minBoxVersion": "7.6.0",
+        "icon": "file://logo.png",
+        "forumUrl": "https://forum.cloudron.io/category/129/n8n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.n8n.cloudronapp/workflow1.png",
+            "https://screenshots.cloudron.io/io.n8n.cloudronapp/workflow2.png",
+            "https://screenshots.cloudron.io/io.n8n.cloudronapp/workflow3.png"
+        ],
+        "dockerImage": "cloudron/io.n8n.cloudronapp:202602120320270000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.n8n.cloudronapp/versions/4.6.0/icon",
+    "featured": true,
+    "ranking": 0
+}

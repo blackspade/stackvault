@@ -1,0 +1,52 @@
+{
+    "id": "com.electerious.ackee",
+    "creationDate": "2025-11-19T23:14:35.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-02-13T20:18:03.000Z",
+    "publishedAt": "2021-02-13T20:18:03.000Z",
+    "manifest": {
+        "id": "com.electerious.ackee",
+        "version": "1.7.1",
+        "upstreamVersion": "3.5.1",
+        "title": "Ackee",
+        "author": "Ackee Community",
+        "description": "## About\n\nAckee is a self-hosted analytics tool that cares about privacy. We believe that you don't need to track every aspect of your visitors. Ackee keeps tracked data anonymized to avoid that users are identifiable, while still providing helpful insights. It's the right tool for everyone who doesn't need a full-featured marketing analytics platform like Google Analytics or Matomo.\n\n## Features\n\n* Self-hosted: Ackee runs on your own server and is 100% open-source\n* Modern technologies: Lightweight Node.js and MongoDB architecture\n* Beautiful: Minimal and focused interface\n* No cookies: No unique user tracking and therefore no required cookie message\n* Events: Track button clicks, newsletter subscriptions and more\n* GraphQL API: Fully documented GraphQL API that allows you to build new tools upon Ackee\n\n",
+        "tagline": "Track without being tracked",
+        "website": "https://ackee.electerious.com/",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.electerious.ackee/1.png",
+            "https://screenshots.cloudron.io/com.electerious.ackee/2.png",
+            "https://screenshots.cloudron.io/com.electerious.ackee/3.png"
+        ],
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "mongodb": []
+        },
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "analytics",
+            "tracker"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin email and password credentials immediately by editing `/app/data/env` and restarting the app."
+            }
+        },
+        "changelog": "* Update Ackee to 3.5.1\n* [Full Changelog](https://github.com/electerious/Ackee/releases/tag/v3.5.1)\n* Several dependencies have been updated to their latest versions to bring in security patches and improvements\n* `ackee-tracker` has been updated to fix an issue where visits were not recorded when the website had an empty `document.referrer`. You might have seen lower visit counts since version 3.5.0 when your website had no referrer, e.g., when visiting it directly or via bookmarks.\n",
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/ackee/",
+        "forumUrl": "https://forum.cloudron.io/category/125/ackee",
+        "minBoxVersion": "8.1.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/com.electerious.ackee:202511191755150000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.electerious.ackee/versions/1.7.1/icon",
+    "featured": false,
+    "ranking": 0
+}

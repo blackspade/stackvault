@@ -1,0 +1,69 @@
+{
+    "id": "io.baserow.cloudronapp",
+    "creationDate": "2026-01-04T09:42:15.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-11-09T13:10:52.000Z",
+    "publishedAt": "2021-11-09T13:10:52.000Z",
+    "manifest": {
+        "id": "io.baserow.cloudronapp",
+        "version": "1.33.5",
+        "upstreamVersion": "2.0.6",
+        "title": "Baserow",
+        "author": "Baserow B.V.",
+        "description": "## Overview\n\nBaserow is the secure, open-source platform for building databases, applications,\nautomations, and AI agents — all without code. Trusted by over 150,000 users,\nBaserow delivers enterprise-grade security with GDPR, HIPAA, and SOC 2 Type II\ncompliance, plus cloud and self-hosted deployments for full data control. With a\nbuilt-in AI Assistant that lets you create databases and workflows using natural\nlanguage, Baserow empowers teams to structure data, automate processes, build\ninternal tools, and create custom dashboards. Fully extensible and API-first, Baserow\nintegrates seamlessly with your existing tools and performs at any scale.\n\n* Grid, gallery, kanban and calendar views.\n* Filter, sort, search, group and color capabilities.\n* Powerful form capabilities with conditions.\n* Publicly share your data.\n* Import and export to various formats.\n* 100+ templates.\n* Invite other users and collaborate in real-time.\n* Integrate with the API and webhooks.\n* Over 20 field types like formula, lookup, file, single select.\n* Aggregations, snapshot, comments, and much more.\n* Application builder.\n* Automations.\n* Dashboards.\n* AI-assistant\n\nMore information on: https://baserow.io\n\n## Application builder domains\n\nBaserow has an application builder that allows to deploy an application to a specific\ndomain. Because Cloudron has a reverse proxy that routes a domain to the right Cloudron\napp, the deployed application isn't automatically available on the chosen domain.\n\nTo make this work, you must add a domain alias in the Cloudron settings. This can be\ndone by going to the settings of your Baserow app, then click on `Location`, click on\n`Add an alias`, and then add the domain you've published the application to in Baserow.\nMake sure that the alias matches the full domain name in Baserow. After that, Cloudron\nwill request the SSL certificate, and then you can visit your domain.\n\nIt's also possible to add a wildcard alias to Cloudron, but the SSL certificate then\ndoesn't work out of the box. Some additional settings on Cloudron might be required to\nmake it work.\n",
+        "postInstallMessage": "The first user to signup is made the Baserow admin.\n\nNew user signup is enabled by default and the admin can disable this behavior from within Baserow.\n",
+        "changelog": "* Update baserow to 2.0.6\n* [Full Changelog](https://github.com/baserow/baserow/releases/tag/2.0.6)\n* [Core] Added more advanced formulas. [#4318](https://github.com/baserow/baserow/-/issues/4318)\n* [Core] Allow array properties to be selected in the formula context when expert mode is selected. [#4485](https://github.com/baserow/baserow/-/issues/4485)\n* [Builder] Resolve an issue with styling button fields in table elements. [#4494](https://github.com/baserow/baserow/-/issues/4494)\n* [Database] Ensure m2m field indexes are all set.\n* [Database] Prevent creating a new constraint when the enter key of the default value is pressed.\n",
+        "tagline": "Build databases, automations, apps & agents with AI — no code",
+        "website": "https://baserow.io",
+        "forumUrl": "https://forum.cloudron.io/category/136/baserow",
+        "documentationUrl": "https://docs.cloudron.io/packages/baserow",
+        "contactEmail": "support@baserow.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "no-code",
+            "nocode",
+            "database",
+            "data",
+            "applications",
+            "automations",
+            "dashboards",
+            "collaborate",
+            "airtable",
+            "ai",
+            "ai-assistant"
+        ],
+        "healthCheckPath": "/_health",
+        "httpPort": 80,
+        "addons": {
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "redis": [],
+            "localstorage": []
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, register yourself as admin to start using the app."
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.baserow.cloudronapp/slider_database_grid.webp",
+            "https://screenshots.cloudron.io/io.baserow.cloudronapp/slider_database_gallery.webp",
+            "https://screenshots.cloudron.io/io.baserow.cloudronapp/slider_database_form.webp",
+            "https://screenshots.cloudron.io/io.baserow.cloudronapp/slider_database_timeline.webp",
+            "https://screenshots.cloudron.io/io.baserow.cloudronapp/slider_database_kanban.webp"
+        ],
+        "multiDomain": true,
+        "memoryLimit": 3221225472,
+        "minBoxVersion": "8.0.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/io.baserow.cloudronapp:202601040519220000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.baserow.cloudronapp/versions/1.33.5/icon",
+    "featured": false,
+    "ranking": 0
+}

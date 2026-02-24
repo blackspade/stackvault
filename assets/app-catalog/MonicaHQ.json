@@ -1,0 +1,46 @@
+{
+    "id": "com.monicahq.cloudronapp",
+    "creationDate": "2018-09-09T08:11:45.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.monicahq.cloudronapp",
+        "title": "MonicaHQ",
+        "author": "MonicaHQ developers",
+        "description": "This app packages MonicaHQ <upstream>2.7.0</upstream>.\n\nMonica is an open-source web application to organize the\ninteractions with your loved ones. I call it a PRM, or\nPersonal Relationship Management. Think of it as a CRM\n(a popular tool used by sales teams in the corporate world)\nfor your friends or family.\n\n## Purpose\n\nMonica allows people to keep track of everything that's important about their friends and family. Like the activities done with them. When you last called someone. What you talked about. It will help you remember the name and the age of the kids. It can also remind you to call someone you haven't talked to in a while.\n\n## Features\n\n* Add and manage contacts\n* Add significant others and children\n* Auto reminders for birthdays\n* Reminders are sent by email\n* Management of debts\n* Ability to add notes to a contact\n* Ability to indicate how you've met someone\n* Management of activities done with a contact\n* Management of tasks\n* Management of gifts\n* Management of addresses and all the different ways to contact someone\n* Management of contact field types\n* Management of contact pets\n* Basic journal\n* Ability to indicate how the day went\n* Export and import of data\n* Export a contact as vCard\n* Ability to set custom genders\n* Multi users\n* Labels to organize contacts\n* Multi currencies\n* Multi languages\n* An API that covers most of the data\n\n",
+        "changelog": "* Update Monica to 2.7.0\n* Add ability to track conversations (#1629 - thanks to djaiss).\n* Prepare AWS S3 upload for avatars (#1747 - thanks to asbiin).\n* Add Laravel tinker (#1717 - thanks to asbiin).\n* Support Arabic language and fix a lot of right-to-left displays (#1736 - thanks to asbiin).\n* Add language selector on register page (#1770 - thanks to asbiin).\n",
+        "tagline": "Remember everything about friends and family",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": [],
+            "scheduler": {
+                "moncron": {
+                    "schedule": "*/5 * * * *",
+                    "command": "sudo -u www-data php /app/code/artisan schedule:run"
+                }
+            }
+        },
+        "manifestVersion": 1,
+        "website": "https://monicahq.com",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "social",
+            "crm",
+            "prm",
+            "blog",
+            "notes"
+        ],
+        "mediaLinks": [
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.monicahq.cloudronapp/2bfd094363de23088ca9cd1c659d7b476fadebb6/screenshot1.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.monicahq.cloudronapp/2bfd094363de23088ca9cd1c659d7b476fadebb6/screenshot2.png"
+        ],
+        "dockerImage": "cloudron/img-062037096d69bbf3ffb5b9316ad89cb9:1ecdb749-b943-48cc-b4f1-ff112c546042"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.monicahq.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

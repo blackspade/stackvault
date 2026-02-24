@@ -1,0 +1,60 @@
+{
+    "id": "org.glpi.cloudronapp",
+    "creationDate": "2026-02-09T15:25:18.000Z",
+    "publishState": "approved",
+    "userId": "cd00534b-edca-4ea1-a88b-ee99603a4282",
+    "visibility": "listed",
+    "releaseState": "unstable",
+    "ts": "2026-01-29T11:25:48.000Z",
+    "publishedAt": "2026-01-29T11:25:48.000Z",
+    "manifest": {
+        "id": "org.glpi.cloudronapp",
+        "title": "GLPI",
+        "author": "TECLIB",
+        "description": "GLPI is a powerful open-source IT Asset Management, IT Service Management and helpdesk solution. Manage your IT infrastructure, track assets, handle tickets and incidents with comprehensive ITIL workflows.\n\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: glpi<br/>\n**Password**: glpi<br/>\n\n",
+        "changelog": "* Fix typo in initial admin password\n",
+        "tagline": "IT Asset & Service Management Platform",
+        "icon": "file://logo.png",
+        "upstreamVersion": "11.0.4",
+        "version": "0.3.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/plugins/singlesignon/front/callback.php/provider/1"
+            },
+            "localstorage": []
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-admin-password": {
+                "message": "Change the admin password"
+            }
+        },
+        "tags": [
+            "helpdesk",
+            "license tracking",
+            "software audit",
+            "assets management",
+            "service management"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.glpi.cloudronapp/glpi-00.png",
+            "https://screenshots.cloudron.io/org.glpi.cloudronapp/glpi-01.png",
+            "https://screenshots.cloudron.io/org.glpi.cloudronapp/glpi-02.png"
+        ],
+        "memoryLimit": 1073741824,
+        "website": "https://glpi-project.org",
+        "contactEmail": "support@cloudron.io",
+        "forumUrl": "https://forum.cloudron.io/category/217/glpi",
+        "documentationUrl": "https://docs.cloudron.io/packages/glpi/",
+        "manifestVersion": 2,
+        "minBoxVersion": "9.0.0",
+        "dockerImage": "cloudron/org.glpi.cloudronapp:202602091511510000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.glpi.cloudronapp/versions/0.3.0/icon",
+    "featured": false,
+    "ranking": 0
+}

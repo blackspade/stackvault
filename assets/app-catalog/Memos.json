@@ -1,0 +1,57 @@
+{
+    "id": "com.usememos.cloudronapp",
+    "creationDate": "2026-02-09T08:47:15.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-11-06T15:06:42.000Z",
+    "publishedAt": "2024-11-06T15:06:42.000Z",
+    "manifest": {
+        "id": "com.usememos.cloudronapp",
+        "title": "Memos",
+        "tagline": "Your Notes, Your Way",
+        "author": "usememos.com",
+        "description": "### Memos is a feature rich note taking app\n\nOpen Source, Self-hosted, Your Notes, Your Way.\nEffortlessly craft your impactful content.\nThe pain-less way to create meaningful notes.\n\n#### Privacy First\nTake control of your data. All runtime data is securely stored in your local database.\n\n#### Create at Speed\nSave content as plain text for quick access, with Markdown support for fast formatting and easy sharing.\n\n#### Lightweight but Powerful\nBuilt with Go, React.js, and a compact architecture, our service delivers powerful performance in a lightweight package.\n\n#### Customizable\nEasily customize your server name, icon, description, system style, and execution scripts to make it uniquely yours.\n\n#### Open Source\nMemos embraces the future of open source, with all code available on GitHub for transparency and collaboration.\n\n#### Free to Use\nEnjoy all features completely free, with no charges ever for any content\n",
+        "changelog": "* Update memos to 0.26.1\n* [Full Changelog](https://github.com/usememos/memos/releases/tag/v0.26.1)\n* Avoid inbox crashes by gracefully handling deleted memos in the activity service. ([984d9b46](https://github.com/usememos/memos/commit/984d9b46))\n* Correctly parse environment variables that contain underscores. ([a69056a1](https://github.com/usememos/memos/commit/a69056a1))\n* Return gRPC-style errors consistently instead of Echo HTTP errors. ([d9dc5be2](https://github.com/usememos/memos/commit/d9dc5be2))\n* Fix video attachment handling. ([c4176b4e](https://github.com/usememos/memos/commit/c4176b4e))\n* Prevent 401 errors on window focus when an access token expires. ([81ef53b3](https://github.com/usememos/memos/commit/81ef53b3))\n* Ensure the shortcut edit button opens the edit dialog (not create). ([e7605d90](https://github.com/usememos/memos/commit/e7605d90))\n* Block `Ctrl+Enter` from saving while the editor is still loading content ([#&#8203;5581](https://github.com/usememos/memos/issues/5581)). ([6bb383a4](https://github.com/usememos/memos/commit/6bb383a4))\n* Fix nested task list rendering and checkbox interactions ([#&#8203;5575](https://github.com/usememos/memos/issues/5575)). ([b4fea8c6](https://github.com/usememos/memos/commit/b4fea8c6))\n* Make OAuth PKCE optional during sign-in ([#&#8203;5570](https://github.com/usememos/memos/issues/5570)). ([cf0a285e](https://github.com/usememos/memos/commit/cf0a285e))\n* Prevent private memos from disappearing during token refresh ([#&#8203;5565](https://github.com/usememos/memos/issues/5565)). ([6db58fae](https://github.com/usememos/memos/commit/6db58fae))\n",
+        "version": "1.5.2",
+        "upstreamVersion": "0.26.1",
+        "website": "https://usememos.com",
+        "contactEmail": "support@cloudron.io",
+        "healthCheckPath": "/",
+        "httpPort": 8081,
+        "tags": [
+            "notes",
+            "memo",
+            "evernote",
+            "keep",
+            "onenote"
+        ],
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/callback"
+            }
+        },
+        "optionalSso": true,
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.usememos.cloudronapp/usememos-01.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/197/memos",
+        "documentationUrl": "https://docs.cloudron.io/packages/memos",
+        "minBoxVersion": "8.1.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/com.usememos.cloudronapp:202602090020470000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.usememos.cloudronapp/versions/1.5.2/icon",
+    "featured": false,
+    "ranking": 0
+}

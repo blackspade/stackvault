@@ -1,0 +1,59 @@
+{
+    "id": "com.onlyoffice_ee.coudronapp",
+    "creationDate": "2025-12-18T16:15:11.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-10-15T15:26:26.000Z",
+    "publishedAt": "2021-10-15T15:26:26.000Z",
+    "manifest": {
+        "id": "com.onlyoffice_ee.coudronapp",
+        "title": "ONLYOFFICE Enterprise",
+        "author": "Cloudron Team",
+        "description": "### Overview\n\nONLYOFFICE provides you with the most secure way to create, edit and collaborate on business documents online.\nIt is 100% compatible with MS Office formats.\n\nUse this together with Nextcloud to build a powerfull collaboration suite or integrate with many other [3rdparty solutions](https://www.onlyoffice.com/all-connectors.aspx)\n",
+        "changelog": "* Update DocumentServer to 9.2.1\n* [Full Changelog](https://github.com/ONLYOFFICE/DocumentServer/blob/master/CHANGELOG.md#921)\n* Fixed word break in Korean  \n* Fixed an issue with data overlap when transferring sheets between documents via Move or Copy ([DocumentServer#3512](https://github.com/ONLYOFFICE/DocumentServer/issues/3512))  \n* Fixed an error when opening a PDF file  \n* Fixed an error when scrolling pages in a PDF file  \n* Fixed errors when copying, pasting, and undoing actions with the Find panel in PDF Editing mode  \n* Fixed an error when deleting a page from a document while working with the Find panel in PDF Editing mode  \n* Fixed an error with unsaved changes in replies to comments in PDF files  \n* Fixed the XSS injection in the Color theme name using a custom Prepared exploit  \n* Fixed the XSS injection of JS code in the Font field for the Multilevel list settings window  \n* Fixed a vulnerability in the textarea of the comment editing form\n",
+        "tagline": "Office and productivity suite",
+        "version": "1.12.1",
+        "upstreamVersion": "9.2.1",
+        "healthCheckPath": "/healthcheck",
+        "httpPort": 80,
+        "addons": {
+            "localstorage": [],
+            "redis": {
+                "noPassword": true
+            },
+            "postgresql": []
+        },
+        "checklist": {
+            "change-default-secret": {
+                "message": "Change the default secret in `/app/data/config/production-linux.json`. There are two places in the file where you need to change the secret."
+            }
+        },
+        "manifestVersion": 2,
+        "memoryLimit": 2147483648,
+        "website": "https://www.onlyoffice.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "postInstallMessage": "**This is the Enterprise version of ONLYOFFICE Docs and requires a license key**\n\nA license can be purchased [here](https://www.onlyoffice.com/docs-enterprise-prices.aspx),\nafterwards the key has to be put in the app at `/app/data/license.lic` and the app needs to be restarted then to pick it up.\n\nThis app has to be setup alongside NextCloud to provide a document editor.\n\nIn your NextCloud installation, install the OnlyOffice app and configure it\nto use this app's domain and use `changeme` as the secret key.\n\n",
+        "tags": [
+            "office",
+            "nextcloud",
+            "collaboration",
+            "document",
+            "googledocs",
+            "office365"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.onlyoffice.coudronapp/onlyoffice_00.png",
+            "https://screenshots.cloudron.io/com.onlyoffice.coudronapp/onlyoffice_01.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/13/onlyoffice",
+        "documentationUrl": "https://docs.cloudron.io/packages/onlyoffice/",
+        "dockerImage": "cloudron/com.onlyoffice_ee.coudronapp:202512180420300000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.onlyoffice_ee.coudronapp/versions/1.12.1/icon",
+    "featured": false,
+    "ranking": 0
+}

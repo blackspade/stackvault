@@ -1,0 +1,51 @@
+{
+    "id": "com.espocrm.cloudronapp",
+    "creationDate": "2019-06-21T22:16:43.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.espocrm.cloudronapp",
+        "title": "Espo CRM",
+        "author": "Espo CRM",
+        "description": "This app packages EspoCRM version <upstream>5.6.2</upstream>.\n\nEspoCRM is an Open Source CRM (Customer Relationship Management) software that\nallows you to see, enter and evaluate all your company relationships regardless\nof the type. People, companies or opportunities - all in an easy and intuitive\ninterface.\n\n## Features\n\n* Web based CRM. One version for all your devices.\n* Free of charge and open source CRM distributed under GPLv3.\n* Tested with most hosting providers.\n* New features every 2 months.\n* Responsive Design and latest Web Technologies.\n* Lightning fast.\n* No user limitation.\n* Cloud and On-Premise version available.\n* Easy to customize.\n* Open architecture for third party integration via API.\n\n",
+        "changelog": "* Update manifest to v2\n",
+        "tagline": "Increase profitability through customer loyalty",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "ldap": [],
+            "sendmail": [],
+            "scheduler": {
+                "jobs": {
+                    "schedule": "*/10 * * * *",
+                    "command": "/usr/local/bin/gosu www-data:www-data php /app/code/current/cron.php"
+                }
+            }
+        },
+        "memoryLimit": 536870912,
+        "manifestVersion": 2,
+        "website": "https://www.espocrm.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "crm",
+            "salesforce",
+            "sugarcrm",
+            "suitecrm"
+        ],
+        "mediaLinks": [
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.espocrm.cloudronapp/ff577d20c136a81a4f079cfdc7c8083b118adb8a/screenshot1.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.espocrm.cloudronapp/ff577d20c136a81a4f079cfdc7c8083b118adb8a/screenshot2.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.espocrm.cloudronapp/ff577d20c136a81a4f079cfdc7c8083b118adb8a/screenshot3.png"
+        ],
+        "postInstallMessage": "This app integrates with Cloudron user management.\n\nA default admin user has been setup with the following credentials:\n\n```\nusername: admin\npassword: changeme\n```\n\n**Note:** Please change the password immediately after installation.\n\n",
+        "minBoxVersion": "4.1.4",
+        "documentationUrl": "https://cloudron.io/documentation/apps/espocrm/",
+        "dockerImage": "cloudron/img-062037096d69bbf3ffb5b9316ad89cb9:f52b0837-6cba-41f9-8fec-7159251f8d8d"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.espocrm.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

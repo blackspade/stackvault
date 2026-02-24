@@ -1,0 +1,96 @@
+{
+    "id": "com.wallosapp.cloudronapp",
+    "creationDate": "2026-02-11T09:46:11.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-01-06T16:20:53.000Z",
+    "publishedAt": "2025-01-06T16:20:53.000Z",
+    "manifest": {
+        "id": "com.wallosapp.cloudronapp",
+        "title": "Wallos",
+        "tagline": "Your finances with ease",
+        "author": "Wallos Authors",
+        "description": "### Introduction\n\nWallos is a powerful, open-source, and self-hostable web application designed to empower you in managing your finances with ease. Say goodbye to complicated spreadsheets and expensive financial software – Wallos simplifies the process of tracking expenses and helps you gain better control over your financial life.\n\n### Features\n\n* Subscription Management: Keep track of your recurring subscriptions and payments, ensuring you never miss a due date.\n* Category Management: Organize your expenses into customizable categories, enabling you to gain insights into your spending habits.\n* Multi-Currency support: Wallos supports multiple currencies, allowing you to manage your finances in the currency of your choice.\n* Currency Conversion: Integrates with the Fixer API so you can get exchange rates and see all your subscriptions on your main currency.\n* Data Privacy: As a self-hosted application, Wallos ensures that your financial data remains private and secure on your own server.\n* Customization: Tailor Wallos to your needs with customizable categories, currencies, themes and other display options.\n* Sorting Options: Allowing you to view your subscriptions from different perspectives.\n* Logo Search: Wallos can search the web for the logo of your subscriptions if you don't have them available for upload.\n* Mobile view: Wallos on the go.\n* Statistics: Another perspective into your spendings.\n* Notifications: Wallos supports multiple notification methods (email, discord, pushover, telegram, gotify and webhooks). Get notified about your upcoming payments.\n* Multi Language support.\n\n",
+        "changelog": "* Update Wallos to 4.6.1\n* [Full Changelog](https://github.com/ellite/Wallos/releases/tag/v4.6.1)\n* vulnerabily on add subscription endpoint ([#&#8203;991](https://github.com/ellite/Wallos/issues/991)) ([76a53df](https://github.com/ellite/Wallos/commit/76a53df9cb4658123b8f0b7cf1826f1ba7d1c960))\n",
+        "version": "1.19.1",
+        "upstreamVersion": "4.6.1",
+        "website": "https://wallosapp.com",
+        "contactEmail": "support@cloudron.io",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "tags": [
+            "finances",
+            "expences",
+            "track",
+            "control"
+        ],
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/db/wallos.db"
+                    ]
+                }
+            },
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "scheduler": {
+                "updatenextpayment": {
+                    "schedule": "0 1 * * *",
+                    "command": "/app/pkg/cron.sh updatenextpayment"
+                },
+                "updateexchange": {
+                    "schedule": "0 2 * * *",
+                    "command": "/app/pkg/cron.sh updateexchange"
+                },
+                "sendcancellationnotifications": {
+                    "schedule": "0 8 * * *",
+                    "command": "/app/pkg/cron.sh sendcancellationnotifications"
+                },
+                "sendnotifications": {
+                    "schedule": "0 9 * * *",
+                    "command": "/app/pkg/cron.sh sendnotifications"
+                },
+                "sendverificationemails": {
+                    "schedule": "*/2 * * * *",
+                    "command": "/app/pkg/cron.sh sendverificationemails"
+                },
+                "sendresetpasswordemails": {
+                    "schedule": "*/2 * * * *",
+                    "command": "/app/pkg/cron.sh sendresetpasswordemails"
+                },
+                "storetotalyearlycost": {
+                    "schedule": "30 1 * * 1",
+                    "command": "/app/pkg/cron.sh storetotalyearlycost"
+                }
+            },
+            "oidc": {
+                "loginRedirectUri": "/"
+            }
+        },
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.wallosapp.cloudronapp/dashboard-dark.png",
+            "https://screenshots.cloudron.io/com.wallosapp.cloudronapp/dashboard-light.png",
+            "https://screenshots.cloudron.io/com.wallosapp.cloudronapp/form.png",
+            "https://screenshots.cloudron.io/com.wallosapp.cloudronapp/stats.png"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password"
+            }
+        },
+        "forumUrl": "https://forum.cloudron.io/category/201/wallos",
+        "documentationUrl": "https://docs.cloudron.io/packages/wallos",
+        "minBoxVersion": "8.2.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/com.wallosapp.cloudronapp:202602110221130000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.wallosapp.cloudronapp/versions/1.19.1/icon",
+    "featured": false,
+    "ranking": 0
+}

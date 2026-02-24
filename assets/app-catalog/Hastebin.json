@@ -1,0 +1,40 @@
+{
+    "id": "com.hastebin.cloudronapp",
+    "creationDate": "2022-01-11T03:37:49.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.hastebin.cloudronapp",
+        "title": "Hastebin",
+        "author": "Hastebin developers",
+        "tagline": "The Elegant Pastebin",
+        "description": "This app packages Haste server <upstream>7af15cc32de1</upstream>.\n\n## About\n\nHaste is a pastebin software.\n\nMajor design objectives:\n\n    Be really pretty\n    Be really simple\n\nHaste works really well with a little utility called haste-client, allowing you to do things like:\n\n    cat something | haste\n\nwhich will output a URL to share containing the contents of cat something's STDOUT.\n\n",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 7777,
+        "manifestVersion": 2,
+        "website": "https://github.com/seejohnrun/haste-server",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "addons": {
+            "localstorage": [],
+            "proxyAuth": []
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.hastebin.cloudronapp/1.jpg",
+            "https://screenshots.cloudron.io/com.hastebin.cloudronapp/2.jpg"
+        ],
+        "tags": [
+            "paste",
+            "development"
+        ],
+        "changelog": "* Update hastbin to 7af15cc32de1\n",
+        "minBoxVersion": "6.0.0",
+        "optionalSso": true,
+        "forumUrl": "https://forum.cloudron.io/category/78/hastebin",
+        "documentationUrl": "https://docs.cloudron.io/apps/hastebin/",
+        "dockerImage": "cloudron/com.hastebin.cloudronapp:20220111-030116-10865dac2"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.hastebin.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

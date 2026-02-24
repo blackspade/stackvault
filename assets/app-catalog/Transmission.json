@@ -1,0 +1,54 @@
+{
+    "id": "com.transmissionbt.cloudronapp",
+    "creationDate": "2026-01-28T08:01:44.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-12-13T20:33:03.000Z",
+    "publishedAt": "2020-12-13T20:33:03.000Z",
+    "manifest": {
+        "id": "com.transmissionbt.cloudronapp",
+        "title": "Transmission",
+        "author": "Transmission Authors",
+        "description": "### Overview\n\nTransmission is a cross-platform BitTorrent client.\n\n### Features\n\n* Uses fewer resources than other clients\n* Daemon ideal for servers, embedded systems, and headless use\n* All these can be remote controlled by Web and Terminal clients\n* Local Peer Discovery\n* Full encryption, DHT, µTP, PEX and Magnet Link support\n\n",
+        "tagline": "Transmission is a cross-platform BitTorrent client",
+        "tags": [
+            "torrent",
+            "bittorrent"
+        ],
+        "version": "2.5.0",
+        "upstreamVersion": "4.1.0",
+        "minBoxVersion": "9.0.0",
+        "memoryLimit": 1073741824,
+        "healthCheckPath": "/transmission/web/",
+        "httpPort": 9091,
+        "manifestVersion": 2,
+        "website": "https://transmissionbt.com/",
+        "contactEmail": "arantes555@gmail.com",
+        "icon": "file://logo.png",
+        "addons": {
+            "localstorage": [],
+            "proxyAuth": {
+                "basicAuth": true
+            }
+        },
+        "forumUrl": "https://forum.cloudron.io/category/114/transmission",
+        "documentationUrl": "https://docs.cloudron.io/packages/transmission/",
+        "tcpPorts": {
+            "TORRENT_PORT": {
+                "title": "Torrent Port",
+                "description": "TCP port for BitTorrent traffic",
+                "defaultValue": 51413
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.transmissionbt.cloudronapp/img01.png"
+        ],
+        "changelog": "* Update transmission to 4.1.0\n* [Full Changelog](https://github.com/transmission/transmission/releases/tag/4.1.0)\n* Improved TP download performance. ([#&#8203;6508](https://github.com/transmission/transmission/pull/6508))\n* Added support for IPv6 and dual-stack UDP trackers. ([#&#8203;6687](https://github.com/transmission/transmission/pull/6687))\n* Support trackers that only support the old BEP-7 with `&ipv4=` and `&ipv6=`. ([#&#8203;7481](https://github.com/transmission/transmission/pull/7481))\n* New [JSON-RPC 2.0](https://www.jsonrpc.org/specification)-compliant RPC API. ([#&#8203;7269](https://github.com/transmission/transmission/pull/7269))\n* Added optional sequential downloading. ([#&#8203;4795](https://github.com/transmission/transmission/pull/4795))\n* Use native icons for menus and toolbars: SF Symbols on macOS, Segoe Fluent on Windows 11, Segoe MDL2 on Windows 10, and XDG standard icon names everywhere else. ([#&#8203;7819](https://github.com/transmission/transmission/pull/7819), Qt Client)\n* Fixed `4.0.6` bug where Transmission might spam HTTP tracker announces. ([#&#8203;7086](https://github.com/transmission/transmission/pull/7086))\n* Improved libtransmission code to use less CPU. ([#&#8203;4876](https://github.com/transmission/transmission/pull/4876), [#&#8203;5645](https://github.com/transmission/transmission/pull/5645), [#&#8203;5715](https://github.com/transmission/transmission/pull/5715), [#&#8203;5734](https://github.com/transmission/transmission/pull/5734), [#&#8203;5740](https://github.com/transmission/transmission/pull/5740), [#&#8203;5792](https://github.com/transmission/transmission/pull/5792), [#&#8203;6103](https://github.com/transmission/transmission/pull/6103), [#&#8203;6111](https://github.com/transmission/transmission/pull/6111), [#&#8203;6325](https://github.com/transmission/transmission/pull/6325), [#&#8203;6549](https://github.com/transmission/transmission/pull/6549), [#&#8203;6589](https://github.com/transmission/transmission/pull/6589), [#&#8203;6712](https://github.com/transmission/transmission/pull/6712), [#&#8203;7027](https://github.com/transmission/transmission/pull/7027), [#&#8203;7744](https://github.com/transmission/transmission/pull/7744), [#&#8203;7800](https://github.com/transmission/transmission/pull/7800))\n* Avoid unnecessary heap memory allocations. ([#&#8203;5519](https://github.com/transmission/transmission/pull/5519), [#&#8203;5520](https://github.com/transmission/transmission/pull/5520), [#&#8203;5522](https://github.com/transmission/transmission/pull/5522), [#&#8203;5527](https://github.com/transmission/transmission/pull/5527), [#&#8203;5540](https://github.com/transmission/transmission/pull/5540), [#&#8203;5649](https://github.com/transmission/transmission/pull/5649), [#&#8203;5666](https://github.com/transmission/transmission/pull/5666), [#&#8203;5672](https://github.com/transmission/transmission/pull/5672), [#&#8203;5676](https://github.com/transmission/transmission/pull/5676), [#&#8203;5720](https://github.com/transmission/transmission/pull/5720), [#&#8203;5722](https://github.com/transmission/transmission/pull/5722), [#&#8203;5725](https://github.com/transmission/transmission/pull/5725), [#&#8203;5726](https://github.com/transmission/transmission/pull/5726), [#&#8203;5768](https://github.com/transmission/transmission/pull/5768), [#&#8203;5788](https://github.com/transmission/transmission/pull/5788), [#&#8203;5830](https://github.com/transmission/transmission/pull/5830), [#&#8203;6542](https://github.com/transmission/transmission/pull/6542))\n* Slightly reduced latency when sending protocol messages to peers. ([#&#8203;5394](https://github.com/transmission/transmission/pull/5394))\n",
+        "dockerImage": "cloudron/com.transmissionbt.cloudronapp:202601280621250000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.transmissionbt.cloudronapp/versions/2.5.0/icon",
+    "featured": false,
+    "ranking": 0
+}

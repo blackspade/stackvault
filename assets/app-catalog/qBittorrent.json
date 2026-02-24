@@ -1,0 +1,73 @@
+{
+    "id": "org.qbittorrent.cloudronapp",
+    "creationDate": "2026-01-20T09:09:13.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-11-01T22:31:13.000Z",
+    "publishedAt": "2023-11-01T22:31:13.000Z",
+    "manifest": {
+        "id": "org.qbittorrent.cloudronapp",
+        "title": "qBittorrent",
+        "tagline": "Fast & Reliable P2P Bittorrent client",
+        "author": "Daan Wijns",
+        "description": "## About\n\nqBittorrent is an advanced and multi-platform BitTorrent client with a nice Qt user interface as well as a Web UI for remote control and an integrated search engine. qBittorrent aims to meet the needs of most users while using as little CPU and memory as possible.\n\nVuetorrent is the sleekest looking WebUI for qBittorrent\n\n## Features\n\n* Polished µTorrent-like User Interface\n* No Ads\n* Well-integrated and extensible Search Engine\n* RSS feed support with advanced download filters (incl. regex)\n* Remote control through Web user interface, written with AJAX\n* Sequential downloading (Download in order)\n* Advanced control over torrents, trackers and peers\n* Bandwidth scheduler\n* Torrent creation tool\n* IP Filtering (eMule & PeerGuardian format compatible)\n* IPv6 compliant\n* UPnP / NAT-PMP port forwarding support\n* Available on all platforms: Windows, Linux, macOS, FreeBSD, OS/2\n* Available in ~70 languages\n\n",
+        "version": "2.25.3",
+        "upstreamVersion": "2.31.3",
+        "tags": [
+            "torrent",
+            "qBittorrent",
+            "vuetorrent"
+        ],
+        "website": "https://www.qbittorrent.org",
+        "documentationUrl": "https://docs.cloudron.io/packages/qbittorrent/",
+        "contactEmail": "support@cloudron.io",
+        "postInstallMessage": "The app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: adminadmin<br/>\n\n",
+        "changelog": "* Update VueTorrent to 2.31.3\n* [Full Changelog](https://github.com/WDaan/VueTorrent/releases/tag/v2.31.3)\n* **lsio-mod:** Fix invalid permissions on non-root users ([#2597](https://github.com/VueTorrent/VueTorrent/issues/2597)) ([85a1fb3](https://github.com/VueTorrent/VueTorrent/commit/85a1fb3795d46b422772f5fd749ad5d141352b76))\n* **RightClick:** Prevent selecting text when opening menu on apple touch devices ([#2598](https://github.com/VueTorrent/VueTorrent/issues/2598)) ([f1846ec](https://github.com/VueTorrent/VueTorrent/commit/f1846ec4397d95443a011954bae171bf3d0fd618))\n* **RSSArticles:** Prevent unread status inconsistency ([#2624](https://github.com/VueTorrent/VueTorrent/issues/2624)) ([6963f29](https://github.com/VueTorrent/VueTorrent/commit/6963f29008d6eaedfbb15c0798c4a3c7f6e95cf0))\n* Wrong message for category delete confirmation ([#2599](https://github.com/VueTorrent/VueTorrent/issues/2599)) ([5f9fc86](https://github.com/VueTorrent/VueTorrent/commit/5f9fc86a85a89e47ee75dd61fa53c9fc7345ab2b))\n* **ActiveFilters:** Click on chip disables only active filters ([#2606](https://github.com/VueTorrent/VueTorrent/issues/2606)) ([bfca3d4](https://github.com/VueTorrent/VueTorrent/commit/bfca3d42335b2c1ab9c3da60a74f304e1e44f040))\n* **Content:** Double click on a node to toggle selection ([#2607](https://github.com/VueTorrent/VueTorrent/issues/2607)) ([2bcce0a](https://github.com/VueTorrent/VueTorrent/commit/2bcce0a5b0e2ad22218373ad87044ddcd305af43))\n* Improve URL detection ([#2590](https://github.com/VueTorrent/VueTorrent/issues/2590)) ([26ea94d](https://github.com/VueTorrent/VueTorrent/commit/26ea94de05bcd160fb4d362938d08fcddf4cb8e8))\n* **Overview:** Wrap comment to prevent text overflow ([#2589](https://github.com/VueTorrent/VueTorrent/issues/2589)) ([c48c2e0](https://github.com/VueTorrent/VueTorrent/commit/c48c2e046828c454acd4c86c943ebcfc82013a3c))\n* **RSSArticles:** Use vue-concurrency ([#2624](https://github.com/VueTorrent/VueTorrent/issues/2624)) ([e28bfcd](https://github.com/VueTorrent/VueTorrent/commit/e28bfcdb1668fa11b02a9742a2bc351ec0597c05))\n* **TorrentDetail:** Change title to use torrent name ([#2608](https://github.com/VueTorrent/VueTorrent/issues/2608)) ([bbbe846](https://github.com/VueTorrent/VueTorrent/commit/bbbe846295f4bb23f734fc3595891acac873374a))\n",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password"
+            }
+        },
+        "tcpPorts": {
+            "QBITTORRENT_TCP_PORT": {
+                "title": "Torrent port (required)",
+                "description": "TCP port for BitTorrent traffic",
+                "defaultValue": 6881,
+                "containerPort": 6881,
+                "enabledByDefault": true
+            }
+        },
+        "udpPorts": {
+            "QBITTORRENT_UDP_PORT": {
+                "title": "UDP port for BitTorrent traffic (must match TCP port)",
+                "description": "UDP port for BitTorrent traffic",
+                "defaultValue": 6881,
+                "containerPort": 6881,
+                "enabledByDefault": true
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.qbittorrent.cloudronapp/screenshot-desktop-dark-mode.png",
+            "https://screenshots.cloudron.io/org.qbittorrent.cloudronapp/screenshot-desktop.png"
+        ],
+        "memoryLimit": 268435456,
+        "minBoxVersion": "9.0.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "forumUrl": "https://forum.cloudron.io/category/177/qbittorrent",
+        "dockerImage": "cloudron/org.qbittorrent.cloudronapp:202601200819240000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.qbittorrent.cloudronapp/versions/2.25.3/icon",
+    "featured": false,
+    "ranking": 0
+}

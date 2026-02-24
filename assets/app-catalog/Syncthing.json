@@ -1,0 +1,63 @@
+{
+    "id": "net.syncthing.cloudronapp2",
+    "creationDate": "2026-02-04T07:33:28.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2018-02-27T01:14:18.000Z",
+    "publishedAt": "2018-02-27T01:14:18.000Z",
+    "manifest": {
+        "id": "net.syncthing.cloudronapp2",
+        "title": "Syncthing",
+        "author": "Syncthing Developers",
+        "description": "Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.\n\n### Features\n\n#### Secure & Private\n\n- **Private.** None of your data is ever stored anywhere else other than on your computers. There is no central server that might be compromised, legally or illegally.\n- **Encrypted.** All communication is secured using TLS. The encryption used includes perfect forward secrecy to prevent any eavesdropper from ever gaining access to your data.\n- **Authenticated.** Every node is identified by a strong cryptographic certificate. Only nodes you have explicitly allowed can connect to your cluster.\n\n#### Easy to Use\n\nSyncthing is still in development, although a large number of features have already been implemented:\n\n- **Web GUI.** Configure and monitor Syncthing via a responsive and powerful interface accessible via your browser.\n- **Portable.** Works on Mac OS X, Windows, Linux, FreeBSD, Solaris and OpenBSD. Run it on your desktop computers and synchronize them with your server for backup.\n- **Simple.** Syncthing doesn't need IP addresses or advanced configuration: it just works, over LAN and over the Internet. Every machine is identified by an ID. Just give your ID to your friends, share a folder and watch: UPnP will do if you don't want to port forward or you don't know how.\n- **Powerful.** Synchronize as many folders as you need with different people.\n\n#### Native GUIs & Integrations\n\n- **Windows** tray utility, filesystem watcher & launcher: [SyncTrayzor](https://github.com/canton7/SyncTrayzor/releases/latest)\n- **Cross-platform** GUI wrapper: [Syncthing-GTK](https://github.com/syncthing/syncthing-gtk/releases/latest)\n- **Android** app: [Syncthing App](https://f-droid.org/repository/browse/?fdid=com.nutomic.syncthingandroid)\n",
+        "changelog": "* Update syncthing to 2.0.14\n* [Full Changelog](https://github.com/syncthing/syncthing/releases/tag/v2.0.14)\n",
+        "tagline": "Decentralized file synchronization",
+        "version": "1.33.15",
+        "upstreamVersion": "2.0.14",
+        "healthCheckPath": "/healthcheck",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "ldap": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password",
+                "sso": false
+            }
+        },
+        "tcpPorts": {
+            "SYNC_PORT": {
+                "title": "Sync Port",
+                "description": "Port over which syncthing will exchange data (do not disable)",
+                "defaultValue": 22000,
+                "containerPort": 22000,
+                "enabledByDefault": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://syncthing.net",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "storage",
+            "sync"
+        ],
+        "minBoxVersion": "9.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/56/syncthing",
+        "documentationUrl": "https://docs.cloudron.io/packages/syncthing/",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/net.syncthing.cloudronapp2/1.png",
+            "https://screenshots.cloudron.io/net.syncthing.cloudronapp2/2.png",
+            "https://screenshots.cloudron.io/net.syncthing.cloudronapp2/3.png"
+        ],
+        "optionalSso": true,
+        "postInstallMessage": "<nosso>\nThis app is pre-setup with an account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n</nosso>\n\n<sso>\nNote that all users manage and synchronize the same set of files.\n</sso>\n\n",
+        "dockerImage": "cloudron/net.syncthing.cloudronapp2:202602040721240000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/net.syncthing.cloudronapp2/versions/1.33.15/icon",
+    "featured": false,
+    "ranking": 0
+}

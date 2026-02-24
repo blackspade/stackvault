@@ -1,0 +1,59 @@
+{
+    "id": "org.apache.guacamole.cloudronapp",
+    "creationDate": "2025-07-02T21:33:36.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-09-12T02:19:14.000Z",
+    "publishedAt": "2020-09-12T02:19:14.000Z",
+    "manifest": {
+        "id": "org.apache.guacamole.cloudronapp",
+        "title": "Guacamole",
+        "author": "Apache Software Foundation",
+        "description": "## About\n\nApache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH.\n\nWe call it clientless because no plugins or client software are required.\n\nThanks to HTML5, once Guacamole is installed on a server, all you need to access your desktops is a web browser.\n\n## Features\n\n* Access your computers from anywhere - Because the Guacamole client is an HTML5 web application, use of your computers is not tied to any one device or location. As long as you have access to a web browser, you have access to your machines.\n\n\n* Keep your desktop in the cloud - Desktops accessed through Guacamole need not physically exist. With both Guacamole and a desktop operating system hosted in the cloud, you can combine the convenience of Guacamole with the resilience and flexibility of cloud computing.\n\n\n* Free and open source - Apache Guacamole is and will always be free and open source software. It is licensed under the Apache License, Version 2.0, and is actively maintained by a community of developers that use Guacamole to access their own development environments. We feel this sets us apart from other remote desktop solutions, and gives us a distinct advantage.\n\n* Built on a well-documented API - Apache Guacamole is built on its own stack of core APIs which are thoroughly documented, including basic tutorials and conceptual overviews in the online manual. These APIs allow Guacamole to be tightly integrated into other applications, whether they be open source or proprietary.\n\n* Commercially supported - For enterprises, dedicated commercial support is also available through third party companies.\n\n## Supported Protocols\n\n * VNC protocol\n * RDP protocol (Remote Desktop)\n * SSH\n * Telnet\n\n",
+        "changelog": "* Fix upstream version\n",
+        "tagline": "Apache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH.",
+        "version": "2.5.1",
+        "upstreamVersion": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 8080,
+        "addons": {
+            "mysql": [],
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "website": "https://guacamole.apache.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "vnc",
+            "rdp",
+            "ssh",
+            "rdesktop"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.apache.guacamole.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.apache.guacamole.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.apache.guacamole.cloudronapp/3.png"
+        ],
+        "memoryLimit": 536870912,
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: guacadmin<br/>\n**Password**: guacadmin<br/>\n\n<sso>\nBy default, Cloudron users have regular users permissions. The user permissions can be changed on the users management page.\n</sso>\n",
+        "forumUrl": "https://forum.cloudron.io/category/99/guacamole",
+        "minBoxVersion": "8.1.0",
+        "documentationUrl": "https://docs.cloudron.io/packages/guacamole/",
+        "dockerImage": "cloudron/org.apache.guacamole.cloudronapp:202507021608460000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.apache.guacamole.cloudronapp/versions/2.5.1/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,56 @@
+{
+    "id": "org.joplinapp.cloudron",
+    "creationDate": "2025-12-20T07:39:59.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-08-05T19:00:25.000Z",
+    "publishedAt": "2021-08-05T19:00:25.000Z",
+    "manifest": {
+        "id": "org.joplinapp.cloudron",
+        "title": "Joplin Server",
+        "author": "Joplin Authors",
+        "description": "## About\n\nJoplin is a free, open source note taking and to-do application, which can handle a large number of notes organised into notebooks. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in Markdown format.\n\n## License\n\n**JOPLIN SERVER PERSONAL USE LICENSE**\n\nPlease carefully read and review [the license](https://github.com/laurent22/joplin/blob/dev/packages/server/LICENSE.md).\n\nIn particular, Joplin Server may be used for personal non-commercial purposes only.\n\n## Features\n\n* Desktop, mobile and terminal applications.\n* Web Clipper for Firefox and Chrome.\n* End To End Encryption (E2EE).\n* Note history (revisions).\n* Synchronisation with various services, including Nextcloud, Dropbox, WebDAV and OneDrive.\n* Offline first, so the entire data is always available on the device even without an internet connection.\n* Import Enex files (Evernote export format) and Markdown files.\n* Export JEX files (Joplin Export format) and raw files.\n* Support notes, to-dos, tags and notebooks.\n* Sort notes by multiple criteria - title, updated time, etc.\n* Support for alarms (notifications) in mobile and desktop applications.\n* Markdown notes, which are rendered with images and formatting in the desktop and mobile applications. Support for extra features such as math notation and checkboxes.\n* Choice of both Markdown and Rich Text (WYSIWYG) editors.\n* File attachment support - images are displayed, other files are linked and can be opened in the relevant application.\n* Inline display of PDF, video and audio files.\n* Goto Anything feature.\n* Search functionality.\n* Geo-location support.\n* Supports multiple languages.\n* External editor support - open notes in your favorite external editor with one click in Joplin.\n* Extensible functionality through plugin and data APIs.\n* Template support with data variables for auto creation of time & dates.\n* Custom CSS support for customisation of both the rendered markdown and overall user interface.\n* Customisable layout allows toggling, movement and sizing of various elements.\n* Keyboard shortcuts are editable and allow binding of most Joplin commands with export/import functionality.\n\n",
+        "tagline": "Free, open source note taking app",
+        "version": "2.4.1",
+        "upstreamVersion": "3.5.2",
+        "minBoxVersion": "8.1.0",
+        "healthCheckPath": "/api/ping",
+        "httpPort": 3000,
+        "website": "https://joplinapp.org",
+        "memoryLimit": 536870912,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Please change the admin password and email immediately."
+            }
+        },
+        "contactEmail": "support@cloudron.io",
+        "manifestVersion": 2,
+        "icon": "file://logo.png",
+        "tags": [
+            "wiki",
+            "notes",
+            "evernote"
+        ],
+        "changelog": "* Update joplin to 3.5.2\n* [Full Changelog](https://github.com/laurent22/joplin/releases/tag/server-v3.5.2)\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.joplinapp.cloudron/multimedia-notes-img.png",
+            "https://screenshots.cloudron.io/org.joplinapp.cloudron/save-web-img.png"
+        ],
+        "postInstallMessage": "**Joplin Server may be used for personal non-commercial purposes only.** Please carefully read and review [the license](https://github.com/laurent22/joplin/blob/dev/packages/server/LICENSE.md).\n\nThis app is pre-setup with an admin account. The initial credentials are:\n  \n**Email**: admin@localhost<br/>\n**Password**: admin<br/>\n\nDownload the clients here https://joplinapp.org/download/.\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/joplin-server/",
+        "forumUrl": "https://forum.cloudron.io/category/134/joplin-server",
+        "dockerImage": "cloudron/org.joplinapp.cloudron:202512200219530000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.joplinapp.cloudron/versions/2.4.1/icon",
+    "featured": false,
+    "ranking": 0
+}

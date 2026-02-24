@@ -1,0 +1,61 @@
+{
+    "id": "app.linkwarden.cloudronapp",
+    "creationDate": "2026-01-05T17:22:44.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-09-17T09:22:54.000Z",
+    "publishedAt": "2024-09-17T09:22:54.000Z",
+    "manifest": {
+        "id": "app.linkwarden.cloudronapp",
+        "title": "Linkwarden",
+        "version": "1.20.0",
+        "upstreamVersion": "2.13.5",
+        "tagline": "Collect, organize, and preserve webpages",
+        "description": "### Overwview\n\nLinkwarden is a self-hosted, open-source collaborative bookmark manager to collect, organize and archive webpages.\n\nThe objective is to organize useful webpages and articles you find across the web in one place, and since useful webpages can go away (see the inevitability of Link Rot), Linkwarden also saves a copy of each webpage as a Screenshot and PDF, ensuring accessibility even if the original content is no longer available.\n\nAdditionally, Linkwarden is designed with collaboration in mind, sharing links with the public and/or allowing multiple users to work together seamlessly.\n\n",
+        "changelog": "* add dumb-init to collect zombies\n",
+        "author": "Linkwarden developers",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "minBoxVersion": "8.1.0",
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "oidc": {
+                "loginRedirectUri": "/api/v1/auth/callback/authentik"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.linkwarden.cloudronapp/linkwarden-01.png"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: changeme<br/>\n",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "forumUrl": "https://forum.cloudron.io/category/195/linkwarden",
+        "documentationUrl": "https://docs.cloudron.io/packages/linkwarden/",
+        "optionalSso": true,
+        "runtimeDirs": [
+            "/app/code/apps/web/.next"
+        ],
+        "memoryLimit": 1073741824,
+        "tags": [
+            "archive",
+            "bookmark"
+        ],
+        "website": "https://linkwarden.app",
+        "contactEmail": "support@cloudron.io",
+        "dockerImage": "cloudron/app.linkwarden.cloudronapp:202601051652360000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.linkwarden.cloudronapp/versions/1.20.0/icon",
+    "featured": false,
+    "ranking": 0
+}

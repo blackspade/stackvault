@@ -1,0 +1,63 @@
+{
+    "id": "org.joinmastodon.cloudronapp",
+    "creationDate": "2026-02-04T07:30:38.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-01-24T02:12:21.000Z",
+    "publishedAt": "2020-01-24T02:12:21.000Z",
+    "manifest": {
+        "id": "org.joinmastodon.cloudronapp",
+        "title": "Mastodon",
+        "author": "Mastodon Authors",
+        "description": "## About\n\nMastodon is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones. On Mastodon, users can publish anything they want: links, pictures, text, video. All Mastodon servers are interoperable as a federated network (users on one server can seamlessly communicate with users from another one, including non-Mastodon software that implements ActivityPub)!\n\n## Features\n\n* No vendor lock-in: Fully interoperable with any conforming platform\n* Real-time, chronological timeline updates\n* Media attachments like images and short videos\n* Safety and moderation tools\n* OAuth2 and a straightforward REST API\n\n",
+        "changelog": "* Update mastodon to 4.5.6\n* [Full Changelog](https://github.com/mastodon/mastodon/releases/tag/v4.5.6)\n* Fix relationship cache not being cleared when handling account migrations ([#&#8203;37664](https://github.com/tootsuite/mastodon/issues/37664) by [@&#8203;ClearlyClaire](https://github.com/ClearlyClaire))\n* Fix quote cancel button not appearing after edit then delete-and-redraft ([#&#8203;37066](https://github.com/tootsuite/mastodon/issues/37066) by [@&#8203;PGrayCS](https://github.com/PGrayCS))\n* Fix followers with profile subscription (bell icon) being notified of post edits ([#&#8203;37646](https://github.com/tootsuite/mastodon/issues/37646) by [@&#8203;ClearlyClaire](https://github.com/ClearlyClaire))\n* Fix error when encountering invalid tag in updated object ([#&#8203;37635](https://github.com/tootsuite/mastodon/issues/37635) by [@&#8203;ClearlyClaire](https://github.com/ClearlyClaire))\n* Fix cross-server conversation tracking ([#&#8203;37559](https://github.com/tootsuite/mastodon/issues/37559) by [@&#8203;ClearlyClaire](https://github.com/ClearlyClaire))\n* Fix recycled connections not being immediately closed ([#&#8203;37335](https://github.com/tootsuite/mastodon/issues/37335) and [#&#8203;37674](https://github.com/tootsuite/mastodon/issues/37674) by [@&#8203;ClearlyClaire](https://github.com/ClearlyClaire) and [@&#8203;shleeable](https://github.com/shleeable))\n",
+        "tagline": "Federated social network",
+        "version": "1.17.6",
+        "upstreamVersion": "4.5.6",
+        "healthCheckPath": "/about",
+        "httpPort": 8000,
+        "memoryLimit": 1610612736,
+        "configurePath": "/admin/dashboard",
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "sendmail": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/auth/openid_connect/callback"
+            },
+            "scheduler": {
+                "cleanup": {
+                    "schedule": "11 01 * * *",
+                    "command": "/app/pkg/cleanup.sh"
+                }
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://joinmastodon.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "social",
+            "forum",
+            "chat",
+            "twitter",
+            "federated"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.joinmastodon.cloudronapp/1.jpg",
+            "https://screenshots.cloudron.io/org.joinmastodon.cloudronapp/2.png"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/mastodon/",
+        "postInstallMessage": "Accounts are created with the username and the subdomain under which this app is installed  e.g. `@$CLOUDRON-USERNAME@$CLOUDRON-APP-FQDN`.\nMastodon does not allow changing the domain part of the account later.\nSee [the docs](https://docs.cloudron.io/apps/mastodon/#federation) for more information, f you want to change this domain.\n\n<sso>\n**NOTE:**\n* Mastodon has [restrictions](https://docs.cloudron.io/apps/mastodon/#username-restriction) on usernames that might prevent some users from logging in.\n\n* External registration [does not work well](https://github.com/mastodon/mastodon/issues/20655) when Cloudron user management is enabled.\n</sso>\n\n<nosso>\n**NOTE:**\n* Open registration is disabled by default. To enable this, see the [docs](https://docs.cloudron.io/apps/mastodon/#registration)\n\n* To add an initial account follow those [instructions](https://docs.cloudron.io/apps/mastodon/#adding-users)\n</nosso>\n",
+        "optionalSso": true,
+        "minBoxVersion": "7.1.2",
+        "forumUrl": "https://forum.cloudron.io/category/41/mastodon",
+        "dockerImage": "cloudron/org.joinmastodon.cloudronapp:202602040020590000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.joinmastodon.cloudronapp/versions/1.17.6/icon",
+    "featured": false,
+    "ranking": 0
+}

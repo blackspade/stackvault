@@ -1,0 +1,51 @@
+{
+    "id": "io.homeassistant.cloudronapp",
+    "creationDate": "2026-02-09T08:46:57.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-10-25T14:42:30.000Z",
+    "publishedAt": "2024-10-25T14:42:30.000Z",
+    "manifest": {
+        "id": "io.homeassistant.cloudronapp",
+        "title": "Home Assistant",
+        "version": "1.16.1",
+        "upstreamVersion": "2025.12.0b9",
+        "tagline": "Awaken your home",
+        "author": "Home Assistant Developers",
+        "description": "### Overview\n\nOpen source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts.\n",
+        "changelog": "* Update core to 2026.2.1\n* [Full Changelog](https://www.home-assistant.io/blog/2026/02/04/release-20262/)\n",
+        "website": "https://www.home-assistant.io/",
+        "documentationUrl": "https://docs.cloudron.io/packages/homeassistant/",
+        "forumUrl": "https://forum.cloudron.io/category/196/home-assistant",
+        "contactEmail": "support@cloudron.io",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "httpPort": 8123,
+        "addons": {
+            "localstorage": [],
+            "postgresql": []
+        },
+        "runtimeDirs": [
+            "/app/code/lib/python3.14/site-packages/",
+            "/app/code/bin/",
+            "/app/code/share/"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.homeassistant.cloudronapp/img01.png"
+        ],
+        "tags": [
+            "automation",
+            "assistant",
+            "home"
+        ],
+        "memoryLimit": 1073741824,
+        "minBoxVersion": "8.0.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/io.homeassistant.cloudronapp:202602090021530000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.homeassistant.cloudronapp/versions/1.16.1/icon",
+    "featured": false,
+    "ranking": 0
+}

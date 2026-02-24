@@ -1,0 +1,54 @@
+{
+    "id": "io.cloudron.releasebell",
+    "creationDate": "2025-03-31T14:53:38.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2018-06-28T12:08:52.000Z",
+    "publishedAt": "2018-06-28T12:08:52.000Z",
+    "manifest": {
+        "id": "io.cloudron.releasebell",
+        "title": "ReleaseBell",
+        "author": "Cloudron Team",
+        "description": "### Overview\n\nRelease Bell tracks your starred GitHub repositories and will notify you on every new tag or release.\nFurthermore it allows to manually track GitLab project releases.\n\nAll notifications are sent out via email.\n",
+        "tagline": "Release notification service",
+        "tags": [
+            "tags",
+            "releases",
+            "github"
+        ],
+        "version": "1.13.0",
+        "upstreamVersion": "1.11.2",
+        "healthCheckPath": "/api/v1/status",
+        "httpPort": 3000,
+        "manifestVersion": 2,
+        "website": "https://releasebell.com",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/api/v1/callback"
+            },
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "localstorage": []
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.cloudron.releasebell/releasebell_1.png",
+            "https://screenshots.cloudron.io/io.cloudron.releasebell/releasebell_2.png",
+            "https://screenshots.cloudron.io/io.cloudron.releasebell/releasebell_3.png",
+            "https://screenshots.cloudron.io/io.cloudron.releasebell/releasebell_4.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/55/release-bell",
+        "changelog": "* Email display name support\n",
+        "minBoxVersion": "7.5.1",
+        "documentationUrl": "https://docs.cloudron.io/apps/releasebell/",
+        "dockerImage": "cloudron/io.cloudron.releasebell:202503311445390000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.cloudron.releasebell/versions/1.13.0/icon",
+    "featured": false,
+    "ranking": 0
+}

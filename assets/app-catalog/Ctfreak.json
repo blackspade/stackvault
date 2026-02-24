@@ -1,0 +1,52 @@
+{
+    "id": "com.ctfreak.cloudronapp",
+    "creationDate": "2024-06-27T13:02:41.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.ctfreak.cloudronapp",
+        "title": "Ctfreak",
+        "author": "JYP Software <hello@jyp.software>",
+        "description": "## About\n\nCtfreak allows you to centralize and schedule various types of tasks:\n\n- Shell scripts (bash/powershell) on multiple servers concurrently via SSH\n- SQL scripts on multiple databases concurrently (mysql/mariadb/postgresql)\n- HTTP request calls\n- Workflows (to launch other tasks sequentially or concurrently)\n\nIt also provides the ability to send notifications based on the results (slack, teams, discord, ...).\n\n## Use cases\n\nSome use cases include:\n\n- Replacing the crontabs on all your servers\n- Trigger script execution from your mobile device through a nice and responsive web app\n- Regularly checking if your website is still up\n- Being notified on failed backups\n- Coordinating the execution of distributed intensive computations across multiple servers\n\n",
+        "version": "1.6.0",
+        "upstreamVersion": "1.15.0",
+        "minBoxVersion": "7.5.0",
+        "tagline": "Centralized task scheduler",
+        "healthCheckPath": "/isalive",
+        "httpPort": 6700,
+        "website": "https://ctfreak.com/",
+        "contactEmail": "support@ctfreak.com",
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/oidc/callback",
+                "logoutRedirectUri": "/",
+                "tokenSignatureAlgorithm": "RS256"
+            }
+        },
+        "optionalSso": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.ctfreak.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/com.ctfreak.cloudronapp/2.png"
+        ],
+        "icon": "file://logo.png",
+        "tags": [
+            "automation",
+            "scheduling",
+            "devops",
+            "cron",
+            "bash",
+            "powershell",
+            "sql"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/164/ctfreak",
+        "changelog": "* Update ctfreak to 1.15.0\n* [Full changelog](https://ctfreak.com/docs/changelog#v1-15-0)\n* Add optional HTTP response logging (status, headers and body)\n* JSON response body auto-prettifying\n* Add FreeBSD amd64 & arm64 build and install process\n* Add Linux arm64 build\n* Remove Linux arm32 build\n* Back-end is now built with Go 1.22\n* Update dependencies\n* Update internal log timestamp format\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: ctfreak<br/>\n\nPlease change the admin password immediately.\n",
+        "documentationUrl": "https://ctfreak.com/docs",
+        "memoryLimit": 268435456,
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/com.ctfreak.cloudronapp:20240627-124931-809017df7"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.ctfreak.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

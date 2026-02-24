@@ -1,0 +1,84 @@
+{
+    "id": "com.getoutline.cloudronapp",
+    "creationDate": "2026-01-28T08:01:05.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-11-07T14:59:22.000Z",
+    "publishedAt": "2023-11-07T14:59:22.000Z",
+    "manifest": {
+        "id": "com.getoutline.cloudronapp",
+        "title": "Outline",
+        "author": "Outline Authors",
+        "version": "1.19.0",
+        "upstreamVersion": "1.4.0",
+        "minBoxVersion": "8.1.0",
+        "contactEmail": "support@cloudron.io",
+        "description": "### About\n\nThe fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.\n\n### Features\n\n* Open source\n* Translated in 17+ languages\n* Built in public (see [Changelog](https://www.getoutline.com/changelog))\n* Integrate and embed content from over [20 other tools](https://www.getoutline.com/integrations)\n",
+        "tagline": "Collaborative knowledge base",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.getoutline.cloudronapp/screenshot.png",
+            "https://screenshots.cloudron.io/com.getoutline.cloudronapp/link-previews.png",
+            "https://screenshots.cloudron.io/com.getoutline.cloudronapp/comment-in-code.png"
+        ],
+        "website": "https://www.getoutline.com/",
+        "changelog": "* Update outline to 1.4.0\n* [Full Changelog](https://github.com/outline/outline/releases/tag/v1.4.0)\n* New **\"Toggle blocks\"** allow creating content that is collapsed by default in [#8317](https://github.com/outline/outline/pull/8317)  \n* Table cells can now have a custom background color set in [#10930](https://github.com/outline/outline/pull/10930)  \n* Search results are now highlighted in the document when navigating from search in [#11262](https://github.com/outline/outline/pull/11262)  \n* A new Figma integration allows unfurling information about Figma links in documents by [@hmacr](https://github.com/hmacr) in [#11044](https://github.com/outline/outline/pull/11044)  \n* Added support for sorting dates in table columns by [@lucawimmer](https://github.com/lucawimmer) in [#11198](https://github.com/outline/outline/pull/11198)  \n* Document changes made through the API are now synced to clients in realtime in [#11186](https://github.com/outline/outline/pull/11186)  \n* The rate limiter now prefers user ID over ip address for logged in sessions, prevents issues on larger office networks in [#11215](https://github.com/outline/outline/pull/11215)  \n* The markdown importer now supports more file layouts in [#11278](https://github.com/outline/outline/pull/11278)  \n* Fixed some typos comments and messages by [@NAM-MAN](https://github.com/NAM-MAN) in [#11203](https://github.com/outline/outline/pull/11203)  \n* Fixed an issue where mentions would sometimes break when using drag and drop in a list in [#11208](https://github.com/outline/outline/pull/11208)  \n",
+        "tags": [
+            "docs",
+            "collaborative",
+            "document",
+            "editor",
+            "notes",
+            "markdown"
+        ],
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "redis": [],
+            "postgresql": [],
+            "scheduler": {
+                "daily": {
+                    "schedule": "0 0 * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            },
+            "oidc": {
+                "loginRedirectUri": "/auth/oidc.callback",
+                "logoutRedirectUri": "/",
+                "tokenSignatureAlgorithm": "RS256"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "license-agreement": {
+                "message": "Read and accept [the BSL license restrictions](https://github.com/outline/outline/blob/main/LICENSE)"
+            },
+            "email-registration": {
+                "message": "Registration with email is enabled by default. This can be disabled in `Security` settings",
+                "sso": true
+            },
+            "first-user-admin": {
+                "message": "First logged in user is automatically made admin",
+                "sso": true
+            },
+            "create-admin": {
+                "message": "On first visit, create and register an admin account",
+                "sso": false
+            }
+        },
+        "optionalSso": true,
+        "forumUrl": "https://forum.cloudron.io/category/178/outline",
+        "documentationUrl": "https://docs.cloudron.io/packages/outline/",
+        "manifestVersion": 2,
+        "memoryLimit": 1048576000,
+        "dockerImage": "cloudron/com.getoutline.cloudronapp:202601280419500000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.getoutline.cloudronapp/versions/1.19.0/icon",
+    "featured": false,
+    "ranking": 0
+}

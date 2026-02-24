@@ -1,0 +1,72 @@
+{
+    "id": "io.taiga.cloudronapp",
+    "creationDate": "2025-12-17T14:48:42.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-02-04T17:17:26.000Z",
+    "publishedAt": "2016-02-04T17:17:26.000Z",
+    "manifest": {
+        "id": "io.taiga.cloudronapp",
+        "title": "Taiga",
+        "author": "Taiga Authors",
+        "tagline": "Project management platform",
+        "version": "2.17.1",
+        "upstreamVersion": "6.9.0",
+        "description": "### Overview\n\nTaiga is a project management platform for startups and agile developers & designers who want a simple, beautiful tool that makes work truly enjoyable.\n\n### Features\n\n* **Backlog** - Keeps the running list of all features and User Stories that make up your project.\n* **Kanban** - Fully Customizable Post-it Note type layout of your workflow.\n* **Tasks** - Further define the work required to complete each User Story.\n* **Sprints** - Gathers and Tracks the User Stories and Tasks that can be worked on by your team within a given time frame.\n* **Issues** - Track issues and bugs, assign tags, responsibility and keep traceability.\n\n### Focus on\n\n* Fun to use\n* Intuitive and Easy to use\n* Clean to not distract\n* Unobtrusive\n* Keep your team in sync\n* Do not rule over you\n",
+        "changelog": "* Switch LDAP plugin to support usernames with a dot\n",
+        "healthCheckPath": "/",
+        "configurePath": "/admin/",
+        "httpPort": 8000,
+        "optionalSso": true,
+        "addons": {
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "postgresql": [],
+            "localstorage": [],
+            "ldap": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password and email immediately."
+            }
+        },
+        "tags": [
+            "scrum",
+            "kanban",
+            "project",
+            "management",
+            "agile",
+            "trello",
+            "asana",
+            "jira",
+            "basecamp",
+            "backlog",
+            "srints",
+            "issue",
+            "bug"
+        ],
+        "memoryLimit": 314572800,
+        "manifestVersion": 2,
+        "minBoxVersion": "8.1.0",
+        "website": "https://taiga.io",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.taiga.cloudronapp/01.png",
+            "https://screenshots.cloudron.io/io.taiga.cloudronapp/02.png",
+            "https://screenshots.cloudron.io/io.taiga.cloudronapp/03.png",
+            "https://screenshots.cloudron.io/io.taiga.cloudronapp/04.png",
+            "https://screenshots.cloudron.io/io.taiga.cloudronapp/05.png"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. This admin account is only for the admin panel, not the regular login!\nThe initial credentials are:\n\n**Username**: admin<br/>\n**Password**: 123123<br/>\n\nThe admin panel is reachable at `/admin/` (trailing slash is important!)\n\n<nosso>\nNew users can be created in the registration form of the app. Public registration is enabled by default.\n</nosso>\n\n<sso>\n**Cloudron users must login to the app before being able to add them to projects in Taiga**.\nOtherwise, the app assumes they are external users and sends an invite.\n</sso>\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/taiga",
+        "forumUrl": "https://forum.cloudron.io/category/65/taiga",
+        "dockerImage": "cloudron/io.taiga.cloudronapp:202511031213110000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.taiga.cloudronapp/versions/2.17.1/icon",
+    "featured": false,
+    "ranking": 0
+}

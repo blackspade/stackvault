@@ -1,0 +1,69 @@
+{
+    "id": "net.kanboard.cloudronapp",
+    "creationDate": "2026-02-09T08:47:49.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2015-12-03T20:26:59.000Z",
+    "publishedAt": "2015-12-03T20:26:59.000Z",
+    "manifest": {
+        "id": "net.kanboard.cloudronapp",
+        "title": "Kanboard",
+        "author": "Frédéric Guillot",
+        "description": "Kanboard is a project management software that use the Kanban methodology.\n\n### Features\n* Fast and simple to use\n* Visualize your work\n* Limit your work in progress to be more efficient\n* Customize your boards according to your business activities\n* Multiple boards with the ability to drag and drop tasks\n* Reports and analytics\n* Access from anywhere with a modern browser\n* Visual and clear overview of your tasks\n* Search and filter tasks\n* Single dashboard for all projects\n* Tasks, subtasks, attachments and comments\n* Swimlines, Gantt charts and much more\n\n### About Kanban\n\nKanban is a methodology originally developed by Toyota to be more efficient.\n\nThere is only two constraints imposed by Kanban:\n\n  * Visualize your workflow\n  * Limit your work in progress\n  * Measure performance and improvement\n",
+        "tagline": "Simple visual task board",
+        "version": "1.17.6",
+        "upstreamVersion": "1.2.50",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/oauth/callback"
+            },
+            "scheduler": {
+                "cronjob": {
+                    "schedule": "0 23 * * *",
+                    "command": "/usr/local/bin/gosu www-data:www-data bash -c \"cd /app/code && /app/code/cli cronjob\""
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "http://kanboard.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "productivity",
+            "project management",
+            "kanban",
+            "task management",
+            "trello",
+            "wekan"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/net.kanboard.cloudronapp/board.png",
+            "https://screenshots.cloudron.io/net.kanboard.cloudronapp/dashboard.png",
+            "https://screenshots.cloudron.io/net.kanboard.cloudronapp/analytics.png"
+        ],
+        "changelog": "* Update kanboard to 1.2.50\n* [Full Changelog](https://github.com/kanboard/kanboard/releases/tag/v1.2.50)\n* fix: add missing authorization checks  \n* fix: enforce plugin installer check in PluginController actions  \n* fix: enable Parsedown safe mode for Markdown rendering  \n* fix: add missing project authorization checks in controllers  \n* fix: add CSRF protection for project role changes and enforce JSON content type\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin <br/>\n**Password**: admin <br/>\n\n",
+        "optionalSso": true,
+        "forumUrl": "https://forum.cloudron.io/category/36/kanboard",
+        "minBoxVersion": "8.1.0",
+        "documentationUrl": "https://docs.cloudron.io/packages/kanboard/",
+        "dockerImage": "cloudron/net.kanboard.cloudronapp:202602090120420000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/net.kanboard.cloudronapp/versions/1.17.6/icon",
+    "featured": false,
+    "ranking": 0
+}

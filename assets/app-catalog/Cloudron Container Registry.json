@@ -1,0 +1,60 @@
+{
+    "id": "com.docker.registry",
+    "creationDate": "2026-01-20T07:08:29.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-01-13T18:14:24.000Z",
+    "publishedAt": "2021-01-13T18:14:24.000Z",
+    "manifest": {
+        "id": "com.docker.registry",
+        "version": "2.3.0",
+        "upstreamVersion": "2.6.0 3.0.0 (registry UI 2.5.7)",
+        "author": "Docker Developers",
+        "title": "Cloudron Container Registry",
+        "tagline": "Docker toolset to pack, ship, store, and deliver content",
+        "contactEmail": "support@cloudron.io",
+        "healthCheckPath": "/v2",
+        "httpPort": 8000,
+        "description": "## About\n\nThe Docker toolset to pack, ship, store, and deliver content.\n\nThis repository's main product is the Open Source Docker Registry implementation for storing and distributing Docker and OCI images using the OCI Distribution Specification. The goal of this project is to provide a simple, secure, and scalable base for building a registry solution or running a simple private registry.\n\n",
+        "changelog": "* Update docker-registry-ui to 2.6.0\n* [Full Changelog](https://github.com/Joxit/docker-registry-ui/releases/tag/2.6.0)\n* tags: use Material Symbols instead of Icons ([`21f33f5`](https://github.com/Joxit/docker-registry-ui/commit/21f33f5d))\n* update for new unprivileged nginx images ([#433](https://github.com/Joxit/docker-registry-ui/issues/433)) ([`433a2aa`](https://github.com/Joxit/docker-registry-ui/commit/433a2aa1))\n* tag-table: icons for ascending & descending are not shown correctly ([#406](https://github.com/Joxit/docker-registry-ui/issues/406)) ([`9960afe`](https://github.com/Joxit/docker-registry-ui/commit/9960afe9))\n* avoid exceptions and display date when using OCI images ([#372](https://github.com/Joxit/docker-registry-ui/issues/372)) ([`079f359`](https://github.com/Joxit/docker-registry-ui/commit/079f3597))\n* nginx: too big request header when cookie is defined  ([#356](https://github.com/Joxit/docker-registry-ui/issues/356)) ([`dc9bdcb`](https://github.com/Joxit/docker-registry-ui/commit/dc9bdcbe))\n* add `DOCKER_REGISTRY_UI_TITLE` and `ENABLE_VERSION_NOTIFICATION` ([#369](https://github.com/Joxit/docker-registry-ui/issues/369)) ([`83c33e9`](https://github.com/Joxit/docker-registry-ui/commit/83c33e9d))\n* add `/version.json` endpoint ([`3381fb4`](https://github.com/Joxit/docker-registry-ui/commit/3381fb42))\n* oci: add support to helm exports history and use material symbols ([`b7f732a`](https://github.com/Joxit/docker-registry-ui/commit/b7f732a6))\n* add `SHOW_TAG_HISTORY` option to hide tag history button ([#362](https://github.com/Joxit/docker-registry-ui/issues/362)) ([`7025df6`](https://github.com/Joxit/docker-registry-ui/commit/7025df68))\n* theme: contrast changes for light and dark themes ([#361](https://github.com/Joxit/docker-registry-ui/issues/361)) ([`cfbc6e7`](https://github.com/Joxit/docker-registry-ui/commit/cfbc6e76))\n",
+        "website": "https://github.com/docker/distribution",
+        "icon": "logo.png",
+        "addons": {
+            "localstorage": [],
+            "redis": {
+                "optional": true
+            },
+            "proxyAuth": {
+                "basicAuth": true
+            },
+            "scheduler": {
+                "garbage_collect": {
+                    "schedule": "0 0 * * *",
+                    "command": "/usr/local/bin/gosu cloudron:cloudron /app/code/registry garbage-collect /app/data/config.yml"
+                }
+            }
+        },
+        "minBoxVersion": "7.1.0",
+        "tags": [
+            "docker",
+            "registry",
+            "harbor",
+            "devtools"
+        ],
+        "manifestVersion": 2,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.docker.registry/1.png",
+            "https://screenshots.cloudron.io/com.docker.registry/2.png",
+            "https://screenshots.cloudron.io/com.docker.registry/3.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/119/docker-registry",
+        "documentationUrl": "https://docs.cloudron.io/packages/docker-registry/",
+        "optionalSso": true,
+        "dockerImage": "cloudron/com.docker.registry:202601200621140000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.docker.registry/versions/2.3.0/icon",
+    "featured": false,
+    "ranking": 0
+}

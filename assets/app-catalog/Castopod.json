@@ -1,0 +1,61 @@
+{
+    "id": "org.castopod.cloudronapp",
+    "creationDate": "2026-02-06T17:44:39.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-08-04T10:38:05.000Z",
+    "publishedAt": "2023-08-04T10:38:05.000Z",
+    "manifest": {
+        "id": "org.castopod.cloudronapp",
+        "title": "Castopod",
+        "author": "Benjamin Bellamy / Yassine Doghrii",
+        "description": "## About\n\nCastopod is a free and open-source podcast hosting solution made for podcasters who want engage and interact with their audience.\n\nSelf-host your podcasts with ease, keep control over what you create and talk to your audience without any middleman. Your podcast and your audience belong to you and you only.\n\n## Features\n\n* Talk to your audience, directly - Interact with your audience in the fediverse, a decentralized social network.\n* Promote your podcast - Castopod helps you get noticed by enforcing best practices and by giving you tools to post easily on all social media.\n* Your podcast, everywhere - Manage your podcast in one place, broadcast it everywhere using RSS.\n* Built-in analytics - Get all the insights of your podcasts and episodes\n* Value your work - Publish your podcast for free or monetize it\n* Free & open-source\n\n",
+        "changelog": "* Fix session files\n",
+        "tagline": "Podcast hosting solution",
+        "postInstallMessage": "The initial admin credentials are:\n\n**Email**: admin@cloudron.local<br/>\n**Password**: changeme<br/>\n\nThe admin page of Castopod is located at the $CLOUDRON-APP-ORIGIN/cp-admin .\n",
+        "version": "2.12.2",
+        "upstreamVersion": "1.14.1",
+        "minBoxVersion": "8.0.0",
+        "healthCheckPath": "/",
+        "configurePath": "/cp-admin",
+        "icon": "file://logo.png",
+        "memoryLimit": 536870912,
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "scheduler": {
+                "cron": {
+                    "schedule": "* * * * *",
+                    "command": "echo '==> cron/run' && gosu www-data:www-data /usr/bin/php /app/code/spark tasks:run >> /dev/null 2>&1"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.castopod.cloudronapp/castopod-0.png"
+        ],
+        "manifestVersion": 2,
+        "website": "https://castopod.org",
+        "forumUrl": "https://forum.cloudron.io/category/172/castopod",
+        "documentationUrl": "https://docs.cloudron.io/packages/castopod",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "podcast"
+        ],
+        "dockerImage": "cloudron/org.castopod.cloudronapp:202602061448580000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.castopod.cloudronapp/versions/2.12.2/icon",
+    "featured": false,
+    "ranking": 0
+}

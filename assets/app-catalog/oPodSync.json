@@ -1,0 +1,55 @@
+{
+    "id": "org.kd2.fossil.opodsync.cloudronapp",
+    "creationDate": "2026-01-16T16:11:19.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-04-22T09:20:15.000Z",
+    "publishedAt": "2025-04-22T09:20:15.000Z",
+    "manifest": {
+        "id": "org.kd2.fossil.opodsync.cloudronapp",
+        "title": "oPodSync",
+        "version": "1.1.1",
+        "upstreamVersion": "0.5.1",
+        "tagline": "minimalist GPodder-compatible server",
+        "author": "oPodSync developers",
+        "description": "### About\n\noPodSync is a minimalist podcast synchronization server, for self-hosting your podcast listening / download history.\nThis allows you to keep track of which episodes have been listened to.\n\n### Features\n\n* Compatible with GPodder and NextCloud gPodder Sync APIs\n* Stores history of subscriptions and episodes (plays, downloads, etc.)\n* Sync between devices\n* Compatible with gPodder desktop client\n* Self-registration\n* See subscriptions and history on web interface\n* Fetch feeds and episodes metadata and store them locally (optional)\n",
+        "website": "https://fossil.kd2.org/opodsync/doc/main/README.md",
+        "documentationUrl": "https://docs.cloudron.io/apps/opodsync",
+        "forumUrl": "https://forum.cloudron.io/category/206/opodsync",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "minBoxVersion": "8.2.0",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/data.sqlite"
+                    ]
+                }
+            }
+        },
+        "checklist": {
+            "create-inital-admin": {
+                "message": "Visit the app to create the initial admin account. Registration is disabled afterwards."
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.kd2.fossil.opodsync.cloudronapp/opodsync_01.png"
+        ],
+        "changelog": "* Update opodsync to 0.5.1\n* [Full Changelog](https://github.com/kd2org/opodsync/releases/tag/0.5.1)\n* Add support for adding new subscriptions from the web UI (thanks [@nebulade](https://github.com/kd2org/opodsync/pull/85))\n",
+        "tags": [
+            "gpodder",
+            "sync",
+            "podcast"
+        ],
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.kd2.fossil.opodsync.cloudronapp:202601161418330000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.kd2.fossil.opodsync.cloudronapp/versions/1.1.1/icon",
+    "featured": false,
+    "ranking": 0
+}

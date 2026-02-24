@@ -1,0 +1,63 @@
+{
+    "id": "org.weblate.cloudronapp",
+    "creationDate": "2026-01-14T20:35:07.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-09T19:00:18.000Z",
+    "publishedAt": "2020-11-09T19:00:18.000Z",
+    "manifest": {
+        "id": "org.weblate.cloudronapp",
+        "version": "1.36.1",
+        "upstreamVersion": "5.15.2",
+        "title": "Weblate",
+        "tagline": "Web-based continuous localization",
+        "website": "https://weblate.org",
+        "author": "Weblate developers",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "description": "### Description\n\nWeblate is a copylefted libre software web-based continuous localization system, used by over 1150 libre projects and companies in more than 115 countries.\nIt comes with tight version control integration.\nSimple and clean user interface, propagation of translations across components, quality checks and automatic linking to source files.\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n**Email**: admin@cloudron.local<br/>\n\n",
+        "changelog": "* Update weblate to 5.15.2\n* [Full Changelog](https://github.com/WeblateOrg/weblate/releases/tag/weblate-5.15.2)\n* Statistics generator is now triggered upon installation.\n* Screenshots updated from the repository have proper history.\n* reStructuredText syntax error now reports unintended list conversion.\n* Unchanged translation check ignores AsciiDoc source code blocks.\n* Information leak via screenshots (CVE 2026-21889 / GHSA-3g2f-4rjg-9385).\n* Explanation sync in TermBase eXchange format.\n* User interface fixes.\n* Clarified needs editing/checking/rewriting states.\n* Automatically translated flag with bulk approvals.\n* GitHub forks no longer trigger actions.\n",
+        "tags": [
+            "translation",
+            "localization",
+            "transifex",
+            "i18n",
+            "l10n"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.weblate.cloudronapp/weblate-01.png",
+            "https://screenshots.cloudron.io/org.weblate.cloudronapp/weblate-02.png"
+        ],
+        "healthCheckPath": "/healthz/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/accounts/complete/oidc/"
+            },
+            "postgresql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password and email"
+            }
+        },
+        "memoryLimit": 3758096384,
+        "documentationUrl": "https://docs.cloudron.io/packages/weblate",
+        "forumUrl": "https://forum.cloudron.io/category/106/weblate",
+        "minBoxVersion": "8.1.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.weblate.cloudronapp:202601142000250000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.weblate.cloudronapp/versions/1.36.1/icon",
+    "featured": false,
+    "ranking": 0
+}

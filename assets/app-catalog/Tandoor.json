@@ -1,0 +1,56 @@
+{
+    "id": "dev.tandoor.cloudronapp",
+    "creationDate": "2026-02-09T08:49:07.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-05-16T16:05:11.000Z",
+    "publishedAt": "2023-05-16T16:05:11.000Z",
+    "manifest": {
+        "id": "dev.tandoor.cloudronapp",
+        "title": "Tandoor",
+        "author": "https://tandoor.dev",
+        "description": "## Overview\n\nManage your ever growing recipe collection online. Drop your collection of links and notes.\n\nGet Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!\n\nThis application is meant for people with a collection of recipes they want to share with family and friends or simply store them in a nicely organized way. A basic permission system exists but this application is not meant to be run as a public page.\n\n## Core Features\n\n* Manage your recipes - Manage your ever growing recipe collection\n* Plan - multiple meals for each day\n* Shopping lists - via the meal plan or straight from recipes\n* Cookbooks - collect recipes into books\n* Share and collaborate on recipes with friends and family\n\n## All the must haves\n\n* Optimized for use on mobile devices\n* localized in many languages thanks to the awesome community\n* Import your collection from many other recipe managers\n* Many more like recipe scaling, image compression, printing views and supermarkets\n\n",
+        "tagline": "Recipe Management",
+        "version": "1.11.0",
+        "upstreamVersion": "1.5.34",
+        "memoryLimit": 1073741824,
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "oidc": {
+                "loginRedirectUri": "/accounts/oidc/cloudron/login/callback/"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://tandoor.dev",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "recipe",
+            "household",
+            "food",
+            "cooking",
+            "cookbook",
+            "meal-planner"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/dev.tandoor.cloudronapp/tandoor_00.png"
+        ],
+        "postInstallMessage": "On first visit, you can create a Tandoor superuser.\n",
+        "changelog": "* Update recipes to 2.5.0\n* [Full Changelog](https://github.com/TandoorRecipes/recipes/releases/tag/2.5.0)\n* added ability to subscribe to meal plan using ical [#1254](https://github.com/TandoorRecipes/recipes/issues/1254) (button in meal plan view, only visible on desktop for now)\n* added the ability to run tandoor in a container as a non root users (thanks to [@wilmardo](https://github.com/wilmardo) [#4042](https://github.com/TandoorRecipes/recipes/issues/4042))\n* added ability to hide login form trough environment variable (thanks to [@mattinx](https://github.com/mattinx) [#4352](https://github.com/TandoorRecipes/recipes/issues/4352))\n* added cooklang importer and docs for creating custom integrations (thanks to [@doylelew](https://github.com/doylelew) [#4304](https://github.com/TandoorRecipes/recipes/issues/4304))\n* added support (and enabled by default) to include child keywords/foods when searching (thanks to [@smilerz](https://github.com/smilerz) [#4345](https://github.com/TandoorRecipes/recipes/issues/4345))\n* improved Chowdown integration and added export (thanks to [@buergi](https://github.com/buergi) [#4344](https://github.com/TandoorRecipes/recipes/issues/4344))\n* improved import/export docs (thanks to [loucasal](https://github.com/loucasal) [#4399](https://github.com/TandoorRecipes/recipes/issues/4399))\n* improved error messages during default tandoor import (thanks to [buergi](https://github.com/buergi) [#4317](https://github.com/TandoorRecipes/recipes/issues/4317))\n* improved made the books view more intuitive (thanks to [racehd](https://github.com/racehd) [#4154](https://github.com/TandoorRecipes/recipes/issues/4154))\n* improved properly handle AI timeouts (thanks to [@smilerz](https://github.com/smilerz) [#4391](https://github.com/TandoorRecipes/recipes/issues/4391])\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/163/tandoor",
+        "documentationUrl": "https://docs.cloudron.io/packages/tandoor/",
+        "dockerImage": "cloudron/dev.tandoor.cloudronapp:202602090621360000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/dev.tandoor.cloudronapp/versions/1.11.0/icon",
+    "featured": false,
+    "ranking": 0
+}

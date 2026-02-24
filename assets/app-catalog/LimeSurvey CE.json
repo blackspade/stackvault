@@ -1,0 +1,64 @@
+{
+    "id": "org.limesurvey.cloudronapp",
+    "creationDate": "2026-02-09T16:08:01.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-04-14T22:48:20.000Z",
+    "publishedAt": "2020-04-14T22:48:20.000Z",
+    "manifest": {
+        "id": "org.limesurvey.cloudronapp",
+        "title": "LimeSurvey CE",
+        "author": "LimeSurvey developers",
+        "contactEmail": "support@cloudron.io",
+        "description": "### Overview\n\nLimeSurvey is the tool to use for your online surveys. Whether you are conducting simple\nquestionnaires with just a couple of questions or advanced assessments with conditionals\nand quota management, LimeSurvey has got you covered.\n\nLimeSurvey is 100% open source and will always be transparently developed.\nWe can help you reach your goals.\n\n### Features\n\n* Multilingual - Supporting more than 80 languages\n* Unlimited administrators - Give administrative access to colleagues or friends\n* 28 different question types - We have them all!\n* What you see is what you get - Simple editing of your HTML content\n* Quota management - Control your target group participation by quotas\n* Skip logic / branching - Set conditions for your questions based on previous answers\n* Reuse survey content - Copy questions, answers or complete surveys\n* Analyze your surveys easier - Use assessment scores to analyze survey site.\n* Invite and remind - Invite your participant using LimeSurvey\n* Anonymized responses - protected participants - Invite participants by email and anonymize their responses\n* Open and closed surveys - Create invite-only, open or public surveys\n* Design your survey appearance - Individual design of your survey\n* Offline functionality - Printable version and manual data entry\n* Visualize your response data - Create statistics and graphs inside the application\n* Export your responses - Export to all common formats and applications\n* Dynamic questions - Create questions based on previous answers\n\n",
+        "tagline": "Professional online surveys",
+        "tags": [
+            "survey",
+            "polls",
+            "surveymonkey",
+            "typeform",
+            "feedback",
+            "forms"
+        ],
+        "version": "1.55.5",
+        "upstreamVersion": "6.16.7+260205",
+        "healthCheckPath": "/",
+        "configurePath": "/admin/index.php",
+        "httpPort": 8000,
+        "manifestVersion": 2,
+        "website": "https://www.limesurvey.org",
+        "icon": "file://logo.png",
+        "changelog": "* Update LimeSurvey to 6.16.7+260205\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\nThe admin panel is available at `/admin/index.php`.\n",
+        "optionalSso": true,
+        "addons": {
+            "mysql": [],
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": true,
+                "optional": true
+            },
+            "ldap": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.limesurvey.cloudronapp/img_01.png",
+            "https://screenshots.cloudron.io/org.limesurvey.cloudronapp/img_02.png",
+            "https://screenshots.cloudron.io/org.limesurvey.cloudronapp/img_03.png",
+            "https://screenshots.cloudron.io/org.limesurvey.cloudronapp/img_04.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/71/limesurvey",
+        "documentationUrl": "https://docs.cloudron.io/packages/limesurvey/",
+        "dockerImage": "cloudron/org.limesurvey.cloudronapp:202602091552060000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.limesurvey.cloudronapp/versions/1.55.5/icon",
+    "featured": false,
+    "ranking": 0
+}

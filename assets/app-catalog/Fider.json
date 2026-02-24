@@ -1,0 +1,63 @@
+{
+    "id": "io.fider.cloudronapp",
+    "creationDate": "2025-12-07T11:18:09.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-06-18T14:07:47.000Z",
+    "publishedAt": "2025-06-18T14:07:47.000Z",
+    "manifest": {
+        "id": "io.fider.cloudronapp",
+        "title": "Fider",
+        "tagline": "Feature voting tool",
+        "version": "1.5.0",
+        "upstreamVersion": "0.32.0",
+        "description": "## About\n\nFider is a feedback portal for feature requests and suggestions.\n\nGive your customers a voice and let them tell you what they need. Spend less time guessing and more time building the right product.\n\nIf you do self-host and enjoy Fider, please [let us know where you're using it](https://github.com/getfider/fider/issues/899) - we really appreciate it\n\n## Features\n\n* Share ideas, vote and discuss - Give voice to your community, get valuable suggestions and prioritize what they need the most.\n* Keep everyone informed -  Whenever you start, complete or decline a suggestion, Fider will notify everyone that subscribed to that topic.\n* One click sign in - Visitors are only one click away from contributing! Sign in via Facebook, Google, GitHub, Azure AD, Twitch, Discord or any other OAuth2 provider.\n* Private Site - You can choose to control access to your site by making it Private.\n* Your Brand - Use custom CSS feature to style Fider the way you want. Your logo, your colors, your identity.\n* Public API - Leverage our complete API and have total control to integrate Fider into your process.\n* Integrations - Fider can integrate with any system that supports Webhook, such as Slack and Discord.\n* Multi-language - We speak your language! Fider is translated in 10+ languages, such as English, Spanish, German, French and Portuguese!\n* Organize your content - Tag your content to make it easier to find, group and decide. Tags can be either Public or Private.\n* Markdown - Style your text with the popular Markdown markup language.\n* Your own domain - When using our hosted service, you can use your own domain and get a free TLS certificate to keep it secure.\n* Open Source - Fider is 100% Open Source.\n\n",
+        "author": "Guilherme Oenning & Matt Roberts",
+        "website": "https://fider.io",
+        "healthCheckPath": "/",
+        "icon": "logo.png",
+        "httpPort": 3000,
+        "memoryLimit": 1073741824,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false,
+                "requiresValidCertificate": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/oauth/cloudron/callback"
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, set up an admin user."
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.fider.cloudronapp/homepage.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/209/fider",
+        "documentationUrl": "https://docs.cloudron.io/packages/fider",
+        "manifestVersion": 2,
+        "optionalSso": true,
+        "contactEmail": "support@cloudron.io",
+        "postInstallMessage": "<sso>\nBy default, Cloudron users have regular users permissions. The user permissions can be changed on the members management page.\n</sso>\n",
+        "changelog": "* Update fider to 0.32.0\n* [Full Changelog](https://github.com/getfider/fider/releases/tag/v0.32.0)\n* There were some issues with the \"raw markdown mode\" editor where markdown formatting wasn't always persisting properly between HTML and raw view. Switching to use a textarea for the raw markdown mode fixed these issues, and meant that the code was simpler since we had less kludging to do. That fixes many little issues, including [#1401](https://github.com/getfider/fider/issues/1401)\n* Also sorted [#1402](https://github.com/getfider/fider/issues/1402), and implemented some security improvements too (CWE-22 Path Traversal vulnerability).\n",
+        "minBoxVersion": "9.0.0",
+        "tags": [
+            "feedback",
+            "portal",
+            "feature requests",
+            "UserVoice",
+            "UserResponse",
+            "canny"
+        ],
+        "dockerImage": "cloudron/io.fider.cloudronapp:202512071058050000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.fider.cloudronapp/versions/1.5.0/icon",
+    "featured": false,
+    "ranking": 0
+}

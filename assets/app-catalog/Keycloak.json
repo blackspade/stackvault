@@ -1,0 +1,67 @@
+{
+    "id": "org.keycloak.cloudronapp",
+    "creationDate": "2026-02-11T10:05:37.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-01-30T17:24:09.000Z",
+    "publishedAt": "2025-01-30T17:24:09.000Z",
+    "manifest": {
+        "id": "org.keycloak.cloudronapp",
+        "title": "Keycloak",
+        "author": "Keycloak Authors",
+        "description": "## About\n\nOpen Source Identity and Access Management. Add authentication to applications and secure services with minimum effort. No need to deal with storing users or authenticating users.\n\nKeycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.\n\n## Features\n\n* Single-Sign On - Users authenticate with Keycloak rather than individual applications. This means that your applications don't have to deal with login forms, authenticating users, and storing users. Once logged-in to Keycloak, users don't have to login again to access a different application.\n\n* Single-Sign On - Users authenticate with Keycloak rather than individual applications. This means that your applications don't have to deal with login forms, authenticating users, and storing users. Once logged-in to Keycloak, users don't have to login again to access a different application.\n\n* User Federation - Keycloak has built-in support to connect to existing LDAP or Active Directory servers. You can also implement your own provider if you have users in other stores, such as a relational database.\n\n* Standard Protocols - Keycloak is based on standard protocols and provides support for OpenID Connect, OAuth 2.0, and SAML.\n",
+        "changelog": "* Update keycloak to 26.5.3\n* [Full Changelog](https://github.com/keycloak/keycloak/releases/tag/26.5.3)\n* [46144](https://github.com/keycloak/keycloak/issues/46144) CVE-2026-1609 Disabled users can still obtain tokens via JWT Authorization Grant \n* [46145](https://github.com/keycloak/keycloak/issues/46145) CVE-2026-1529 Forged invitation JWT enables cross-organization self-registration \n* [46146](https://github.com/keycloak/keycloak/issues/46146) CVE-2026-1486 Logic Bypass in JWT Authorization Grant Allows Authentication via Disabled Identity Providers \n* [46147](https://github.com/keycloak/keycloak/issues/46147) CVE-2025-14778 Incorrect ownership checks in /uma-policy/ \n* [45892](https://github.com/keycloak/keycloak/issues/45892) Upgrade minikube for CI tests `operator`\n* [44379](https://github.com/keycloak/keycloak/issues/44379) Node.js admin client does not refresh tokens `admin/client-js`\n* [45459](https://github.com/keycloak/keycloak/issues/45459) k8s multiple restart (oomkilled) in v26.5.0-0 during startup because of RAM `dist/quarkus`\n* [45662](https://github.com/keycloak/keycloak/issues/45662) Increase in startup memory consumption in post 26.5 versions `dist/quarkus`\n* [45677](https://github.com/keycloak/keycloak/issues/45677) Hibernate Validator is enabled by default when not used `dist/quarkus`\n* [45708](https://github.com/keycloak/keycloak/issues/45708) Unpexted value '' in mixed-cluster-compatibility-tests `testsuite`\n",
+        "contactEmail": "support@keycloak.org",
+        "tagline": "Open Source Identity and Access Management",
+        "upstreamVersion": "26.5.3",
+        "version": "1.5.3",
+        "healthCheckPath": "/",
+        "httpPort": 8080,
+        "memoryLimit": 1073741824,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/realms/master/broker/cloudron/endpoint"
+            },
+            "ldap": []
+        },
+        "checklist": {
+            "create-permanent-admin": {
+                "message": "Create a permanent admin user and delete the temporary admin"
+            }
+        },
+        "icon": "file://logo.png",
+        "tags": [
+            "auth",
+            "sso",
+            "openid",
+            "oidc",
+            "SAML"
+        ],
+        "runtimeDirs": [
+            "/app/code/lib/quarkus/"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.keycloak.cloudronapp/screen-account.png",
+            "https://screenshots.cloudron.io/org.keycloak.cloudronapp/screen-admin.png",
+            "https://screenshots.cloudron.io/org.keycloak.cloudronapp/screen-login.png"
+        ],
+        "optionalSso": true,
+        "postInstallMessage": "Initial temporary admin account credentials:\n\n**Username**: tempadmin<br/>\n**Password**: changeme<br/>\n\n",
+        "forumUrl": "https://forum.cloudron.io/category/203/keycloak",
+        "documentationUrl": "https://docs.cloudron.io/packages/keycloak",
+        "manifestVersion": 2,
+        "minBoxVersion": "8.1.0",
+        "website": "https://keycloak.org",
+        "dockerImage": "cloudron/org.keycloak.cloudronapp:202602101537360000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.keycloak.cloudronapp/versions/1.5.3/icon",
+    "featured": false,
+    "ranking": 0
+}

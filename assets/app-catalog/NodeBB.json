@@ -1,0 +1,66 @@
+{
+    "id": "org.nodebb.cloudronapp",
+    "creationDate": "2026-01-28T17:08:39.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-07-19T09:28:51.000Z",
+    "publishedAt": "2016-07-19T09:28:51.000Z",
+    "manifest": {
+        "id": "org.nodebb.cloudronapp",
+        "title": "NodeBB",
+        "author": "NodeBB Team",
+        "description": "### Overview\n\nA community forum allows you to engage and retain customers, keeping them interested\nand up-to-date with your latest product or service.\n\nNodeBB integrates into your existing website and social media networks, allowing you\nto maximize your outreach and establish close relationships with your users.\n\n### Features\n\n* Mobile Responsive\n* Internationalization\n* SEO\n* Social Integration\n* Real-time streaming\n* Analytics\n",
+        "tagline": "Next generation forum software",
+        "version": "2.24.1",
+        "upstreamVersion": "4.8.1",
+        "healthCheckPath": "/ping",
+        "httpPort": 4567,
+        "addons": {
+            "localstorage": [],
+            "mongodb": [],
+            "sendmail": {
+                "supportsDisplayName": true,
+                "optional": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password and email"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://nodebb.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "runtimeDirs": [
+            "/app/code/node_modules",
+            "/app/code/build"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.nodebb.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.nodebb.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.nodebb.cloudronapp/3.png"
+        ],
+        "memoryLimit": 1073741824,
+        "changelog": "* Update NodeBB to 4.8.1\n* [Full Changelog](https://github.com/NodeBB/NodeBB/releases/tag/v4.8.1)\n* upgrade script to handle topics that were already pruned ([`03b7374`](https://github.com/NodeBB/NodeBB/commit/03b7374c))\n* closes [#&#8203;13899](https://github.com/NodeBB/NodeBB/issues/13899) ([`f98de3e`](https://github.com/NodeBB/NodeBB/commit/f98de3e9))\n* [#&#8203;10682](https://github.com/NodeBB/NodeBB/issues/10682), fix all the other rss routes as well ([`385a4d0`](https://github.com/NodeBB/NodeBB/commit/385a4d03))\n* protocol ([`da5605e`](https://github.com/NodeBB/NodeBB/commit/da5605e0))\n* closes [#&#8203;12986](https://github.com/NodeBB/NodeBB/issues/12986) ([`310e90c`](https://github.com/NodeBB/NodeBB/commit/310e90c7))\n* [#&#8203;13919](https://github.com/NodeBB/NodeBB/issues/13919) ([`b2c6fbe`](https://github.com/NodeBB/NodeBB/commit/b2c6fbed))\n* use min ([`090b9f5`](https://github.com/NodeBB/NodeBB/commit/090b9f55))\n* [#&#8203;13918](https://github.com/NodeBB/NodeBB/issues/13918), make arrayLimit configurable increase default to 50 ([`d25e772`](https://github.com/NodeBB/NodeBB/commit/d25e7726))\n* closes [#&#8203;13258](https://github.com/NodeBB/NodeBB/issues/13258), dont mark digest as delivered if it fails ([`f29c9f0`](https://github.com/NodeBB/NodeBB/commit/f29c9f06))\n* wrap fields in quotes in user csv export ([`1b08aef`](https://github.com/NodeBB/NodeBB/commit/1b08aef2))\n",
+        "tags": [
+            "forum",
+            "collaboration",
+            "community",
+            "discourse",
+            "bb",
+            "phpbb",
+            "vanilla"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/18/nodebb",
+        "documentationUrl": "https://docs.cloudron.io/packages/nodebb/",
+        "dockerImage": "cloudron/org.nodebb.cloudronapp:202601281625570000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.nodebb.cloudronapp/versions/2.24.1/icon",
+    "featured": true,
+    "ranking": 0
+}

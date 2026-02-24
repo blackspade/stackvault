@@ -1,0 +1,64 @@
+{
+    "id": "io.leantime.cloudronapp",
+    "creationDate": "2026-02-02T14:45:36.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-07-24T16:27:48.000Z",
+    "publishedAt": "2023-07-24T16:27:48.000Z",
+    "manifest": {
+        "id": "io.leantime.cloudronapp",
+        "title": "Leantime",
+        "author": "Leantime Developers",
+        "description": "### Overview\n\nLeantime is a strategic open source project management system for innovative companies and teams looking to go from start to finish.\nBuilt for the non-project manager, we combine the plans and the work while making it easy for everyone on the team to use.\nIt's an alternative to ClickUp, Notion, and Asana. As simple as Trello but as feature rich as Jira.\n",
+        "changelog": "* Update leantime to 3.6.2\n* [Full Changelog](https://github.com/Leantime/leantime/releases/tag/v3.6.2)\n* Fix timer not starting after v3.6.0 update by [@gloriafolaron](https://github.com/gloriafolaron) in [#3215](https://github.com/Leantime/leantime/pull/3215)  \n* fix(db): Fix zp_entity_relationship table migration issues by [@gloriafolaron](https://github.com/gloriafolaron) in [#3221](https://github.com/Leantime/leantime/pull/3221)  \n* **Timer Not Starting** - Fixed an issue where the stopwatch/timer feature stopped working after the 3.6.0 update ([#3208](https://github.com/Leantime/leantime/issues/3208))  \n* **Database Migration Fix** - Added migration to fix entity relationship table issues that caused dashboard and ticket errors ([#3221](https://github.com/Leantime/leantime/issues/3221))\n",
+        "tagline": "Project management system",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: changeme<br/>\n",
+        "version": "1.11.1",
+        "upstreamVersion": "3.6.2",
+        "minBoxVersion": "8.0.0",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "memoryLimit": 536870912,
+        "httpPort": 8080,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/oidc/callback"
+            },
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "optionalSso": true,
+        "runtimeDirs": [
+            "/app/code/storage",
+            "/app/code/bootstrap/cache"
+        ],
+        "manifestVersion": 2,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.leantime.cloudronapp/leantime_01.png"
+        ],
+        "website": "https://leantime.io",
+        "forumUrl": "https://forum.cloudron.io/category/171/leantime",
+        "documentationUrl": "https://docs.cloudron.io/packages/leantime/",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "project",
+            "management",
+            "asana",
+            "notion"
+        ],
+        "dockerImage": "cloudron/io.leantime.cloudronapp:202602020849230000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.leantime.cloudronapp/versions/1.11.1/icon",
+    "featured": false,
+    "ranking": 0
+}

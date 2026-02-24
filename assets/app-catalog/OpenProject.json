@@ -1,0 +1,71 @@
+{
+    "id": "org.openproject.cloudronapp",
+    "creationDate": "2026-02-06T12:27:24.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-08-17T09:33:01.000Z",
+    "publishedAt": "2016-08-17T09:33:01.000Z",
+    "manifest": {
+        "id": "org.openproject.cloudronapp",
+        "title": "OpenProject",
+        "author": "OpenProject Developers",
+        "description": "OpenProject is a sophisticated project management application. Get your projects done with a multitude of features to support your teams.\n\n## Features\n\n### Work packages\n\n* Organize your projects’ requirements, tasks, bugs, risks and much more\n* Assign responsibilities, keep track of due dates, see the change history\n* Configure your individual workflows\n\n### Timelines\n\n* Easily track your project phases and milestones\n* Have customized timelines tailored to your needs\n* Easily track changes and dependencies\n\n### Agile and Scrum\n\n* Manage your Agile teams with digital backlogs\n* Support your Daily meetings with an online task board\n* See the sprint progress in a burndown chart\n\n### Wiki\n\n* Document and share project information in a wiki\n* Embed attachments, such as images, and timeline reports\n* See the change history\n\n### Time and costs\n\n* Create and monitor your project budgets\n* Log time or units spent to work packages\n* Generate aggregated cost reports\n\n### More project collaboration software features\n\n* Share documents with integrated version control\n* Manage meetings with agendas and minutes\n* Communicate news within your projects\n* Discuss topics in project boards\n",
+        "changelog": "* Update openproject to 17.0.3\n* [Full Changelog](https://www.openproject.org/docs/release-notes/17-0-3/)\n* GHSA-q523-c695-h3hp - Stored HTML injection on time tracking\n* GHSA-x37c-hcg5-r5m7 - Command Injection on OpenProject repositories leads to Remote Code Execution\n* Bugfix: Unable to change to earlier finish date for automatically scheduled successor [[#65130](https://community.openproject.org/wp/65130)]\n* Bugfix: DPA/AVV cannot be downloaded [[#67323](https://community.openproject.org/wp/67323)]\n* Bugfix: hocupocus logs [onAuthenticate] fetch failed and connection to collaboration server not possible [[#70542](https://community.openproject.org/wp/70542)]\n* Bugfix: Wrong sidebar sort order in System Admin Guide -> Authentication [[#70914](https://community.openproject.org/wp/70914)]\n* Bugfix: \"form\\_configuration-status=422\" Unable to Change Custom fields in Work Packages without Enterprise Plan [[#71093](https://community.openproject.org/wp/71093)]\n",
+        "tagline": "Project management",
+        "version": "3.45.3",
+        "upstreamVersion": "17.0.3",
+        "healthCheckPath": "/health_checks/all",
+        "memoryLimit": 1572864000,
+        "httpPort": 8080,
+        "optionalSso": true,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "ldap": []
+        },
+        "manifestVersion": 2,
+        "website": "https://www.openproject.org/",
+        "documentationUrl": "https://docs.cloudron.io/packages/openproject/",
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/31/openproject",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "project",
+            "management",
+            "gantt",
+            "timeline",
+            "scrum",
+            "agile",
+            "kanban",
+            "trello",
+            "asana"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_1.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_2.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_3.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_4.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_5.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_6.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_7.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_8.png",
+            "https://screenshots.cloudron.io/org.openproject.cloudronapp/thumbnail_9.png"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin<br/>\n**Password**: admin<br/>\n",
+        "dockerImage": "cloudron/org.openproject.cloudronapp:202602061130200000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.openproject.cloudronapp/versions/3.45.3/icon",
+    "featured": false,
+    "ranking": 0
+}

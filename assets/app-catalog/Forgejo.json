@@ -1,0 +1,72 @@
+{
+    "id": "org.forgejo.cloudron",
+    "creationDate": "2026-02-05T17:48:11.000Z",
+    "publishState": "approved",
+    "userId": "bfa555ee-8db7-4027-94f6-7409feafd4cb",
+    "visibility": "listed",
+    "releaseState": "unstable",
+    "ts": "2026-01-26T14:41:36.000Z",
+    "publishedAt": "2026-01-26T14:41:36.000Z",
+    "manifest": {
+        "id": "org.forgejo.cloudron",
+        "title": "Forgejo",
+        "author": "Forgejo Community",
+        "description": "Forgejo is a self-hosted lightweight software forge. It provides a collaborative platform for software development, including source code management, issue tracking, and more.\n",
+        "tagline": "Beyond coding. We forge.",
+        "version": "0.5.0",
+        "upstreamVersion": "14.0.2",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/user/oauth2/cloudron/callback"
+            }
+        },
+        "tcpPorts": {
+            "SSH_PORT": {
+                "title": "SSH Port",
+                "description": "SSH Port over which repos can be pushed & pulled",
+                "defaultValue": 29418,
+                "enabledByDefault": true
+            }
+        },
+        "manifestVersion": 2,
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: root<br/>\n**Password**: changeme<br/>\n\n",
+        "changelog": "* basic tests implemented\n",
+        "website": "https://forgejo.org",
+        "contactEmail": "support@appx.uk",
+        "icon": "file://logo.png",
+        "tags": [
+            "git",
+            "dev",
+            "scm"
+        ],
+        "minBoxVersion": "9.0.0",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.forgejo.cloudron/dark_mode.png",
+            "https://screenshots.cloudron.io/org.forgejo.cloudron/project.webp",
+            "https://screenshots.cloudron.io/org.forgejo.cloudron/contributors.webp"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            },
+            "disable-registration": {
+                "message": "[Disable registration](https://docs.cloudron.io/packages/forgejo/#disable-registration), if required, to prevent misuse"
+            }
+        },
+        "optionalSso": true,
+        "forumUrl": "https://forum.cloudron.io/category/216/forgejo",
+        "documentationUrl": "https://docs.cloudron.io/packages/forgejo/",
+        "dockerImage": "cloudron/org.forgejo.cloudron:202602051211480000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.forgejo.cloudron/versions/0.5.0/icon",
+    "featured": false,
+    "ranking": 0
+}

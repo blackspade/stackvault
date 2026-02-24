@@ -1,0 +1,48 @@
+# ──────────────────────────────────────────────
+#  StackVault — .gitignore
+# ──────────────────────────────────────────────
+
+# Environment & secrets — NEVER commit
+.env
+
+# Runtime storage — generated at runtime, not committed
+storage/logs/*
+storage/sessions/*
+storage/cache/*
+storage/client_files/*
+
+# storage/app_data is now empty (catalog moved to assets/app-catalog/)
+storage/app_data/*
+
+# Keep directory structure intact via placeholder files
+!storage/logs/.gitkeep
+!storage/sessions/.gitkeep
+!storage/cache/.gitkeep
+!storage/app_data/.gitkeep
+!storage/client_files/.gitkeep
+!storage/client_files/.htaccess
+
+# App catalog (static data — always committed)
+# assets/app-catalog/ is NOT excluded — it contains the JSON manifests and icons
+
+# Dev-only files — not for distribution
+DEV_STATE.txt
+errors.txt
+notes/
+
+# Vendor (if Composer is added later)
+vendor/
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# PHP logs
+*.log

@@ -1,0 +1,54 @@
+{
+    "id": "com.formbricks.cloudronapp",
+    "creationDate": "2025-03-18T21:11:51.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.formbricks.cloudronapp",
+        "title": "Formbricks",
+        "version": "1.6.0",
+        "upstreamVersion": "3.5.0",
+        "author": "Formbricks",
+        "description": "### About\n\nFormbricks provides a free and open source surveying platform. Gather feedback at every point in the user journey with beautiful in-app, website, link and email surveys. Build on top of Formbricks or leverage prebuilt data analysis capabilities.\n\n### Features\n\n* Create conversion-optimized surveys with our no-code editor with several question types.\n* Choose from a variety of best-practice templates.\n* Launch and target your surveys to specific user groups without changing your application code.\n* Create shareable link surveys.\n* Invite your organization members to collaborate on your surveys.\n* Integrate Formbricks with Slack, Notion, Zapier, n8n and more.\n",
+        "changelog": "* Update formbricks to 3.5.0\n* [Full Changelog](https://github.com/formbricks/formbricks/releases/tag/v3.5.0)\n* fix: Android build fixes by [@&#8203;vaxi87](https://github.com/vaxi87) in https://github.com/formbricks/formbricks/pull/4984\n* feat: add custom TTL for cache records by [@&#8203;victorvhs017](https://github.com/victorvhs017) in https://github.com/formbricks/formbricks/pull/4912\n* feat: added qr code feature by [@&#8203;Paribesh01](https://github.com/Paribesh01) in https://github.com/formbricks/formbricks/pull/4951\n* fix(helm-chart): missing envFrom when using secret.enabled by [@&#8203;d3vb0ox](https://github.com/d3vb0ox) in https://github.com/formbricks/formbricks/pull/4992\n* fix: handling invalid csv files by [@&#8203;pandeymangg](https://github.com/pandeymangg) in https://github.com/formbricks/formbricks/pull/4991\n",
+        "tagline": "Experience Management suite",
+        "checklist": {
+            "create-admin": {
+                "sso": false,
+                "message": "Register a first user to create an admin account"
+            }
+        },
+        "minBoxVersion": "8.2.0",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "runtimeDirs": [
+            "/app/code/apps/web/.next",
+            "/app/code/apps/web/public"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.formbricks.cloudronapp/formbricks_00.png"
+        ],
+        "manifestVersion": 2,
+        "optionalSso": true,
+        "website": "https://formbricks.com",
+        "forumUrl": "https://forum.cloudron.io/category/202/formbricks",
+        "documentationUrl": "https://docs.cloudron.io/apps/formbricks/",
+        "memoryLimit": 536870912,
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "survey",
+            "qualtrics"
+        ],
+        "dockerImage": "cloudron/com.formbricks.cloudronapp:202503182038260000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.formbricks.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

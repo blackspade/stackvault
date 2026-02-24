@@ -1,0 +1,61 @@
+{
+    "id": "org.apache.answer.cloudronapp",
+    "creationDate": "2026-02-04T07:28:42.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-05-02T16:43:11.000Z",
+    "publishedAt": "2024-05-02T16:43:11.000Z",
+    "manifest": {
+        "id": "org.apache.answer.cloudronapp",
+        "title": "Apache Answer",
+        "tagline": "a community between your users and your team",
+        "author": "Apache Software Foundation",
+        "description": "### Overview\n\nA Q&A platform software for teams at any scales. Whether it’s a community forum, help center, or knowledge management platform, you can always count on Answer.\n\n### Features\n\n* Q&A Platform - Help members with questions and boost community participation. Your experts are happy to contribute, verify, upvote correct info. Your info keeping up-to-date and trusted.\n* Organized - Use tags to organize questions and help contents into categories. They make knowledge easy to find for others. Use the search to quickly find the answer.\n* Integrations - Configure your community with plugins and your favorite services. So that you can improve your workflow, grow your community, or make your other tools better.\n* Gamification - We’ve gamified the Q&A platform with reputation and badges. So the community members and teams have fun collaborating and getting work done.\n\n",
+        "version": "1.7.0",
+        "upstreamVersion": "2.0.0",
+        "website": "https://answer.apache.org",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* Update answer to 2.0.0\n* [Full Changelog](https://github.com/apache/incubator-answer/releases/tag/v2.0.0)\n* New: AI Assistant feature ([@&#8203;shuashuai](https://github.com/shuashuai) [@&#8203;LinkinStars](https://github.com/LinkinStars) [#&#8203;1479](https://github.com/apache/answer/issues/1479))\n* New: MCP server feature ([@&#8203;LinkinStars](https://github.com/LinkinStars) [@&#8203;shuashuai](https://github.com/shuashuai) [#&#8203;1480](https://github.com/apache/answer/issues/1480))\n* New: API Keys feature ([@&#8203;LinkinStars](https://github.com/LinkinStars) [@&#8203;shuashuai](https://github.com/shuashuai) [#&#8203;1482](https://github.com/apache/answer/issues/1482))\n* New: Editor plugin support ([@&#8203;robinv8](https://github.com/robinv8) [#&#8203;1481](https://github.com/apache/answer/issues/1481))\n* Fixed: Add user in the Admin, no result prompt after submission ([@&#8203;bimakw](https://github.com/bimakw) [#&#8203;1457](https://github.com/apache/answer/issues/1457))\n* Fixed: Fix/external id notification ([@&#8203;IfDougelseSa](https://github.com/IfDougelseSa) [#&#8203;1465](https://github.com/apache/answer/issues/1465))\n* Fixed: fix: expand avatar column length from 1024 to 2048 ([@&#8203;csouls](https://github.com/csouls) [#&#8203;1463](https://github.com/apache/answer/issues/1463))\n* Fixed: When the input type of SchemeForm is a number, the default value of 0 is not displayed.[@&#8203;shuashuai](https://github.com/shuashuai)\n",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "tags": [
+            "Q&A platform",
+            "community",
+            "forum",
+            "stackoverflow"
+        ],
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "redis": [],
+            "oidc": {
+                "loginRedirectUri": "/answer/api/v1/connector/redirect/basic"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "memoryLimit": 268435456,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.apache.answer.cloudronapp/screenshot.png"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Email**: admin@cloudron.local<br/>\n**Password**: changeme123<br/>\n\n<sso>\nBy default, Cloudron users have `User` role. The user role can be changed on the users management page.\n</sso>\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/188/apache-answer",
+        "documentationUrl": "https://docs.cloudron.io/packages/apache-answer",
+        "optionalSso": true,
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.apache.answer.cloudronapp:202602040420420000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.apache.answer.cloudronapp/versions/1.7.0/icon",
+    "featured": false,
+    "ranking": 0
+}

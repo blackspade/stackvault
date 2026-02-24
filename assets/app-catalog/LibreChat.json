@@ -1,0 +1,66 @@
+{
+    "id": "ai.librechat.cloudronapp",
+    "creationDate": "2026-01-29T10:24:02.000Z",
+    "publishState": "approved",
+    "userId": "cd00534b-edca-4ea1-a88b-ee99603a4282",
+    "visibility": "listed",
+    "releaseState": "unstable",
+    "ts": "2025-07-03T16:28:54.000Z",
+    "publishedAt": "2025-07-03T16:28:54.000Z",
+    "manifest": {
+        "id": "ai.librechat.cloudronapp",
+        "version": "1.1.1",
+        "title": "LibreChat",
+        "upstreamVersion": "0.8.2",
+        "author": "Danny Avila",
+        "description": "LibreChat is an open-source chatbot client that supports multiple AI providers and models including:\n\n- OpenAI GPT Models\n- Anthropic Claude Models\n- Google PaLM Models\n- Various open-source local models\n\nFeatures:\n- Switch between various AI models\n- Conversation history\n- Plugins support\n- File upload and processing\n- Custom instructions\n- Multiple conversation modes\n\n",
+        "changelog": "* Update LibreChat to 0.8.2\n* [Full Changelog](https://github.com/danny-avila/LibreChat/releases/tag/v0.8.2)\n* Cross-replica support for resumable streams in Redis mode, enabling seamless horizontal scaling for production deployments.\n* Add, configure, and share MCP servers directly from the UI with full access control. Includes API key authentication support, domain restrictions for remote transports, and improved OAuth handling.\n* Pin frequently used agents and models to the sidebar for quick access.\n* Render Mermaid diagrams inline within chat messages with enhanced UX and focus rendering.\n* Extensive improvements to meet WCAG standards with better screen reader support, keyboard navigation, focus management, and contrast ratios across the entire application.\n* Moonshot Kimi K2 Bedrock support\n* Anthropic Beta support for Bedrock\n* Anthropic Vertex AI support\n* Gemini Image Generation Tool (Nano Banana)\n* Bedrock Guardrails support\n",
+        "tagline": "ChatGPT-like interface with model switching",
+        "website": "https://github.com/danny-avila/LibreChat",
+        "documentationUrl": "https://docs.cloudron.io/packages/librechat/",
+        "forumUrl": "https://forum.cloudron.io/category/210/librechat",
+        "contactEmail": "support@cloudron.io",
+        "healthCheckPath": "/health",
+        "httpPort": 3080,
+        "addons": {
+            "postgresql": [],
+            "mongodb": [],
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/oauth/openid/callback"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On the first visit, register yourself as an admin user"
+            },
+            "disable-registration": {
+                "message": "Disable registration, if required, to prevent misuse"
+            },
+            "set-api-keys": {
+                "message": "Set API keys in /app/data/env file and restart the app"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "memoryLimit": 1073741824,
+        "minBoxVersion": "8.1.0",
+        "tags": [
+            "ai",
+            "chat",
+            "gpt"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/ai.librechat.cloudronapp/librechat-00.png",
+            "https://screenshots.cloudron.io/ai.librechat.cloudronapp/librechat-01.png"
+        ],
+        "icon": "file://logo.png",
+        "dockerImage": "cloudron/ai.librechat.cloudronapp:202601290734220000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/ai.librechat.cloudronapp/versions/1.1.1/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,48 @@
+{
+    "id": "org.radicale.cloudronapp2",
+    "creationDate": "2026-01-11T16:01:56.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-09-10T15:41:56.000Z",
+    "publishedAt": "2017-09-10T15:41:56.000Z",
+    "manifest": {
+        "id": "org.radicale.cloudronapp2",
+        "title": "Radicale",
+        "author": "Radicale Developers",
+        "description": "### About\n\nThe Radicale Project is a CalDAV (calendar) and CardDAV (contact) server solution.\n\nCalendars and address books can be viewed, edited and synced by calendar and contact clients on mobile phones or computers.\n\nOfficially supported clients are listed [here](https://radicale.org/v3.html#supported-clients), other DAV compatible clients may work as well.\n\n",
+        "tagline": "A Calendar and Contact Server",
+        "version": "2.11.0",
+        "upstreamVersion": "3.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 5232,
+        "manifestVersion": 2,
+        "website": "http://radicale.org/",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* chore(deps): update dependency radicale to v3.6.0\n",
+        "icon": "logo.png",
+        "tags": [
+            "caldav",
+            "carddav",
+            "contacts",
+            "calendar",
+            "sync"
+        ],
+        "addons": {
+            "localstorage": [],
+            "ldap": []
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.radicale.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.radicale.cloudronapp/2.png"
+        ],
+        "minBoxVersion": "7.1.2",
+        "documentationUrl": "https://docs.cloudron.io/packages/radicale/",
+        "forumUrl": "https://forum.cloudron.io/category/76/radicale",
+        "dockerImage": "cloudron/org.radicale.cloudronapp2:202601110120240000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.radicale.cloudronapp2/versions/2.11.0/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,53 @@
+{
+    "id": "io.invidious.cloudronapp",
+    "creationDate": "2026-02-08T16:48:16.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-11-08T12:57:25.000Z",
+    "publishedAt": "2023-11-08T12:57:25.000Z",
+    "manifest": {
+        "id": "io.invidious.cloudronapp",
+        "title": "Invidious",
+        "tagline": "An alternative front-end to YouTube",
+        "author": "Invidious team",
+        "description": "## About\n\nAn open source alternative front-end to YouTube\n\n## Features\n\n* Lightweight\n* No ads\n* No tracking\n* No JavaScript required\n* Light/Dark themes\n* Customizable homepage\n* Subscriptions independent from Google\n* Notifications for all subscribed channels\n* Audio-only mode (with background play on mobile)\n* Support for Reddit comments\n* Available in many languages, thanks to our translators\n* Import subscriptions from YouTube, NewPipe and Freetube\n* Import watch history from YouTube and NewPipe\n* Export subscriptions to NewPipe and Freetube\n* Import/Export Invidious user data\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\nIf it stops showing and playing videos you should delete `/app/data/.youtube-trusted-session-generator` file and restart the app.\n",
+        "version": "1.12.0",
+        "upstreamVersion": "v2.20260207.0",
+        "tags": [
+            "youtube",
+            "privacy"
+        ],
+        "website": "https://invidious.io",
+        "documentationUrl": "https://docs.cloudron.io/packages/invidious",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* Update invidious to v2.20260207.0\n* [Full Changelog](https://github.com/iv-org/invidious/releases/tag/v2.20260207.0)\n* Livestream experiences are restored: Trending shows livestreams again, the gaming feed remains accessible, and \"Watch on YouTube\" links stop carrying stale timestamps ([#5480](https://github.com/iv-org/invidious/issues/5480), [#5555](https://github.com/iv-org/invidious/issues/5555), [#5481](https://github.com/iv-org/invidious/issues/5481))\n* Channel and playlist metadata is richer thanks to pronoun support, topic playlist thumbnails, and accurate related video counts ([#5617](https://github.com/iv-org/invidious/issues/5617), [#5616](https://github.com/iv-org/invidious/issues/5616), [#5446](https://github.com/iv-org/invidious/issues/5446))\n* Downloads get smoother because download actions are URL-safe and downloads can flow through Invidious companion when available ([#5367](https://github.com/iv-org/invidious/issues/5367), [#5561](https://github.com/iv-org/invidious/issues/5561))\n* Users see clearer feedback with Erroneous CAPTCHA messages, DMCA controls restored, and a footer link pointing at the current release ([#5508](https://github.com/iv-org/invidious/issues/5508), [#5228](https://github.com/iv-org/invidious/issues/5228), [#4702](https://github.com/iv-org/invidious/issues/4702))\n* Companion integration is sturdier: CSP is generated once, check identifiers persist, and the helper hyperlink is fixed ([#5497](https://github.com/iv-org/invidious/issues/5497), [#5575](https://github.com/iv-org/invidious/issues/5575), [#5491](https://github.com/iv-org/invidious/issues/5491))\n* Proxied images and videoplayback strip unwanted response headers (shared header-strip list) ([#5595](https://github.com/iv-org/invidious/issues/5595))\n* Runtime and packaging updates pin docker/OCI builds to Crystal 1.16.3, bring an optional Crystal 1.18.2 + Alpine 3.23 image, and compile OpenSSL from source to mitigate the memory leak seen with Alpine-provided OpenSSL ([#5604](https://github.com/iv-org/invidious/issues/5604), [#5577](https://github.com/iv-org/invidious/issues/5577), [#5574](https://github.com/iv-org/invidious/issues/5574), [#5441](https://github.com/iv-org/invidious/issues/5441))\n* Server stability improves via a larger `max_request_line_size` that is required to be able to access some next pages of Youtube channels videos and a rewritten static file handler ([#5566](https://github.com/iv-org/invidious/issues/5566), [#5338](https://github.com/iv-org/invidious/issues/5338))\n* Top-level constants moved into dedicated modules, preferences handling was cleaned up, and the legacy signature helper is finally removed ([#5596](https://github.com/iv-org/invidious/issues/5596), [#5450](https://github.com/iv-org/invidious/issues/5450), [#5550](https://github.com/iv-org/invidious/issues/5550))\n* Crystal API updates replaced the deprecated `Socket#blocking` property and restored the shard target plus SPDX license metadata ([#5538](https://github.com/iv-org/invidious/issues/5538), [#5608](https://github.com/iv-org/invidious/issues/5608), [#5552](https://github.com/iv-org/invidious/issues/5552))\n",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.invidious.cloudronapp/01_player.png",
+            "https://screenshots.cloudron.io/io.invidious.cloudronapp/02_preferences.png",
+            "https://screenshots.cloudron.io/io.invidious.cloudronapp/03_subscriptions.png"
+        ],
+        "addons": {
+            "localstorage": [],
+            "postgresql": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "forumUrl": "https://forum.cloudron.io/category/179/invidious",
+        "memoryLimit": 1073741824,
+        "minBoxVersion": "8.0.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/io.invidious.cloudronapp:202602081419410000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.invidious.cloudronapp/versions/1.12.0/icon",
+    "featured": false,
+    "ranking": 0
+}

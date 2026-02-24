@@ -1,0 +1,46 @@
+{
+    "id": "io.cloudron.geoip",
+    "creationDate": "2025-11-14T17:35:55.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-12-09T20:14:09.000Z",
+    "publishedAt": "2019-12-09T20:14:09.000Z",
+    "manifest": {
+        "id": "io.cloudron.geoip",
+        "title": "IP2Location",
+        "author": "Johannes Zellner",
+        "description": "A simple Geolocation service based on [maxmind](https://www.npmjs.com/package/maxmind).\n\n### Usage\n\nWhen making any request to either `/json` or `/jsonp?callback=functionName`, the service will\nresolve the IP to a location and return as much information as possible about the country and city.\n\nAdditionally both routes can take a query param `ip` which will override the source ip.\n\n",
+        "changelog": "* Rename to Ip2location due to trademark collision\n",
+        "tagline": "Simple IP to location service",
+        "version": "1.19.0-1",
+        "healthCheckPath": "/healthcheck",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": []
+        },
+        "manifestVersion": 2,
+        "website": "https://git.cloudron.io/cloudron/ip2location/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "geoip",
+            "ip2location",
+            "location",
+            "asn",
+            "geolocation",
+            "ip2asn"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.cloudron.geoip/img00.png"
+        ],
+        "minBoxVersion": "5.3.0",
+        "forumUrl": "https://forum.cloudron.io/category/79/ip2location-service",
+        "documentationUrl": "https://docs.cloudron.io/packages/ip2location",
+        "dockerImage": "cloudron/io.cloudron.geoip:202511121518150000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.cloudron.geoip/versions/1.19.0-1/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,49 @@
+{
+    "id": "com.metabase.cloudronapp",
+    "creationDate": "2020-11-13T18:33:15.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.metabase.cloudronapp",
+        "title": "Metabase",
+        "author": "Metabase, Inc.",
+        "description": "This app packages Metabase <upstream>0.37.1/upstream>.\n\n## About\n\nMetabase is the easy, open source way for everyone in your company to ask questions and learn from data.\n\n### Ask your own questions\n\n* Explore on your own - Easily summarize and visualize your data without ever writing a line of SQL or having to wait on a coworker.\n\n* Quick and easy lookup - Browse or search through your tables, then filter things down to find just what you need.\n\n* Visualize results - Move from your data to beautiful graphs and charts with just a few clicks.\n\n### Features\n\n* Pulses - Schedule and send charts or results to your team via email or Slack\n* Dashboards - Let everyone on your team create, organize, and share beautiful collections of visualizations and data.\n* Open source and constantly improving.\n\n",
+        "tagline": "Ask questions and learn from data",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "ldap": [],
+            "postgresql": [],
+            "sendmail": []
+        },
+        "optionalSso": true,
+        "memoryLimit": 1610612736,
+        "manifestVersion": 2,
+        "website": "https://www.metabase.com",
+        "contactEmail": "support@clourdon.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "data",
+            "analytics",
+            "visualization",
+            "redash",
+            "bi",
+            "tableau"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.metabase.cloudronapp/homepage-visualize.png",
+            "https://screenshots.cloudron.io/com.metabase.cloudronapp/homepage-find.png",
+            "https://screenshots.cloudron.io/com.metabase.cloudronapp/homepage-explore.png"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Email**: admin@cloudron.local<br/>\n**Password**: changeme123<br/>\n\nPlease change the admin email and password immediately.\n\n",
+        "minBoxVersion": "5.3.0",
+        "documentationUrl": "https://docs.cloudron.io/apps/metabase/",
+        "forumUrl": "https://forum.cloudron.io/category/86/metabase",
+        "changelog": "* Update metabase to 0.37.1\n* [Full changelog](https://github.com/metabase/metabase/releases/tag/v0.37.1)\n* Table schema sync performance impact (#13650)\n* Pie chart shows spinner, when returned measure/value is null or 0 (#13626)\n* Wrong day names are displayed when using not-Sunday as start of the week and grouping by \"Day of week\" (#13604)\n* When result row is null, then frontend incorrectly shows as \"No results!\" (#13571)\n* Snowflake tables with a GEOGRAPHY column cannot be explored (#13505)\n* Cannot edit BigQuery settings without providing service account JSON again (#13442)\n* Sync crashes with OOM on very large columns/row samples [proposal] (#13288)\n* 500 stack overflow error on collection/graph API call (#13211)\n* Custom Column after aggregation creates wrong query and fails (#12762)\n* The expression editor shouldn't start in error mode without any user input (#12140)\n* Pulse attachment file sent without file extension (#11879)\n* Metric with unnamed Custom Expression breaks Data Model for table (#10844)\n* Nested queries with duplicate column names fail (#10511)\n* pulse attachment file(question name) Korean support problem (#8410)\n* Pulse Bar Chart Negative Values Formatting (#7044)\n",
+        "dockerImage": "cloudron/com.metabase.cloudronapp:20201113-180559-797e077bc"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.metabase.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

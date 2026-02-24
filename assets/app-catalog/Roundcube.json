@@ -1,0 +1,53 @@
+{
+    "id": "net.roundcube.cloudronapp",
+    "creationDate": "2026-02-09T08:48:00.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-07-17T22:49:55.000Z",
+    "publishedAt": "2016-07-17T22:49:55.000Z",
+    "manifest": {
+        "id": "net.roundcube.cloudronapp",
+        "title": "Roundcube",
+        "author": "Roundcube Developers",
+        "description": "### About\n\nRoundcube webmail is a browser-based multilingual IMAP client with an\napplication-like user interface. It provides full functionality you\nexpect from an email client, including MIME support, address book,\nfolder manipulation, message searching and spell checking.\n\n### Features\n\n* Multilingual capabilities\n* Find-as-you-type address book\n* Richtext/HTML message composing\n* Searching messages and contacts\n* Canned response templatesNew!\n* Shared folders and ACL\n* Full featured address book\n\n",
+        "changelog": "* Update roundcubemail to 1.6.13\n* [Full Changelog](https://github.com/roundcube/roundcubemail/releases/tag/1.6.13)\n* Managesieve: Fix handling of string-list format values for date tests in Out of Office ([#10075](https://github.com/roundcube/roundcubemail/issues/10075))\n* Fix CSS injection vulnerability reported by CERT Polska.\n* Fix remote image blocking bypass via SVG content reported by nullcathedral.\n",
+        "tagline": "Webmail software for the masses",
+        "version": "2.9.3",
+        "upstreamVersion": "1.6.13",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "mysql": [],
+            "email": [],
+            "localstorage": []
+        },
+        "manifestVersion": 2,
+        "website": "https://roundcube.net",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "webmail",
+            "mail",
+            "email",
+            "imap",
+            "smtp",
+            "gmail",
+            "fastmail"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/net.roundcube.cloudronapp/mailbox.png",
+            "https://screenshots.cloudron.io/net.roundcube.cloudronapp/compose.png",
+            "https://screenshots.cloudron.io/net.roundcube.cloudronapp/editcontact.png",
+            "https://screenshots.cloudron.io/net.roundcube.cloudronapp/managesieve.png"
+        ],
+        "minBoxVersion": "7.2.1",
+        "forumUrl": "https://forum.cloudron.io/category/22/roundcube",
+        "documentationUrl": "https://docs.cloudron.io/packages/roundcube/",
+        "dockerImage": "cloudron/net.roundcube.cloudronapp:202602090120020000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/net.roundcube.cloudronapp/versions/2.9.3/icon",
+    "featured": true,
+    "ranking": 0
+}

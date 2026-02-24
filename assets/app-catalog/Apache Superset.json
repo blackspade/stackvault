@@ -1,0 +1,59 @@
+{
+    "id": "org.apache.superset.cloudronapp",
+    "creationDate": "2025-12-19T16:48:54.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-02-21T15:02:42.000Z",
+    "publishedAt": "2023-02-21T15:02:42.000Z",
+    "manifest": {
+        "id": "org.apache.superset.cloudronapp",
+        "title": "Apache Superset",
+        "tagline": "Data exploration and visualization platform",
+        "author": "Apache Software Foundation",
+        "description": "### Overview\n\nSuperset is a modern data exploration and data visualization platform. Superset can replace or augment proprietary business intelligence tools for many teams. Superset integrates well with a variety of data sources.\n\n### Features\n\nSuperset provides:\n\n* A no-code interface for building charts quickly\n* A powerful, web-based SQL Editor for advanced querying\n* A lightweight semantic layer for quickly defining custom dimensions and metrics\n* Out of the box support for nearly any SQL database or data engine\n* A wide array of beautiful visualizations to showcase your data, ranging from simple bar charts to geospatial visualizations\n* Lightweight, configurable caching layer to help ease database load\n* Highly extensible security roles and authentication options\n* An API for programmatic customization\n* A cloud-native architecture designed from the ground up for scale\n\n",
+        "version": "1.12.0",
+        "upstreamVersion": "6.0.0",
+        "website": "https://superset.apache.org",
+        "documentationUrl": "https://docs.cloudron.io/packages/superset",
+        "forumUrl": "https://forum.cloudron.io/category/159/superset",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* chore(deps): update dependency apache-superset to v6\n",
+        "healthCheckPath": "/",
+        "httpPort": 8088,
+        "tags": [
+            "data",
+            "analytics",
+            "visualization",
+            "redash",
+            "bi",
+            "tableau",
+            "nocode"
+        ],
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/oauth-authorized/Cloudron"
+            },
+            "localstorage": [],
+            "postgresql": [],
+            "redis": {
+                "noPassword": true
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.apache.superset.cloudronapp/apache_superset_00.jpg",
+            "https://screenshots.cloudron.io/org.apache.superset.cloudronapp/apache_superset_01.jpg",
+            "https://screenshots.cloudron.io/org.apache.superset.cloudronapp/apache_superset_02.jpg"
+        ],
+        "memoryLimit": 2684354560,
+        "postInstallMessage": "The default role for a new user is administrator.\n\n",
+        "minBoxVersion": "7.5.1",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.apache.superset.cloudronapp:202512191243410000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.apache.superset.cloudronapp/versions/1.12.0/icon",
+    "featured": false,
+    "ranking": 0
+}

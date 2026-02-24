@@ -1,0 +1,67 @@
+{
+    "id": "org.getgrav.cloudronapp",
+    "creationDate": "2025-09-11T08:18:00.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-02-04T05:07:56.000Z",
+    "publishedAt": "2020-02-04T05:07:56.000Z",
+    "manifest": {
+        "id": "org.getgrav.cloudronapp",
+        "title": "Grav",
+        "author": "Grav CMS",
+        "description": "## About\n\nGrav is a Fast, Simple, and Flexible, file-based Web-platform. There is Zero installation required. Just extract the ZIP archive, and you are already up and running. It follows similar principles to other flat-file CMS platforms, but has a different design philosophy than most. Grav comes with a powerful Package Management System to allow for simple installation and upgrading of plugins and themes, as well as simple updating of Grav itself.\n\n## Features\n\nThe underlying architecture of Grav is designed to use well-established and best-in-class technologies to ensure that Grav is simple to use and easy to extend. Some of these key technologies include:\n\n* Twig Templating: for powerful control of the user interface\n* Markdown: for easy content creation\n* YAML: for simple configuration\n* Parsedown: for fast Markdown and Markdown Extra support\n* Doctrine Cache: layer for performance\n* Pimple Dependency Injection Container: for extensibility and maintainability\n* Symfony Event Dispatcher: for plugin event handling\n* Symfony Console: for CLI interface\n* Gregwar Image Library: for dynamic image manipulation\n\n",
+        "tagline": "Grav is a modern open source flat-file CMS",
+        "version": "1.8.5",
+        "upstreamVersion": "1.7.49.5",
+        "healthCheckPath": "/",
+        "configurePath": "/admin",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "scheduler": {
+                "grav_scheduler": {
+                    "schedule": "*/1 * * * *",
+                    "command": "echo '==> Running scheduler' && sudo -u www-data -E -- /app/code/bin/grav scheduler"
+                }
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://getgrav.org",
+        "contactEmail": "support@clourdon.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "cms",
+            "blog",
+            "weblog",
+            "wordpress",
+            "static",
+            "website",
+            "hosting"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.getgrav.cloudronapp/001-dashboard.png",
+            "https://screenshots.cloudron.io/org.getgrav.cloudronapp/002-config.png",
+            "https://screenshots.cloudron.io/org.getgrav.cloudronapp/003-editpage.png",
+            "https://screenshots.cloudron.io/org.getgrav.cloudronapp/006-themes.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/72/grav-cms",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: Changeme123#<br/>\n\nThe admin interface is located at `/admin`.\n",
+        "changelog": "* Update grav to 1.7.49.5\n* [Full Changelog](https://github.com/getgrav/grav/releases/tag/1.7.49.5)\n* Backup not honoring ignored paths [#&#8203;3952](https://github.com/getgrav/grav/issues/3952)\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/grav",
+        "dockerImage": "cloudron/org.getgrav.cloudronapp:202509110734060000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.getgrav.cloudronapp/versions/1.8.5/icon",
+    "featured": false,
+    "ranking": 0
+}

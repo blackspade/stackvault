@@ -1,0 +1,73 @@
+{
+    "id": "com.teamspeak.cloudronapp",
+    "creationDate": "2025-07-31T18:41:26.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-05-08T13:39:54.000Z",
+    "publishedAt": "2020-05-08T13:39:54.000Z",
+    "manifest": {
+        "id": "com.teamspeak.cloudronapp",
+        "title": "Teamspeak Server",
+        "author": "Teamspeak authors",
+        "description": "### Overview\n\nTeamSpeak is a proprietary voice-over-Internet Protocol (VoIP) application for audio communication between users on a chat channel, much like a telephone conference call. Users typically use headphones with a microphone. The client software connects to a TeamSpeak server of the user's choice, from which the user may join chat channels.\n\n### License\n\nBy default this package uses free license, which includes a maximum of 32 concurrent users. Game or Commercial licenses can be obtained via the [TeamSpeak website](https://teamspeak.com/en/features/licensing/) and the app can then be configured to use the license key.\n",
+        "changelog": "* checklist added to manifest\n",
+        "tagline": "Out-of-this-world VoIP solution",
+        "version": "1.5.1",
+        "upstreamVersion": "3.13.7",
+        "healthCheckPath": "/api/healthcheck",
+        "httpPort": 8000,
+        "memoryLimit": 268435456,
+        "udpPorts": {
+            "DEFAULT_PORT": {
+                "title": "Default Teamspeak Port",
+                "description": "Default Teamspeak Port (udp)",
+                "defaultValue": 9987
+            }
+        },
+        "tcpPorts": {
+            "SERVERQUERY_PORT": {
+                "title": "ServerQuery Listening Port",
+                "description": "ServerQuery Listening Port (tcp)",
+                "defaultValue": 10011
+            },
+            "FILETRANSFER_PORT": {
+                "title": "File transfer Port",
+                "description": "File transfer Port (tcp)",
+                "defaultValue": 30033
+            }
+        },
+        "addons": {
+            "localstorage": [],
+            "mysql": []
+        },
+        "checklist": {
+            "get-default-password": {
+                "message": "After installation, check the app logs to get the admin password and privilege key. All further configuration happens through the clients."
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "8.1.0",
+        "website": "https://www.teamspeak.com",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "im",
+            "voip",
+            "voice",
+            "conference",
+            "chat",
+            "zoom"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.teamspeak.cloudronapp/teamspeak-00.png"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/teamspeak/",
+        "forumUrl": "https://forum.cloudron.io/category/84/teamspeak",
+        "dockerImage": "cloudron/com.teamspeak.cloudronapp:202507311208580000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.teamspeak.cloudronapp/versions/1.5.1/icon",
+    "featured": false,
+    "ranking": 0
+}

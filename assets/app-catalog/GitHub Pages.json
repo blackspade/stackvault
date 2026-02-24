@@ -1,0 +1,62 @@
+{
+    "id": "github.pages.cloudronapp",
+    "creationDate": "2025-04-02T09:28:18.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2018-02-18T20:39:15.000Z",
+    "publishedAt": "2018-02-18T20:39:15.000Z",
+    "manifest": {
+        "id": "github.pages.cloudronapp",
+        "title": "GitHub Pages",
+        "author": "GitHub developers",
+        "description": "## About\n\nGitHub Pages is a Cloudron app for hosting static web pages for GitHub users, user blogs, project documentation or even whole books.\n\nIt is integrated with the Jekyll software for static web site and blog generation. The Jekyll source pages for a web site can be stored as a Git repository inside the app, and when the repository is updated the GitHub Pages servers will automatically regenerate the site.\n\n## Jekyll Support\n\nThis app uses the GitHub pages gem and as such only supports the Jekyll version and Jekyll\nplugins that GitHub supports for it's Pages feature.\n\nSee [Dependency versions](https://pages.github.com/versions/) for the version list.\n\n",
+        "changelog": "* Update base image to 5.0.0\n",
+        "tagline": "Publish webpages from a git repo",
+        "version": "1.23.0",
+        "upstreamVersion": "232",
+        "healthCheckPath": "/_healthcheck",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "ldap": []
+        },
+        "tcpPorts": {
+            "SSH_PORT": {
+                "title": "SSH Port",
+                "description": "SSH Port over which repo can be pushed & pulled",
+                "defaultValue": 29418
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "7.1.2",
+        "forumUrl": "https://forum.cloudron.io/category/39/github-pages",
+        "website": "https://pages.github.com/",
+        "documentationUrl": "https://docs.cloudron.io/apps/githubpages",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "blog",
+            "hosting",
+            "github",
+            "pages",
+            "jekyll",
+            "website",
+            "cms",
+            "static",
+            "squarespace",
+            "wix",
+            "netlify"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/github.pages.cloudronapp/img0.png",
+            "https://screenshots.cloudron.io/github.pages.cloudronapp/img1.png",
+            "https://screenshots.cloudron.io/github.pages.cloudronapp/img2.png"
+        ],
+        "dockerImage": "cloudron/github.pages.cloudronapp:202504020850270000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/github.pages.cloudronapp/versions/1.23.0/icon",
+    "featured": false,
+    "ranking": 0
+}

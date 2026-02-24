@@ -1,0 +1,68 @@
+{
+    "id": "org.audiobookshelf.cloudronapp",
+    "creationDate": "2025-12-24T08:29:14.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-06-17T08:17:03.000Z",
+    "publishedAt": "2023-06-17T08:17:03.000Z",
+    "manifest": {
+        "id": "org.audiobookshelf.cloudronapp",
+        "title": "Audiobookshelf",
+        "author": "advplyr",
+        "description": "## About\n\nAudiobookshelf is a self-hosted audiobook and podcast server.\n\n## Features\n\n* Stream all audio formats on the fly\n* Keeps progress per user and syncs across devices\n* Backup your metadata + automated daily backups\n* Chromecast support on the web app and android app\n* Merge audio files into a single m4b\n* Basic ebook support and ereader\n* Open RSS feeds for podcasts and audiobooks\n",
+        "changelog": "* Update audiobookshelf to 2.32.1\n* [Full Changelog](https://github.com/advplyr/audiobookshelf/releases/tag/v2.32.1)\n* Important: New authentication system was added in [v2.26.0](https://github.com/advplyr/audiobookshelf/releases/tag/v2.26.0). See <https://github.com/advplyr/audiobookshelf/discussions/4460> for details.\n* Server crash matching with Audible provider [#4931](https://github.com/advplyr/audiobookshelf/issues/4931)\n* More strings translated\n* Finnish by [@pHamala](https://github.com/pHamala)\n* Polish by [@MarcinKlejna](https://github.com/MarcinKlejna)\n* Russian by [@renesat](https://github.com/renesat)\n* Swedish by [@bittin](https://github.com/bittin)\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\nContent can be uploaded into `/app/data/podcasts` and `/app/data/audiobooks`.\n\n",
+        "tagline": "audiobook and podcast server",
+        "version": "1.96.1",
+        "upstreamVersion": "2.32.1",
+        "minBoxVersion": "8.2.0",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "memoryLimit": 536870912,
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/config/absdatabase.sqlite"
+                    ]
+                }
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/auth/openid/callback, /auth/openid/mobile-redirect"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://audiobookshelf.org",
+        "contactEmail": "support@cloudron.io",
+        "forumUrl": "https://forum.cloudron.io/category/167/audiobookshelf",
+        "documentationUrl": "https://docs.cloudron.io/packages/audiobookshelf",
+        "optionalSso": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.audiobookshelf.cloudronapp/audiobookshelf_01.png",
+            "https://screenshots.cloudron.io/org.audiobookshelf.cloudronapp/audiobookshelf_02.png",
+            "https://screenshots.cloudron.io/org.audiobookshelf.cloudronapp/audiobookshelf_03.png",
+            "https://screenshots.cloudron.io/org.audiobookshelf.cloudronapp/audiobookshelf_04.png",
+            "https://screenshots.cloudron.io/org.audiobookshelf.cloudronapp/audiobookshelf_05.png"
+        ],
+        "tags": [
+            "podcast",
+            "audiobook",
+            "audio"
+        ],
+        "dockerImage": "cloudron/org.audiobookshelf.cloudronapp:202512240420320000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.audiobookshelf.cloudronapp/versions/1.96.1/icon",
+    "featured": false,
+    "ranking": 0
+}

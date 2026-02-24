@@ -1,0 +1,51 @@
+{
+    "id": "io.github.ascimoo.searx",
+    "creationDate": "2026-02-12T10:55:58.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-12-09T20:14:09.000Z",
+    "publishedAt": "2019-12-09T20:14:09.000Z",
+    "manifest": {
+        "id": "io.github.ascimoo.searx",
+        "title": "SearXNG",
+        "author": "SearXNG authors",
+        "description": "### About\n\nSearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled. \n\nSearXNG is a fork of searx.\n\n### How does SearXNG protect privacy?\n\nSearXNG protects the privacy of its users in multiple ways regardless of the type of the instance (private, public). Removal of private data from search requests comes in three forms:\n\n* removal of private data from requests going to search services\n* not forwarding anything from a third party services through search services (e.g. advertisement)\n* removal of private data from requests going to the result pages\n\n### Donate\n\nIf you want to support the SearXNG team you can make a [donation](https://docs.searxng.org/donate.html).\n\n",
+        "changelog": "* Update searxng to 970f2b8\n",
+        "tagline": "Search without being tracked",
+        "version": "2.78.0",
+        "upstreamVersion": "NewVersionIsNotSet",
+        "healthCheckPath": "/",
+        "httpPort": 8888,
+        "addons": {
+            "localstorage": [],
+            "proxyAuth": []
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "website": "https://docs.searxng.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "search",
+            "metasearch",
+            "bing",
+            "google",
+            "duckduckgo",
+            "privacy"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.github.ascimoo.searx/1ng.png",
+            "https://screenshots.cloudron.io/io.github.ascimoo.searx/2ng.png",
+            "https://screenshots.cloudron.io/io.github.ascimoo.searx/3ng.png"
+        ],
+        "minBoxVersion": "7.2.0",
+        "documentationUrl": "https://docs.cloudron.io/packages/searxng/",
+        "forumUrl": "https://forum.cloudron.io/category/47/searxng",
+        "dockerImage": "cloudron/io.github.ascimoo.searx:202602120921260000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.github.ascimoo.searx/versions/2.78.0/icon",
+    "featured": false,
+    "ranking": 0
+}

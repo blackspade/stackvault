@@ -1,0 +1,37 @@
+# StackVault root .htaccess
+# Routes app requests through public/index.php while protecting sensitive paths.
+# Tested on WAMP (Apache 2.4 + mod_rewrite).
+
+Options -Indexes
+
+# Block hidden files (.env, .git, etc.)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # ── Block direct URL access to server-side directories ───────────────────
+    RewriteRule ^(app|config|routes|storage|resources|notes)(/|$) - [F,L]
+
+    # ── Serve setup.php directly ─────────────────────────────────────────────
+    RewriteRule ^setup\.php$ - [L]
+
+    # ── Serve real files directly (assets, images, etc.) ─────────────────────
+    # Using a positive match (-f) instead of negative (!-f && !-d) so that
+    # directory requests like /stackvault/ are also routed to public/index.php.
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # ── Route everything else (including / directory) to front controller ────
+    RewriteRule ^(.*)$ public/index.php [QSA,L]
+
+</IfModule>
+
+# If mod_rewrite is not available, block access to sensitive files at minimum
+<IfModule !mod_rewrite.c>
+    <FilesMatch "\.(env|log|json|lock)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>

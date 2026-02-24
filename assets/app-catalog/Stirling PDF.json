@@ -1,0 +1,46 @@
+{
+    "id": "stirlingpdf.frooodle.cloudronapp1",
+    "creationDate": "2026-02-12T09:18:47.000Z",
+    "publishState": "approved",
+    "userId": "cd00534b-edca-4ea1-a88b-ee99603a4282",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-12-03T17:44:17.000Z",
+    "publishedAt": "2025-12-03T17:44:17.000Z",
+    "manifest": {
+        "version": "3.4.6",
+        "upstreamVersion": "2.4.6",
+        "id": "stirlingpdf.frooodle.cloudronapp1",
+        "title": "Stirling PDF",
+        "tagline": "PDF manipulation tool",
+        "description": "## About\n\nStirling-PDF is a powerful web based PDF manipulation tool that allows you to perform various operations on PDF files, such as splitting merging, converting, reorganizing, adding images, rotating, compressing, and more. This locally hosted web application started as a 100% ChatGPT-made application and has evolved to include a wide range of features to handle all your PDF needs.\n \n## Feature\n\n* Interactive GUI for merging/splitting/rotating/moving PDFs and their pages.\n* Split PDFs into multiple files at specified page numbers or extract all pages as individual files.\n* Merge multiple PDFs together into a single resultant file\n* Convert PDFs to and from images\n* Reorganize PDF pages into different orders.\n* Add/Generate signatures\n* Flatten PDFs\n* Repair PDFs\n* Detect and remove blank pages\n* Compare 2 PDFs and show differences in text\n* Add images to PDFs\n* Rotating PDFs in 90 degree increments.\n* Compressing PDFs to decrease their filesize. (Using OCRMyPDF)\n* Add and remove passwords\n* Set PDF Permissions\n* Add watermark(s)\n* Convert Any common file to PDF (using LibreOffice)\n* Convert PDF to Word/Powerpoint/Others (using LibreOffice)\n* Extract images from PDF\n* OCR on PDF (Using OCRMyPDF)\n* Edit metadata\n* Dark mode support.\n* Custom download options (see here for example)\n* Parallel file processing and downloads\n* API for integration with external scripts\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: stirling<br/>\n\nOn first login a new password has to be set. This cannot be changed later!\n",
+        "contactEmail": "support@cloudron.io",
+        "author": "Anthony Stirling",
+        "healthCheckPath": "/",
+        "httpPort": 8080,
+        "icon": "file://logo.png",
+        "addons": {
+            "localstorage": []
+        },
+        "optionalSso": true,
+        "memoryLimit": 1073741824,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/stirlingpdf.frooodle.cloudronapp/stirling-home.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/168/stirling-pdf",
+        "documentationUrl": "https://docs.cloudron.io/packages/stirling-pdf/",
+        "manifestVersion": 2,
+        "changelog": "* Update Stirling-PDF to 2.4.6\n* [Full Changelog](https://github.com/frooodle/stirling-pdf/releases/tag/v2.4.6)\n* License not always correctly loading due to cache issues\n* public endpoints not always accessible when without JWT\n* Language not always correctly taking the server's default\n* Desktop issues for SAML SSO\n* maxFileSize server setting not being handled correctly\n* fix(markdown): markdown conversion image handling and zip support by [@&#8203;balazs-szucs](https://github.com/balazs-szucs) in [Stirling-Tools#5677](https://github.com/Stirling-Tools/Stirling-PDF/pull/5677)\n* Enhance SSO SAML in desktop app by [@&#8203;jbrunton96](https://github.com/jbrunton96) in [Stirling-Tools#5705](https://github.com/Stirling-Tools/Stirling-PDF/pull/5705)\n* Fix maxFileSize environment variable support ([#&#8203;5542](https://github.com/Frooodle/Stirling-PDF/issues/5542)) by [@&#8203;Eruis2579](https://github.com/Eruis2579) in [Stirling-Tools#5655](https://github.com/Stirling-Tools/Stirling-PDF/pull/5655)\n* Bug fixing and debugs by [@&#8203;Frooodle](https://github.com/Frooodle) in [Stirling-Tools#5704](https://github.com/Stirling-Tools/Stirling-PDF/pull/5704)\n* fix(api): address potential backend resource leaks and improve frontend accessibility by [@&#8203;balazs-szucs](https://github.com/balazs-szucs) in [Stirling-Tools#5678](https://github.com/Stirling-Tools/Stirling-PDF/pull/5678)\n",
+        "tags": [
+            "tools",
+            "pdf"
+        ],
+        "minBoxVersion": "8.1.0",
+        "website": "https://github.com/Frooodle/Stirling-PDF",
+        "dockerImage": "cloudron/stirlingpdf.frooodle.cloudronapp1:202602120721100000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/stirlingpdf.frooodle.cloudronapp1/versions/3.4.6/icon",
+    "featured": false,
+    "ranking": 0
+}

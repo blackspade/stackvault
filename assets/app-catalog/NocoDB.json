@@ -1,0 +1,47 @@
+{
+    "id": "com.nocodb.cloudronapp",
+    "creationDate": "2022-11-22T15:05:13.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.nocodb.cloudronapp",
+        "title": "NocoDB",
+        "author": "NocoDB Authors",
+        "description": "## About\n\nNocoDB is an open source #NoCode platform that turns any database into a smart spreadsheet. \n\n## Features\n\n* It is free & self-hostable. Let your imagination be thy limit\n* Create grid view, gallery view, kanban view and calendar view on top your data\n* Search, sort, filter columns and rows with ultra ease\n* Invite your team with fine grained Access Control\n* Share views publicly and also with password protection\n* Build automations with you favourite apps : Microsoft Teams Slack, Discord, Whatsapp, Twilio, Email & SMS\n* Provides REST & GraphQL APIs with Swagger & GraphiQL GUI\n\n",
+        "tagline": "#NoCode platform at turns any database into a smart spreadsheet",
+        "version": "1.6.0",
+        "upstreamVersion": "0.99.0",
+        "httpPort": 8080,
+        "memoryLimit": 524288000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": []
+        },
+        "healthCheckPath": "/dashboard",
+        "manifestVersion": 2,
+        "website": "https://www.nocodb.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "documentationUrl": "https://docs.cloudron.io/apps/nocodb/",
+        "tags": [
+            "nocode",
+            "airtable",
+            "spreadsheet",
+            "database",
+            "graphql"
+        ],
+        "changelog": "* Update NocoDB to 0.99.0\n* [Full changelog](https://github.com/nocodb/nocodb/releases/tag/0.99.0)\n* Edit all data types within a cell with ease of keyboard. No mouse required.\n* Account Settings for Users and Super Admin\n",
+        "minBoxVersion": "7.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/140/nocodb",
+        "postInstallMessage": "On first visit, you can sign up and create a NocoDB superadmin.\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.nocodb.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/com.nocodb.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/com.nocodb.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/com.nocodb.cloudronapp/4.png"
+        ],
+        "dockerImage": "cloudron/com.nocodb.cloudronapp:20221122-144415-684c35a61"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.nocodb.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

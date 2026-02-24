@@ -1,0 +1,48 @@
+{
+    "id": "org.openhab.cloudronapp",
+    "creationDate": "2026-02-09T09:50:50.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-11-24T14:55:10.000Z",
+    "publishedAt": "2022-11-24T14:55:10.000Z",
+    "manifest": {
+        "id": "org.openhab.cloudronapp",
+        "title": "OpenHAB",
+        "version": "1.8.2",
+        "upstreamVersion": "5.1.2",
+        "author": "OpenHAB Team",
+        "tagline": "Empowering the smart home",
+        "description": "### Overview\n\nThe open Home Automation Bus (openHAB, pronounced ˈəʊpənˈhæb) is an open source, technology agnostic home automation platform which runs as the center of your smart home!\n",
+        "changelog": "* Update openhab-distro to 5.1.2\n* [Full Changelog](https://github.com/openhab/openhab-distro/releases/tag/5.1.2)\n* Log warning on Thing config errors  \n* API /file-format/parse: do not extend thing/channel config  \n* Change ambient server domain  \n* Fix premature event scheduling  \n* Fix unit for energy values while polling  \n* Improve thread synchronization  \n* Fix UoM for state updates  \n* Fix HTTP Host Header  \n* adopted allowed values for currents since easee also allows 1-5A.  \n* Upgrade wattpilot4j to 2.3.0 & OSGi-ify it  \n",
+        "tags": [
+            "automation",
+            "assistant",
+            "home"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.openhab.cloudronapp/img01.png"
+        ],
+        "healthCheckPath": "/",
+        "httpPort": 8080,
+        "addons": {
+            "localstorage": []
+        },
+        "capabilities": [
+            "vaapi"
+        ],
+        "memoryLimit": 536870912,
+        "website": "https://www.openhab.org/",
+        "documentationUrl": "https://docs.cloudron.io/packages/openhab/",
+        "forumUrl": "https://forum.cloudron.io/category/152/openhab",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "minBoxVersion": "7.3.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.openhab.cloudronapp:202602090852250000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.openhab.cloudronapp/versions/1.8.2/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,71 @@
+{
+    "id": "org.mediawiki.www.cloudronapp",
+    "creationDate": "2025-12-17T07:25:19.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2015-11-29T09:03:14.000Z",
+    "publishedAt": "2015-11-29T09:03:14.000Z",
+    "manifest": {
+        "id": "org.mediawiki.www.cloudronapp",
+        "author": "MediaWiki Community",
+        "title": "MediaWiki",
+        "description": "## About\n\nMediaWiki is a free and open-source wiki software package. It serves as the platform\nfor Wikipedia and the other projects of the Wikimedia Foundation, which deliver\ncontent in over 280 languages to more than half a billion people each month.\n\n## Features\n\n* feature-rich and extensible, both on-wiki and with hundreds of extensions.\n* suitable for both small and large sites.\n* available in your language.\n\n\n",
+        "tagline": "The software behind Wikipedia",
+        "version": "3.6.1",
+        "upstreamVersion": "1.45.1",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "manifestVersion": 2,
+        "website": "https://www.mediawiki.org",
+        "contactEmail": "apps@cloudron.io",
+        "icon": "logo.png",
+        "addons": {
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/wiki/Special:PluggableAuthLogin"
+            },
+            "localstorage": {
+                "ftp": {
+                    "uid": 33,
+                    "uname": "www-data"
+                }
+            },
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "scheduler": {
+                "runJobs": {
+                    "schedule": "*/1 * * * *",
+                    "command": "echo '==> Run cron job' && /usr/local/bin/gosu cloudron:cloudron /usr/bin/php /app/code/maintenance/runJobs.php --maxtime 50 --procs 1"
+                }
+            }
+        },
+        "tags": [
+            "wiki",
+            "collaboration",
+            "notes"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.mediawiki.www.cloudronapp/MobileFrontendSectionPage.png",
+            "https://screenshots.cloudron.io/org.mediawiki.www.cloudronapp/MediaWiki%27s_gallery_feature.png"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password credentials."
+            }
+        },
+        "changelog": "* Update mediawiki to 1.45.1\n* [Full Changelog](https://www.mediawiki.org/wiki/MediaWiki_1.45)\n",
+        "postInstallMessage": "This app is pre-setup with an admin (bureaucrat) account. The initial credentials are:\n\n**Username**: administrator<br/>\n**Password**: changeme123<br/>\n\n<sso>\nThis wiki is setup to be editable only by Cloudron users. Anonymous users\ncan read all pages.\n</sso>\n\n<nosso>\nThe wiki is setup to be editable by all registered users and readable by all.\n</nosso>\n\n",
+        "minBoxVersion": "8.1.0",
+        "documentationUrl": "https://docs.cloudron.io/packages/mediawiki/",
+        "optionalSso": true,
+        "configurePath": "/wiki/Special:SpecialPages",
+        "forumUrl": "https://forum.cloudron.io/category/80/mediawiki",
+        "dockerImage": "cloudron/org.mediawiki.www.cloudronapp:202512170021140000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.mediawiki.www.cloudronapp/versions/3.6.1/icon",
+    "featured": false,
+    "ranking": 0
+}

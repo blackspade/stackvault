@@ -1,0 +1,67 @@
+{
+    "id": "app.dawarich.cloudronapp",
+    "creationDate": "2026-02-09T08:46:21.000Z",
+    "publishState": "approved",
+    "userId": "cd00534b-edca-4ea1-a88b-ee99603a4282",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-11-17T17:28:40.000Z",
+    "publishedAt": "2025-11-17T17:28:40.000Z",
+    "manifest": {
+        "id": "app.dawarich.cloudronapp",
+        "title": "Dawarich",
+        "author": "Dawarich Developers",
+        "website": "https://dawarich.app/",
+        "tagline": "Your Life, Mapped Automatically",
+        "upstreamVersion": "1.1.0",
+        "version": "1.6.0",
+        "minBoxVersion": "9.0.0",
+        "contactEmail": "apps@cloudron.io",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "icon": "file://logo.png",
+        "description": "### Overview\n\nYour Life, Mapped Automatically\n\nDo you remember where you've been last year? With Dawarich, you don't have to worry about forgetting.\nWe help you remember the places you've been and the life you've lived — day by day, on a beautiful private timeline only you control.\n\n\n## Features\n\n* Track Your Trips\n* Interactive Location Visualization\n* Comprehensive Analytics\n* Scratch Map\n* Real-time Location Updates\n\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: demo@dawarich.app<br/>\n**Password**: password<br/>\n",
+        "changelog": "* Update dawarich to 1.1.0\n* [Full Changelog](https://github.com/Freika/dawarich/releases/tag/1.1.0)\n* Photos are now being clustered on the Map v2 to improve performance and usability when viewing large numbers of photos.\n* City statistics thresholds are now user-configurable: \"Min Minutes in City\" and \"Max Gap Between Points\" sliders in the Map v2 Settings panel. [#2207](https://github.com/Freika/dawarich/issues/2207)\n* New Timeline tool is added to Map V2. It allows user to quickly navigate through time and see how their location changed throughout the day. It can also be used to replay a trip by clicking the play button.\n* The SSL Security Warning is now working correctly on the Immich and Photoprism integration forms.\n* Family members and Places layers are now being correctly remembered across page reloads on Map v2.\n* Immich returning 400. [#2222](https://github.com/Freika/dawarich/issues/2222) [#2186](https://github.com/Freika/dawarich/issues/2186)\n* Points info on the Map V2 now shows time in 24h format and includes seconds. [#2172](https://github.com/Freika/dawarich/issues/2172)\n* Digests not being created for years earlier than 2000. [#2158](https://github.com/Freika/dawarich/issues/2158)\n* Tracks on Map V2 are now respecting the date filters correctly. [#2196](https://github.com/Freika/dawarich/issues/2196)\n* Undefined method `.to_sym` for nil in Sidekiq. [#2190](https://github.com/Freika/dawarich/issues/2190)\n",
+        "memoryLimit": 2147483648,
+        "tags": [
+            "location",
+            "gps",
+            "tracking"
+        ],
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "sendmail": {
+                "optional": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/users/auth/openid_connect/callback",
+                "logoutRedirectUri": "/",
+                "tokenSignatureAlgorithm": "RS256"
+            }
+        },
+        "checklist": {
+            "change-admin-password": {
+                "message": "Change the admin email and password"
+            },
+            "disable-registration": {
+                "message": "[Disable registration](https://docs.cloudron.io/packages/dawarich/#disable-registration), if required, to prevent misuse",
+                "sso": true
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.dawarich.cloudronapp/dawarich_00.png",
+            "https://screenshots.cloudron.io/app.dawarich.cloudronapp/dawarich_01.png"
+        ],
+        "optionalSso": true,
+        "forumUrl": "https://forum.cloudron.io/category/213/dawarich",
+        "documentationUrl": "https://docs.cloudron.io/packages/dawarich/",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/app.dawarich.cloudronapp:202602090620090000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.dawarich.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

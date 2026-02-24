@@ -1,0 +1,64 @@
+{
+    "id": "org.ghost.cloudronapp2",
+    "creationDate": "2026-02-12T17:12:30.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-08-15T04:36:57.000Z",
+    "publishedAt": "2017-08-15T04:36:57.000Z",
+    "manifest": {
+        "id": "org.ghost.cloudronapp2",
+        "title": "Ghost",
+        "author": "Ghost developers",
+        "description": "## About\n\nGhost is a simple, powerful publishing platform that allows you to share\nyour stories with the world.\n\nThe project is maintained by a non-profit organisation called the **Ghost Foundation**, along with an amazing group of independent [contributors](https://github.com/TryGhost/Ghost/contributors). We're trying to make publishing software that changes the shape of online journalism.\n\n- [Ghost.org](https://ghost.org)\n- [Latest Release](https://ghost.org/download/)\n- [Support](https://forum.ghost.org/)\n- [Theme Docs](https://ghost.org/docs/themes/)\n\n",
+        "changelog": "* Update ghost to 6.18.2\n* [Full Changelog](https://github.com/tryghost/ghost/releases/tag/v6.18.2)\n* Fixed email rendering to use cached image dimensions ([#&#8203;26295](https://github.com/tryghost/ghost/issues/26295)) - Princi Vershwal\n* Fixed welcome emails using noreply address instead of default newsletter reply-to address ([#&#8203;26358](https://github.com/tryghost/ghost/issues/26358)) - Chris Raible\n",
+        "tagline": "Just a blogging platform",
+        "version": "4.151.1",
+        "upstreamVersion": "v6.18.2",
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "manifestVersion": 2,
+        "website": "https://ghost.org/",
+        "contactEmail": "support@cloudron.io",
+        "configurePath": "/ghost",
+        "icon": "file://logo.png",
+        "memoryLimit": 314572800,
+        "addons": {
+            "mysql": [],
+            "sendmail": {
+                "optional": true,
+                "supportsDisplayName": true
+            },
+            "localstorage": []
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, you can set up an admin user and invite other users"
+            }
+        },
+        "postInstallMessage": "The admin page of Ghost is located at the $CLOUDRON-APP-ORIGIN/ghost .\n\nComplete the [email setup](https://docs.cloudron.io/apps/ghost/#email) to configure Ghost for sending transactional and bulk emails.\n\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/ghost/",
+        "tags": [
+            "blog",
+            "ghost",
+            "cms",
+            "wordpress",
+            "wix",
+            "squarespace",
+            "hosting"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.ghost.cloudronapp2/casper.jpg",
+            "https://screenshots.cloudron.io/org.ghost.cloudronapp2/content.png",
+            "https://screenshots.cloudron.io/org.ghost.cloudronapp2/editor.png",
+            "https://screenshots.cloudron.io/org.ghost.cloudronapp2/nightshift.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/59/ghost",
+        "minBoxVersion": "8.0.0",
+        "dockerImage": "cloudron/org.ghost.cloudronapp2:202602121209080000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.ghost.cloudronapp2/versions/4.151.1/icon",
+    "featured": true,
+    "ranking": 0
+}

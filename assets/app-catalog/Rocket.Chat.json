@@ -1,0 +1,70 @@
+{
+    "id": "chat.rocket.cloudronapp",
+    "creationDate": "2026-01-14T21:01:41.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2015-10-25T15:26:18.000Z",
+    "publishedAt": "2015-10-25T15:26:18.000Z",
+    "manifest": {
+        "id": "chat.rocket.cloudronapp",
+        "title": "Rocket.Chat",
+        "author": "RocketChat Developers",
+        "description": "### Overview\n\nA complete team chat solution, from group messages and video calls all the way to helpdesk killer features.\n\n### Features\n\n* **Video Conference**\n    Chat with your colleagues and friends face-to-face over audio and video.\n* **Helpdesk Chat**\n    Have your website visitors contact you in real-time and increase conversions.\n* **File Sharing**\n    Drag-and-drop files or select them from your computer or mobile device.\n* **Voice Messages**\n    Record and transmit voice messages to a channel, group or private conversation.\n* **Link Preview**\n    Post a link and immediately view its content. YouTube, Twitter, Gifs!\n* **API**\n    Integrate your chat to multiple services: GitHub, GitLab, JIRA, Confluence and others.\n* **Extendability**\n    Want a new killing feature? Add a new package. It's as simple as that.\n* **Native Applications**\n    Native client applications available for download on Linux, Windows and OSX.\n* **Mobile Applications**\n    Mobile client applications available for iOS and Android on their respective stores.\n",
+        "tagline": "The Complete Open Source Chat Solution",
+        "version": "2.76.2",
+        "upstreamVersion": "7.13.3",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "optionalSso": true,
+        "addons": {
+            "localstorage": [],
+            "mongodb": {
+                "oplog": true
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "turn": [],
+            "oidc": {
+                "loginRedirectUri": "/_oauth/cloudron"
+            }
+        },
+        "checklist": {
+            "create-admin": {
+                "sso": false,
+                "message": "On first visit, create and register an admin account."
+            }
+        },
+        "memoryLimit": 4294967296,
+        "manifestVersion": 2,
+        "website": "https://rocket.chat",
+        "contactEmail": "apps@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "chat",
+            "webchat",
+            "slack",
+            "teams",
+            "matrix",
+            "federation",
+            "voip"
+        ],
+        "changelog": "* Update Rocket.Chat to 7.13.3\n* [Full Changelog](https://github.com/RocketChat/Rocket.Chat/releases/tag/7.13.3)\n* Bump [@rocket](https://github.com/rocket).chat/meteor version.\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/chat.rocket.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/chat.rocket.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/chat.rocket.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/chat.rocket.cloudronapp/4.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/14/rocket-chat",
+        "documentationUrl": "https://docs.cloudron.io/packages/rocket.chat/",
+        "postInstallMessage": "<sso>\n\n**IMPORTANT:**\n\n* The admin name and email must not conflict with an existing Cloudron user.\n* External registration is enabled by default.\n\n</sso>\n\n",
+        "dockerImage": "cloudron/chat.rocket.cloudronapp:202601142007160000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/chat.rocket.cloudronapp/versions/2.76.2/icon",
+    "featured": false,
+    "ranking": 0
+}

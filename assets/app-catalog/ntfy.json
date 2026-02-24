@@ -1,0 +1,55 @@
+{
+    "id": "sh.ntfy.cloudronapp",
+    "creationDate": "2026-02-10T07:27:58.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-02-18T11:14:40.000Z",
+    "publishedAt": "2023-02-18T11:14:40.000Z",
+    "manifest": {
+        "id": "sh.ntfy.cloudronapp",
+        "version": "1.20.0",
+        "upstreamVersion": "2.17.0",
+        "title": "ntfy",
+        "author": "ntfy.sh authors",
+        "description": "ntfy (pronounce: notify) is a simple HTTP-based pub-sub notification service. It allows you to send\nnotifications to your phone or desktop via scripts from any computer, entirely without signup or cost.\n\n",
+        "tagline": "Push notifications via PUT/POST",
+        "website": "https://ntfy.sh/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/sh.ntfy.cloudronapp/screenshot-curl.png",
+            "https://screenshots.cloudron.io/sh.ntfy.cloudronapp/screenshot-phone-detail.jpg",
+            "https://screenshots.cloudron.io/sh.ntfy.cloudronapp/screenshot-web-detail.png"
+        ],
+        "httpPort": 8000,
+        "tags": [
+            "notify",
+            "push",
+            "gotify"
+        ],
+        "minBoxVersion": "8.1.0",
+        "changelog": "* Update ntfy to 2.17.0\n* [Full Changelog](https://github.com/binwiederhier/ntfy/releases/tag/v2.17.0)\n* Server: Support templating in the priority field ([#&#8203;1426](https://github.com/binwiederhier/ntfy/issues/1426), thanks to [@&#8203;seantomburke](https://github.com/seantomburke) for reporting)\n* Server: Add admin-only `GET /v1/version` endpoint returning server version, build commit, and date ([#&#8203;1599](https://github.com/binwiederhier/ntfy/issues/1599), thanks to [@&#8203;crivchri](https://github.com/crivchri) for reporting)\n* Server/Web: [Support \"copy\" action](https://docs.ntfy.sh/publish/#copy-to-clipboard) button to copy a value to the clipboard ([#&#8203;1364](https://github.com/binwiederhier/ntfy/issues/1364), thanks to [@&#8203;SudoWatson](https://github.com/SudoWatson) for reporting)\n* Web: Show red notification dot on favicon when there are unread messages ([#&#8203;1017](https://github.com/binwiederhier/ntfy/issues/1017), thanks to [@&#8203;ad-si](https://github.com/ad-si) for reporting)\n* Server: Fix crash when commit string is shorter than 7 characters in non-GitHub-Action builds ([#&#8203;1493](https://github.com/binwiederhier/ntfy/issues/1493), thanks to [@&#8203;cyrinux](https://github.com/cyrinux) for reporting)\n* Server: Fix server crash (nil pointer panic) when subscriber disconnects during publish ([#&#8203;1598](https://github.com/binwiederhier/ntfy/pull/1598))\n* Server: Fix log spam from `http: response.WriteHeader on hijacked connection` for WebSocket errors ([#&#8203;1362](https://github.com/binwiederhier/ntfy/issues/1362), thanks to [@&#8203;bonfiresh](https://github.com/bonfiresh) for reporting)\n* Server: Use `slices.Contains` from stdlib to simplify code ([#&#8203;1406](https://github.com/binwiederhier/ntfy/pull/1406), thanks to [@&#8203;tanhuaan](https://github.com/tanhuaan))\n* Web: Fix `clear=true` on action buttons not clearing the notification ([#&#8203;1029](https://github.com/binwiederhier/ntfy/issues/1029), thanks to [@&#8203;ElFishi](https://github.com/ElFishi) for reporting)\n* Web: Fix Markdown message line height to match plain text (1.5 instead of 1.2) ([#&#8203;1139](https://github.com/binwiederhier/ntfy/issues/1139), thanks to [@&#8203;etfz](https://github.com/etfz) for reporting)\n",
+        "postInstallMessage": "The app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n**Note:** By design, the web interface is accessible by all and can be used to interact with\none or more ntfy servers.\n\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/ntfy",
+        "forumUrl": "https://forum.cloudron.io/category/158/ntfy",
+        "addons": {
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password following these [instructions](https://docs.cloudron.io/apps/ntfy/#change-password)"
+            }
+        },
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/sh.ntfy.cloudronapp:202602100319530000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/sh.ntfy.cloudronapp/versions/1.20.0/icon",
+    "featured": false,
+    "ranking": 0
+}

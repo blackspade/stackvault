@@ -1,0 +1,80 @@
+{
+    "id": "eu.pretix.cloudronapp",
+    "creationDate": "2026-01-28T08:04:44.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-06-02T13:09:36.000Z",
+    "publishedAt": "2025-06-02T13:09:36.000Z",
+    "manifest": {
+        "id": "eu.pretix.cloudronapp",
+        "title": "Pretix",
+        "tagline": "Ticket shop application",
+        "version": "1.4.0",
+        "upstreamVersion": "2026.1.0",
+        "description": "### About\n\nTicket shop application for conferences, festivals, concerts, tech events, shows, exhibitions, workshops, barcamps, etc.\n\n",
+        "author": "rami.io GmbH",
+        "website": "https://pretix.eu",
+        "healthCheckPath": "/",
+        "icon": "logo.png",
+        "httpPort": 8000,
+        "memoryLimit": 1073741824,
+        "multiDomain": true,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "oidc": {
+                "loginRedirectUri": "/oidc/callback/"
+            },
+            "scheduler": {
+                "housekeeping": {
+                    "schedule": "15,45 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            },
+            "redis": []
+        },
+        "runtimeDirs": [
+            "/app/code/venv/lib/python3.12/site-packages/pretix/static.dist",
+            "/app/code/venv/lib/python3.12/site-packages/pretix/static/jsi18n/",
+            "/app/code/venv/lib/python3.12/site-packages/django_filters/locale/",
+            "/app/code/venv/lib/python3.12/site-packages/hijack/locale",
+            "/app/code/venv/lib/python3.12/site-packages/pretix/locale",
+            "/app/code/venv/lib/python3.12/site-packages/django/contrib/sessions",
+            "/app/code/venv/lib/python3.12/site-packages/django/contrib/postgres",
+            "/app/code/venv/lib/python3.12/site-packages/django/contrib/sites/locale",
+            "/app/code/venv/lib/python3.12/site-packages/django_countries/locale",
+            "/app/code/venv/lib/python3.12/site-packages/localflavor/locale"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "manifestVersion": 2,
+        "contactEmail": "support@cloudron.io",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin@localhost<br/>\n**Password**: admin<br/>\n\n",
+        "forumUrl": "https://forum.cloudron.io/category/207/pretix",
+        "documentationUrl": "https://docs.cloudron.io/packages/pretix/",
+        "changelog": "* Update pretix to 2026.1.0\n* [Full Changelog](https://github.com/pretix/pretix/releases/tag/v2026.1.0)\n* Breaking change: Removed deprecated API endpoints for ticket validation\n* Feature: Added support for multi-currency payments\n* Feature: Introduced a new dashboard for event analytics\n* Bug fix: Fixed issue with email notifications not being sent\n* Bug fix: Resolved payment gateway timeout errors\n* Feature: Enhanced security for user authentication\n* Breaking change: Changed default settings for new events\n* Bug fix: Corrected display issue on mobile devices\n* Feature: Implemented new search functionality for events\n* Bug fix: Addressed problem with data export feature\n",
+        "minBoxVersion": "8.3.0",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/eu.pretix.cloudronapp/shop_frontpage.png",
+            "https://screenshots.cloudron.io/eu.pretix.cloudronapp/shop_questions.png",
+            "https://screenshots.cloudron.io/eu.pretix.cloudronapp/waiting_list_admin.png"
+        ],
+        "tags": [
+            "tickets",
+            "shop",
+            "ticketing software"
+        ],
+        "dockerImage": "cloudron/eu.pretix.cloudronapp:202601270812340000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/eu.pretix.cloudronapp/versions/1.4.0/icon",
+    "featured": false,
+    "ranking": 0
+}

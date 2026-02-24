@@ -1,0 +1,57 @@
+{
+    "id": "com.gitlab.cloudronapp",
+    "creationDate": "2017-12-29T01:27:47.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.gitlab.cloudronapp",
+        "title": "GitLab",
+        "author": "GitLab Community",
+        "description": "This app packages GitLab 10.3.1\n\nGitLab Community Edition (CE) includes git repository management, code reviews, \nan issue tracking and wiki’s and [much more](https://about.gitlab.com/features/).\n\n## Features\n* Manage Git repositories with fine grained access controls that keep your code secure\n* Perform code reviews and enhance collaboration with merge requests\n* Each project can also have an issue tracker and a wiki\n* Used by more than 100,000 organizations, GitLab is the most popular solution to manage Git repositories on-premises\n* Completely free and open source (MIT Expat license)\n* Powered by Ruby on Rails\n\n## Website\n\nOn [about.gitlab.com](https://about.gitlab.com/) you can find more information about:\n\n- [Subscriptions](https://about.gitlab.com/subscription/)\n- [Consultancy](https://about.gitlab.com/consultancy/)\n- [Community](https://about.gitlab.com/community/)\n- [Hosted GitLab.com](https://about.gitlab.com/gitlab-com/) use GitLab as a free service\n- [GitLab Enterprise Edition](https://about.gitlab.com/gitlab-ee/) with additional features aimed at larger organizations.\n- [GitLab CI](https://about.gitlab.com/gitlab-ci/) a continuous integration (CI) server that is easy to integrate with GitLab.\n\n## Getting help\n\nPlease see [Getting help for GitLab](https://about.gitlab.com/getting-help/) on our website for the many options to get help.\n\n## Is it any good?\n\n[Yes](https://news.ycombinator.com/item?id=3067434)\n\n## Is it awesome?\n\nThanks for [asking this question](https://twitter.com/supersloth/status/489462789384056832) Joshua.\n[These people](https://twitter.com/gitlab/favorites) seem to like it.\n\n",
+        "tagline": "Create, review and deploy code together",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "tcpPorts": {
+            "SSH_PORT": {
+                "title": "SSH Port",
+                "description": "SSH Port over which repos can be pushed & pulled",
+                "defaultValue": 29418
+            }
+        },
+        "manifestVersion": 1,
+        "website": "https://about.gitlab.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.gitlab.cloudronapp/e74a69c17f45fa0bec49e061f1e5d9c5de7e0863/mr_sh.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.gitlab.cloudronapp/e74a69c17f45fa0bec49e061f1e5d9c5de7e0863/02-merge-conflicts.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.gitlab.cloudronapp/e74a69c17f45fa0bec49e061f1e5d9c5de7e0863/04-file-browser.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.gitlab.cloudronapp/e74a69c17f45fa0bec49e061f1e5d9c5de7e0863/05-issue-management.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.gitlab.cloudronapp/e74a69c17f45fa0bec49e061f1e5d9c5de7e0863/06-issue-board.png"
+        ],
+        "addons": {
+            "postgresql": [],
+            "redis": [],
+            "sendmail": [],
+            "recvmail": [],
+            "localstorage": [],
+            "ldap": []
+        },
+        "memoryLimit": 3221225472,
+        "tags": [
+            "version control",
+            "git",
+            "code hosting",
+            "development"
+        ],
+        "changelog": "* Update GitLab to 10.3.1\n* [Release blog](https://about.gitlab.com/2017/12/22/gitlab-10-3-released/)\n* Merge Request Commit Discussions\n* Customize branch name when creating merge request from issue\n* Flow charts, sequence diagrams, and Gantt diagrams in GitLab Flavored Markdown (GFM) with Mermaid\n* Strict check on artifacts dependencies \n* Automatically run first pipeline when enabling Auto DevOps\n* Git push and pull on project redirects \n* Show project member role on list of projects \n* Customize \"New Project\" page \n",
+        "postInstallMessage": "#### User management\n\nGitLab optionally integrates with Cloudron user management. When enabled,\nCloudron users can login to GitLab using the `Cloudron` tab in the login screen.\n\nOn startup, you will be asked to set the `root` user password. Using this `root` account,\nyou can make other users as GitLab admins.\n\n**IMPORTANT**: Remember to change the email address of the root account, so you can reset\nthe password easily if required.\n\n\n",
+        "optionalSso": true,
+        "documentationUrl": "https://cloudron.io/documentation/apps/gitlab/",
+        "minBoxVersion": "1.8.1",
+        "dockerImage": "cloudron/img-062037096d69bbf3ffb5b9316ad89cb9:3f92c46b-79f6-45a2-a550-62c26f3c42cd"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.gitlab.cloudronapp/versions/1.6.0/icon",
+    "featured": true,
+    "ranking": 0
+}

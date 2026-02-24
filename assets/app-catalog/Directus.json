@@ -1,0 +1,71 @@
+{
+    "id": "io.directus9.cloudronapp",
+    "creationDate": "2026-02-07T07:37:07.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-11-05T23:10:15.000Z",
+    "publishedAt": "2021-11-05T23:10:15.000Z",
+    "manifest": {
+        "id": "io.directus9.cloudronapp",
+        "title": "Directus",
+        "author": "Directus Developers",
+        "description": "## About\n\nDirectus is an open-source tool that wraps your database with an API, and provides an intuitive admin app for\nnon-technical users to manage its content. It's what you'd get if you mixed a headless CMS, database client,\nand WebApp builder. Created in 2004, our platform powers over a million data-driven projects around the world.\n\n## What makes Directus so special?\n\n* Freedom to Innovate\n* All Platforms & Devices\n* Free & Open-Source\n* Pure SQL Content\n* Whitelabel with your Brand\n\n## Features\n\n* Custom Workflows\n* Form Layout\n* Digital Asset Management\n* Database Mirroring\n* Multilingual Support\n\n",
+        "changelog": "* Update directus to 11.15.1\n* [Full Changelog](https://github.com/directus/directus/releases/tag/v11.15.1)\n* Fixed field selection of 20+ fields in the app returns no selection ([#26600](https://github.com/directus/directus/pull/26600) by [@ComfortablyCoding](https://github.com/ComfortablyCoding))\n* Improved prompts for using Visual Editor elements inside AI Assistant ([#26598](https://github.com/directus/directus/pull/26598) by [@bryantgillespie](https://github.com/bryantgillespie))\n",
+        "tagline": "Data-First Headless CMS & API",
+        "version": "2.15.1",
+        "upstreamVersion": "11.15.1",
+        "healthCheckPath": "/server/ping",
+        "httpPort": 8055,
+        "configurePath": "/admin/",
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/login/cloudron/callback"
+            },
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "runtimeDirs": [
+            "/home/cloudron/.npm"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "memoryLimit": 536870912,
+        "website": "https://www.directus.io",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "cms",
+            "sql",
+            "api",
+            "contentful",
+            "strapi",
+            "netlify",
+            "no-code",
+            "nocode"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.directus.cloudronapp/app-overview.png",
+            "https://screenshots.cloudron.io/io.directus.cloudronapp/item-browse-order.png",
+            "https://screenshots.cloudron.io/io.directus.cloudronapp/user-directory.png"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n  \n**Email**: admin@example.com<br/>\n**Password**: changeme<br/>\n\n<sso>\nCloudron users are given the default role of administrator. Set `AUTH_CLOUDRON_DEFAULT_ROLE_ID` to a custom role id in `/app/data/env.sh` to override this.\n</sso>\n\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/101/directus",
+        "documentationUrl": "https://docs.cloudron.io/packages/directus/",
+        "dockerImage": "cloudron/io.directus9.cloudronapp:202602070620210000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.directus9.cloudronapp/versions/2.15.1/icon",
+    "featured": false,
+    "ranking": 0
+}

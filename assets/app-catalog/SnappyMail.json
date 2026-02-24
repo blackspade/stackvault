@@ -1,0 +1,53 @@
+{
+    "id": "eu.snappymail.cloudronapp",
+    "creationDate": "2025-03-30T08:54:59.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-01-25T17:56:28.000Z",
+    "publishedAt": "2022-01-25T17:56:28.000Z",
+    "manifest": {
+        "id": "eu.snappymail.cloudronapp",
+        "title": "SnappyMail",
+        "author": "SnappyMail Developers",
+        "description": "### About\n\nSnappyMail is a Simple, modern, lightweight & fast web-based email client.\n\nMobile booting with ~144 KB download (using Brotli) and up to 99% performance grade by Lighthouse.\n\nThis is a fork of the much appreciated RainLoop, but with massive changes to be compatible with (mobile) browsers in 2020.\n[Here's a short comparison](https://snappymail.eu/comparison.html).\n\n### Features\n * Modern user interface.\n * Complete support of IMAP and SMTP protocols including SSL and STARTTLS.\n * Sieve scripts (Filters and vacation message).\n * Minimalistic resources requirements.\n * Direct access to mail server is used (mails are not stored locally on web server).\n * Allows for adding multiple accounts to primary one, simultaneous access to different accounts in different browser tabs is supported. Additional identities.\n * Administrative panel for configuring main options.\n * Really simple installation and update (the product is updated from admin panel).\n * Managing folders list.\n * Simple look'n'feel customization.\n * Extending functionality with plugins installed through admin panel.\n * Perfect rendering of complex HTML mails.\n * Drag'n'drop for mails and attachments.\n * Keyboard shortcuts support.\n * Autocompletion of e-mail addresses.\n\n### Modifications\n\nThis fork of RainLoop has the following changes:\n\n* Privacy/GDPR friendly (no: Social, Gravatar, Facebook, Google, Twitter, DropBox, OwnCloud, X-Mailer)\n* Admin uses `password_hash`/`password_verify`\n* Auth failed attempts written to syslog\n* ES2018\n* Dark mode\n* Added option to remove background/font colors from messages for real \"dark mode\"\n* Removed BackwardCapability (class \\RainLoop\\Account)\n* Removed ChangePassword (re-implemented as plugin)\n* Removed POP3 support\n* Removed background video support\n* Removed Sentry (Application Monitoring and Error Tracking Software)\n* Removed Spyc yaml\n* Replaced gulp-uglify with gulp-terser\n* CRLF => LF line endings\n\n",
+        "changelog": "* Update base image to 5.0.0\n",
+        "tagline": "Your webmail client",
+        "version": "1.26.0",
+        "upstreamVersion": "2.38.2",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "email": []
+        },
+        "manifestVersion": 2,
+        "website": "https://snappymail.eu/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "webmail",
+            "mail",
+            "email",
+            "imap",
+            "smtp",
+            "gmail",
+            "fastmail"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/eu.snappymail.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/eu.snappymail.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/eu.snappymail.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/eu.snappymail.cloudronapp/4.png"
+        ],
+        "postInstallMessage": "External domains can be added by logging into SnappyMail as an administrator.\n\n",
+        "minBoxVersion": "7.1.2",
+        "forumUrl": "https://forum.cloudron.io/category/138/snappymail",
+        "documentationUrl": "https://docs.cloudron.io/apps/snappymail/",
+        "dockerImage": "cloudron/eu.snappymail.cloudronapp:202503291010280000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/eu.snappymail.cloudronapp/versions/1.26.0/icon",
+    "featured": false,
+    "ranking": 0
+}

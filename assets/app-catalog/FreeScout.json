@@ -1,0 +1,75 @@
+{
+    "id": "net.freescout.cloudronapp",
+    "creationDate": "2026-02-08T12:00:49.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-04-27T13:12:42.000Z",
+    "publishedAt": "2020-04-27T13:12:42.000Z",
+    "manifest": {
+        "id": "net.freescout.cloudronapp",
+        "version": "1.15.29",
+        "upstreamVersion": "1.8.204",
+        "title": "FreeScout",
+        "tagline": "Helpdesk & Shared Mailbox",
+        "website": "https://freescout.net",
+        "author": "FreeScout developers",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "description": "FreeScout is the super lightweight free open source help desk and shared inbox written in PHP7.\nIt is a self hosted clone of HelpScout. Now you can enjoy free Zendesk & Help Scout without giving up privacy or locking you into a service you don't control.\n\n***Cloudron user-management is supported through the paid [LDAP module](https://freescout.net/module/ldap/).***\n\n### Features\n\nFreeScout is the perfect helpdesk solution for those who need to provide a professional customer support, but who can not afford to pay for Zendesk or Help Scout.\n\n* No limitations on the number of users, tickets, etc.\n* 100% Mobile-friendly.\n* Multilingual (English, French, Italian, Portuguese, Russian, Dutch, German, Spanish, Swedish).\n* Seamless email integration.\n* Starred conversations.\n* Push notifications.\n* Following a conversation.\n* Auto reply.\n* Saved replies.\n* Notes.\n* Email commands.\n* Forwarding conversations.\n* Moving conversations between mailboxes.\n* Sending new conversations to multiple recipients at once.\n* Pasting screenshots from the clipboard into the reply area.\n* Satisfaction Ratings.\n* Configuring notifications on a per user basis.\n* Open tracking.\n* Tags.\n* Editing / hiding threads.\n* Search.\n* Spam filter.\n* Slack integration.\n* Translating tickets.\n* Time tracking.\n* Custom fields.\n* White-labeling.\n* Custom folders.\n* Workflows & SLA.\n* Telegram Notifications.\n",
+        "postInstallMessage": "This initial admin credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: changeme123<br/>\n\n",
+        "changelog": "* Update freescout to 1.8.204\n* [Full Changelog](https://github.com/freescout-helpdesk/freescout/releases/tag/1.8.204)\n* Remove `Australia/Queensland` timezone ([#&#8203;5175](https://github.com/freescout-helpdesk/freescout/issues/5175))\n* Add `base-uri` rule to CSP tag.\n* Use PHP library to fetch via POP3 instead of IMAP extension.\n",
+        "tags": [
+            "help",
+            "helpdesk",
+            "support",
+            "tickets",
+            "zendesk",
+            "helpscout"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/net.freescout.cloudronapp/freescout-01.png",
+            "https://screenshots.cloudron.io/net.freescout.cloudronapp/freescout-02.png",
+            "https://screenshots.cloudron.io/net.freescout.cloudronapp/freescout-03.png"
+        ],
+        "optionalSso": true,
+        "multiDomain": true,
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "addons": {
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "ldap": [],
+            "oidc": {
+                "loginRedirectUri": "/oauth-login/callback/cloudron"
+            },
+            "mysql": [],
+            "scheduler": {
+                "housekeeping": {
+                    "schedule": "* * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            },
+            "setup-oauth-login-module": {
+                "sso": true,
+                "message": "Purchase FreeScout's [OAuth & Social Login module](https://freescout.net/module/oauth-login/). Restart app after activating the module"
+            }
+        },
+        "documentationUrl": "https://docs.cloudron.io/packages/freescout",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/68/freescout",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/net.freescout.cloudronapp:202602080619300000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/net.freescout.cloudronapp/versions/1.15.29/icon",
+    "featured": false,
+    "ranking": 0
+}

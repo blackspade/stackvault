@@ -1,0 +1,67 @@
+{
+    "id": "io.typebot.cloudronapp",
+    "creationDate": "2026-01-12T07:49:51.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-08-12T10:29:05.000Z",
+    "publishedAt": "2023-08-12T10:29:05.000Z",
+    "manifest": {
+        "id": "io.typebot.cloudronapp",
+        "title": "Typebot",
+        "author": "Baptiste Arnaud <baptiste@typebot.io>",
+        "description": "### Overview\n\nTypebot is a visual chatbot builder that helps you create chatbots for your website without coding.\n",
+        "changelog": "* Update typebot.io to 3.15.2\n* [Full Changelog](https://github.com/baptisteArno/typebot.io/releases/tag/v3.15.2)\n* Fix app router automatically adding `transfer-encoding: chunked` header to backend requests [69efa2f](https://github.com/baptisteArno/typebot.io/commit/69efa2f3c9cb0ca1c24b3c053767020397fbb57b)\n",
+        "tagline": "Build advanced chatbots visually",
+        "version": "1.23.2",
+        "upstreamVersion": "3.15.2",
+        "minBoxVersion": "8.1.0",
+        "healthCheckPath": "/",
+        "icon": "logo.png",
+        "httpPort": 3000,
+        "httpPorts": {
+            "TYPEBOT_VIEWER_HOST": {
+                "title": "Typebot Viewer",
+                "description": "The Typebot viewer where your users can interact with your bots",
+                "containerPort": 3001,
+                "defaultValue": "bot"
+            }
+        },
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/api/auth/callback/custom-oauth"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "configure-s3": {
+                "message": "Configure S3 settings in /app/data/env.sh"
+            }
+        },
+        "postInstallMessage": "In order to function properly, your S3 bucket must be configured. Make sure to read through the S3 configuration [docs](https://docs.typebot.io/self-hosting/guides/s3).\n",
+        "manifestVersion": 2,
+        "website": "https://typebot.io",
+        "contactEmail": "support@typebot.io",
+        "forumUrl": "https://forum.cloudron.io/category/173/typebot",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.typebot.cloudronapp/typebot_00.png"
+        ],
+        "optionalSso": true,
+        "tags": [
+            "chatbot",
+            "forms",
+            "typeform"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/typebot/",
+        "memoryLimit": 1073741824,
+        "dockerImage": "cloudron/io.typebot.cloudronapp:202601120621010000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.typebot.cloudronapp/versions/1.23.2/icon",
+    "featured": false,
+    "ranking": 0
+}

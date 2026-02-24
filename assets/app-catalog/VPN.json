@@ -1,0 +1,75 @@
+{
+    "id": "io.cloudron.openvpn",
+    "creationDate": "2025-11-28T07:29:45.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-09-01T03:23:54.000Z",
+    "publishedAt": "2017-09-01T03:23:54.000Z",
+    "manifest": {
+        "id": "io.cloudron.openvpn",
+        "title": "VPN",
+        "author": "OpenVPN & WireGuard Authors",
+        "description": "# VPN\n\nThis is a VPN & Wireguard server, packaged with a very simple key manager.\n\n## Features\n\n* TCP based VPN tunnel with AES-256-CBC encryption\n* Pre-shared static key (PSK) for \"extra protection\" to the the TLS channel\n* Devices connected to the VPN can reach each other through the domain `device.user.vpn.mydomain.com` or simply `device.user`\n* Client connection status indicator\n* Prevents DNS leaks using a private DNS server that is run as part of the app\n* Issue and revoke per-device client certificates\n* This app can be installed multiple times to create independent VPN instances\n* Set a custom DNS server for the entire network\n\n## Usage\n\nThe key management interface is available under the `/` location.\n\nAuthenticated users can create and download keys for themselves.\n\n",
+        "tagline": "VPN Server",
+        "tags": [
+            "vpn",
+            "openvpn",
+            "network",
+            "wireguard"
+        ],
+        "version": "2.10.0",
+        "upstreamVersion": "2.6.14-0ubuntu0.24.04.3 2.5.9, WireGuard Tools v1.0.20210914",
+        "healthCheckPath": "/api/healthcheck",
+        "httpPort": 3000,
+        "manifestVersion": 2,
+        "website": "https://openvpn.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/api/oidc/callback"
+            },
+            "localstorage": []
+        },
+        "capabilities": [
+            "net_admin",
+            "ping"
+        ],
+        "minBoxVersion": "8.1.0",
+        "tcpPorts": {
+            "VPN_TCP_PORT": {
+                "title": "VPN TCP port",
+                "description": "Port over which OpenVPN server listens",
+                "defaultValue": 7494
+            }
+        },
+        "udpPorts": {
+            "VPN_UDP_PORT": {
+                "title": "VPN UDP port. If enabled, TCP will be disabled",
+                "description": "UDP Port over which OpenVPN server listens",
+                "defaultValue": 7194
+            },
+            "WIREGUARD_UDP_PORT": {
+                "title": "Wireguard UDP port",
+                "description": "UDP Port over which Wireguard server listens",
+                "defaultValue": 51820
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.cloudron.openvpn/img01.png",
+            "https://screenshots.cloudron.io/io.cloudron.openvpn/img02.png",
+            "https://screenshots.cloudron.io/io.cloudron.openvpn/img03.png",
+            "https://screenshots.cloudron.io/io.cloudron.openvpn/img04.png"
+        ],
+        "changelog": "* Update openvpn to 2.6.14-0ubuntu0.24.04.3\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/vpn/",
+        "forumUrl": "https://forum.cloudron.io/category/20/vpn",
+        "postInstallMessage": "This app is designed for self-service usage. Cloudron users can login and generate a certificate\nfor each device they own.\n\nFirst user is made an admin.\n\n",
+        "dockerImage": "cloudron/io.cloudron.openvpn:202511280022320000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.cloudron.openvpn/versions/2.10.0/icon",
+    "featured": true,
+    "ranking": 0
+}

@@ -1,0 +1,75 @@
+{
+    "id": "org.matrix.synapse",
+    "creationDate": "2026-02-12T20:15:14.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-04-25T20:51:59.000Z",
+    "publishedAt": "2020-04-25T20:51:59.000Z",
+    "manifest": {
+        "id": "org.matrix.synapse",
+        "title": "Matrix Synapse",
+        "author": "Matrix synapse authors",
+        "description": "**This package only provides the Matrix backend. A variety of clients are available\n[here](https://matrix.org/clients/). Riot is a popular web frontend for Matrix and\nis available as a separate app.**\n\n## About\n\nMatrix is an ambitious new ecosystem for open federated Instant Messaging and VoIP.\n\nMatrix specifies a set of pragmatic RESTful HTTP JSON APIs as an open standard, which handle:\n\n* Creating and managing fully distributed chat rooms with no single points of control or failure\n* Eventually-consistent cryptographically secure synchronisation of room state across a global open network of federated servers and services\n* Sending and receiving extensible messages in a room with (optional) end-to-end encryption[1]\n* Inviting, joining, leaving, kicking, banning room members\n* Managing user accounts (registration, login, logout)\n* Using 3rd Party IDs (3PIDs) such as email addresses, phone numbers, Facebook accounts to authenticate, identify and discover users on Matrix.\n* Placing 1:1 VoIP and Video calls\n\n## What is Synapse?\n\nSynapse is a reference \"homeserver\" implementation of Matrix from the core development\nteam at matrix.org, written in Python/Twisted.\n\n",
+        "changelog": "* Update synapse to 1.147.1\n* [Full Changelog](https://github.com/element-hq/synapse/releases/tag/v1.147.1)\n* Block federation requests and events authenticated using a known insecure signing key. See [CVE-2026-24044](https://www.cve.org/CVERecord?id=CVE-2026-24044) / [ELEMENTSEC-2025-1670](https://github.com/element-hq/ess-helm/security/advisories/GHSA-qwcj-h6m8-vp6q). ([#&#8203;19459](https://github.com/element-hq/synapse/issues/19459))\n",
+        "tagline": "Secure & decentralized communication",
+        "version": "1.127.1",
+        "upstreamVersion": "1.147.1",
+        "healthCheckPath": "/",
+        "httpPort": 8008,
+        "memoryLimit": 536870912,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/_synapse/client/oidc/callback"
+            },
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "turn": {
+                "optional": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://matrix.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "im",
+            "collaboration",
+            "voip",
+            "videochat",
+            "chat",
+            "slack",
+            "zulip",
+            "federated",
+            "element",
+            "riot"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.matrix.synapse/1.png",
+            "https://screenshots.cloudron.io/org.matrix.synapse/2.png",
+            "https://screenshots.cloudron.io/org.matrix.synapse/3.png"
+        ],
+        "checklist": {
+            "configure-federation": {
+                "message": "For federation to work, the delegation URI `https://$CLOUDRON-APP-DOMAIN/.well-known/matrix/server` must be configured. See the [docs](https://docs.cloudron.io/packages/synapse/#post-installation) on how to do this"
+            },
+            "registration-enabled-without-verification": {
+                "message": "Registration is enabled but verification is disabled. See [docs](https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html?highlight=registration_require#enable_registration) for more information",
+                "sso": false
+            }
+        },
+        "postInstallMessage": "Account ids are created with the username and the second level domain under which the\napp is installed e.g. `@$CLOUDRON-USERNAME:$CLOUDRON-APP-DOMAIN`.\n",
+        "minBoxVersion": "8.2.0",
+        "forumUrl": "https://forum.cloudron.io/category/50/matrix-synapse-riot",
+        "documentationUrl": "https://docs.cloudron.io/packages/synapse/",
+        "optionalSso": true,
+        "dockerImage": "cloudron/org.matrix.synapse:202602121716050000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.matrix.synapse/versions/1.127.1/icon",
+    "featured": true,
+    "ranking": 0
+}

@@ -1,0 +1,56 @@
+{
+    "id": "org.navidrome.cloudronapp",
+    "creationDate": "2026-02-11T09:41:39.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-09T06:55:36.000Z",
+    "publishedAt": "2020-11-09T06:55:36.000Z",
+    "manifest": {
+        "id": "org.navidrome.cloudronapp",
+        "title": "Navidrome",
+        "author": "Navidrome Authors",
+        "description": "Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen\nto your music collection from any browser or mobile device. It's like your personal Spotify!\n\n## Features\n\n* Handles very large music collections\n* Streams virtually any audio format available\n* Reads and uses all your beautifully curated metadata\n* Great support for compilations (Various Artists albums) and box sets (multi-disc albums)\n* Multi-user, each user has their own play counts, playlists, favourites, etc...\n* Very low resource usage\n* Multi-platform, runs on macOS, Linux and Windows. Docker images are also provided\n* Ready to use binaries for all major platforms, including Raspberry Pi\n* Automatically monitors your library for changes, importing new files and reloading new metadata\n* Themeable, modern and responsive Web interface based on Material UI\n* Compatible with all Subsonic/Madsonic/Airsonic clients\n* Transcoding on the fly. Can be set per user/player. Opus encoding is supported\n* Translated to various languages\n\n",
+        "tagline": "Modern Music Server",
+        "version": "1.27.2",
+        "upstreamVersion": "0.60.3",
+        "healthCheckPath": "/",
+        "httpPort": 4533,
+        "memoryLimit": 536870912,
+        "addons": {
+            "localstorage": []
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, set up an admin account"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://www.navidrome.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.navidrome.cloudronapp/ss-desktop-player.png",
+            "https://screenshots.cloudron.io/org.navidrome.cloudronapp/ss-mobile-album-view.png",
+            "https://screenshots.cloudron.io/org.navidrome.cloudronapp/ss-mobile-login.png",
+            "https://screenshots.cloudron.io/org.navidrome.cloudronapp/ss-mobile-player.png"
+        ],
+        "tags": [
+            "music",
+            "subsonic",
+            "spotify",
+            "last.fm",
+            "media"
+        ],
+        "changelog": "* Update navidrome to 0.60.3\n* [Full Changelog](https://github.com/navidrome/navidrome/releases/tag/v0.60.3)\n* [`34c6f12`](https://github.com/navidrome/navidrome/commit/34c6f12aeeb11144100d764b06248e0a40ccb126): feat(server): add explicit status support in smart playlists ([#&#8203;5031](https://github.com/navidrome/navidrome/issues/5031)) ([@&#8203;kgarner7](https://github.com/kgarner7))\n* [`408aa78`](https://github.com/navidrome/navidrome/commit/408aa78ed53f0299d35e758cd422fd0b9dfe93a3): fix(scanner): log warning when metadata extraction fails ([@&#8203;deluan](https://github.com/deluan))\n* [`ed79a88`](https://github.com/navidrome/navidrome/commit/ed79a8897bc16602ebadb4e3a253d87f1599642f): fix(scanner): pass filename hint to gotaglib's OpenStream for format detection ([#&#8203;5012](https://github.com/navidrome/navidrome/issues/5012)) ([@&#8203;deluan](https://github.com/deluan))\n* [`fd09ca1`](https://github.com/navidrome/navidrome/commit/fd09ca103fd9fd14f5d0ecd3df6efd839a9df560): fix(scanner): resolve data race on conf.Server access in getScanner ([@&#8203;deluan](https://github.com/deluan))\n* [`0a47228`](https://github.com/navidrome/navidrome/commit/0a4722802af833caa8dd794fa8c25f8d0a97dd06): fix(subsonic): validate JSONP callback parameter ([@&#8203;deluan](https://github.com/deluan))\n* [`eb9ebc3`](https://github.com/navidrome/navidrome/commit/eb9ebc3fba6545334c2c13d778273c1bd55135ee): fix(ui): add missing keys in Danish translation ([#&#8203;5011](https://github.com/navidrome/navidrome/issues/5011)) ([@&#8203;denisarissa](https://github.com/denisarissa))\n* [`62f9c3a`](https://github.com/navidrome/navidrome/commit/62f9c3a458bd101df1d059eeaf8bce43e7c97c21): fix: linux service should restart when upgrading ([#&#8203;5001](https://github.com/navidrome/navidrome/issues/5001)) ([@&#8203;mintsoft](https://github.com/mintsoft))\n* [`e05a7e2`](https://github.com/navidrome/navidrome/commit/e05a7e230f7a72b6c2e7d789006df63b688c30e2): fix: prevent data race on conf.Server during cleanup in e2e tests ([@&#8203;deluan](https://github.com/deluan))\n* [`bee0305`](https://github.com/navidrome/navidrome/commit/bee0305831a76c49a46e7a6b0cbe09fd865abebc): fix: split reflex -R flags to preserve directory exclusion optimization ([@&#8203;deluan](https://github.com/deluan))\n",
+        "postInstallMessage": "By default, the music library is located at `/app/data/library`.\n\n**IMPORTANT**: Passwords are stored in [clear text](https://github.com/deluan/navidrome/issues/202)\nin the database for subsonic compatiblity. For this reason, we recommend using a random password.\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/navidrome/",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/108/navidrome",
+        "dockerImage": "cloudron/org.navidrome.cloudronapp:202602110321150000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.navidrome.cloudronapp/versions/1.27.2/icon",
+    "featured": false,
+    "ranking": 0
+}

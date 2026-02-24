@@ -1,0 +1,66 @@
+{
+    "id": "org.actualbudget.cloudronapp",
+    "creationDate": "2026-02-02T19:02:22.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-01-02T21:57:53.000Z",
+    "publishedAt": "2024-01-02T21:57:53.000Z",
+    "manifest": {
+        "id": "org.actualbudget.cloudronapp",
+        "title": "Actual Budget",
+        "author": "Actual Authors",
+        "description": "# About\n\nActual Budget is a super fast and privacy-focused app for managing your finances. At its heart is the well proven and much loved Envelope Budgeting methodology. Actual is local-first, free and open source, and features multi-device sync, optional end-to-end encryption and so much more.\n\nActualbudget was created by [James Long](https://jlongster.com/). Originally a commercial project, Actual became [open source in April 2022](https://actualbudget.com/open-source). Actual is now maintained by an active community of contributors.\n\n## Features\n\n* Everything in one place\n* Syncing across devices\n* Payees\n* Split transactions\n* Bank Sync\n* Budgeting\n* Transfers\n* Importing Transactions\n* Undo & redo\n* Migrate your data\n* Dark Mode\n* API\n* Own your data\n\n",
+        "changelog": "* Update actual to 26.2.0\n* [Full Changelog](https://actualbudget.org/blog/release-26.2.0/)\n",
+        "postInstallMessage": "Actual Server is a single user application. To complete setup, set a server password at $CLOUDRON-APP-ORIGIN .\n\n",
+        "icon": "file://logo.png",
+        "tagline": "A personal finances manager",
+        "version": "1.22.0",
+        "upstreamVersion": "26.2.0",
+        "website": "https://actualbudget.org/",
+        "documentationUrl": "https://docs.cloudron.io/packages/actual",
+        "forumUrl": "https://forum.cloudron.io/category/181/actual",
+        "healthCheckPath": "/health",
+        "contactEmail": "support@cloudron.io",
+        "httpPort": 5006,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/openid/callback"
+            }
+        },
+        "optionalSso": true,
+        "checklist": {
+            "complete-setup": {
+                "message": "To complete setup, set a server password",
+                "sso": false
+            },
+            "first-user-admin": {
+                "message": "To complete setup, login via SSO, the first logged in user is automatically made admin",
+                "sso": true
+            }
+        },
+        "tags": [
+            "actual",
+            "finance",
+            "accounting",
+            "money",
+            "invoices",
+            "mint",
+            "gnucash"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.actualbudget.cloudronapp/actual-main-budget.png",
+            "https://screenshots.cloudron.io/org.actualbudget.cloudronapp/actual-main-transaction.png",
+            "https://screenshots.cloudron.io/org.actualbudget.cloudronapp/actual-report-cash-flow.png",
+            "https://screenshots.cloudron.io/org.actualbudget.cloudronapp/actual-reports.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.actualbudget.cloudronapp:202602021714310000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.actualbudget.cloudronapp/versions/1.22.0/icon",
+    "featured": false,
+    "ranking": 0
+}

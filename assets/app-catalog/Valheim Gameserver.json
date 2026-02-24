@@ -1,0 +1,55 @@
+{
+    "id": "com.valheim.cloudronapp",
+    "creationDate": "2025-04-01T15:47:39.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.valheim.cloudronapp",
+        "title": "Valheim Gameserver",
+        "author": "Elias Hackradt",
+        "description": "### Overview\n\nThis app packages the <upstream>evergreen</upstream> Valheim Dedicated Server\n\nA battle-slain warrior, the Valkyries have ferried your soul to Valheim, the tenth Norse world. Besieged by creatures of chaos and ancient enemies of the gods, you are the newest custodian of the primordial purgatory, tasked with slaying Odin’s ancient rivals and bringing order to Valheim.\n\nYour trials begin at the disarmingly peaceful centre of Valheim, but the gods reward the brave and glory awaits. Venture forth through imposing forests and snow-capped mountains, explore and harvest more valuable materials to craft deadlier weapons, sturdier armor, viking strongholds and outposts. Build a mighty longship and sail the great oceans in search of exotic lands … but be wary of sailing too far...\n",
+        "icon": "file://logo.png",
+        "changelog": "* Update Base image to 5.0.0\n",
+        "postInstallMessage": "# Post Install - Post Update\n\n## Updates\n\nOn every restart, the app will check for new upstream game server releases and apply them.\n\n---\n\n## Updated Parameters\n\nAfter updates (see changelog) new parameters could have been added.\n\nPlease check the `/app/code/.env` file and compare it to your `/app/data/.env` file and add missing lines.\n\n---\n\n## Mod Support\n\nIf `MODSUPPORT` is enabled all files and folders from `/app/data/mods/` will by synced to `/run/vhserver-steam/`.\n\nPlace your Mod `*.dll` files in `/app/data/mods/BepInEx/plugins/` and the Mod Config files in `/app/data/mods/BepInEx/config/`\n\n---\n\n## Mod Example [ValheimPlus](https://github.com/valheimPlus/ValheimPlus)\n\nThe [UnixServer.zip](https://github.com/valheimPlus/ValheimPlus/releases/download/0.9.6/UnixServer.zip) of [ValheimPlus](https://github.com/valheimPlus/ValheimPlus) has the same folder structure which cold be extracted into `/app/data/mods/` but this would also overwrite the cloudron auto installed version of BepInEx.\n\nIf you make a mistake here, don't worry.\n\nSimply clear the `/app/data/mods/` folder and it will be recreated after a app restart.\n\n---\n",
+        "tagline": "Multiplayer Server for Valheim",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "tags": [
+            "game",
+            "multiplayer"
+        ],
+        "memoryLimit": 5368709120,
+        "httpPort": 8000,
+        "udpPorts": {
+            "GAME_PORT": {
+                "title": "Game Port",
+                "description": "Game Port where clients connect",
+                "defaultValue": 2456
+            },
+            "QUERY_PORT": {
+                "title": "Query Port",
+                "description": "Query Port where Serverlists checks aval",
+                "defaultValue": 2457
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "7.6.0",
+        "website": "https://www.valheimgame.com/",
+        "contactEmail": "support@cloudron.io",
+        "documentationUrl": "https://docs.cloudron.io/apps/valheim/",
+        "forumUrl": "https://forum.cloudron.io/category/128/valheim",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.valheim.cloudronapp/screen1.jpg",
+            "https://screenshots.cloudron.io/com.valheim.cloudronapp/screen2.jpg"
+        ],
+        "addons": {
+            "localstorage": []
+        },
+        "runtimeDirs": [
+            "/app/code/Steam"
+        ],
+        "dockerImage": "cloudron/com.valheim.cloudronapp:202504011527380000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.valheim.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,114 @@
+{
+    "id": "org.traccar.cloudronapp",
+    "creationDate": "2025-12-08T17:45:11.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-06-09T04:45:04.000Z",
+    "publishedAt": "2022-06-09T04:45:04.000Z",
+    "manifest": {
+        "id": "org.traccar.cloudronapp",
+        "title": "Traccar",
+        "author": "Traccar developers",
+        "description": "## About\n\nTraccar is an open source GPS tracking system. This repository contains Java-based back-end service. It supports more than 200 GPS protocols and more than 2000 models of GPS tracking devices. Traccar can be used with any major SQL database system. It also provides easy to use REST API.\n\n## Features\n\nSome of the available features include:\n\n* Real-time GPS tracking\n* Driver behaviour monitoring\n* Detailed and summary reports\n* Geofencing functionality\n* Alarms and notifications\n* Account and device management\n* Email and SMS support\n\n",
+        "changelog": "* Update traccar to 6.11.1\n* [Full Changelog](https://www.traccar.org/blog/traccar-6-11/)\n* breaking: Removed legacy authentication method  \n* feature: Added support for new device protocol  \n* fix: Resolved issue with GPS data parsing  \n* fix: Corrected server startup error on Windows  \n* fix: Fixed memory leak in connection handler  \n* fix: Addressed UI glitch in device management panel  \n* fix: Patched security vulnerability in API endpoint\n",
+        "tagline": "Modern GPS Tracking Platform",
+        "version": "1.22.0",
+        "upstreamVersion": "6.11.1",
+        "minBoxVersion": "9.0.0",
+        "memoryLimit": 1073741824,
+        "healthCheckPath": "/",
+        "httpPort": 8082,
+        "httpPorts": {
+            "OSMAND_DOMAIN": {
+                "title": "OsmAnd Domain",
+                "description": "Domain over which OsmAnd clients can connect",
+                "containerPort": 5055,
+                "defaultValue": "osmand"
+            }
+        },
+        "tcpPorts": {
+            "GL200_PORT": {
+                "title": "GL200 Port",
+                "description": "Port over which GL200 clients can connect",
+                "defaultValue": 5004,
+                "enabledByDefault": false
+            },
+            "GPS103_PORT": {
+                "title": "GPS103 Port",
+                "description": "Port over which GPS103 clients can connect",
+                "defaultValue": 5001,
+                "enabledByDefault": false
+            },
+            "TAIP_PORT": {
+                "title": "TAIP Port",
+                "description": "Port over which TAIP clients can connect",
+                "defaultValue": 5031,
+                "enabledByDefault": false
+            },
+            "H02_PORT": {
+                "title": "H02 Port",
+                "description": "Port over which H02 clients can connect",
+                "defaultValue": 5013,
+                "enabledByDefault": false
+            },
+            "GT06_PORT": {
+                "title": "GT06 Port",
+                "description": "Port over which GT06 clients can connect",
+                "defaultValue": 5023,
+                "enabledByDefault": false
+            },
+            "TELTOKIA_PORT": {
+                "title": "Teltonika Port",
+                "description": "Port over which Teltonika clients can connect",
+                "defaultValue": 5027,
+                "enabledByDefault": false
+            },
+            "TLT2H_PORT": {
+                "title": "TLT2H Port",
+                "description": "Port over which TLT2H clients can connect",
+                "defaultValue": 5030,
+                "enabledByDefault": false
+            }
+        },
+        "addons": {
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "localstorage": [],
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/api/session/openid/callback, org.traccar.manager:/api/session/openid/callback"
+            }
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password credentials"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://www.traccar.org",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: admin<br/>\n\n<sso>\nBy default, Cloudron users have regular users permissions. Permissions can be updated on the user profile page in the admin back-end.\n</sso>\n",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "gps",
+            "tracking",
+            "seek",
+            "fleet"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.traccar.cloudronapp/web.png",
+            "https://screenshots.cloudron.io/org.traccar.cloudronapp/polyline.png",
+            "https://screenshots.cloudron.io/org.traccar.cloudronapp/command_new.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/146/traccar",
+        "documentationUrl": "https://docs.cloudron.io/packages/traccar",
+        "dockerImage": "cloudron/org.traccar.cloudronapp:202512081607320000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.traccar.cloudronapp/versions/1.22.0/icon",
+    "featured": false,
+    "ranking": 0
+}

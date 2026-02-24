@@ -1,0 +1,70 @@
+{
+    "id": "org.woodpecker_ci.cloudronapp",
+    "creationDate": "2026-01-14T14:42:58.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-04-26T10:38:53.000Z",
+    "publishedAt": "2023-04-26T10:38:53.000Z",
+    "manifest": {
+        "id": "org.woodpecker_ci.cloudronapp",
+        "title": "Woodpecker CI",
+        "website": "https://woodpecker-ci.org",
+        "contactEmail": "support@cloudron.io",
+        "tagline": "Simple CI engine with great extensibility",
+        "author": "Woodpecker developers",
+        "version": "2.14.0",
+        "upstreamVersion": "3.13.0",
+        "minBoxVersion": "9.0.0",
+        "healthCheckPath": "/",
+        "description": "## About\n\nWoodpecker is a simple CI engine with great extensibility. It runs your pipelines inside Docker containers, so if you are already using them in your daily workflow, you'll love Woodpecker for sure.\n\n## Features\n\n* OpenSource and free - Woodpecker is and always will be totally free. As Woodpecker's source code is open-source you can contribute to help evolving the project.\n\n* Based on docker containers - Woodpecker uses docker containers to execute pipeline steps. If you need more than a normal docker image, you can create plugins to extend the pipeline features. How do plugins work?\n\n* Multi pipelines - Woodpecker allows you to easily create multiple pipelines for your project. They can even depend on each other. Check out the docs\n\n",
+        "httpPort": 8000,
+        "tcpPorts": {
+            "GRPC_PORT": {
+                "title": "GRPC Port (TLS)",
+                "description": "Agent communication port",
+                "defaultValue": 9000,
+                "containerPort": 9090,
+                "enabledByDefault": true
+            }
+        },
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "tls": []
+        },
+        "checklist": {
+            "configure-auth": {
+                "message": "Configure [authentication](https://docs.cloudron.io/apps/woodpecker#authentication) using credentials from your existing Version Control System (Github/Gitea/Gogs/GitLab etc). Note that you cannot login without this configuration step."
+            },
+            "setup-agent": {
+                "message": "Setup one or more [agents](https://docs.cloudron.io/apps/woodpecker#agent) outside the Cloudron VM."
+            }
+        },
+        "tags": [
+            "drone",
+            "ci",
+            "github",
+            "gitlab",
+            "gitea",
+            "cd",
+            "automation",
+            "actions",
+            "devops"
+        ],
+        "changelog": "* Update woodpecker to 3.13.0\n* [Full Changelog](https://github.com/woodpecker-ci/woodpecker/releases/tag/v3.13.0)\n* Update quic-go/qpack & quic-go/quic-go [#5885](https://github.com/woodpecker-ci/woodpecker/pull/5885)\n* fix: updateRepoPermissions to cleanup old permissions [#5790](https://github.com/woodpecker-ci/woodpecker/pull/5790)\n* Add cli contexts [#5929](https://github.com/woodpecker-ci/woodpecker/pull/5929)\n* Use repo-user for api call of cron [#5967](https://github.com/woodpecker-ci/woodpecker/pull/5967)\n* Close opened file on LogFind [#5961](https://github.com/woodpecker-ci/woodpecker/pull/5961)\n* Delete/Deactivate repo ignores missing repo at forge [#5953](https://github.com/woodpecker-ci/woodpecker/pull/5953)\n* Correctly update repo permissions [#5928](https://github.com/woodpecker-ci/woodpecker/pull/5928)\n* Revert repos pagination for GH and BB [#5924](https://github.com/woodpecker-ci/woodpecker/pull/5924)\n* fix: send correct argument to rpc call for name/url [#5922](https://github.com/woodpecker-ci/woodpecker/pull/5922)\n* fix: secrets-file flag [#5909](https://github.com/woodpecker-ci/woodpecker/pull/5909)\n",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.woodpecker_ci.cloudronapp/ui.png",
+            "https://screenshots.cloudron.io/org.woodpecker_ci.cloudronapp/activation.png"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/woodpecker/",
+        "forumUrl": "https://forum.cloudron.io/category/162/woodpecker",
+        "dockerImage": "cloudron/org.woodpecker_ci.cloudronapp:202601141332330000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.woodpecker_ci.cloudronapp/versions/2.14.0/icon",
+    "featured": false,
+    "ranking": 0
+}

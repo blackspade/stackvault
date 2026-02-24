@@ -1,0 +1,82 @@
+{
+    "id": "com.adguard.home.cloudronapp",
+    "creationDate": "2025-12-09T08:28:05.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-19T20:04:17.000Z",
+    "publishedAt": "2020-11-19T20:04:17.000Z",
+    "manifest": {
+        "id": "com.adguard.home.cloudronapp",
+        "title": "AdGuard Home",
+        "tagline": "Privacy protection center for you and your devices",
+        "website": "https://adguard.com/en/adguard-home/overview.html",
+        "author": "AdGuard developers",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "description": "## About\n\nAdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it'll cover ALL your home devices, and you don't need any client-side software for that.\n\nIt operates as a DNS server that re-routes tracking domains to a \"black hole,\" thus preventing your devices from connecting to those servers. It's based on software we use for our public AdGuard DNS servers -- both share a lot of common code.\n\n### Features\n\n* Blocking ads and trackers\n* Customizing blocklists\n* Built-in DHCP server\n* HTTPS for the Admin interface\n* Encrypted DNS upstream servers (DNS-over-HTTPS, DNS-over-TLS, DNSCrypt)\n* Cross-platform\n* Running as a DNS-over-HTTPS or DNS-over-TLS server\n* Blocking phishing and malware domains\n* Parental control (blocking adult domains)\n* Force Safe search on search engines\n* Per-client (device) configuration\n* Access settings (choose who can use AGH DNS)\n\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n  \n**Username**: admin<br/>\n**Password**: changeme<br/>\n\nSee the [docs](https://docs.cloudron.io/apps/adguard-home) on how to change the admin password\nand secure your installation.\n\n",
+        "changelog": "* Update AdGuardHome to 0.107.71\n* [Full Changelog](https://github.com/AdguardTeam/AdGuardHome/releases/tag/v0.107.71)\n* In this release, the schema version has changed from 31 to 32.\n* Added a new string fields `dns.cache_optimistic_answer_ttl` and `dns.cache_optimistic_max_age`.\n* Optimistic DNS cache not working ([#&#8203;8148]).\n",
+        "version": "1.14.10",
+        "upstreamVersion": "0.108.0-b.67",
+        "healthCheckPath": "/",
+        "tags": [
+            "pihole",
+            "adblock",
+            "ublock",
+            "privacy",
+            "dns"
+        ],
+        "httpPort": 3000,
+        "tcpPorts": {
+            "DNS_TCP_PORT": {
+                "title": "TCP DNS Port",
+                "description": "TCP Port over which DNS requests are made",
+                "containerPort": 53,
+                "defaultValue": 53,
+                "readOnly": true,
+                "enabledByDefault": false
+            },
+            "DNS_TLS_PORT": {
+                "title": "DNS over TLS (DoT) Port",
+                "description": "TLS Port over which DNS requests are made",
+                "containerPort": 853,
+                "defaultValue": 853,
+                "readOnly": true,
+                "enabledByDefault": false
+            }
+        },
+        "udpPorts": {
+            "DNS_UDP_PORT": {
+                "title": "UDP DNS Port",
+                "description": "UDP Port over which DNS requests are made",
+                "containerPort": 53,
+                "defaultValue": 53,
+                "readOnly": true,
+                "enabledByDefault": true
+            }
+        },
+        "addons": {
+            "localstorage": [],
+            "tls": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "multiDomain": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.adguard.home.cloudronapp/main-image.png"
+        ],
+        "manifestVersion": 2,
+        "documentationUrl": "https://docs.cloudron.io/packages/adguard-home",
+        "minBoxVersion": "9.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/113/adguard-home",
+        "dockerImage": "cloudron/com.adguard.home.cloudronapp:202512090743140000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.adguard.home.cloudronapp/versions/1.14.10/icon",
+    "featured": false,
+    "ranking": 0
+}

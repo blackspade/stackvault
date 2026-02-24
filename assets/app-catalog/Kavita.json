@@ -1,0 +1,71 @@
+{
+    "id": "com.kavitareader.cloudronapp",
+    "creationDate": "2026-01-19T09:22:25.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-03-22T18:16:05.000Z",
+    "publishedAt": "2024-03-22T18:16:05.000Z",
+    "manifest": {
+        "id": "com.kavitareader.cloudronapp",
+        "title": "Kavita",
+        "author": "Joe Milazzo",
+        "description": "### About\n\nKavita is a fast, feature rich, cross platform reading server. Built with a focus for manga and the goal of being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family.\n\n### Features\n\n* Serve up Manga/Webtoons/Comics (cbr, cbz, zip/rar/rar5, 7zip, raw images) and Books (epub, pdf)\n* First class responsive readers that work great on any device (phone, tablet, desktop)\n* Dark mode and customizable theming support\n* External metadata integration and scrobbling for read status, ratings, and reviews (available via Kavita+)\n* Rich Metadata support with filtering and searching\n* Ways to group reading material: Collections, Reading Lists (CBL Import), Want to Read\n* Ability to manage users with rich Role-based management for age restrictions, abilities within the app, etc\n* Rich web readers supporting webtoon, continuous reading mode (continue without leaving the reader), virtual pages (epub), etc\n* Full Localization Support\n* Ability to customize your dashboard and side nav with smart filters, custom order and visibility toggles.\n\n",
+        "tagline": "Reading server",
+        "version": "1.10.0",
+        "upstreamVersion": "0.8.9.1",
+        "healthCheckPath": "/api/health",
+        "httpPort": 5000,
+        "addons": {
+            "localstorage": {
+                "ftp": {
+                    "uid": 1000,
+                    "uname": "cloudron"
+                }
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/signin-oidc",
+                "logoutRedirectUri": "/signout-callback-oidc"
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, register yourself as admin to start using the app."
+            }
+        },
+        "tags": [
+            "books",
+            "manga",
+            "server",
+            "ebook",
+            "calibre",
+            "pdf",
+            "mobi",
+            "kindle"
+        ],
+        "optionalSso": true,
+        "changelog": "* Update Kavita to 0.8.9.1\n* [Full Changelog](https://github.com/Kareadita/Kavita/releases/tag/v0.8.9.1)\n* Changed: The image reader will now always send a progress event for chapters with exactly one page.\n* Fixed: Fixed re-read prompt not being disabled when setting is 0\n* Fixed: Fixed empty re-read setting breaking saving flow\n* Fixed: Fixed theme being reset\n* Fixed: Fixed some tables not loading in the statistics page for admins, breaking the page.\n* Fixed: Fixed inconsistent behaviour with the /api/plugin/authkey-expires endpoint.\n",
+        "minBoxVersion": "8.1.0",
+        "memoryLimit": 536870912,
+        "forumUrl": "https://forum.cloudron.io/category/186/kavita",
+        "documentationUrl": "https://docs.cloudron.io/packages/kavita/",
+        "manifestVersion": 2,
+        "website": "https://www.kavitareader.com/",
+        "contactEmail": "support@cloudron.io",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.kavita.cloudronapp/homepage.png",
+            "https://screenshots.cloudron.io/org.kavita.cloudronapp/librarydetail.png",
+            "https://screenshots.cloudron.io/org.kavita.cloudronapp/mixedchapterandvolumes.png",
+            "https://screenshots.cloudron.io/org.kavita.cloudronapp/search.png"
+        ],
+        "icon": "file://logo.png",
+        "dockerImage": "cloudron/com.kavitareader.cloudronapp:202601190119390000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.kavitareader.cloudronapp/versions/1.10.0/icon",
+    "featured": false,
+    "ranking": 0
+}

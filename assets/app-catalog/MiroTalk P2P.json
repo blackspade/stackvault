@@ -1,0 +1,52 @@
+{
+    "id": "com.mirotalkp2p.cloudronapp",
+    "creationDate": "2026-02-12T09:16:48.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-01-27T21:34:12.000Z",
+    "publishedAt": "2024-01-27T21:34:12.000Z",
+    "manifest": {
+        "id": "com.mirotalkp2p.cloudronapp",
+        "title": "MiroTalk P2P",
+        "version": "1.18.8",
+        "upstreamVersion": "1.7.29",
+        "tagline": "Real-time P2P video calls",
+        "description": "## About\n\nSimple, Secure and Fast Real-Time Video Conferences Up to 4k and 60fps, compatible with all browsers and platforms.\n\n## License\n\nMiroTalk P2P is free and open-source under the terms of AGPLv3 (GNU Affero General Public License v3.0).\n\nTo obtain a MiroTalk P2P license with terms different from the AGPLv3, you can conveniently make your purchase on [CodeCanyon](https://codecanyon.net/user/miroslavpejic85/portfolio). This allows you to tailor the licensing conditions to better suit your specific requirements.\n\n## Feature\n\n* Is 100% Free - Open Source - Self Hosted and PWA!\n* No download, plug-in, or login required, entirely browser-based\n* Unlimited number of conference rooms without call time limitation\n* Translated in 133 languages\n* Host protection to ensure unauthorized access to your host\n* Possibility to Password protect the Room for the meeting\n* Desktop and Mobile compatible\n* Optimized Room URL Sharing for mobile\n* Webcam Streaming (Front - Rear for mobile)\n* Audio Streaming crystal clear with detect speaking and volume indicator\n* Screen Sharing to present documents, slides, and more...\n* File Sharing (with drag-and-drop), share any files to your participants in the room\n* Select Audio Input - Output and Video source\n* Ability to set video quality up to 4K and 60 FPS\n* Recording your Screen, Audio and Video\n* Snapshot the video frame and save it as image png\n* Chat with Emoji Picker to show you feeling, private messages, Markdown support, possibility to Save the conversations, and many more\n* ChatGPT (openAI), designed to answer users' questions, provide relevant information, and connect them with relevant resources\n* Speech recognition to send the speeches\n* Push to talk, like a walkie-talkie.\n* Advance collaborative whiteboard for the teachers\n* Share any YT Embed video, video mp4, webm, ogg and audio mp3 in real-time\n* Full-Screen Mode on mouse click on the Video element, Pin/Unpin, Zoom in-out video element\n* Possibility to Change UI Themes\n* Right-click on the Video elements for more options\n* Direct peer-to-peer connection ensures the lowest latency thanks to WebRTC\n* Supports REST API (Application Programming Interface)\n* Slack API integration\n* Sentry for error reporting\n* ...\n",
+        "changelog": "* Update mirotalkp2p to 1.7.29\n",
+        "author": "Miroslav Pejic",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "addons": {
+            "localstorage": [],
+            "turn": [],
+            "sendmail": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/callback"
+            }
+        },
+        "postInstallMessage": "<sso>\nCloudron users can login to Mirotalk.\n\nIf you need to make authentication required for all routes (e.g. for invitaion links), you should set `OIDC_AUTH_REQUIRED=true` in `/app/data/env` using [Web Terminal](https://docs.cloudron.io/apps/#web-terminal).\n</sso>\n",
+        "minBoxVersion": "8.1.0",
+        "multiDomain": true,
+        "tags": [
+            "zoom",
+            "video",
+            "conference",
+            "p2p"
+        ],
+        "website": "https://p2p.mirotalk.com/",
+        "documentationUrl": "https://docs.cloudron.io/packages/mirotalk/",
+        "forumUrl": "https://forum.cloudron.io/category/183/mirotalk",
+        "contactEmail": "support@cloudron.io",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.mirotalkp2p.cloudronapp/mirotalkp2p_00.png"
+        ],
+        "dockerImage": "cloudron/com.mirotalkp2p.cloudronapp:202602120121460000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.mirotalkp2p.cloudronapp/versions/1.18.8/icon",
+    "featured": false,
+    "ranking": 0
+}

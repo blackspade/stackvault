@@ -1,0 +1,48 @@
+{
+    "id": "info.privatebin.cloudronapp",
+    "creationDate": "2025-11-12T09:54:19.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-10-10T00:37:00.000Z",
+    "publishedAt": "2019-10-10T00:37:00.000Z",
+    "manifest": {
+        "id": "info.privatebin.cloudronapp",
+        "title": "PrivateBin",
+        "author": "PrivateBin Authors",
+        "description": "A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES. [https://privatebin.info/](https://privatebin.info/)\n\n### What PrivateBin provides\n\n* As a server administrator you don't have to worry if your users post content that is considered illegal in your country. You have no knowledge of any of the pastes content. If requested or enforced, you can delete any paste from your system.\n\n* Pastebin-like system to store text documents, code samples, etc.\n\n* Encryption of data sent to server.\n\n* Possibility to set a password which is required to read the paste. It further protects a paste and prevents people stumbling upon your paste's link from being able to read it without the password.\n\n",
+        "changelog": "* Update PrivateBin to 2.0.3\n* [Full Changelog](https://github.com/PrivateBin/PrivateBin/releases/tag/2.0.3)\n* FIXED: Prevent arbitrary PHP file inclusion when enabling template switching  \n* FIXED: Malicious filename can be used for self-XSS / HTML injection locally for users  \n* FIXED: Unable to create a new paste from the cloned one when a JSON file attached ([#1585](https://github.com/PrivateBin/PrivateBin/issues/1585))\n",
+        "tagline": "A minimalist, zero knowledge pastebin",
+        "version": "1.11.3",
+        "upstreamVersion": "2.0.3",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": []
+        },
+        "multiDomain": true,
+        "manifestVersion": 2,
+        "website": "https://privatebin.info/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "privatebin",
+            "bin",
+            "secret",
+            "pastebin"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/info.privatebin.cloudronapp/bootstrap.png",
+            "https://screenshots.cloudron.io/info.privatebin.cloudronapp/bootstrap-dark.png",
+            "https://screenshots.cloudron.io/info.privatebin.cloudronapp/page.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/54/privatebin",
+        "minBoxVersion": "7.1.2",
+        "documentationUrl": "https://cloudron.io/documentation/packages/privatebin",
+        "dockerImage": "cloudron/info.privatebin.cloudronapp:202511120752230000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/info.privatebin.cloudronapp/versions/1.11.3/icon",
+    "featured": false,
+    "ranking": 0
+}

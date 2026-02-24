@@ -1,0 +1,70 @@
+{
+    "id": "org.freshrss.cloudronapp",
+    "creationDate": "2026-01-26T07:37:46.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-02-17T11:05:24.000Z",
+    "publishedAt": "2017-02-17T11:05:24.000Z",
+    "manifest": {
+        "id": "org.freshrss.cloudronapp",
+        "title": "FreshRSS",
+        "author": "FreshRSS Developers",
+        "description": "## About\n\nFreshRSS is a self-hosted RSS feed aggregator such as Leed or Kriss Feed.\n\nIt is at the same time lightweight, easy to work with, powerful and customizable.\n\nIt is a multi-user application with an anonymous reading mode. It supports PubSubHubbub for instant notifications from compatible Web sites. There is an API for (mobile) clients, and a Command-Line Interface. Finally, it supports extensions for further tuning.\n\n## Extensions\n\nFreshRSS supports further customizations by adding extensions on top of its core functionality.\nSee the [repository dedicated to those extensions](https://github.com/FreshRSS/Extensions).\n\n\n## Compatible clients\nAny client supporting a Google Reader-like API. Selection:\n\n* Android\n\t* [News+](https://play.google.com/store/apps/details?id=com.noinnion.android.newsplus) with [News+ Google Reader extension](https://play.google.com/store/apps/details?id=com.noinnion.android.newsplus.extension.google_reader) (Closed source)\n\t* [EasyRSS](https://github.com/Alkarex/EasyRSS) (Open source, F-Droid)\n* Linux\n\t* [FeedReader 2.0+](https://jangernert.github.io/FeedReader/) (Open source)\n* Mac/iOS\n    * [Reeder](https://reederapp.com/)\n\n",
+        "changelog": "* Update FreshRSS to 1.28.1\n* [Full Changelog](https://github.com/FreshRSS/FreshRSS/releases/tag/1.28.1)\n* Handle Web scraping of `text/plain` as `<pre class=\"text-plain\">` [#&#8203;8340](https://github.com/FreshRSS/FreshRSS/pull/8340)\n* New customisable message for closed registrations [#&#8203;8462](https://github.com/FreshRSS/FreshRSS/pull/8462)\n* Fix unwanted expansion of user queries (saved searches) applied to filters [#&#8203;8395](https://github.com/FreshRSS/FreshRSS/pull/8395)\n* Fix encoding of filter actions for labels [#&#8203;8368](https://github.com/FreshRSS/FreshRSS/pull/8368)\n* Fix searching of tags [#&#8203;8425](https://github.com/FreshRSS/FreshRSS/pull/8425)\n* Fix refreshing feeds with token while anonymous refresh is disabled [#&#8203;8371](https://github.com/FreshRSS/FreshRSS/pull/8371)\n* Fix RSS and OPML access by token [#&#8203;8434](https://github.com/FreshRSS/FreshRSS/pull/8434)\n* Fix MySQL/MariaDB `transliterator_transliterate` fallback (when the `php-intl` extension is unavailable) [#&#8203;8427](https://github.com/FreshRSS/FreshRSS/pull/8427)\n* Fix regression with MySQL/MariaDB index hint [#&#8203;8460](https://github.com/FreshRSS/FreshRSS/pull/8460)\n* Auto-add `lastUserModified` database column also during mark-as-read action [#&#8203;8346](https://github.com/FreshRSS/FreshRSS/pull/8346)\n",
+        "tagline": "RSS feed reader",
+        "version": "1.27.1",
+        "upstreamVersion": "1.28.1",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/i/oidc/"
+            },
+            "scheduler": {
+                "update_feeds": {
+                    "schedule": "*/1 * * * *",
+                    "command": "echo '==> Run actualize script' && /usr/local/bin/gosu www-data:www-data php /app/code/app/actualize_script.php"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "sso": false,
+                "message": "Change the default admin password"
+            },
+            "create-admin": {
+                "sso": true,
+                "message": "On first visit, sign in using the built-in Cloudron authentication and then make the user administrator by running: `php cli/reconfigure.php --default_user YOUR_USERNAME`"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "http://www.freshrss.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "rss",
+            "atom",
+            "greader",
+            "reader",
+            "news",
+            "feeds",
+            "feedly"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.freshrss.cloudronapp/1.png"
+        ],
+        "postInstallMessage": "<nosso>\nThis app is pre-setup with an admin account. The initial credentials are:\n  \n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n</nosso>\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/27/freshrss",
+        "documentationUrl": "https://cloudron.io/documentation/packages/freshrss/",
+        "optionalSso": true,
+        "dockerImage": "cloudron/org.freshrss.cloudronapp:202601260620550000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.freshrss.cloudronapp/versions/1.27.1/icon",
+    "featured": false,
+    "ranking": 0
+}

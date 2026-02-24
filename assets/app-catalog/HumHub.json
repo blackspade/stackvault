@@ -1,0 +1,62 @@
+{
+    "id": "com.humhub.cloudronapp",
+    "creationDate": "2024-06-19T13:19:44.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.humhub.cloudronapp",
+        "title": "HumHub",
+        "author": "HumHub developers",
+        "description": "## Overview\n\nHumHub is a free and open-source social network software written on top of the Yii PHP framework that\nprovides an easy to use toolkit for creating and launching your own social network.\n\nThe platform can be used for internal communication and collaboration that can range from a few users\nup to huge Intranets that serve companies with hundreds and thousands of employees.\nThe platform was meant to be self-hosted and currently comes with pretty normal requirements, working with most shared hosting environments around.\nHumHub also supports themes and modules to extend the functionality for almost all requirements.\n",
+        "tagline": "The flexible social media kit",
+        "version": "1.6.0",
+        "upstreamVersion": "1.16.0",
+        "healthCheckPath": "/",
+        "memoryLimit": 805306368,
+        "httpPort": 8000,
+        "manifestVersion": 2,
+        "website": "https://www.humhub.com",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "optionalSso": true,
+        "addons": {
+            "mysql": [],
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "ldap": [],
+            "scheduler": {
+                "queue": {
+                    "schedule": "* * * * *",
+                    "command": "echo '==> queue/run' && gosu www-data:www-data /usr/bin/php /app/code/protected/yii queue/run --isolate=0"
+                },
+                "cron": {
+                    "schedule": "* * * * *",
+                    "command": "echo '==> cron/run' && gosu www-data:www-data /usr/bin/php /app/code/protected/yii cron/run"
+                }
+            }
+        },
+        "tags": [
+            "facebook",
+            "network",
+            "social",
+            "yammer",
+            "blog",
+            "confluence"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.humhub.cloudronapp/humhub_00.png",
+            "https://screenshots.cloudron.io/com.humhub.cloudronapp/humhub_01.jpg",
+            "https://screenshots.cloudron.io/com.humhub.cloudronapp/humhub_02.jpg"
+        ],
+        "changelog": "* Update HumHub to 1.16.0\n* [Full changelog](https://github.com/humhub/humhub/releases/tag/v1.16.0)\n* Fix #7059: Saving of empty password by admin\n* Cgh #7074: Text in lists is smaller than in paragraphs\n* Enh #7067: Display more context menu options on search results\n* Enh #7062: Render emojis also in email content\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Email**:    admin@cloudron.local<br/>\n**Password**: changeme<br/>\n\nPlease change the admin password immediately.\n",
+        "minBoxVersion": "7.3.0",
+        "forumUrl": "https://forum.cloudron.io/category/155/humhub",
+        "documentationUrl": "https://docs.cloudron.io/apps/humhub/",
+        "dockerImage": "cloudron/com.humhub.cloudronapp:20240619-130504-98193c843"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.humhub.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

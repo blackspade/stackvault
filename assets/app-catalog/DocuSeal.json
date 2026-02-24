@@ -1,0 +1,56 @@
+{
+    "id": "co.docuseal.cloudronapp",
+    "creationDate": "2026-02-12T09:16:32.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-09-25T09:22:57.000Z",
+    "publishedAt": "2023-09-25T09:22:57.000Z",
+    "manifest": {
+        "id": "co.docuseal.cloudronapp",
+        "title": "DocuSeal",
+        "author": "DocuSeal Developers",
+        "website": "https://www.docuseal.co/",
+        "tagline": "Create, fill, and sign digital documents",
+        "tags": [
+            "DocuSign",
+            "PandaDoc",
+            "signature",
+            "documents"
+        ],
+        "version": "1.13.4",
+        "upstreamVersion": "2.3.3",
+        "healthCheckPath": "/",
+        "description": "### About\n\nDocuSeal allows to create, fill, and sign digital documents. DocuSign, PandaDoc open source alternative for everyone.\n\n### Create Documents with Ease\n\nDocuSeal allows you to convert documents into fillable PDF forms. Fields can be easily added to the document using the user-friendly form builder. With 10 available field types, you can efficiently collect all the required information from the documents.\n\n### Sign Documents with Ease\n\nAll required information and signatures can be provided by users using a step-by-step form. Users are less likely to make mistakes when the information is requested in smaller portions throughout the form. The form is optimized for devices of any screen size.\n\n",
+        "changelog": "* Update docuseal to 2.3.3\n* [Full Changelog](https://github.com/docusealco/docuseal/releases/tag/2.3.3)\n*  New app logo.\n*  Now signature and initials are prefilled from the recipient full name.\n*  Increased the webhook request timeout duration.\n",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "memoryLimit": 536870912,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/co.docuseal.cloudronapp/docuseal_00.jpg"
+        ],
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "postgresql": [],
+            "redis": []
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "Set up an admin user by visiting the app"
+            }
+        },
+        "minBoxVersion": "8.0.0",
+        "manifestVersion": 2,
+        "forumUrl": "https://forum.cloudron.io/category/175/docuseal",
+        "documentationUrl": "https://docs.cloudron.io/packages/docuseal/",
+        "dockerImage": "cloudron/co.docuseal.cloudronapp:202602120046310000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/co.docuseal.cloudronapp/versions/1.13.4/icon",
+    "featured": false,
+    "ranking": 0
+}

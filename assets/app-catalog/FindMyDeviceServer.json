@@ -1,0 +1,52 @@
+{
+    "id": "com.gitlab.nulide.findmydeviceserver.cloudronapp",
+    "creationDate": "2026-02-02T12:11:14.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-12-14T16:40:35.000Z",
+    "publishedAt": "2024-12-14T16:40:35.000Z",
+    "manifest": {
+        "id": "com.gitlab.nulide.findmydeviceserver.cloudronapp",
+        "version": "1.1.0",
+        "upstreamVersion": "0.14.0",
+        "title": "FindMyDeviceServer",
+        "author": "FindMyDeviceServer Project",
+        "tagline": "For android.",
+        "description": "## About\n\nThis is the official server for FindMyDevice (FMD) written in Go.\nThe FMD app can register an account on FMD Server.\nThe app can then upload its location at regular intervals.\nYou can also push commands to the FMD app on your device from FMD Server,\ne.g. to make your device ring.\n\nThe FMD app for android can be found here https://gitlab.com/Nulide/findmydevice great!",
+        "minBoxVersion": "8.2.3",
+        "forumUrl": "https://forum.cloudron.io/category/199/findmydevice",
+        "documentationUrl": "https://docs.cloudron.io/packages/findmydevice",
+        "postInstallMessage": "Register your Android device using the [Find My Device App on F-Droid](https://f-droid.org/en/packages/de.nulide.findmydevice/).\n\nRegistration notes:\n\n* Choose a 5 character device FMD ID\n* The registration token is in `/app/data/config.yml`.\n\n",
+        "healthCheckPath": "/",
+        "website": "https://gitlab.com/Nulide/findmydeviceserver",
+        "contactEmail": "support@cloudron.io",
+        "httpPort": 8080,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/fmd.sqlite"
+                    ]
+                }
+            }
+        },
+        "tags": [
+            "privacy",
+            "FindMyDevice",
+            "android"
+        ],
+        "manifestVersion": 2,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.gitlab.nulide.findmydeviceserver.cloudronapp/fmd-logged-in.png",
+            "https://screenshots.cloudron.io/com.gitlab.nulide.findmydeviceserver.cloudronapp/fmd-login.png"
+        ],
+        "icon": "file://logo.png",
+        "changelog": "* Update fmd-server to 0.14.0\n* [Full Changelog](https://gitlab.com/Nulide/findmydeviceserver/-/releases/v0.14.0)\n* Light mode. And a setting to switch between theme modes.\n* Ability to view the map in fullscreen.\n* Ability to pass a message when locking the device (`fmd lock <message>`).\n* Setting to switch between metric and imperial units.\n* The command list is much longer, making nearly all commands available in the web UI. The commands now also have a description.\n* The UI now automatically refreshes the location shown on the map.\n* If you select \"Remember me\" during login, the access token and the private keys will now be stored in the browser's local storage.\n* Enable WAL (write-ahead-logging) in sqlite. (!159)\n* Limit request body size to 15 MB. (!164)\n* Reduce default MaxSavedLoc from 1000 to 500. (!170)\n",
+        "dockerImage": "cloudron/com.gitlab.nulide.findmydeviceserver.cloudronapp:202602021201130000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.gitlab.nulide.findmydeviceserver.cloudronapp/versions/1.1.0/icon",
+    "featured": false,
+    "ranking": 0
+}

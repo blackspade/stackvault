@@ -1,0 +1,79 @@
+{
+    "id": "io.gitea.cloudronapp",
+    "creationDate": "2026-01-22T09:44:54.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-06-02T09:21:46.000Z",
+    "publishedAt": "2017-06-02T09:21:46.000Z",
+    "manifest": {
+        "id": "io.gitea.cloudronapp",
+        "title": "Gitea",
+        "author": "Gitea developers",
+        "description": "Gitea is a painless self-hosted Git service. It is similar to GitHub, Bitbucket or Gitlab.\n\n### Purpose\n\nThe goal of this project is to make the easiest, fastest, and most painless way to set up a self-hosted Git service.\n\n### Features\n\n- Activity timeline\n- SSH and HTTP/HTTPS protocols\n- SMTP/LDAP/Reverse proxy authentication\n- Reverse proxy with sub-path\n- Account/Organization/Repository management\n- Repository/Organization webhooks (including Slack)\n- Repository Git hooks/deploy keys\n- Repository issues, pull requests and wiki\n- Add/Remove repository collaborators\n- Gravatar and custom source\n- Mail service\n- Administration panel\n\n### Bug reports\n\nOpen bugs on [Github](https://git.cloudron.io/cloudron/gitea-app/issues)\n",
+        "tagline": "A painless self-hosted Git Service",
+        "version": "1.37.4",
+        "upstreamVersion": "1.25.4",
+        "healthCheckPath": "/explore",
+        "httpPort": 3000,
+        "memoryLimit": 536870912,
+        "addons": {
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/user/oauth2/cloudron/callback"
+            }
+        },
+        "tcpPorts": {
+            "SSH_PORT": {
+                "title": "SSH Port",
+                "description": "SSH Port over which repos can be pushed & pulled",
+                "defaultValue": 29418,
+                "enabledByDefault": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://gitea.io",
+        "contactEmail": "apps@cloudron.io",
+        "icon": "file://logo.png",
+        "optionalSso": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.gitea.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/io.gitea.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/io.gitea.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/io.gitea.cloudronapp/4.png",
+            "https://screenshots.cloudron.io/io.gitea.cloudronapp/5.png"
+        ],
+        "tags": [
+            "version control",
+            "git",
+            "code hosting",
+            "development",
+            "github",
+            "bitbucket",
+            "gitlab"
+        ],
+        "changelog": "* Update gitea to 1.25.4\n* [Full Changelog](https://github.com/go-gitea/gitea/releases/tag/v1.25.4)\n* Release attachments must belong to the intended repo ([#36347](https://github.com/go-gitea/gitea/issues/36347)) ([#36375](https://github.com/go-gitea/gitea/issues/36375))\n* Fix permission check on org project operations ([#36318](https://github.com/go-gitea/gitea/issues/36318)) ([#36373](https://github.com/go-gitea/gitea/issues/36373))\n* Clean watches when make a repository private and check permission when send release emails ([#36319](https://github.com/go-gitea/gitea/issues/36319)) ([#36370](https://github.com/go-gitea/gitea/issues/36370))\n* Add more check for stopwatch read or list ([#36340](https://github.com/go-gitea/gitea/issues/36340)) ([#36368](https://github.com/go-gitea/gitea/issues/36368))\n* Fix openid setting check ([#36346](https://github.com/go-gitea/gitea/issues/36346)) ([#36361](https://github.com/go-gitea/gitea/issues/36361))\n* Fix cancel auto merge bug ([#36341](https://github.com/go-gitea/gitea/issues/36341)) ([#36356](https://github.com/go-gitea/gitea/issues/36356))\n* Fix delete attachment check ([#36320](https://github.com/go-gitea/gitea/issues/36320)) ([#36355](https://github.com/go-gitea/gitea/issues/36355))\n* LFS locks must belong to the intended repo ([#36344](https://github.com/go-gitea/gitea/issues/36344)) ([#36349](https://github.com/go-gitea/gitea/issues/36349))\n* Fix bug on notification read ([#36339](https://github.com/go-gitea/gitea/issues/36339)) [#36387](https://github.com/go-gitea/gitea/issues/36387)\n* Add more routes to the \"expensive\" list ([#36290](https://github.com/go-gitea/gitea/issues/36290))\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: root<br/>\n**Password**: changeme<br/>\n\n<sso>\nUse the `Local` authentication source for logging in as admin.\n</sso>\n\n",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            },
+            "disable-registration": {
+                "message": "Disable registration, if required, to prevent misuse",
+                "sso": false
+            }
+        },
+        "minBoxVersion": "9.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/19/gitea",
+        "documentationUrl": "https://docs.cloudron.io/packages/gitea/",
+        "dockerImage": "cloudron/io.gitea.cloudronapp:202601220821590000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.gitea.cloudronapp/versions/1.37.4/icon",
+    "featured": false,
+    "ranking": 0
+}

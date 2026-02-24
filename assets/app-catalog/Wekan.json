@@ -1,0 +1,58 @@
+{
+    "id": "io.wekan.cloudronapp",
+    "creationDate": "2026-02-08T11:55:29.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-04-01T14:37:03.000Z",
+    "publishedAt": "2016-04-01T14:37:03.000Z",
+    "manifest": {
+        "id": "io.wekan.cloudronapp",
+        "title": "Wekan",
+        "author": "Wekan developers",
+        "description": "### Wekan is a collaborative kanban board application\n\nWhether you’re maintaining a personal todo list, planning your holidays\nwith some friends, or working in a team on your next revolutionary idea,\nKanban boards are an unbeatable tool to keep your things organized.\nThey give you a visual overview of the current state of your project,\nand make you productive by allowing you to focus on the few items that\nmatter the most.\n\nWekan supports most features you would expect of it including a real-time\nuser interface, cards comments, member assignations, customizable labels,\nfiltered views, and more.\n",
+        "changelog": "* Update wekan to 8.31\n* [Full Changelog](https://github.com/wekan/wekan/releases/tag/v8.31)\n* [Fix Copy Card and Move Card](https://github.com/wekan/wekan/commit/f8aa487e9118264f4d96c4d0cde384bcaf05e0a0). Thanks to xet7.\n* [Reverted New UI Design of WeKan v8.29 and added more fixes and performance improvements](https://github.com/wekan/wekan/commit/1b8b8d2eef5b56654026597ae445f3f20ad886b2). Thanks to xet7.\n",
+        "tagline": "The open-source Trello-like kanban",
+        "version": "4.99.0",
+        "upstreamVersion": "8.31",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "mongodb": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/_oauth/oidc"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "minBoxVersion": "7.4.2",
+        "website": "https://wekan.github.io/",
+        "memoryLimit": 536870912,
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "trello",
+            "kanban",
+            "planning",
+            "project",
+            "asana"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.wekan.cloudronapp/img0.png",
+            "https://screenshots.cloudron.io/io.wekan.cloudronapp/img1.png",
+            "https://screenshots.cloudron.io/io.wekan.cloudronapp/img2.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/30/wekan",
+        "documentationUrl": "https://docs.cloudron.io/packages/wekan",
+        "postInstallMessage": "<sso>\nCloudron users must login to Wekan before they can discover and share boards with each other.\nThe first user to login is made a Wekan admin.\n</sso>\n\n<nosso>\nOn first visit, register yourself to start using the app.\n</nosso>\n\n",
+        "dockerImage": "cloudron/io.wekan.cloudronapp:202602080219430000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.wekan.cloudronapp/versions/4.99.0/icon",
+    "featured": false,
+    "ranking": 0
+}

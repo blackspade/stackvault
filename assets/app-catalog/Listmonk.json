@@ -1,0 +1,65 @@
+{
+    "id": "app.listmonk.cloudronapp",
+    "creationDate": "2026-01-03T09:23:22.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-05-29T23:58:28.000Z",
+    "publishedAt": "2022-05-29T23:58:28.000Z",
+    "manifest": {
+        "id": "app.listmonk.cloudronapp",
+        "title": "Listmonk",
+        "author": "Listmonk Community",
+        "description": "## About\n\nListmonk is a standalone, self-hosted, newsletter and mailing list manager. It is fast, feature-rich, and packed into a single binary.\n\n## Features\n\n* Mailing lists - Manage millions of subscribers across many single and double opt-in lists with custom JSON attributes for each subscriber. Query and segment subscribers with SQL expressions.\n* Analytics - - Create powerful, dynamic e-mail templates with the Go templating languageVisualize and compare campaign performance. Connect external visualization programs to the database easily with the simple table structure.\n* Templating - Create powerful, dynamic e-mail templates with the Go templating language\n* Performance - Highly configurable, multi-threaded, high-throughput multi-SMTP e-mail queues for super fast campaign delivery\n* Media - More than just e-mail campaigns. Connect messenger web services and send SMS, Whatsapp, FCM notifications, or any type of arbitrary messages with simple webhooks.Use the media manager to upload images for e-mail campaigns on the server's filesystem, Amazon S3, or any S3 compatible (Minio) backend.\n* Messengers - More than just e-mail campaigns. Connect messenger web services and send SMS, Whatsapp, FCM notifications, or any type of arbitrary messages with simple webhooks.\n* Privacy - Allow subscribers to permanantely blocklist themselves, export all the data associated with their profile including clicks and views, and to wipe all their data in a single click.\n\n",
+        "tagline": "Self-hosted newsletter and mailing list manager",
+        "version": "1.15.0",
+        "upstreamVersion": "6.0.0",
+        "minBoxVersion": "8.1.0",
+        "healthCheckPath": "/",
+        "httpPort": 9000,
+        "website": "https://listmonk.app/",
+        "contactEmail": "support@cloudron.io",
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "recvmail": [],
+            "sendmail": {
+                "supportsDisplayName": true,
+                "optional": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/auth/oidc"
+            }
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password."
+            }
+        },
+        "icon": "file://logo.png",
+        "tags": [
+            "newsletter",
+            "campaign",
+            "mail",
+            "email",
+            "mailchimp",
+            "sendgrid"
+        ],
+        "changelog": "* Update listmonk to 6.0.0\n* [Full Changelog](https://github.com/knadh/listmonk/releases/tag/v6.0.0)\n* TOTP two-factor authentication.\n* E-mail based `Forgot password` reset flow.\n* Ability to archive lists.\n* Subscriber activity in the Subscriber profile UI.\n* Ability to send transactional mails to non-subscribers via the `/api/tx` API.\n* Campaign-level JSON JSON `{}` attributes just like subscriber attributes.\n* Granular override on subscriptions / subscriber profile in bulk import.\n* In-built Postgres VACUUM cron in `Maintenance` settings for large databases.\n* Add `attribs` to campaign docs.\n* Upgrade altcha JS to latest version.\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n**Email**: admin@cloudron.local<br/>\n\n<sso>\nBy default, Cloudron users have 'Super Admin' users role. Admin can create a new user role with appropriate permissions which can be set as a default user role for OIDC users.\nUser roles can be changed on the users management page.\n</sso>\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/listmonk/",
+        "forumUrl": "https://forum.cloudron.io/category/145/listmonk",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.listmonk.cloudronapp/splash.png",
+            "https://screenshots.cloudron.io/app.listmonk.cloudronapp/lists.png",
+            "https://screenshots.cloudron.io/app.listmonk.cloudronapp/analytics.png"
+        ],
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/app.listmonk.cloudronapp:202601030320060000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.listmonk.cloudronapp/versions/1.15.0/icon",
+    "featured": false,
+    "ranking": 0
+}

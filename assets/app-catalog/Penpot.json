@@ -1,0 +1,58 @@
+{
+    "id": "app.penpot.cloudronapp",
+    "creationDate": "2026-02-11T09:42:54.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-06-13T15:25:57.000Z",
+    "publishedAt": "2023-06-13T15:25:57.000Z",
+    "manifest": {
+        "id": "app.penpot.cloudronapp",
+        "title": "Penpot",
+        "tagline": "Design and prototyping platform",
+        "author": "Kaleidos Inc",
+        "description": "### Overview\n\nPenpot is the first Open Source design and prototyping platform meant for cross-domain teams.\nNon dependent on operating systems, Penpot is web based and works with open standards (SVG).\nPenpot invites designers all over the world to fall in love with open source while getting developers excited about the design process in return.\n",
+        "version": "1.15.2",
+        "upstreamVersion": "2.13.2",
+        "website": "https://penpot.app",
+        "documentationUrl": "https://docs.cloudron.io/packages/penpot",
+        "forumUrl": "https://forum.cloudron.io/category/166/penpot",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* Update penpot to 2.13.2\n* [Full Changelog](https://github.com/penpot/penpot/releases/tag/2.13.2)\n* Fix security issue (Path Traversal Vulnerability) on fonts related RPC method\n",
+        "healthCheckPath": "/api/rpc/command/get-profile",
+        "httpPort": 80,
+        "tags": [
+            "design",
+            "prototyping",
+            "visualization",
+            "figma"
+        ],
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "redis": {
+                "noPassword": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/api/auth/oidc/callback"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.penpot.cloudronapp/penpot_00.jpg",
+            "https://screenshots.cloudron.io/app.penpot.cloudronapp/penpot_01.jpg",
+            "https://screenshots.cloudron.io/app.penpot.cloudronapp/penpot_02.jpg"
+        ],
+        "memoryLimit": 1610612736,
+        "minBoxVersion": "7.6.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/app.penpot.cloudronapp:202602101538390000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.penpot.cloudronapp/versions/1.15.2/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,66 @@
+{
+    "id": "org.redmine.coudronapp",
+    "creationDate": "2026-01-26T07:50:00.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-08-10T21:55:17.000Z",
+    "publishedAt": "2017-08-10T21:55:17.000Z",
+    "manifest": {
+        "id": "org.redmine.coudronapp",
+        "title": "Redmine",
+        "author": "Jean-Philippe Lang",
+        "description": "## About\n\nRedmine is a flexible project management web application written using Ruby on Rails framework.\n\n## Features\n\nSome of the main features of Redmine are:\n  * Multiple projects support\n  * Flexible role based access control\n  * Flexible issue tracking system\n  * Gantt chart and calendar\n  * News, documents & files management\n  * Feeds & email notifications\n  * Per project wiki\n  * Per project forums\n  * Time tracking\n  * Custom fields for issues, time-entries, projects and users\n  * SCM integration (SVN, CVS, Git, Mercurial and Bazaar)\n  * Issue creation via email\n  * Multiple LDAP authentication support\n  * User self-registration support\n  * Multilanguage support\n  * Multiple databases support\n\nRead more about [Redmine features](https://redmine.org/projects/redmine/wiki/Features).\n\n## Documentation\n\nYou can read the [Redmine guide](https://redmine.org/projects/redmine/wiki/Guide).\n\nOther resources:\n  * [Changelog](https://redmine.org/projects/redmine/wiki/Changelog)\n  * [Frequently Asked Questions](https://redmine.org/projects/redmine/wiki/FAQ)\n  * [HowTos](https://redmine.org/projects/redmine/wiki/HowTos)\n  * [Plugins](https://redmine.org/projects/redmine/wiki/Plugins)\n  * [Themes](https://redmine.org/projects/redmine/wiki/Themes)\n  * [Logo and Icon](https://redmine.org/projects/redmine/wiki/Logo)\n  * [Third Party Tools](https://redmine.org/projects/redmine/wiki/ThirdPartyTools)\n\n## Support & getting help\n\nFor getting help or discussing about Redmine, you can browse the [Redmine forums](http://www.redmine.org/projects/redmine/boards) hosted right here in Redmine. We also have a fairly [active chatroom](https://redmine.org/projects/redmine/wiki/IRC) - join #redmine on the freenode IRC network.\n\nBefore submitting a bug report, a patch or a feature request here, please read the [Submission guidelines](https://redmine.org/projects/redmine/wiki/Submissions).\n",
+        "changelog": "* Update redmine_oauth to 3.0.9\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: admin<br/>\n\n<sso>\nCloudron users can login after their accounts approved by admin.\nYou can make user accounts approved automatically by updating `Self-registration` setting on `Administration -> Authentication` tab.\n</sso>\n",
+        "tagline": "Flexible project management",
+        "version": "3.9.3",
+        "upstreamVersion": "3.0.9",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "optionalSso": true,
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/oauth2callback"
+            },
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "memoryLimit": 629145600,
+        "manifestVersion": 2,
+        "website": "https://redmine.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "gantt",
+            "git",
+            "project",
+            "project management",
+            "wiki",
+            "asana",
+            "trello"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.redmine.coudronapp/redmine00.png",
+            "https://screenshots.cloudron.io/org.redmine.coudronapp/redmine01.png",
+            "https://screenshots.cloudron.io/org.redmine.coudronapp/redmine02.png",
+            "https://screenshots.cloudron.io/org.redmine.coudronapp/redmine03.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/52/redmine",
+        "minBoxVersion": "8.1.0",
+        "documentationUrl": "https://docs.cloudron.io/packages/redmine/",
+        "dockerImage": "cloudron/org.redmine.coudronapp:202601260705320000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.redmine.coudronapp/versions/3.9.3/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,56 @@
+{
+    "id": "com.postiz.cloudronapp",
+    "creationDate": "2025-06-17T20:35:26.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.postiz.cloudronapp",
+        "title": "Postiz",
+        "author": "Postiz Authors",
+        "contactEmail": "support@cloudron.io",
+        "tagline": "social media scheduling tool",
+        "description": "### About\n\nThe ultimate social media scheduling tool, with a bunch of AI.\n\nPostiz offers everything you need to manage your social media posts,\nbuild an audience, capture leads, and grow your business.\n\n### Features\n\n* Schedule all your social media posts (many AI features)\n* Measure your work with analytics.\n* Collaborate with other team members to exchange or buy posts.\n* Invite your team members to collaborate, comment, and schedule posts.\n\n",
+        "upstreamVersion": "1.51.0",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "tags": [
+            "social",
+            "media",
+            "scheduling"
+        ],
+        "memoryLimit": 536870912,
+        "httpPort": 5000,
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, you can set up an admin user and then create other users."
+            }
+        },
+        "runtimeDirs": [
+            "/app/code/node_modules",
+            "/app/code/dist/apps/frontend/.next/cache"
+        ],
+        "manifestVersion": 2,
+        "minBoxVersion": "8.0.0",
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.postiz.cloudronapp/main.png",
+            "https://screenshots.cloudron.io/com.postiz.cloudronapp/schedule.png",
+            "https://screenshots.cloudron.io/com.postiz.cloudronapp/analytics.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/205/postiz",
+        "documentationUrl": "https://docs.cloudron.io/packages/postiz",
+        "website": "https://postiz.com/",
+        "changelog": "* Update postiz-app to 1.51.0\n* [Full Changelog](https://github.com/gitroomhq/postiz-app/releases/tag/v1.51.0)\n* Added an option to select who can reply to your post on X\n",
+        "dockerImage": "cloudron/com.postiz.cloudronapp:202506171606010000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.postiz.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

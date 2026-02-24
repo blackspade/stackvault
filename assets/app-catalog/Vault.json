@@ -1,0 +1,56 @@
+{
+    "id": "io.vaultproject.cloudronapp2",
+    "creationDate": "2026-01-08T07:52:05.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-12-14T10:47:16.000Z",
+    "publishedAt": "2023-12-14T10:47:16.000Z",
+    "manifest": {
+        "id": "io.vaultproject.cloudronapp2",
+        "version": "1.82.2",
+        "upstreamVersion": "1.21.2",
+        "title": "Vault",
+        "author": "Vault Project",
+        "tagline": "Manage Secrets and Protect Sensitive Data",
+        "description": "## About\n\nVault is a tool for securely accessing secrets. A secret is anything that you want to tightly control access to,\nsuch as API keys, passwords, certificates, and more. Vault provides a unified interface to any secret, while\nproviding tight access control and recording a detailed audit log.\n\n## Features\n\nThe key features of Vault are:\n\n* **Secure Secret Storage**: Arbitrary key/value secrets can be stored in Vault. Vault encrypts these secrets prior to writing them to persistent storage, so gaining access to the raw storage isn't enough to access your secrets. Vault can write to disk, Consul, and more.\n\n**Dynamic Secrets**: Vault can generate secrets on-demand for some systems, such as AWS or SQL databases. For example, when an application needs to access an S3 bucket, it asks Vault for credentials, and Vault will generate an AWS keypair with valid permissions on demand. After creating these dynamic secrets, Vault will also automatically revoke them after the lease is up.\n\n**Data Encryption**: Vault can encrypt and decrypt data without storing it. This allows security teams to define encryption parameters and developers to store encrypted data in a location such as SQL without having to design their own encryption methods.\n\n**Leasing and Renewal**: All secrets in Vault have a lease associated with it. At the end of the lease, Vault will automatically revoke that secret. Clients are able to renew leases via built-in renew APIs.\n\n**Revocation**: Vault has built-in support for secret revocation. Vault can revoke not only single secrets, but a tree of secrets, for example all secrets read by a specific user, or all secrets of a particular type. Revocation assists in key rolling as well as locking down systems in the case of an intrusion.\n\n",
+        "minBoxVersion": "7.1.2",
+        "forumUrl": "https://forum.cloudron.io/category/94/vault",
+        "documentationUrl": "https://docs.cloudron.io/packages/vault/",
+        "healthCheckPath": "/",
+        "website": "https://www.vaultproject.io/",
+        "contactEmail": "support@cloudron.io",
+        "httpPort": 8200,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/ui/vault/auth/oidc/oidc/callback"
+            }
+        },
+        "capabilities": [
+            "mlock"
+        ],
+        "tags": [
+            "secret",
+            "encryption",
+            "hashicorp",
+            "password",
+            "key"
+        ],
+        "manifestVersion": 2,
+        "memoryLimit": 1073741824,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.vaultproject.cloudronapp/vault-ui-wizard.png",
+            "https://screenshots.cloudron.io/io.vaultproject.cloudronapp/replicdation.png",
+            "https://screenshots.cloudron.io/io.vaultproject.cloudronapp/unseal.png"
+        ],
+        "icon": "file://logo.png",
+        "postInstallMessage": "On first visit, you can generate the keys for the vault. The keys are not stored\nin the app and without the keys you cannot unseal the vault.\n\nTo enable authentication against the Cloudron user directory, unseal the vault and\nrun `/app/pkg/enable-oidc.sh <root-token>` using the\n[Web Terminal](https://cloudron.io/documentation/apps/#web-terminal).\n\n",
+        "changelog": "* Update vault to 1.21.2\n* [Full Changelog](https://github.com/hashicorp/vault/releases/tag/v1.21.2)\n* auth/oci: bump plugin to v0.20.1\n* core: Bump Go version to 1.25.5\n* packaging: Container images are now exported using a compressed OCI image layout.\n* packaging: UBI container images are now built on the UBI 10 minimal image.\n* secrets/azure: Update plugin to v0.25.1+ent. Improves retry handling during Azure application and service principal creation to reduce transient failures.\n* storage: Upgrade aerospike client library to v8.\n* core/activitylog (enterprise): Resolve a stability issue where Vault Enterprise could encounter a panic during month-end billing activity rollover.\n* http: skip JSON limit parsing on cluster listener.\n* quotas: Vault now protects plugins with ResolveRole operations from panicking on quota creation.\n* replication (enterprise): fix rare panic due to race when enabling a secondary with Consul storage.\n",
+        "dockerImage": "cloudron/io.vaultproject.cloudronapp2:202601080019250000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.vaultproject.cloudronapp2/versions/1.82.2/icon",
+    "featured": false,
+    "ranking": 0
+}

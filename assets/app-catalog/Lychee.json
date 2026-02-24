@@ -1,0 +1,70 @@
+{
+    "id": "com.electerious.lychee.cloudronapp",
+    "creationDate": "2026-01-29T17:36:36.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-11-29T12:06:01.000Z",
+    "publishedAt": "2016-11-29T12:06:01.000Z",
+    "manifest": {
+        "id": "com.electerious.lychee.cloudronapp",
+        "title": "Lychee",
+        "author": "Lychee Developers",
+        "tagline": "Photo management done right",
+        "version": "2.41.1",
+        "upstreamVersion": "7.3.2",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "localstorage": {
+                "ftp": {
+                    "uid": 33,
+                    "uname": "www-data"
+                }
+            },
+            "mysql": [],
+            "redis": [],
+            "scheduler": {
+                "runner": {
+                    "schedule": "* * * * *",
+                    "command": "echo '==> Running scheduler' && sudo -E -u www-data php artisan schedule:run"
+                }
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first vist, set up new login credentials"
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/34/lychee",
+        "website": "https://lychee.electerious.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "description": "### Overview\n\nLychee is a free photo-management tool. Upload, manage and share photos like from a native application. Lychee comes with everything you need and all your photos are stored securely.\n\n### Features\n\n**Manage**\n\nManaging your photos has never been easier. Upload, move, rename, describe, delete or search your photos in seconds. All in one place, right from your browser.\n\n**Share**\n\nSharing like it should be. One click and every photo and album is ready for the public. You can also protect albums with passwords if you want. It's under your control.\n\n**View**\n\nLook at all your images in full-screen mode, navigate forward and backward by using your keyboard or let others enjoy your photos by making them public.\n\n**Beautiful**\n\nOur goal was to create a web app everyone can use. Lychee works intuitive and comes with a stunning, beautiful interface.\n\n**EXIF**\n\nGet the most out of our photos. Lychee supports EXIF and IPTC Metadata. Always available one click away. Clearly listed next to all other information.\n\n**Import**\n\nImport your photos from various sources. From you local computer, server, via URL or even from your Dropbox.\n\n**Tag**\n\nNever lose one of your photos in the depth of your albums. Tag them or mark them as important. Every single photo or all selected photos at once.\n",
+        "changelog": "* Update Lychee to 7.3.2\n* [Full Changelog](https://github.com/LycheeOrg/Lychee/releases/tag/v7.3.2)\n* Exclude random from requiring XSRF token by [@ildyria](https://github.com/ildyria) in [#4040](https://github.com/LycheeOrg/Lychee/pull/4040)  \n* Fix logic about de-duplication by [@ildyria](https://github.com/ildyria) in [#4043](https://github.com/LycheeOrg/Lychee/pull/4043)  \n* Fix event propagation by [@ildyria](https://github.com/ildyria) in [#4044](https://github.com/LycheeOrg/Lychee/pull/4044)  \n* Version 7.3.2 by [@ildyria](https://github.com/ildyria) in [#4045](https://github.com/LycheeOrg/Lychee/pull/4045)\n",
+        "tags": [
+            "gallery",
+            "photo",
+            "pictures",
+            "images",
+            "media",
+            "instagram"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.electerious.lychee.cloudronapp/img01.jpg",
+            "https://screenshots.cloudron.io/com.electerious.lychee.cloudronapp/img02.jpg",
+            "https://screenshots.cloudron.io/com.electerious.lychee.cloudronapp/img03.jpg"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/lychee/",
+        "dockerImage": "cloudron/com.electerious.lychee.cloudronapp:202601291635110000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.electerious.lychee.cloudronapp/versions/2.41.1/icon",
+    "featured": false,
+    "ranking": 0
+}

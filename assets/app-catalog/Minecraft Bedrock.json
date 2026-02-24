@@ -1,0 +1,54 @@
+{
+    "id": "net.minecraft.bedrock.cloudronapp",
+    "creationDate": "2026-02-11T09:39:12.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-04-09T19:44:18.000Z",
+    "publishedAt": "2019-04-09T19:44:18.000Z",
+    "manifest": {
+        "id": "net.minecraft.bedrock.cloudronapp",
+        "title": "Minecraft Bedrock",
+        "author": "Mojang",
+        "description": "### Overview\n\nMinecraft is a game about breaking and placing blocks. At first, people built structures to protect against nocturnal monsters, but as the game grew players worked together to create wonderful, imaginative things.\n\n### User Management\n\nThe Cloudron user management options only apply to the server dashboard. Minecraft clients login through the Minecraft accounts.\n",
+        "icon": "file://logo.png",
+        "changelog": "* Update bedrock to 1.26.0.2\n",
+        "tagline": "Server for Minecraft Bedrock Edition",
+        "version": "2.37.0",
+        "upstreamVersion": "1.26.0.2",
+        "healthCheckPath": "/api/healthcheck",
+        "tags": [
+            "game",
+            "multiplayer"
+        ],
+        "memoryLimit": 1342177280,
+        "httpPort": 3000,
+        "udpPorts": {
+            "BEDROCK_PORT_V4_UDP": {
+                "title": "Server UDP Port (must be same as TCP)",
+                "description": "Server Port where Minecraft clients connect",
+                "defaultValue": 19132
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://minecraft.net/",
+        "contactEmail": "support@cloudron.io",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/net.minecraft.cloudronapp/minecraft-01.png"
+        ],
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/api/oidc/callback"
+            }
+        },
+        "minBoxVersion": "7.4.3",
+        "forumUrl": "https://forum.cloudron.io/category/49/minecraft",
+        "documentationUrl": "https://cloudron.io/documentation/packages/minecraft/",
+        "dockerImage": "cloudron/net.minecraft.bedrock.cloudronapp:202602110420590000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/net.minecraft.bedrock.cloudronapp/versions/2.37.0/icon",
+    "featured": false,
+    "ranking": 0
+}

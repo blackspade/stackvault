@@ -1,0 +1,71 @@
+{
+    "id": "org.dolibarr.cloudronapp",
+    "creationDate": "2025-12-25T10:24:34.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-07T22:59:52.000Z",
+    "publishedAt": "2020-11-07T22:59:52.000Z",
+    "manifest": {
+        "id": "org.dolibarr.cloudronapp",
+        "title": "Dolibarr",
+        "author": "Dolibarr developers",
+        "description": "## About\n\nThere are several feature modules that can be enabled or disabled, as needed. This software is free under GNU General Public License 3.0. It is a web-based application, and can therefore be used wherever an internet service is available. Dolibarr aims to offer free open source ERP and CRM features for people with no technical knowledge, by providing a simple solution.\n\nDolibarr includes all the important features of an ERP CRM suite. It is modular and is thus characterized by its ease of installation and use, despite the large number of features.\n\n\n## Features\n\nMain modules:\n * Sales Management\n * Purchase Management\n * Customer Relationship Management\n * Products-and-services catalog\n * Stock Management\n * Calendar\n * Event Management\n * Bank account management\n * Address book\n * Foundation-members management\n * Payments management\n * Donations management\n * Commercial actions management\n * Commercial proposals management\n * Contracts management\n * Orders management\n * Standing orders management\n * Shipping management\n * Point of sale\n * Electronic document management\n * Project Management\n * Surveys\n * PDF and OpenDocument generation\n * Reporting\n * Wizard to help to export/import data\n * LDAP connectivity\n\nMiscellaneous:\n * Multi-user, with several permissions levels for each feature.\n * Multi-language\n * Multi-currency\n * User-friendly\n * Assorted skins\n * Code is highly customizable (modular).\n * Works with MySQL 4.1 or higher, or PostgreSQL\n * Works with PHP\n\n",
+        "tagline": "ERP and CRM for non technical people",
+        "version": "1.12.5",
+        "upstreamVersion": "22.0.4",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "manifestVersion": 2,
+        "website": "https://dolibarr.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "multiDomain": true,
+        "addons": {
+            "mysql": [],
+            "localstorage": [],
+            "sendmail": {
+                "optional": true
+            },
+            "ldap": [],
+            "oidc": {
+                "loginRedirectUri": "/core/modules/openid_connect/callback.php, /?openid_mode=true"
+            },
+            "scheduler": {
+                "periodic": {
+                    "schedule": "*/15 * * * *",
+                    "command": "/usr/bin/php /app/pkg/cron_run_jobs_custom.php"
+                },
+                "sync_users": {
+                    "schedule": "5 * * * *",
+                    "command": "/app/pkg/sync-users.sh 2>&1"
+                }
+            }
+        },
+        "tags": [
+            "dolibarr",
+            "CRM",
+            "ERP"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password."
+            }
+        },
+        "changelog": "* Update dolibarr to 22.0.4\n* [Full Changelog](https://github.com/Dolibarr/dolibarr/blob/22.0.4/ChangeLog)\n* FIX: $param is the 5th parameter of print_liste_field_titre ($moreparam) ([#36250](https://github.com/Dolibarr/dolibarr/issues/36250))\n* FIX: 17.0: perweek.php resets task progress to 0% when: ([#36401](https://github.com/Dolibarr/dolibarr/issues/36401))\n* FIX: 18.0: GETPOSTDATE and buildParamDate assumed HTTP param names 'minute' and 'second' instead of 'min' and 'sec'\n* FIX: 19.0 - attachments upload dir for invoices not always determined correctly (doesn't always take multi-entity into account) ([#36302](https://github.com/Dolibarr/dolibarr/issues/36302))\n* FIX: [#33148](https://github.com/Dolibarr/dolibarr/issues/33148) - partial payments are taken into account in EPC QR codes ([#36338](https://github.com/Dolibarr/dolibarr/issues/36338))\n* FIX: [#33899](https://github.com/Dolibarr/dolibarr/issues/33899) API Timespent Service Field\n* FIX: [#35061](https://github.com/Dolibarr/dolibarr/issues/35061)\n* FIX: [#35096](https://github.com/Dolibarr/dolibarr/issues/35096) [#36393](https://github.com/Dolibarr/dolibarr/issues/36393) Add minimal fields required asthe class is used by\n* FIX: [#35141](https://github.com/Dolibarr/dolibarr/issues/35141) ([#36390](https://github.com/Dolibarr/dolibarr/issues/36390))\n* FIX: [#35375](https://github.com/Dolibarr/dolibarr/issues/35375) Accountancy - SQL error on empty filter account category\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n**Email**: admin@cloudron.local<br/>\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.dolibarr.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.dolibarr.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.dolibarr.cloudronapp/3.jpg"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/107/dolibarr",
+        "documentationUrl": "https://docs.cloudron.io/packages/dolibarr/",
+        "dockerImage": "cloudron/org.dolibarr.cloudronapp:202512250619310000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.dolibarr.cloudronapp/versions/1.12.5/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,63 @@
+{
+    "id": "com.osticket.cloudronapp",
+    "creationDate": "2026-01-16T08:10:17.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-06-12T13:49:13.000Z",
+    "publishedAt": "2020-06-12T13:49:13.000Z",
+    "manifest": {
+        "id": "com.osticket.cloudronapp",
+        "version": "2.4.1",
+        "upstreamVersion": "1.18.3",
+        "title": "osTicket",
+        "author": "osTicket Authors",
+        "description": "## About\n\nosTicket is a widely-used open source support ticket system. It seamlessly integrates inquiries\ncreated via email, phone and web-based forms into a simple easy-to-use multi-user web interface.\nManage, organize and archive all your support requests and responses in one place while providing\nyour customers with accountability and responsiveness they deserve.\n\n## Features\n\n* Dashboard Reports\n* Configurable Help Topics\n* Customer Support Portal\n* Service Level Agreements\n* Ticket Filters\n* And Much More!\n\n",
+        "changelog": "* Update osTicket to 1.18.3\n* [Full Changelog](https://github.com/osTicket/osTicket/releases/tag/v1.18.3)\n* mPDF: Upgrade To v8.2.7\n* htmLawed: Upgrade To 1.2.15\n* security: Latest Patches 01/2026\n",
+        "tagline": "Make. Happy. Customers.",
+        "healthCheckPath": "/",
+        "configurePath": "/scp/login.php",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "ldap": [],
+            "scheduler": {
+                "fetch_email": {
+                    "schedule": "*/2 * * * *",
+                    "command": "echo '==> Fetching mails' && sudo -E -u www-data php /app/code/upload/api/cron.php"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password immediately."
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://osticket.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "support",
+            "helpdesk",
+            "zendesk",
+            "salesforce"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.osticket.cloudronapp/Ticket_Filters_1-1024x683.jpg",
+            "https://screenshots.cloudron.io/com.osticket.cloudronapp/Customer_Portal_2-1024x683.jpg",
+            "https://screenshots.cloudron.io/com.osticket.cloudronapp/Assign_Transfer_Referral_2-1024x683.jpg"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/osticket",
+        "postInstallMessage": "The admin interface is located at $CLOUDRON-APP-ORIGIN/scp/login.php .\n\nThis app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: root<br/>\n**Password**: changeme<br/>\n**Email**: admin@server.local<br/>\n\nSee the [admin checklist](https://cloudron.io/documentation/apps/osticket#admin-checklist) before\nstarting to use the app.\n\n<sso>\n<b>Agents must be manually added into osTicket before they can authenticate with the Cloudron User Directory.</b>\nSee [the docs](https://docs.cloudron.io/apps/osticket/#user-management) for more information.\n</sso>\n\n",
+        "optionalSso": true,
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/89/osticket",
+        "dockerImage": "cloudron/com.osticket.cloudronapp:202601160420030000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.osticket.cloudronapp/versions/2.4.1/icon",
+    "featured": false,
+    "ranking": 0
+}

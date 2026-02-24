@@ -1,0 +1,55 @@
+{
+    "id": "org.yourls.cloudronapp",
+    "creationDate": "2026-01-19T13:54:49.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-01-22T05:51:45.000Z",
+    "publishedAt": "2020-01-22T05:51:45.000Z",
+    "manifest": {
+        "id": "org.yourls.cloudronapp",
+        "title": "Yourls",
+        "author": "YOURLS authors",
+        "description": "YOURLS stands for Your Own URL Shortener. It is a small set of PHP scripts that will allow you to run your\nown URL shortening service (a la TinyURL or Bitly).\n\nRunning your own URL shortener is fun, geeky and useful: you own your data and don't depend on third-party services.\nIt's also a great way to add branding to your short URLs, instead of using the same public URL shortener everyone uses.\n\n## Features\n\n* Free and open-source software.\n* Private (your links only) or Public (everybody can create short links, fine for an intranet)\n* Sequential or custom URL keywords\n* Handy bookmarklets to easily shorten and share links\n* Awesome stats: historical click reports, referrers tracking, visitors geo-location\n* Neat Ajaxed interface\n* Terrific Plugin architecture to easily implement new features\n* Cool developer API\n* Full jsonp support\n* Friendly installer\n* Sample files to create your own public interface and more\n\n\n",
+        "changelog": "* Add checklist\n* Fix apache configuration for mod_dir to work correctly\n",
+        "tagline": "YOURLS: Your Own URL Shortener",
+        "version": "1.12.0",
+        "upstreamVersion": "1.10.3",
+        "healthCheckPath": "/admin",
+        "configurePath": "/admin/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "ldap": []
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "8.0.0",
+        "website": "https://yourls.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "url",
+            "shortener",
+            "bitly"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.yourls.cloudronapp/admin-dashboard.gif",
+            "https://screenshots.cloudron.io/org.yourls.cloudronapp/stats-anim.gif"
+        ],
+        "documentationUrl": "https://cloudron.io/documentation/packages/yourls",
+        "forumUrl": "https://forum.cloudron.io/category/93/yourls",
+        "postInstallMessage": "<nosso>\n\nThis app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n</nosso>\n\n",
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password. See [documentation](https://docs.cloudron.io/packages/yourls/#admin-password)"
+            }
+        },
+        "dockerImage": "cloudron/org.yourls.cloudronapp:202601191338480000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.yourls.cloudronapp/versions/1.12.0/icon",
+    "featured": false,
+    "ranking": 0
+}

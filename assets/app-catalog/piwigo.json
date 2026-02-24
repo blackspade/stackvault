@@ -1,0 +1,57 @@
+{
+    "id": "org.piwigo.cloudronapp",
+    "creationDate": "2025-12-30T15:26:52.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-07-05T14:17:46.000Z",
+    "publishedAt": "2022-07-05T14:17:46.000Z",
+    "manifest": {
+        "id": "org.piwigo.cloudronapp",
+        "title": "piwigo",
+        "author": "piwigo authors",
+        "description": "Piwigo is open source photo gallery software for the web. Designed for organisations, teams and individuals.\n\n### Why choose Piwigo?\n\n* High Volume - Piwigo shines when it comes to classifying thousands or even hundreds of thousands of photos.\n* Sustainable - Born in 2002, Piwigo has been supporting its users for more than 21 years. Always evolving!\n* Open Source - Source code is available, editable, auditable and extendable thanks to plugins and themes.\n\n### Features\n\n* Albums Hierarchy\n* Batch Management\n* Themes & Plugins\n* Permissions Control\n\n",
+        "changelog": "* Update Piwigo to 16.2.0\n* [Full Changelog](https://piwigo.org/release-16.2.0)\n",
+        "tagline": "Photo gallery software for the web",
+        "version": "3.2.0",
+        "upstreamVersion": "16.2.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password immediately."
+            }
+        },
+        "minBoxVersion": "8.1.0",
+        "manifestVersion": 2,
+        "website": "http://www.piwigo.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "images",
+            "sharing",
+            "media",
+            "photos",
+            "picasa"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.piwigo.cloudronapp/piwigo_01.jpg",
+            "https://screenshots.cloudron.io/org.piwigo.cloudronapp/piwigo_02.jpg"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/148/piwigo",
+        "documentationUrl": "https://docs.cloudron.io/packages/piwigo",
+        "postInstallMessage": "This app is pre-setup with an admin account:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n",
+        "dockerImage": "cloudron/org.piwigo.cloudronapp:202512301338280000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.piwigo.cloudronapp/versions/3.2.0/icon",
+    "featured": false,
+    "ranking": 0
+}

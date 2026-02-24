@@ -1,0 +1,78 @@
+{
+    "id": "org.wordpress.cloudronapp",
+    "creationDate": "2026-02-11T14:51:35.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2015-12-02T19:22:33.000Z",
+    "publishedAt": "2015-12-02T19:22:33.000Z",
+    "manifest": {
+        "id": "org.wordpress.cloudronapp",
+        "title": "WordPress (Managed)",
+        "author": "WordPress developers",
+        "description": "WordPress (Managed) package brings the user experience of managed WordPress hosting\nto your server. With the Managed edition, WordPress releases are tracked by the Cloudron team\nand your WordPress installation can be updated from the Cloudron dashboard (like other apps).\n\nTo make seamless updates possible, this package has some limitations:\n\n* WordPress core files are read-only. WordPress can still be extended using plugins. If you require\n  the flexibility to edit files, use the WordPress (Developer) package instead.\n* WordPress cannot be updated from WordPress' admin dashboard (because the code is read-only). Instead,\n  you have to update WordPress using Cloudron's dashboard.\n* While we have tested extensively with many plugins, some plugins may not work because of the read-only\n  setup of WordPress. For example, many migration plugins overwrite WordPress code files during restore\n  and are known to not work. We recommend using WordPress (Developer) package for importing your existing site.\n\n## About\n\nWordPress is web software you can use to create a beautiful website or blog.\nWe like to say that WordPress is both free and priceless at the same time.\n\nThe core software is built by hundreds of community volunteers, and when\nyou’re ready for more there are thousands of plugins and themes available\nto transform your site into almost anything you can imagine. Over 60 million\npeople have chosen WordPress to power the place on the web they call “home” \n— we’d love you to join the family.\n\n### Apps\n\n* [Android](https://play.google.com/store/apps/details?id=org.wordpress.android&hl=en)\n* [iOS](https://itunes.apple.com/us/app/wordpress/id335703880?mt=8&uo=6&at=&ct=)\n\n",
+        "tagline": "Transform your site into almost anything",
+        "version": "3.15.3",
+        "upstreamVersion": "6.9.1",
+        "healthCheckPath": "/wp-includes/version.php",
+        "httpPort": 80,
+        "manifestVersion": 2,
+        "website": "https://wordpress.org/",
+        "contactEmail": "support@cloudron.io",
+        "configurePath": "/wp-login.php",
+        "icon": "logo.png",
+        "addons": {
+            "mysql": [],
+            "localstorage": {
+                "ftp": {
+                    "uid": 33,
+                    "uname": "www-data"
+                }
+            },
+            "sendmail": {
+                "optional": true,
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/wp-admin/admin-ajax.php?action=openid-connect-authorize"
+            },
+            "scheduler": {
+                "wpcron": {
+                    "schedule": "*/5 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password and email"
+            }
+        },
+        "tags": [
+            "hosting",
+            "blog",
+            "cms",
+            "weblog",
+            "ghost",
+            "wix",
+            "squarespace"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.wordpress.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.wordpress.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.wordpress.cloudronapp/3.jpg"
+        ],
+        "changelog": "* Update openid-connect-generic to 3.10.4\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n<sso>\nCloudron users get the `editor` role by default. You can give the user\n`admin` role inside WordPress' admin dashboard.\n</sso>\n\n",
+        "optionalSso": true,
+        "minBoxVersion": "8.1.0",
+        "multiDomain": true,
+        "forumUrl": "https://forum.cloudron.io/category/12/wordpress-managed",
+        "documentationUrl": "https://docs.cloudron.io/packages/wordpress-managed/",
+        "dockerImage": "cloudron/org.wordpress.cloudronapp:202602110220370000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.wordpress.cloudronapp/versions/3.15.3/icon",
+    "featured": true,
+    "ranking": 0
+}

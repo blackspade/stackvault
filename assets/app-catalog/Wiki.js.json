@@ -1,0 +1,59 @@
+{
+    "id": "org.wikijs.cloudronapp",
+    "creationDate": "2026-02-12T11:37:14.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-02-22T02:41:04.000Z",
+    "publishedAt": "2020-02-22T02:41:04.000Z",
+    "manifest": {
+        "id": "org.wikijs.cloudronapp",
+        "version": "1.13.5",
+        "upstreamVersion": "2.5.312",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "website": "https://wiki.js.org/",
+        "title": "Wiki.js",
+        "author": "Wiki.js developers",
+        "contactEmail": "support@cloudron.io",
+        "tagline": "A powerful and extensible wiki",
+        "memoryLimit": 536870912,
+        "tags": [
+            "wiki",
+            "markdown"
+        ],
+        "icon": "file://logo.png",
+        "description": "### Overview\n\nWiki.js is a powerful and extensible open source Wiki software.\nIt aims to make writing documentation a joy through a beautiful and intuitive interface.\n\n### Features\n * Performance: Running on the blazing fast Node.js engine, Wiki.js is built with performance in mind.\n * Protected: Make your wiki public, completely private or a mix of both.\n * Administration: Manage all aspects of your wiki using the extensive and intuitive admin area.\n * Customizable: Fully customize the appearance of your wiki, including a light and dark mode.\n * Extensible: There is a wide range of [modules](https://wiki.js.org/modules) available\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Email**: admin@cloudron.local<br/>\n**Password**: changeme123<br/>\n\n<sso>\nBy default, Cloudron users have `Guest` permissions. This can be changed in the Authentication page.\n</sso>\n\n",
+        "changelog": "* Update wiki to 2.5.312\n* [Full Changelog](https://github.com/requarks/wiki/releases/tag/v2.5.312)\n* [`6ae53bf`](https://github.com/requarks/wiki/commit/6ae53bf1bd9174c97585e1bf46bfbdc86673a859) - map OIDC/OAuth2 avatar claims to user pictureUrl *(MR [#&#8203;7908](https://github.com/Requarks/wiki/issues/7908) by [@&#8203;mod242](https://github.com/mod242))*\n* [`3ba58f7`](https://github.com/requarks/wiki/commit/3ba58f754dd6099e4a885d5414c2d5d00096a7a3) - apply theme style to embedded diagram svg *(MR [#&#8203;7903](https://github.com/Requarks/wiki/issues/7903) by [@&#8203;tribut](https://github.com/tribut))*\n* [`3dcf20a`](https://github.com/requarks/wiki/commit/3dcf20ab6f59e72271fd84271884893c754b6d26) - diagram svg styling add `!important` qualifier for light scheme *(MR [#&#8203;7905](https://github.com/Requarks/wiki/issues/7905) by [@&#8203;tribut](https://github.com/tribut))*\n* [`7ae6635`](https://github.com/requarks/wiki/commit/7ae6635d1686afa193bd1417abd9c9891aa0b71a) - validate loginRedirect cookie to prevent open redirect *(MR [#&#8203;7923](https://github.com/Requarks/wiki/issues/7923) by [@&#8203;kolega-ai-dev](https://github.com/kolega-ai-dev))*\n* [`d14b0a5`](https://github.com/requarks/wiki/commit/d14b0a5509f1592e962b6d87324423eeb3903b1b) - authenticate GraphQL subscription WebSocket connections *(MR [#&#8203;7922](https://github.com/Requarks/wiki/issues/7922) by [@&#8203;kolega-ai-dev](https://github.com/kolega-ai-dev))*\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/wikijs/",
+        "optionalSso": true,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/login/cloudron/callback"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "manifestVersion": 2,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.wikijs.cloudronapp/wikijs-00.png",
+            "https://screenshots.cloudron.io/org.wikijs.cloudronapp/wikijs-01.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/51/wiki-js",
+        "dockerImage": "cloudron/org.wikijs.cloudronapp:202602121058150000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.wikijs.cloudronapp/versions/1.13.5/icon",
+    "featured": false,
+    "ranking": 0
+}

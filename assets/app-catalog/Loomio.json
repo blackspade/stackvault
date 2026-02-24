@@ -1,0 +1,83 @@
+{
+    "id": "org.loomio.cloudronapp",
+    "creationDate": "2026-02-10T07:27:12.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-03-17T14:50:00.000Z",
+    "publishedAt": "2023-03-17T14:50:00.000Z",
+    "manifest": {
+        "id": "org.loomio.cloudronapp",
+        "title": "Loomio",
+        "author": "Loomio Cooperative Limited",
+        "description": "*Collaborative Decision Making*\n\nLoomio is a decision-making tool for collaborative organizations.\n\nIn a modern organization having everyone together in one room at the right time, with equal context to be able to make decisions is often impossible. For fast moving teams that work remotely and asynchronously it can be difficult to keep everyone on the same page about what has been decided and why.\n\nLoomio is a tool designed for any online group to make clearer, more collaborative, better decisions together. It is perfect for:\n\n* Remote, asynchronous teamwork. Sharing important context, making decisions and progressing work without being able to all meet at the same time or in the same place.\n\n* Inclusive decision making. Ensure all voices that need to be heard are included in the decision making process.\n\n* Transparency and clarity. Ensure decision making processes are clear and accessible so everyone can understand the decision, outcomes and next steps from the process.\n",
+        "tagline": "Make better decisions together",
+        "version": "1.17.8",
+        "upstreamVersion": "NewVersionIsNotSet",
+        "memoryLimit": 2147483648,
+        "minBoxVersion": "8.1.0",
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "httpPorts": {
+            "CHANNELS_SERVER_DOMAIN": {
+                "title": "Channels Domain",
+                "description": "The subdomain name of Loomio Channels websocket server",
+                "containerPort": 8080,
+                "defaultValue": "channels.loomio"
+            },
+            "HOCUSPOCUS_SERVER_DOMAIN": {
+                "title": "Hocuspocus Domain",
+                "description": "The subdomain name of Loomio Hocuspocus websocket server",
+                "containerPort": 8081,
+                "defaultValue": "hocuspocus.loomio"
+            }
+        },
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": {
+                "noPassword": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/oauth/authorize"
+            },
+            "scheduler": {
+                "hourly_tasks": {
+                    "schedule": "0 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            },
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "checklist": {
+            "create-admin": {
+                "sso": false,
+                "message": "To get started, register yourself as a new user and create one or more groups"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.loomio.cloudronapp/loomio_01.png",
+            "https://screenshots.cloudron.io/org.loomio.cloudronapp/loomio_02.png"
+        ],
+        "manifestVersion": 2,
+        "postInstallMessage": "<nosso>\nDepending on your setup, you can customize Loomio to disable public user registration (invite only)\nand disable creation of groups.\n</nosso>\n\n<sso>\nExternal login is disabled. To enable external login, change `FEATURES_DISABLE_EMAIL_LOGIN` in `/app/data/env.sh`.\n</sso>\n",
+        "website": "https://www.loomio.org",
+        "forumUrl": "https://forum.cloudron.io/category/160/loomio",
+        "documentationUrl": "https://docs.cloudron.io/packages/loomio/",
+        "contactEmail": "support@clourdon.io",
+        "changelog": "* Update loomio_channel_server to 1cb973b\n",
+        "optionalSso": true,
+        "icon": "file://logo.png",
+        "tags": [
+            "collaboration",
+            "decision"
+        ],
+        "dockerImage": "cloudron/org.loomio.cloudronapp:202602100320270000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.loomio.cloudronapp/versions/1.17.8/icon",
+    "featured": false,
+    "ranking": 0
+}

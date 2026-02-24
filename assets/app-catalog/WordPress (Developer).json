@@ -1,0 +1,82 @@
+{
+    "id": "org.wordpress.unmanaged.cloudronapp",
+    "creationDate": "2026-02-11T14:51:20.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-04-29T12:43:39.000Z",
+    "publishedAt": "2019-04-29T12:43:39.000Z",
+    "manifest": {
+        "id": "org.wordpress.unmanaged.cloudronapp",
+        "title": "WordPress (Developer)",
+        "author": "WordPress developers",
+        "description": "WordPress (Developer) package gives you complete control over your WordPress installation.\nUnlike the WordPress (Managed) package, core WordPress files are editable. Because the core files\nare editable, you have to keep WordPress updated from the WP Admin dashboard. Some salient features are:\n\n* Supports all migration plugins. Use this package to migrate your existing site into Cloudron.\n* Make changes to WordPress via SFTP or the File Manager.\n* Supports all WordPress security plugins like WordFence.\n* Update WordPress from inside WordPress' admin dashboard.\n\n## About\n\nWordPress is web software you can use to create a beautiful website or blog.\nWe like to say that WordPress is both free and priceless at the same time.\n\nThe core software is built by hundreds of community volunteers, and when\nyou’re ready for more there are thousands of plugins and themes available\nto transform your site into almost anything you can imagine. Over 60 million\npeople have chosen WordPress to power the place on the web they call “home”\n— we’d love you to join the family.\n\n### Apps\n\n* [Android](https://play.google.com/store/apps/details?id=org.wordpress.android&hl=en)\n* [iOS](https://itunes.apple.com/us/app/wordpress/id335703880?mt=8&uo=6&at=&ct=)\n",
+        "tagline": "Transform your site into almost anything",
+        "version": "3.12.6",
+        "upstreamVersion": "6.9.1",
+        "healthCheckPath": "/wp-includes/version.php",
+        "httpPort": 80,
+        "manifestVersion": 2,
+        "website": "https://wordpress.org/",
+        "contactEmail": "support@cloudron.io",
+        "configurePath": "/wp-login.php",
+        "icon": "logo.png",
+        "addons": {
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/wp-admin/admin-ajax.php?action=openid-connect-authorize"
+            },
+            "localstorage": {
+                "ftp": {
+                    "uid": 33,
+                    "uname": "www-data"
+                }
+            },
+            "sendmail": {
+                "optional": true,
+                "supportsDisplayName": true
+            },
+            "scheduler": {
+                "wpcron": {
+                    "schedule": "*/1 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            },
+            "redis": {
+                "optional": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "tags": [
+            "hosting",
+            "blog",
+            "cms",
+            "weblog",
+            "ghost",
+            "website",
+            "wix",
+            "squarespace"
+        ],
+        "optionalSso": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.wordpress.unmanaged.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.wordpress.unmanaged.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.wordpress.unmanaged.cloudronapp/3.jpg"
+        ],
+        "changelog": "* Update openid-connect-generic to 3.10.4\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n<sso>\nCloudron users get the `editor` role by default. You can give the user\n`admin` role inside WordPress' admin dashboard.\n</sso>\n",
+        "multiDomain": true,
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/77/wordpress-developer",
+        "documentationUrl": "https://docs.cloudron.io/packages/wordpress-developer",
+        "dockerImage": "cloudron/org.wordpress.unmanaged.cloudronapp:202602110220530000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.wordpress.unmanaged.cloudronapp/versions/3.12.6/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,63 @@
+{
+    "id": "is.umami.cloudronapp",
+    "creationDate": "2025-12-19T14:11:53.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-05-04T23:12:27.000Z",
+    "publishedAt": "2022-05-04T23:12:27.000Z",
+    "manifest": {
+        "id": "is.umami.cloudronapp",
+        "version": "3.23.0",
+        "upstreamVersion": "3.0.3",
+        "title": "Umami",
+        "author": "Umami Community",
+        "description": "## About\n\nUmami is a simple, easy to use, self-hosted web analytics solution. The goal is to provide you with a friendlier, privacy-focused alternative to Google Analytics and a free, open-sourced alternative to paid solutions. Umami collects only the metrics you care about and everything fits on a single page.\n\n## Features\n\n* Simple analytics\n* Unlimited websites\n* Bypass ad-blockers\n* Light-weight\n* Multiple accounts\n* Share data\n* Mobile-friendly\n* Data ownership\n* Privacy-focused\n* Open-source\n\n",
+        "tagline": "Own your website analytics",
+        "website": "https://umami.is/",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "memoryLimit": 2147483648,
+        "runtimeDirs": [
+            "/app/code/prisma",
+            "/app/code/src/generated/prisma",
+            "/app/code/generated",
+            "/app/code/node_modules",
+            "/app/code/public",
+            "/app/code/.next"
+        ],
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": {
+                "optional": true
+            }
+        },
+        "manifestVersion": 2,
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "analytics",
+            "tracker"
+        ],
+        "changelog": "* Add optional redis\n",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin<br/>\n**Password**: umami<br/>\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/umami/",
+        "forumUrl": "https://forum.cloudron.io/category/141/umami",
+        "minBoxVersion": "8.0.0",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/is.umami.cloudronapp/about-screenshot.png",
+            "https://screenshots.cloudron.io/is.umami.cloudronapp/languages.png"
+        ],
+        "dockerImage": "cloudron/is.umami.cloudronapp:202512191328360000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/is.umami.cloudronapp/versions/3.23.0/icon",
+    "featured": false,
+    "ranking": 0
+}

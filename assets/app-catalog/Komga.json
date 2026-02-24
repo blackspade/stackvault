@@ -1,0 +1,72 @@
+{
+    "id": "org.komga.cloudronapp",
+    "creationDate": "2026-01-29T11:02:25.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-01-02T23:31:28.000Z",
+    "publishedAt": "2025-01-02T23:31:28.000Z",
+    "manifest": {
+        "id": "org.komga.cloudronapp",
+        "title": "Komga",
+        "author": "Komga Developers",
+        "version": "1.6.1",
+        "description": "### About\n\nKomga is a media server for your comics, mangas, BDs, magazines and eBooks.\n\n### Features\n\n* Browse libraries, series and books via a responsive web UI that works on desktop, tablets and phones\n* Organize your library with collections and read lists\n* Edit metadata for your series and books\n* Import embedded metadata automatically\n* Webreader with multiple reading modes\n* Manage multiple users, with per-library access control, age restrictions, and labels restrictions\n* Offers a REST API, many community tools and scripts can interact with Komga\n* OPDS v1 and v2 support\n* Kobo Sync with your Kobo eReader\n* Download book files, whole series, or read lists\n* Duplicate files detection\n* Duplicate pages detection and removal\n* Import books from outside your libraries directly into your series folder\n* Import ComicRack cbl read lists\n\n",
+        "tagline": "Comics/Mangas Media Server",
+        "upstreamVersion": "1.24.1",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "manga",
+            "comics",
+            "ebooks",
+            "epub",
+            "mobi",
+            "opds",
+            "kobo",
+            "calibre"
+        ],
+        "website": "https://komga.org/",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/actuator/health",
+        "httpPort": 25600,
+        "changelog": "* Update komga to 1.24.1\n* [Full Changelog](https://github.com/gotson/komga/releases/tag/1.24.1)\n* more lenient fixed-layout detection\n",
+        "memoryLimit": 2147483648,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/komga/database.sqlite",
+                        "/app/data/komga/tasks.sqlite"
+                    ]
+                },
+                "ftp": {
+                    "uid": 1000,
+                    "uname": "cloudron"
+                }
+            },
+            "oidc": {
+                "loginRedirectUri": "/login/oauth2/code/cloudron"
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, create an admin user"
+            }
+        },
+        "optionalSso": true,
+        "forumUrl": "https://forum.cloudron.io/category/200/komga",
+        "documentationUrl": "https://docs.cloudron.io/packages/komga",
+        "manifestVersion": 2,
+        "minBoxVersion": "8.2.0",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.komga.cloudronapp/reader.png",
+            "https://screenshots.cloudron.io/org.komga.cloudronapp/duplicate-pages-new.png",
+            "https://screenshots.cloudron.io/org.komga.cloudronapp/library-add-dialog.png"
+        ],
+        "dockerImage": "cloudron/org.komga.cloudronapp:202601291024590000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.komga.cloudronapp/versions/1.6.1/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,48 @@
+{
+    "id": "com.grafana.cloudronapp",
+    "creationDate": "2021-08-05T18:07:22.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.grafana.cloudronapp",
+        "title": "Grafana",
+        "author": "Grafana Labs",
+        "description": "This app packages Grafana <upstream>8.1.0</upstream>.\n\n## About\n\nGrafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored.\n\nCreate, explore, and share dashboards with your team and foster a data driven culture:\n\n* Visualize: Fast and flexible client side graphs with a multitude of options. Panel plugins for many different way to visualize metrics and logs.\n\n* Dynamic Dashboards: Create dynamic & reusable dashboards with template variables that appear as dropdowns at the top of the dashboard.\n\n* Explore Metrics: Explore your data through ad-hoc queries and dynamic drilldown. Split view and compare different time ranges, queries and data sources side by side.\n\n* Explore Logs: Experience the magic of switching from metrics to logs with preserved label filters. Quickly search through all your logs or streaming them live.\n\n* Alerting: Visually define alert rules for your most important metrics. Grafana will continuously evaluate and send notifications to systems like Slack, PagerDuty, VictorOps, OpsGenie.\n\n* Mixed Data Sources: Mix different data sources in the same graph! You can specify a data source on a per-query basis. This works for even custom datasources.\n\n",
+        "tagline": "Platform for monitoring and observability",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": {
+                "noPassword": true
+            },
+            "ldap": [],
+            "sendmail": []
+        },
+        "manifestVersion": 2,
+        "website": "https://grafana.com",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "monitoring",
+            "graphs",
+            "analytics"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.grafana.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/com.grafana.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/com.grafana.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/com.grafana.cloudronapp/4.png"
+        ],
+        "minBoxVersion": "5.3.0",
+        "documentationUrl": "https://cloudron.io/documentation/apps/grafana/",
+        "forumUrl": "https://forum.cloudron.io/category/98/grafana",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: admin<br/>\n\nPlease change the admin password immediately via the user management page\nin Server Admin UI (you cannot change password via the profile page). \n\n",
+        "changelog": "* Update Grafana to 8.1.0\n* [Changelog](https://github.com/grafana/grafana/releases/tag/v8.1.0)\n* Alerting: Deduplicate receivers during migration. #36812, @codesome\n* ColorPicker: Display colors as RGBA. #37231, @nikki-kiga\n* Select: Make portalling the menu opt-in, but opt-in everywhere. #37501, @ashharrison90\n* TimeRangePicker: Improve accessibility. #36912, @tskarhed\n",
+        "dockerImage": "cloudron/com.grafana.cloudronapp:20210805-174823-7200eec09"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.grafana.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

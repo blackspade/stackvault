@@ -1,0 +1,74 @@
+{
+    "id": "org.bigbluebutton.greenlight3.cloudronapp",
+    "creationDate": "2026-01-16T11:42:56.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-11-16T18:26:33.000Z",
+    "publishedAt": "2023-11-16T18:26:33.000Z",
+    "manifest": {
+        "id": "org.bigbluebutton.greenlight3.cloudronapp",
+        "version": "1.9.1",
+        "upstreamVersion": "3.7.1",
+        "title": "Greenlight",
+        "tagline": "BigBlueButton Front-End",
+        "author": "Greenlight Developers",
+        "contactEmail": "support@cloudron.io",
+        "description": "Greenlight is the main front-end interface for a BigBlueButton server.\n\nThis app does **not** bundle BigBlueButton itself, but requires a backend server to be installed.\n",
+        "changelog": "* Update greenlight to 3.7.1\n* [Full Changelog](https://github.com/bigbluebutton/greenlight/releases/tag/release-3.7.1)\n* Fixed issue with omniauth flow for BN deployment\n",
+        "postInstallMessage": "<sso>\nBy default, Cloudron users have `Administrator` role permissions. This can be changed in `Administrator Panel` > `Site Settings` > `Registration`.\n</sso>\n\n<nosso>\nThis app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: Changeme!123<br/>\n\n</nosso>\n\n",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "minBoxVersion": "8.1.0",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/auth/openid_connect/callback"
+            },
+            "redis": {
+                "noPassword": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "sso": false,
+                "message": "Change the default admin password"
+            },
+            "configure-bigbluebutton": {
+                "message": "Configure a BigBlueButton endpoint for the app to work. Edit `/app/data/env` and set the `BIGBLUEBUTTON_ENDPOINT` and `BIGBLUEBUTTON_SECRET` variables."
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://github.com/bigbluebutton/greenlight",
+        "documentationUrl": "https://docs.cloudron.io/packages/greenlight/",
+        "forumUrl": "https://forum.cloudron.io/category/103/greenlight",
+        "tags": [
+            "collaboration",
+            "bbb",
+            "conference",
+            "video",
+            "call",
+            "webrtc",
+            "meeting",
+            "web meeting",
+            "zoom"
+        ],
+        "optionalSso": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.bigbluebutton.greenlight.cloudronapp/greenlight-01.png",
+            "https://screenshots.cloudron.io/org.bigbluebutton.greenlight.cloudronapp/greenlight-02.png",
+            "https://screenshots.cloudron.io/org.bigbluebutton.greenlight.cloudronapp/greenlight-03.png"
+        ],
+        "memoryLimit": 524288000,
+        "dockerImage": "cloudron/org.bigbluebutton.greenlight3.cloudronapp:202601161021050000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.bigbluebutton.greenlight3.cloudronapp/versions/1.9.1/icon",
+    "featured": false,
+    "ranking": 0
+}

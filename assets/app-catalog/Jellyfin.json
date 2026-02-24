@@ -1,0 +1,69 @@
+{
+    "id": "org.jellyfin.cloudronapp",
+    "creationDate": "2026-01-28T15:51:27.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-06-11T18:18:38.000Z",
+    "publishedAt": "2020-06-11T18:18:38.000Z",
+    "manifest": {
+        "id": "org.jellyfin.cloudronapp",
+        "version": "1.13.2",
+        "upstreamVersion": "10.11.6",
+        "title": "Jellyfin",
+        "tagline": "The Free Software Media System",
+        "healthCheckPath": "/",
+        "author": "Jellyfin developers",
+        "contactEmail": "support@cloudron.io",
+        "description": "### Overview\n\nJellyfin is a Free Software Media System that puts you in control of managing and streaming your media.\nIt is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.\nJellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support.\nThere are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it.\n\nWe welcome anyone who is interested in joining us in our quest!\n",
+        "changelog": "* Update jellyfin to 10.11.6\n* [Full Changelog](https://github.com/jellyfin/jellyfin/releases/tag/v10.11.6)\n* Prioritize better matches on search [MR #15983], by [@Shadowghost](https://github.com/Shadowghost)\n* Fix artist display order [MR #15816], by [@theguymadmax](https://github.com/theguymadmax)\n* Restore weekly refresh for library folder images [MR #16046], by [@theguymadmax](https://github.com/theguymadmax)\n* Be more strict about PersonType assignment [MR #15872], by [@Shadowghost](https://github.com/Shadowghost)\n* Fix birthplace not saving correctly [MR #16020], by [@theguymadmax](https://github.com/theguymadmax)\n* Trim music artist names [MR #15808], by [@theguymadmax](https://github.com/theguymadmax)\n* Add mblink creation logic to library update endpoint. [MR #15965], by [@Collin-Swish](https://github.com/Collin-Swish)\n* Fix watched state not kept on Media replace/rename [MR #15899], by [@MarcoCoreDuo](https://github.com/MarcoCoreDuo)\n* Skip hidden directories and .ignore paths in library monitoring [MR #16029], by [@theguymadmax](https://github.com/theguymadmax)\n* Revert \"always sort season by index number\" [MR #15950], by [@theguymadmax](https://github.com/theguymadmax)\n",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.jellyfin.cloudronapp/jellyfin-01.png",
+            "https://screenshots.cloudron.io/org.jellyfin.cloudronapp/jellyfin-02.png"
+        ],
+        "memoryLimit": 1048576000,
+        "postInstallMessage": "\n**IMPORTANT:** Do not uncheck `Allow remote connections to this server` when\ncompleting the installation. Doing so will make the server unreachable.\n\n",
+        "tags": [
+            "media server",
+            "netflix",
+            "media",
+            "plex"
+        ],
+        "website": "https://jellyfin.org/",
+        "forumUrl": "https://forum.cloudron.io/category/85/jellyfin",
+        "httpPort": 8096,
+        "minBoxVersion": "9.0.0",
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/sso/OID/redirect/cloudron"
+            },
+            "localstorage": {
+                "ftp": {
+                    "uid": 1000,
+                    "uname": "cloudron"
+                },
+                "sqlite": {
+                    "paths": [
+                        "/app/data/jellyfin/data/data/library.db",
+                        "/app/data/jellyfin/data/data/jellyfin.db"
+                    ]
+                }
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, you can setup an admin user and finish the installation"
+            }
+        },
+        "manifestVersion": 2,
+        "capabilities": [
+            "vaapi"
+        ],
+        "dockerImage": "cloudron/org.jellyfin.cloudronapp:202601281500070000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.jellyfin.cloudronapp/versions/1.13.2/icon",
+    "featured": false,
+    "ranking": 0
+}

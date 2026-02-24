@@ -1,0 +1,83 @@
+{
+    "id": "com.nextcloud.cloudronapp",
+    "creationDate": "2026-02-12T17:11:29.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-07-05T13:30:50.000Z",
+    "publishedAt": "2016-07-05T13:30:50.000Z",
+    "manifest": {
+        "id": "com.nextcloud.cloudronapp",
+        "title": "Nextcloud",
+        "author": "Nextcloud developers",
+        "version": "5.6.7",
+        "upstreamVersion": "32.0.6",
+        "contactEmail": "support@cloudron.io",
+        "description": "### Overview\n\nNextcloud is a file sync and share server. It provides access to\nyour data through a web interface, sync clients or WebDAV while providing a\nplatform to view, sync and share across devices easily - all under your control.\n\n### Features\n * Mobile and desktop syncing\n * Responsive Design\n * Versioning and Undelete\n * Galleries\n * Activity Feed\n * File editing and preview support for PDF, images, text files, Open Document, Word files and more.\n * Smooth performance and easy user interface.\n * Fine-grained control over access to data and sharing capabilities by user and by group.\n",
+        "tagline": "A safe home for all your data",
+        "tags": [
+            "sync",
+            "file sharing",
+            "files",
+            "gallery",
+            "dropbox"
+        ],
+        "healthCheckPath": "/index.php/login",
+        "httpPort": 80,
+        "manifestVersion": 2,
+        "website": "https://www.nextcloud.com",
+        "icon": "file://logo.png",
+        "changelog": "* Update server to 32.0.6\n* [Full Changelog](https://github.com/nextcloud-releases/server/releases/tag/v32.0.6)\n",
+        "optionalSso": true,
+        "logPaths": [
+            "/run/nextcloud/nextcloud.log"
+        ],
+        "addons": {
+            "postgresql": [],
+            "ldap": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "oidc": {
+                "loginRedirectUri": "/apps/user_oidc/code"
+            },
+            "redis": [],
+            "localstorage": [],
+            "scheduler": {
+                "housekeeping": {
+                    "schedule": "*/5 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                },
+                "previewcleanup": {
+                    "schedule": "0 2 * * *",
+                    "command": "/app/pkg/preview-cleanup.sh"
+                }
+            },
+            "turn": {
+                "optional": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.nextcloud.cloudronapp/screenshot-1.png",
+            "https://screenshots.cloudron.io/com.nextcloud.cloudronapp/screenshot-2.png",
+            "https://screenshots.cloudron.io/com.nextcloud.cloudronapp/screenshot-3.png",
+            "https://screenshots.cloudron.io/com.nextcloud.cloudronapp/screenshot-4.png",
+            "https://screenshots.cloudron.io/com.nextcloud.cloudronapp/screenshot-5.png"
+        ],
+        "memoryLimit": 629145600,
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/10/nextcloud",
+        "documentationUrl": "https://docs.cloudron.io/packages/nextcloud/",
+        "dockerImage": "cloudron/com.nextcloud.cloudronapp:202602121137530000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.nextcloud.cloudronapp/versions/5.6.7/icon",
+    "featured": true,
+    "ranking": 0
+}

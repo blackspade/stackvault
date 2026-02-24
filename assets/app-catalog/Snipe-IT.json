@@ -1,0 +1,67 @@
+{
+    "id": "com.snipeitapp.cloudronapp",
+    "creationDate": "2025-12-12T11:40:42.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-10-01T05:29:06.000Z",
+    "publishedAt": "2020-10-01T05:29:06.000Z",
+    "manifest": {
+        "id": "com.snipeitapp.cloudronapp",
+        "title": "Snipe-IT",
+        "author": "Snipe-IT Authors",
+        "description": "## About\n\nSnipe-IT is a FOSS project for asset management in IT Operations. Knowing who has which laptop, when\nit was purchased in order to depreciate it correctly, handling software licenses, etc.\n\n## Features\n\n* Open Source - Snipe-IT is open source software. Transparency, security and oversight is at the heart of everything we do. No vendor lock-in again, ever.\n\n* App & Platform Security - Both Snipe-IT as a software product and our cloud-hosting infrastructure were designed with security at the forefront.\n\n* Frequent Updates - Snipe-IT is improved constantly, with new releases every few weeks. Bug-fixes and new features ship daily.\n\n* Powerful REST API - Our simple and intuitive developer JSON REST API allows you to develop custom automations based on your own individual needs.\n\n",
+        "tagline": "Open Source IT Asset Management",
+        "version": "1.18.7",
+        "upstreamVersion": "8.3.7",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "scheduler": {
+                "snipeit_scheduler": {
+                    "schedule": "* * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            },
+            "mysql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "ldap": []
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password immediately."
+            }
+        },
+        "manifestVersion": 2,
+        "changelog": "* Update snipe-it to 8.3.7\n* [Full Changelog](https://github.com/grokability/snipe-it/releases/tag/v8.3.7)\n* Add new 'git remote' management to change Snipe-IT URLs by [@uberbrady](https://github.com/uberbrady) in [#18245](https://github.com/grokability/snipe-it/pull/18245)  \n* Fixes [FD-52064] Avery `L6009_A` & `L4736_A` label field overflow with scaling by [@Godmartinz](https://github.com/Godmartinz) in [#18246](https://github.com/grokability/snipe-it/pull/18246)  \n* Optimize queries for Components listing by [@uberbrady](https://github.com/uberbrady) in [#18251](https://github.com/grokability/snipe-it/pull/18251)  \n* Added endpoint & use\\_path\\_style\\_endpoint configs for public/private S3 by [@Valinwolf](https://github.com/Valinwolf) in [#18266](https://github.com/grokability/snipe-it/pull/18266)  \n* Experiment: simpler light/dark toggle by [@snipe](https://github.com/snipe) in [#18249](https://github.com/grokability/snipe-it/pull/18249)  \n* Refactor `assignee` in Checkoutable to accept null by [@Godmartinz](https://github.com/Godmartinz) in [#18273](https://github.com/grokability/snipe-it/pull/18273)  \n* Check That Email Exists on Recipient in Checkout Acceptance by [@spencerrlongg](https://github.com/spencerrlongg) in [#18274](https://github.com/grokability/snipe-it/pull/18274)  \n* Fixed [#18160](https://github.com/grokability/snipe-it/issues/18160) - Multi-create validation fixes by [@uberbrady](https://github.com/uberbrady) in [#18247](https://github.com/grokability/snipe-it/pull/18247)  \n* Fixes Manager View not displaying subordinates EULAs properly in View Assets page by [@iryadifarhan](https://github.com/iryadifarhan) in [#18257](https://github.com/grokability/snipe-it/pull/18257)  \n* adds [#17422](https://github.com/grokability/snipe-it/issues/17422) [FD-49345] `--expired-licenses` command parameter to `snipeit:expiring-alerts` by [@Godmartinz](https://github.com/Godmartinz) in [#18244](https://github.com/grokability/snipe-it/pull/18244)\n",
+        "website": "https://snipeitapp.com",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "MDM",
+            "IT",
+            "asset",
+            "device",
+            "inventory"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n**Email**: admin@cloudron.local<br/>\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.snipeitapp.cloudronapp/screenshot-dashboard.png",
+            "https://screenshots.cloudron.io/com.snipeitapp.cloudronapp/screenshot-asset-list.png",
+            "https://screenshots.cloudron.io/com.snipeitapp.cloudronapp/screenshot-dashboard-2.png"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/snipe-it/",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/100/snipe-it",
+        "dockerImage": "cloudron/com.snipeitapp.cloudronapp:202512121101130000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.snipeitapp.cloudronapp/versions/1.18.7/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,58 @@
+{
+    "id": "com.serpbear.cloudronapp",
+    "creationDate": "2025-07-30T10:10:18.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-04-02T17:11:58.000Z",
+    "publishedAt": "2024-04-02T17:11:58.000Z",
+    "manifest": {
+        "id": "com.serpbear.cloudronapp",
+        "title": "SerpBear",
+        "tagline": "Search Engine Position Tracking App",
+        "author": "SearBear Developers",
+        "description": "### Overview\n\nSerpBear is an Open Source Search Engine Position Tracking App. It allows you to track your website's keyword positions in Google and get notified of their positions.\n\n#### Features\n\n* Unlimited Keywords: Add unlimited domains and unlimited keywords to track their SERP.\n* Email Notification: Get notified of your keyword position changes daily/weekly/monthly through email.\n* SERP API: SerpBear comes with built-in API that you can use for your marketing & data reporting tools. \n* Keyword Research: Ability to research keywords and auto-generate keyword ideas from your tracked website's content by integrating your Google Ads test account. \n* Google Search Console Integration: Get the actual visit count, impressions & more for Each keyword. Discover new keywords, and find the most performing keywords, countries, and pages.\n* Export CSV: Export your domain keywords and their data in CSV files whenever you want.\n* Mobile App: Add the PWA app to your mobile for a better mobile experience.\n\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n\n",
+        "version": "1.2.0",
+        "upstreamVersion": "2.0.7",
+        "tags": [
+            "tracking",
+            "keywords",
+            "promotion",
+            "serp"
+        ],
+        "website": "https://docs.serpbear.com/",
+        "documentationUrl": "https://docs.cloudron.io/packages/serpbear/",
+        "forumUrl": "https://forum.cloudron.io/category/187/serpbear",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* checklist added to manifest\n",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin password and email immediately in `/app/data/env`."
+            }
+        },
+        "runtimeDirs": [
+            "/app/code/.next"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.serpbear.cloudronapp/serpbear_00.gif"
+        ],
+        "memoryLimit": 536870912,
+        "minBoxVersion": "8.1.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/com.serpbear.cloudronapp:202507300929150000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.serpbear.cloudronapp/versions/1.2.0/icon",
+    "featured": false,
+    "ranking": 0
+}

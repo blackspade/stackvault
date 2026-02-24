@@ -1,0 +1,71 @@
+{
+    "id": "io.gogs.cloudronapp",
+    "creationDate": "2026-02-01T11:07:09.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2015-07-01T13:30:11.000Z",
+    "publishedAt": "2015-07-01T13:30:11.000Z",
+    "manifest": {
+        "id": "io.gogs.cloudronapp",
+        "title": "Gogs",
+        "author": "Gogs developers",
+        "description": "### About\n\nGogs (Go Git Service) is a painless self-hosted Git service.\n\n### Purpose\n\nThe goal of this project is to make the easiest, fastest, and most painless way to set up a self-hosted Git service.\n\n### Features\n\n- Activity timeline\n- SSH and HTTP/HTTPS protocols\n- SMTP/LDAP/Reverse proxy authentication\n- Reverse proxy with sub-path\n- Account/Organization/Repository management\n- Repository/Organization webhooks (including Slack)\n- Repository Git hooks/deploy keys\n- Repository issues, pull requests and wiki\n- Add/Remove repository collaborators\n- Gravatar and custom source\n- Mail service\n- Administration panel\n- Supports MySQL, PostgreSQL, SQLite3 and [TiDB](https://github.com/pingcap/tidb) (experimental)\n- Multi-language support ([15 languages](https://crowdin.com/project/gogs))\n\n### Bug reports\n\nOpen bugs on [Github](https://git.cloudron.io/cloudron/gogs-app/issues)\n",
+        "tagline": "A painless self-hosted Git Service",
+        "version": "1.23.0",
+        "upstreamVersion": "0.14.1",
+        "healthCheckPath": "/healthcheck",
+        "httpPort": 3000,
+        "addons": {
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "localstorage": [],
+            "ldap": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "tcpPorts": {
+            "SSH_PORT": {
+                "title": "SSH Port",
+                "description": "SSH Port over which repos can be pushed & pulled",
+                "defaultValue": 29418,
+                "enabledByDefault": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://gogs.io",
+        "contactEmail": "apps@cloudron.io",
+        "icon": "file://logo.png",
+        "optionalSso": true,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.gogs.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/io.gogs.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/io.gogs.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/io.gogs.cloudronapp/4.png"
+        ],
+        "tags": [
+            "version control",
+            "git",
+            "code",
+            "development",
+            "github",
+            "gitlab",
+            "bitbucket"
+        ],
+        "changelog": "* Update gogs to 0.14.1\n* [Full Changelog](https://github.com/gogs/gogs/releases/tag/v0.14.1)\n* Support comparing tags in addition to branches. [#6141](https://github.com/gogs/gogs/issues/6141)\n* Show file name in browser tab title when viewing files. [#5896](https://github.com/gogs/gogs/pull/5896)\n* Support using TLS for Redis session provider using `[session] PROVIDER_CONFIG = ...,tls=true`. [#7860](https://github.com/gogs/gogs/pull/7860)\n* Support expanading values in `app.ini` from environment variables, e.g. `[database] PASSWORD = ${DATABASE_PASSWORD}`. [#8057](https://github.com/gogs/gogs/pull/8057)\n* Support custom logout URL that users get redirected to after sign out using `[auth] CUSTOM_LOGOUT_URL`. [#8089](https://github.com/gogs/gogs/pull/8089)\n* The required Go version to compile source code changed to 1.25.\n* The build tag `cert` has been removed, and the `gogs cert` subcommand is now always available. [#7883](https://github.com/gogs/gogs/pull/7883)\n* Switched to pure-Go SQLite driver, CGO is no longer required to compile Gogs. [#7882](https://github.com/gogs/gogs/issues/7882)\n* *Security:* Unauthenticated file upload. [#8128](https://github.com/gogs/gogs/pull/8128) - [GHSA-fc3h-92p8-h36f](https://github.com/gogs/gogs/security/advisories/GHSA-fc3h-92p8-h36f)\n* *Security:* Protected branch bypass in web UI. [#8124](https://github.com/gogs/gogs/pull/8124) - [GHSA-2c6v-8r3v-gh6p](https://github.com/gogs/gogs/security/advisories/GHSA-2c6v-8r3v-gh6p)\n",
+        "postInstallMessage": "This app is pre-setup with an admin account (use the `Local` authentication source for logging in as admin).\nThe initial credentials are:\n  \n**Username**: root<br/>\n**Password**: changeme<br/>\n\n<sso>\nCloudron users can login using the `Cloudron` authentication source.\n</sso>\n\n",
+        "minBoxVersion": "9.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/70/gogs",
+        "documentationUrl": "https://docs.cloudron.io/packages/gogs/",
+        "dockerImage": "cloudron/io.gogs.cloudronapp:202602011045010000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.gogs.cloudronapp/versions/1.23.0/icon",
+    "featured": false,
+    "ranking": 0
+}

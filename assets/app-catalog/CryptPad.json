@@ -1,0 +1,64 @@
+{
+    "id": "fr.cryptpad.cloudronapp",
+    "creationDate": "2026-02-12T09:17:55.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-05-05T04:49:50.000Z",
+    "publishedAt": "2022-05-05T04:49:50.000Z",
+    "manifest": {
+        "id": "fr.cryptpad.cloudronapp",
+        "version": "1.13.0",
+        "upstreamVersion": "2026.2.0",
+        "title": "CryptPad",
+        "author": "CryptPad Authors",
+        "description": "## About\n\nCryptPad is a collaboration suite that is end-to-end-encrypted and open-source. It is built to enable collaboration, synchronizing changes to documents in real time. Because all data is encrypted, the service and its administrators have no way of seeing the content being edited and stored.\n\n## Features\n\n* Open Source\n* Private by design\n\n",
+        "tagline": "Collaboration suite",
+        "website": "https://cryptpad.org",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "addons": {
+            "localstorage": []
+        },
+        "runtimeDirs": [
+            "/app/code/www"
+        ],
+        "httpPorts": {
+            "SANDBOX_DOMAIN": {
+                "title": "Sandbox domain",
+                "description": "The sandbox domain to serve sensitive assets",
+                "containerPort": 80,
+                "defaultValue": "sandbox"
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "7.3.3",
+        "memoryLimit": 2147483648,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/fr.cryptpad.cloudronapp/drive-grid.png",
+            "https://screenshots.cloudron.io/fr.cryptpad.cloudronapp/drive-list.png",
+            "https://screenshots.cloudron.io/fr.cryptpad.cloudronapp/calendar.png"
+        ],
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "docs",
+            "collaborative",
+            "excel",
+            "spreadsheet",
+            "document",
+            "editor",
+            "notes",
+            "markdown"
+        ],
+        "changelog": "* Update cryptpad to 2026.2.0\n* [Full Changelog](https://github.com/xwiki-labs/cryptpad/releases/tag/2026.2.0)\n* Upgrade Office applications to OnlyOffice v9.2.0.119\n* OnlyOffice history browsing [#&#8203;2134](https://github.com/cryptpad/cryptpad/pull/2134)\n* Update drive tree UI [#&#8203;2102](https://github.com/cryptpad/cryptpad/pull/2102)\n* Fix incorrect error message for invalid credentials [#&#8203;2163](https://github.com/cryptpad/cryptpad/pull/2163)\n* Delete 2FA data when archiving account [#&#8203;2177](https://github.com/cryptpad/cryptpad/pull/2177)\n* Fix padding for profile action buttons [#&#8203;2081](https://github.com/cryptpad/cryptpad/pull/2081)\n* Fix contact page name overflow [#&#8203;2084](https://github.com/cryptpad/cryptpad/pull/2084)\n* Fix: Profile description editor now shows saved value without requiring focus [#&#8203;2100](https://github.com/cryptpad/cryptpad/pull/2100)\n* Fix rtChannel not always stored and pinned [#&#8203;2168](https://github.com/cryptpad/cryptpad/pull/2168)\n* Preserve drive list sorting order across reloads [#&#8203;2115](https://github.com/cryptpad/cryptpad/pull/2115)\n",
+        "postInstallMessage": "On first run, simply sign up and start using the app.\n\nTo complete the installation, check the status in https://$CLOUDRON-APP-FQDN/checkup .\n\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/cryptpad/",
+        "forumUrl": "https://forum.cloudron.io/category/142/cryptpad",
+        "dockerImage": "cloudron/fr.cryptpad.cloudronapp:202602120052050000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/fr.cryptpad.cloudronapp/versions/1.13.0/icon",
+    "featured": false,
+    "ranking": 0
+}

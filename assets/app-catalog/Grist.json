@@ -1,0 +1,58 @@
+{
+    "id": "com.getgrist.cloudronapp",
+    "creationDate": "2026-02-02T20:27:38.000Z",
+    "publishState": "approved",
+    "userId": "bfa555ee-8db7-4027-94f6-7409feafd4cb",
+    "visibility": "listed",
+    "releaseState": "unstable",
+    "ts": "2026-01-24T16:49:13.000Z",
+    "publishedAt": "2026-01-24T16:49:13.000Z",
+    "manifest": {
+        "id": "com.getgrist.cloudronapp",
+        "title": "Grist",
+        "author": "Grist Labs",
+        "description": "### About\n\nGrist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database.\n\n### Features\n\n* Python formulas.\n* A portable, self-contained format.\n* Can be displayed on a static website with grist-static – no special server needed.\n* A self-contained desktop app for viewing and editing locally: grist-desktop.\n* Convenient editing and formatting features.\n* Drag-and-drop dashboards.\n* Incremental imports.\n* Native forms. Create forms that feed directly into your spreadsheet without fuss.\n* Many templates to get you started, from investment research to organizing treasure hunts.\n* Access control options.\n* Sandboxing options for untrusted documents.\n* Translated to many languages.\n* F1 key brings up some quick help. This used to go without saying, but in general Grist has good keyboard support.\n",
+        "tagline": "The evolution of spreadsheets",
+        "version": "0.5.0",
+        "upstreamVersion": "1.7.10",
+        "healthCheckPath": "/",
+        "httpPort": 8484,
+        "minBoxVersion": "8.2.0",
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/grist-sessions.db"
+                    ]
+                }
+            },
+            "postgresql": [],
+            "redis": [],
+            "oidc": {
+                "loginRedirectUri": "/oauth2/callback"
+            }
+        },
+        "changelog": "* Symlink config.json for enterprise mode\n",
+        "manifestVersion": 2,
+        "website": "https://github.com/gristlabs/grist-core",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "forumUrl": "https://forum.cloudron.io/category/215/grist",
+        "documentationUrl": "https://docs.cloudron.io/packages/grist",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.getgrist.cloudronapp/AI-Assistant.png",
+            "https://screenshots.cloudron.io/com.getgrist.cloudronapp/product-lp-visualize.png",
+            "https://screenshots.cloudron.io/com.getgrist.cloudronapp/rsvp-form-prod2.png"
+        ],
+        "tags": [
+            "productivity",
+            "spreadsheets",
+            "database",
+            "excel"
+        ],
+        "dockerImage": "cloudron/com.getgrist.cloudronapp:202602022015230000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.getgrist.cloudronapp/versions/0.5.0/icon",
+    "featured": false,
+    "ranking": 0
+}

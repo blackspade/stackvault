@@ -1,0 +1,56 @@
+{
+    "id": "com.chatwoot.cloudronapp",
+    "creationDate": "2022-06-15T17:37:46.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.chatwoot.cloudronapp",
+        "version": "1.6.0",
+        "upstreamVersion": "2.6.0",
+        "minBoxVersion": "7.2.0",
+        "title": "Chatwoot",
+        "author": "Chatwoot",
+        "description": "## Features\nChatwoot gives an integrated view of conversations happening in different communication channels.\n\nIt supports the following conversation channels:\n\n - **Website**: Talk to your customers using our live chat widget and make use of our SDK to identify a user and provide contextual support.\n - **Facebook**: Connect your Facebook pages and start replying to the direct messages to your page.\n - **Twitter**: Connect your Twitter profiles and reply to direct messages or the tweets where you are mentioned.\n - **Whatsapp**: Connect your Whatsapp business account and manage the conversation in Chatwoot\n - **SMS**: Connect your Twilio SMS account and reply to the SMS queries in Chatwoot\n - **API Channel**: Build custom communication channels using our API channel.\n - **Email (beta)**: Forward all your email queries to Chatwoot and view it in our integrated dashboard.\n\nOther features include:\n\n- **Multi-brand inboxes**: Manage multiple brands or pages using a single dashboard.\n- **Private notes**: Inter team communication is possible using private notes in a conversation.\n- **Canned responses (Saved replies)**: Improve the response rate by adding saved replies for frequently asked questions.\n- **Conversation Labels**: Use conversation labelling to create custom workflows.\n- **Auto assignment**: Chatwoot intelligently assigns a ticket to the agents who have access to the inbox depending on their availability and load.\n- **Conversation continuity**: If the user has provided an email address through the chat widget, Chatwoot would send an email to the customer under the agent name so that the user can continue the conversation over the email.\n- **Multi-lingual support**: Chatwoot supports 10+ languages.\n- **Powerful API & Webhooks**: Extend the capability of the software using Chatwoot’s webhooks and APIs.\n- **Integrations**: Chatwoot natively integrates with Slack right now. Manage your conversations in Slack without logging into the dashboard.\n\n",
+        "tagline": "Open-source customer engagement suite",
+        "website": "https://chatwoot.com/",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "rails",
+            "zendesk",
+            "vuejs",
+            "opensource",
+            "customer support",
+            "conversation",
+            "whatsapp",
+            "intercom",
+            "livechat",
+            "drift",
+            "chat-widget",
+            "chatwoot",
+            "crm"
+        ],
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "redis": []
+        },
+        "memoryLimit": 3221225472,
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "changelog": "* Update Chatwoot to 2.6.0\n* [Full changelog](https://github.com/chatwoot/chatwoot/releases/tag/v2.6.0)\n",
+        "postInstallMessage": "On first visit, you can create an admin and complete the installation.\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.chatwoot.cloudronapp/chatwoot_01.png"
+        ],
+        "forumUrl": "https://forum.cloudron.io/category/135/chatwoot",
+        "documentationUrl": "https://docs.cloudron.io/apps/chatwoot/",
+        "dockerImage": "cloudron/com.chatwoot.cloudronapp:20220615-163639-253655670"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.chatwoot.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

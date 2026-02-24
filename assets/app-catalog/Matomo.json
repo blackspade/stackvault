@@ -1,0 +1,73 @@
+{
+    "id": "org.piwik.cloudronapp",
+    "creationDate": "2026-02-04T07:31:00.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-02-15T15:15:34.000Z",
+    "publishedAt": "2016-02-15T15:15:34.000Z",
+    "manifest": {
+        "id": "org.piwik.cloudronapp",
+        "title": "Matomo",
+        "author": "Matomo Developers",
+        "description": "### About\n\nMatomo provides advanced web analytics. It displays reports regarding the geographic location of visits, the source of visits (i.e. whether they came from a website, directly, or something else), the technical capabilities of visitors (browser, screen size, operating system, etc.), what the visitors did (pages they viewed, actions they took, how they left), the time of visits and more.\n\n### Features\n\nAll standard statistics reports: top keywords and search engines, websites, top page URLs, page titles, user countries, providers, operating system, browser marketshare, screen resolution, desktop VS mobile, engagement (time on site, pages per visit, repeated visits), top campaigns, custom variables, top entry/exit pages, downloaded files, and many more, classified into four main analytics report categories – Visitors, Actions, Referrers, Goals/e-Commerce (30+ reports). See Tour of Matomo.\n\n * Real time data updates\nWatch real time flow of visits to your website. Get a detailed view of your visitors, pages they have visited and goals they have triggered.\n * Customizable Dashboard\nCreate new dashboards with widget configuration fit to your needs.\n * All Websites Dashboard\nBest way to get an overview of what is happening on all your websites at once.\n * Row Evolution\nCurrent & past metric data for any row in any report.\n * Analytics for e-commerce\nUnderstand and improve your online business thanks to advanced e-commerce analytics features.\n * Goal conversion tracking\nTrack Goals and identify whether you are meeting your current business objectives.\n * Event Tracking\nMeasure any interaction by users on your websites and apps.\n * Content Tracking\nMeasure impressions and clicks and CTR for image banners, text banners and any element on your pages.\n * Site Search Analytics\nTrack searches done on your internal search engine.\n * Custom Dimensions\nAssign any custom data to your visitors or actions (like pages, events, …) and then visualize the reports of how many visits, conversions, pageviews, etc. there were for each Custom Dimension.\n * Custom Variables\nsimilar to Custom Dimensions: custom name-value pair that you can assign to your visitors (or page views) using the JavaScript Tracking API, and then visualize the reports of how many visits, conversions, etc. for each custom variable.\n * Geolocation\nLocate your visitors for accurate detection of Country, Region, City, Organization. View the visitors statistics on a World Map by Country, Region, City. View your latest visitors in real time.\n * Pages Transitions\nView what visitors did before, and after viewing specific page.\n * Page Overlay\nDisplay statistics directly on top of your website with our smart overlay.\n * Site speed & pages speed reports\nKeeps track of how fast your website delivers content to your visitors.\n * Track different user interactions\nAutomatic tracking of file downloads, clicks on external website links, optional tracking of 404 pages\n * Analytics campaign tracking\nAutomatically detects Google Analytics campaign parameters in your URLs.\n * Track traffic from search engines\nMore than 800 different search engines tracked!\n * Scheduled email reports (PDF and HTML reports)\nEmbed reports in your app or website (40+ Widgets available) or embed PNG Graphs in any custom page, email, or app.\n * Annotations\nCreate text notes in your graphs, to remember about particular events.\n * No data limit\nYou can keep all your data, without any storage limits, forever!\n\n\n### Administration Options\n\n * Manage unlimited users\n * Set user access to multiple websites\n * Manage unlimited websites\n * Exclude IPs and IP ranges\n * Exclude URL parameters\n * Timezone support, for each website\n * Supports 100+ currencies\n * Powerful options to White Label Matomo are available, ideal for large agencies or when you need a clean, branded Matomo interface\n * Upload your custom logo for UI and email reports\n * Automatically delete old logs and old data reports to keep you database size small\n * Integrates with more than 40 CMS, web frameworks or Ecommerce shops\n\n\n### Tracking API\n\n * By default, we recommend the Javascript Tracking API\n * Mobile App Analytics with the Matomo iOS SDK, the Android SDK and the Titanium Module.\n * Asynchronous code for faster page loads\n * Track & record any data using the REST Tracking API, via the PHP Tracking API Client or the Java Tracking API client\n * Track custom page URLs and page titles\n * Track subdomains\n * User ID lets you accurately measure your unique users across multiple devices.\n * Supports both 1st party cookies (default) and 3rd party cookie (optional)\n * Import your Apache, Nginx, IIS server logs for processing in Matomo!\n * Track server speed generation time for each Page view\n * Supports pages encoded in unicode (for example, UTF-8) but also supports all other charsets\n\n\n### Data Export & APIs\n\n *  Data Export in Excel, XML, Json and more!\n *  Fully-featured analytics API\n *  Administration API (REST) to create/update/delete pragmatically: users API, websites API, goals API, etc.\n *  Segmentation support in the API\n\n\n### Log Analytics: Import and Analyze your Server Logs\n\n * Reprocess historical data from your server logfiles\n * Report server errors and other http status codes\n * Track and identify search engine and other bots\n * Keep your data private on your server\n\n\n### User Privacy\n\n * Privacy compliant web analytics\n * Setting to anonymise your visitors’ IPs\n * Iframe included to let your visitor opt-out of Matomo tracking\n * DoNotTrack support by default\n * Use 1st party cookies by default, with an option to enable third party cookies\n",
+        "changelog": "* Update matomo to 5.7.1\n",
+        "tagline": "Extensible analytics platform",
+        "version": "1.54.1",
+        "upstreamVersion": "5.7.1",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/index.php?module=LoginOIDC&action=callback&provider=oidc"
+            },
+            "scheduler": {
+                "archive": {
+                    "schedule": "*/30 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            }
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password. When updating the admin email, ensure that it does not conflict with the email of an existing Cloudron user"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://matomo.org/",
+        "contactEmail": "support@cloudron.io",
+        "multiDomain": true,
+        "icon": "file://logo.png",
+        "tags": [
+            "analytics",
+            "tracking",
+            "profiling",
+            "tag manager"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.piwik.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.piwik.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.piwik.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/org.piwik.cloudronapp/4.png"
+        ],
+        "memoryLimit": 805306368,
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n  \n**Username**: admin<br/>\n**Password**: changeme<br/>\n**Email**: admin@cloudron.local<br/>\n\n",
+        "runtimeDirs": [
+            "/app/code/js"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/87/matomo",
+        "documentationUrl": "https://docs.cloudron.io/packages/matomo/",
+        "dockerImage": "cloudron/org.piwik.cloudronapp:202602040021450000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.piwik.cloudronapp/versions/1.54.1/icon",
+    "featured": true,
+    "ranking": 0
+}

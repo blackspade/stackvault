@@ -1,0 +1,51 @@
+{
+    "id": "com.mirotalkbro.cloudronapp",
+    "creationDate": "2026-02-12T09:15:37.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2024-12-03T13:16:20.000Z",
+    "publishedAt": "2024-12-03T13:16:20.000Z",
+    "manifest": {
+        "id": "com.mirotalkbro.cloudronapp",
+        "title": "Mirotalk Bro",
+        "version": "1.4.42",
+        "upstreamVersion": "1.1.78",
+        "author": "Miroslav Pejic",
+        "description": "### About\n\nMiroTalk BRO Live Broadcast allows to broadcast live video, audio and screen stream to all connected users (viewers) and receive messages from them. Can handle unlimited rooms, without time limitations, each having a broadcast and many viewers.\n\n",
+        "changelog": "* Update mirotalkbro to 1.1.78\n",
+        "tagline": "broadcast live video streams",
+        "minBoxVersion": "8.1.0",
+        "multiDomain": true,
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "httpPort": 3016,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/callback"
+            },
+            "turn": []
+        },
+        "manifestVersion": 2,
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.mirotalkbro.cloudronapp/mirotalkbro_00.png"
+        ],
+        "tags": [
+            "zoom",
+            "video",
+            "conference",
+            "broadcast",
+            "stream"
+        ],
+        "website": "https://docs.mirotalk.com",
+        "documentationUrl": "https://docs.cloudron.io/packages/mirotalk/",
+        "forumUrl": "https://forum.cloudron.io/category/183/mirotalk",
+        "contactEmail": "support@cloudron.io",
+        "dockerImage": "cloudron/com.mirotalkbro.cloudronapp:202602120122170000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.mirotalkbro.cloudronapp/versions/1.4.42/icon",
+    "featured": false,
+    "ranking": 0
+}

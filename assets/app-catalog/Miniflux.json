@@ -1,0 +1,59 @@
+{
+    "id": "app.miniflux.cloudronapp",
+    "creationDate": "2026-01-07T11:59:55.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-05-23T01:03:33.000Z",
+    "publishedAt": "2022-05-23T01:03:33.000Z",
+    "manifest": {
+        "id": "app.miniflux.cloudronapp",
+        "title": "Miniflux",
+        "author": "Miniflux developers",
+        "description": "## About\n\nMiniflux is a minimalist and opinionated feed reader.\n\n## Features\n\n* Written in Go (Golang)\n* Works only with Postgresql\n* Doesn't use any ORM\n* Doesn't use any complicated framework\n* Use only modern vanilla Javascript (ES6 and Fetch API)\n* Single binary compiled statically without dependency\n* The number of features is voluntarily limited\n\nIt's simple, fast, lightweight and super easy to install.\n\n",
+        "tagline": "Minimalist and opinionated feed reader",
+        "tags": [
+            "rss",
+            "atom",
+            "greader",
+            "reader",
+            "news feeds",
+            "feedly"
+        ],
+        "version": "1.6.10",
+        "upstreamVersion": "2.2.16",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "manifestVersion": 2,
+        "website": "https://miniflux.app",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "optionalSso": true,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/oauth2/oidc/callback"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/app.miniflux.cloudronapp/overview.png",
+            "https://screenshots.cloudron.io/app.miniflux.cloudronapp/dark.png"
+        ],
+        "changelog": "* Update v2 to 2.2.16\n* [Full Changelog](https://github.com/miniflux/v2/releases/tag/2.2.16)\n* Disallow the media proxy from fetching resources on private networks to mitigate potential SSRF issues. This behavior is configurable at the instance level.\n* Disallow fetching feed icons from private networks to reduce the SSRF attack surface. This is also configurable at the instance level.\n* Add the `TRUSTED_REVERSE_PROXY_NETWORKS` configuration option to prevent spoofing of HTTP headers such as `X-Forwarded-For`, `X-Forwarded-Proto`, and `X-Real-Ip`. This option must be configured when `AUTH_PROXY_HEADER` is enabled.\n* Stop logging generated Google Reader API tokens, even when debug mode is enabled.\n* Remove the CORS handler from the Google Reader API, as it is not intended to be used by web clients, reducing the overall attack surface.\n* Avoid indexing the content of removed entries, significantly reducing database index size after cleanup.\n* Add a new API endpoint to import entries into an existing feed.\n* Execute the content sanitizer when updating or importing entries through the API to ensure consistent sanitization.\n* Improve Google Reader API compatibility by removing unnecessary output parameter checks and aligning behavior with other open-source RSS readers.\n* Add smooth page transitions for a more polished navigation experience.\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n  \n**Username**: admin<br/>\n**Password**: changeme<br/>\n\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/144/miniflux",
+        "documentationUrl": "https://docs.cloudron.io/packages/miniflux/",
+        "dockerImage": "cloudron/app.miniflux.cloudronapp:202601070907320000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/app.miniflux.cloudronapp/versions/1.6.10/icon",
+    "featured": false,
+    "ranking": 0
+}

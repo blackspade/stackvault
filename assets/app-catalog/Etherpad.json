@@ -1,0 +1,52 @@
+{
+    "id": "org.etherpad.cloudronapp",
+    "creationDate": "2026-01-27T07:55:40.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2016-07-01T12:00:55.000Z",
+    "publishedAt": "2016-07-01T12:00:55.000Z",
+    "manifest": {
+        "id": "org.etherpad.cloudronapp",
+        "title": "Etherpad",
+        "author": "Etherpad Developers",
+        "description": "### About\n\nEtherpad is a real-time collaborative editor scalable to thousands of simultaneous real time users. It provides full data export capabilities, and runs on your server, under your control.\n\n### Collaborating in really real-time\n\nNo more sending your stuff back and forth via email, just set up a pad, share the link and start collaborating!\n\nEtherpad allows you to edit documents collaboratively in real-time, much like a live multi-player editor that runs in your browser. Write articles, press releases, to-do lists, etc. together with your friends, fellow students or colleagues, all working on the same document at the same time.\n\nAll instances provide access to all data through a well-documented API and supports import/export to many major data exchange formats.\n",
+        "tagline": " Collaborating in real-time",
+        "version": "4.5.1",
+        "upstreamVersion": "2.6.1",
+        "healthCheckPath": "/health",
+        "httpPort": 9001,
+        "manifestVersion": 2,
+        "website": "http://etherpad.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "postInstallMessage": "Admins can be specified as mentioned in the [docs](https://docs.cloudron.io/apps/etherpad/#admin-user).\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.etherpad.cloudronapp/etherpad-01.png"
+        ],
+        "addons": {
+            "mysql": [],
+            "oidc": {
+                "loginRedirectUri": "/ep_openid_connect/callback"
+            },
+            "localstorage": []
+        },
+        "memoryLimit": 805306368,
+        "tags": [
+            "document",
+            "docs",
+            "collaboration",
+            "editor",
+            "notes"
+        ],
+        "changelog": "* Update etherpad-lite to 2.6.1\n* [Full Changelog](https://github.com/ether/etherpad-lite/releases/tag/v2.6.1)\n* Minor fixes and improvements to the session transfer feature introduced in 2.6.0\n* Dependencies upgrades\n",
+        "minBoxVersion": "7.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/61/etherpad-lite",
+        "documentationUrl": "https://docs.cloudron.io/packages/etherpad/",
+        "dockerImage": "cloudron/org.etherpad.cloudronapp:202601270121500000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.etherpad.cloudronapp/versions/4.5.1/icon",
+    "featured": false,
+    "ranking": 0
+}

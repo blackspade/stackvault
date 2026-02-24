@@ -1,0 +1,64 @@
+{
+    "id": "org.tt_rss.cloudronapp2",
+    "creationDate": "2026-02-12T10:56:09.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-04-22T09:49:37.000Z",
+    "publishedAt": "2025-04-22T09:49:37.000Z",
+    "manifest": {
+        "id": "org.tt_rss.cloudronapp2",
+        "title": "Tiny Tiny RSS",
+        "author": "Tiny Tiny RSS developers",
+        "description": "## About\n\nTiny Tiny RSS is an open source web-based news feed (RSS/Atom) reader and aggregator, designed to allow you to read news from any location, while feeling as close to a real desktop application as possible.\n\n# Features\n\n* Server-side AJAX-powered application, user only needs a web browser.\n* Supports\n  * feed aggregation / syndication,\n  * keyboard shortcuts,\n  * OPML import/export,\n  * multiple ways to share stuff: via RSS feeds, using plugins to various social sites, sharing by URL, etc,\n  * sharing arbitrary content through tt-rss,\n  * mobile devices,\n  * internationalization,\n  * various plugins and themes,\n  * detecting and filtering duplicate articles,\n  * podcasts,\n  * flexible article filtering,\n  * JSON-based API,\n  * and much more...\n* [Android client](https://play.google.com/store/apps/details?id=org.ttrssreader)\n* Free software, licensed under GNU GPLv3\n\n",
+        "tagline": "RSS feed reader",
+        "tags": [
+            "rss",
+            "atom",
+            "greader",
+            "reader",
+            "news feeds",
+            "feedly"
+        ],
+        "version": "2.78.0",
+        "upstreamVersion": "NewVersionIsNotSet",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "manifestVersion": 2,
+        "website": "http://tt-rss.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "addons": {
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": ""
+            },
+            "localstorage": [],
+            "scheduler": {
+                "update_feeds": {
+                    "schedule": "*/10 * * * *",
+                    "command": "/app/pkg/update_feeds.sh"
+                }
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.tt_rss.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.tt_rss.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.tt_rss.cloudronapp/3.png",
+            "https://screenshots.cloudron.io/org.tt_rss.cloudronapp/4.png",
+            "https://screenshots.cloudron.io/org.tt_rss.cloudronapp/5.png"
+        ],
+        "changelog": "* Update tt-rss to ca31740\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/21/tiny-tiny-rss",
+        "documentationUrl": "https://docs.cloudron.io/packages/tinytinyrss/",
+        "dockerImage": "cloudron/org.tt_rss.cloudronapp2:202602120921400000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.tt_rss.cloudronapp2/versions/2.78.0/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,58 @@
+{
+    "id": "org.kimai.cloudronapp",
+    "creationDate": "2026-02-01T10:42:35.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-08-26T16:45:07.000Z",
+    "publishedAt": "2019-08-26T16:45:07.000Z",
+    "manifest": {
+        "id": "org.kimai.cloudronapp",
+        "title": "Kimai",
+        "author": "Kevin Papst",
+        "description": "### Overview\n\nKimai is a free & open source timetracker. It tracks work time and prints out a summary of your activities on demand. Yearly, monthly, daily, by customer, by project … It’s simplicity is its strength. Due to Kimai’s browser based interface it runs cross-platform, even on your mobile device.\n\n### Feature list\n\n* Mobile ready\n* Multi user\n* Multi language\n* Teams\n* Projects\n* Activities\n* AM/PM format\n* Timesheet filter\n* Weekend rates\n* Archiving\n* Permissions\n* User profile\n* Theming\n* User registration\n\n",
+        "changelog": "* Update kimai to 2.48.0\n* [Full Changelog](https://github.com/kimai/kimai/releases/tag/2.48.0)\n* Allow to configure export templates to be used by regular users (add them to the list in `My times` / `All times`) ([#5789](https://github.com/kimai/kimai/issues/5789))\n* Simplify export template title handling ([#5789](https://github.com/kimai/kimai/issues/5789))\n* Added `type` attribute for `DayAddOn` ([#5789](https://github.com/kimai/kimai/issues/5789))\n* Added styles and icons for `DayAddOn` ([#5789](https://github.com/kimai/kimai/issues/5789))\n* Fixed wrong widget labels in German ([#5789](https://github.com/kimai/kimai/issues/5789))\n* Fix API doc (Team ID for new projects) ([#5789](https://github.com/kimai/kimai/issues/5789))\n* Translations update from Hosted Weblate ([#5748](https://github.com/kimai/kimai/issues/5748))\n* Add translation links to README ([#5798](https://github.com/kimai/kimai/issues/5798))\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme123<br/>\n\n<sso>\n\nLogin as the admin user to grant admin previleges to Cloudron users.\n\n</sso>\n",
+        "documentationUrl": "https://cloudron.io/documentation/packages/kimai/",
+        "forumUrl": "https://forum.cloudron.io/category/45/kimai",
+        "tagline": "Time-tracking for everyone",
+        "version": "2.42.0",
+        "upstreamVersion": "2.48.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "ldap": [],
+            "localstorage": [],
+            "mysql": []
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://www.kimai.org/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "time",
+            "tracking",
+            "toggl",
+            "harvest",
+            "clockify"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.kimai.cloudronapp/kimai_01.png",
+            "https://screenshots.cloudron.io/org.kimai.cloudronapp/kimai_02.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "dockerImage": "cloudron/org.kimai.cloudronapp:202602010120220000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.kimai.cloudronapp/versions/2.42.0/icon",
+    "featured": false,
+    "ranking": 0
+}

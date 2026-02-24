@@ -1,0 +1,54 @@
+{
+    "id": "org.jupyter.cloudronapp",
+    "creationDate": "2025-12-13T08:32:06.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2018-08-27T01:41:04.000Z",
+    "publishedAt": "2018-08-27T01:41:04.000Z",
+    "manifest": {
+        "id": "org.jupyter.cloudronapp",
+        "title": "Jupyter Hub",
+        "author": "Cloudron",
+        "description": "## About\n\nJupyterHub brings the power of notebooks to groups of users. It gives users access to computational environments and resources without burdening the users with installation and maintenance tasks. Users - including students, researchers, and data scientists - can get their work done in their own workspaces on shared resources which can be managed efficiently by system administrators.\n\n## Notebook container image\n\nThis app uses the [data science](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook)\nnotebook image by default. This image is ~2GB and is downloaded during\napp startup. This can take a bit of time depending on the network speed.\n\nThe Jupyter Notebook is an open-source web application that allows you\nto create and share documents that contain live code, equations,\nvisualizations and narrative text. Uses include: data cleaning and\ntransformation, numerical simulation, statistical modeling, data visualization,\nmachine learning, and much more.\n\n## Features\n\n* Language of choice - Python, R, Julia, and Scala\n* In-browser editing for code, with automatic syntax highlighting, indentation, and tab completion/introspection.\n* The ability to execute code from the browser, with the results of computations attached to the code which generated them.\n* Displaying the result of computation using rich media representations, such as HTML, LaTeX, PNG, SVG, etc. For example, publication-quality figures rendered by the matplotlib library, can be included inline.\n* In-browser editing for rich text using the Markdown markup language, which can provide commentary for the code, is not limited to plain text.\n* The ability to easily include mathematical notation within markdown cells using LaTeX, and rendered natively by MathJax.\n\n",
+        "changelog": "* Update jupyterhub to 5.4.3\n* [Full Changelog](https://github.com/jupyterhub/jupyterhub/releases/tag/5.4.3)\n",
+        "tagline": "Open Standards for Interactive Computing",
+        "version": "1.58.3",
+        "upstreamVersion": "5.4.3 (datascience-notebook@lab-4.3.5)",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "docker": [],
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/hub/oauth_callback"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://jupyter.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "notebook",
+            "interactive computing",
+            "ipython",
+            "data science",
+            "education",
+            "cocalc"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/75/jupyterhub",
+        "postInstallMessage": "This app is configured to use the [data science](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook)\nnotebook. See the docs on how to set an [alternate notebook](https://cloudron.io/documentation/apps/jupyterhub/#selecting-a-notebook-image).\n\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/jupyterhub/",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.jupyter.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.jupyter.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.jupyter.cloudronapp/3.png"
+        ],
+        "dockerImage": "cloudron/org.jupyter.cloudronapp:202512130220240000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.jupyter.cloudronapp/versions/1.58.3/icon",
+    "featured": false,
+    "ranking": 0
+}

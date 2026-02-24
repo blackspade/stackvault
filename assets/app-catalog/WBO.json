@@ -1,0 +1,50 @@
+{
+    "id": "dev.ophir.wbo.cloudronapp",
+    "creationDate": "2025-10-28T10:45:48.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-12-19T18:02:02.000Z",
+    "publishedAt": "2020-12-19T18:02:02.000Z",
+    "manifest": {
+        "id": "dev.ophir.wbo.cloudronapp",
+        "title": "WBO",
+        "author": "WBO Community",
+        "description": "## About\n\nWBO is a free and open-source online collaborative whiteboard that allows many users to draw simultaneously on a large virtual board. The board is updated in real time for all connected users, and its state is always persisted. It can be used for many different purposes, including art, entertainment, design and teaching.\n\nTo collaborate on a drawing in real time with someone, just send them its URL.\n",
+        "tagline": "Online collaborative whiteboard",
+        "version": "1.20.1",
+        "upstreamVersion": "1.22.1",
+        "healthCheckPath": "/",
+        "httpPort": 8080,
+        "addons": {
+            "localstorage": [],
+            "proxyAuth": []
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "website": "https://wbo.ophir.dev/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/dev.ophir.wbo.cloudronapp/architecture.png",
+            "https://screenshots.cloudron.io/dev.ophir.wbo.cloudronapp/fibonacci.png",
+            "https://screenshots.cloudron.io/dev.ophir.wbo.cloudronapp/screenshot.png"
+        ],
+        "tags": [
+            "collaboration",
+            "whiteboard",
+            "draw",
+            "sketch",
+            "fun"
+        ],
+        "changelog": "* Update whitebophir to 1.22.1\n* [Full Changelog](https://github.com/lovasoa/whitebophir/releases/tag/v1.22.1)\n",
+        "forumUrl": "https://forum.cloudron.io/category/116/wbo",
+        "documentationUrl": "https://docs.cloudron.io/packages/wbo",
+        "minBoxVersion": "7.3.0",
+        "dockerImage": "cloudron/dev.ophir.wbo.cloudronapp:202510281030490000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/dev.ophir.wbo.cloudronapp/versions/1.20.1/icon",
+    "featured": false,
+    "ranking": 0
+}

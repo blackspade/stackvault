@@ -1,0 +1,52 @@
+{
+    "id": "com.invoiceninja.cloudronapp",
+    "creationDate": "2018-10-13T23:44:34.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.invoiceninja.cloudronapp",
+        "title": "Invoice Ninja",
+        "author": "Invoice Ninja",
+        "description": "This app packages Invoice Ninja <upstream>4.5.5</upstream>.\n\nInvoice from anywhere, get paid from everywhere.\n\nInvoice Ninja is the leading open-source platform providing powerful invoicing software for small businesses and freelancers.\n\nSend invoices and manage payments from multiple devices in any location. Whether you’re in the office, visiting a client, or relaxing on vacation, you can monitor your records and track your invoices via your tablet or smartphone.\n",
+        "changelog": "* Use latest base image\n",
+        "postInstallMessage": "Invoice Ninja does not integrate with the Cloudron user management. After installation, you can set up an admin user in the app and invite others.\n",
+        "tagline": "Invoice from anywhere, get paid from everywhere.",
+        "version": "1.6.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": [],
+            "scheduler": {
+                "invoices": {
+                    "schedule": "0 */6 * * *",
+                    "command": "sudo -u www-data php /app/code/artisan ninja:send-invoices"
+                },
+                "reminders": {
+                    "schedule": "0 8 * * *",
+                    "command": "sudo -u www-data php /app/code/artisan ninja:send-reminders"
+                }
+            }
+        },
+        "manifestVersion": 1,
+        "website": "https://www.invoiceninja.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "invoice",
+            "expense",
+            "quote",
+            "finance"
+        ],
+        "mediaLinks": [
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.invoiceninja.cloudronapp/b8d32c5e2617fc866bd7b7ea633d0e335b3a1c97/img0.png",
+            "https://s3.amazonaws.com/cloudron-app-screenshots/com.invoiceninja.cloudronapp/b8d32c5e2617fc866bd7b7ea633d0e335b3a1c97/img1.jpg"
+        ],
+        "minBoxVersion": "1.8.1",
+        "documentationUrl": "https://cloudron.io/documentation/apps/invoiceninja/",
+        "dockerImage": "cloudron/img-062037096d69bbf3ffb5b9316ad89cb9:1b013d12-0db8-4249-a4f1-085ee5ffb951"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.invoiceninja.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

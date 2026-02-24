@@ -1,0 +1,61 @@
+{
+    "id": "com.github.trilium.cloudronapp",
+    "creationDate": "2026-01-09T08:17:48.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-07-13T16:00:49.000Z",
+    "publishedAt": "2020-07-13T16:00:49.000Z",
+    "manifest": {
+        "id": "com.github.trilium.cloudronapp",
+        "version": "1.27.2",
+        "upstreamVersion": "0.101.3",
+        "title": "TriliumNext Notes",
+        "author": "TriliumNext Authors",
+        "tagline": "Personal knowledge base",
+        "healthCheckPath": "/api/sync/stats",
+        "description": "## About\n\nTriliumNext Notes is a hierarchical note taking application with focus on building\nlarge personal knowledge bases.\n\n## Features\n\n* Notes can be arranged into arbitrarily deep tree. Single note can be placed into multiple places in the tree (see [cloning](https://github.com/zadam/trilium/wiki/Cloning-notes))\n* Rich WYSIWYG note editing including e.g. tables and images with markdown [autoformat](https://github.com/zadam/trilium/wiki/Text-notes#autoformat)\n* Support for editing [notes with source code](https://github.com/zadam/trilium/wiki/Code-notes), including syntax highlighting\n* Fast and easy [navigation between notes](https://github.com/zadam/trilium/wiki/Note-navigation), full text search and [note hoisting](https://github.com/zadam/trilium/wiki/Note-hoisting)\n* Seamless [note versioning](https://github.com/zadam/trilium/wiki/Note-revisions)\n* Note [attributes](https://github.com/zadam/trilium/wiki/Attributes) can be used for note organization, querying and advanced [scripting](https://github.com/zadam/trilium/wiki/Scripts)\n* [Synchronization](https://github.com/zadam/trilium/wiki/Synchronization) with self-hosted sync server\n* Strong [note encryption](https://github.com/zadam/trilium/wiki/Protected-notes) with per-note granularity\n* [Relation maps](https://github.com/zadam/trilium/wiki/Relation-map) and [link maps](https://github.com/zadam/trilium/wiki/Link-map) for visualizing notes and their relations\n* [Scripting](https://github.com/zadam/trilium/wiki/Scripts) - see [Advanced showcases](https://github.com/zadam/trilium/wiki/Advanced-showcases)\n* Scales well in both usability and performance upwards of 100 000 notes\n* Touch optimized [mobile frontend](https://github.com/zadam/trilium/wiki/Mobile-frontend) for smartphones and tablets\n* [Night theme](https://github.com/zadam/trilium/wiki/Themes)\n* [Evernote](https://github.com/zadam/trilium/wiki/Evernote-import) and [Markdown import & export](https://github.com/zadam/trilium/wiki/Markdown)\n* [Web Clipper](https://github.com/zadam/trilium/wiki/Web-clipper) for easy saving of web content\n\n",
+        "httpPort": 8080,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/document.db"
+                    ]
+                }
+            }
+        },
+        "checklist": {
+            "create-user": {
+                "sso": true,
+                "message": "On first visit, create a user and complete the installation."
+            }
+        },
+        "manifestVersion": 2,
+        "minBoxVersion": "8.2.0",
+        "forumUrl": "https://forum.cloudron.io/category/95/triliumnext",
+        "documentationUrl": "https://docs.cloudron.io/packages/trilium-next/",
+        "website": "https://triliumnext.github.io/Docs/",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "notes",
+            "personal",
+            "evernote",
+            "wiki",
+            "knowledge base"
+        ],
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.github.trilium.cloudronapp/screenshot.png",
+            "https://screenshots.cloudron.io/com.github.trilium.cloudronapp/dark-theme.png",
+            "https://screenshots.cloudron.io/com.github.trilium.cloudronapp/weight-tracker.png",
+            "https://screenshots.cloudron.io/com.github.trilium.cloudronapp/relation-map-family.png"
+        ],
+        "changelog": "* Update Trilium to 0.101.3\n* [Full Changelog](https://github.com/TriliumNext/Notes/releases/tag/v0.101.3)\n* SQL Console: cannot copy table data by [@SiriusXT](https://github.com/SiriusXT)\n* Title is not selected when creating a note via the launcher by [@SiriusXT](https://github.com/SiriusXT)\n* Popup editor closing after inserting a note link by [@SiriusXT](https://github.com/SiriusXT)\n* New Mermaid diagrams do not save content by [@lzinga](https://github.com/lzinga)\n* Can't scroll mermaid diagram code\n* Max content width is not respected when switching between note types in the same tab\n* Crash When a Note Includes Itself\n* Severe Performance Degradation and Crash Issues Due to Recursive Inclusion in Included Notes\n* is not a launcher even though it's in the launcher subtree\n* Archived subnotes of direct children appear in grid view without #includeArchived\n",
+        "dockerImage": "cloudron/com.github.trilium.cloudronapp:202601090621270000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.github.trilium.cloudronapp/versions/1.27.2/icon",
+    "featured": false,
+    "ranking": 0
+}

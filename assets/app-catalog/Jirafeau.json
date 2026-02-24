@@ -1,0 +1,59 @@
+{
+    "id": "net.jirafeau.cloudronapp",
+    "creationDate": "2026-01-26T07:39:04.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-01-28T18:12:20.000Z",
+    "publishedAt": "2021-01-28T18:12:20.000Z",
+    "manifest": {
+        "id": "net.jirafeau.cloudronapp",
+        "version": "1.12.1",
+        "upstreamVersion": "4.7.1",
+        "title": "Jirafeau",
+        "tagline": "Select your file, upload, share a link",
+        "website": "https://jirafeau.net",
+        "author": "Jirafeau developers",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "description": "## About\n\nJirafeau is a \"one-click-filesharing\": Select your file, upload, share a link. That's it.\n\n## Main features\n\n* One upload - One download link & one delete link\n* Shows progression: speed, percentage and remaining upload time\n* Preview content in browser (if possible)\n* Optional password protection (for uploading or downloading)\n* Set expiration time for downloads\n* Option to self-destruct after first download\n* Shortened URLs using base 64 encoding\n* Maximal upload size configurable\n* NO database, only use basic PHP\n* Simple language support with a lot of langages (help us on weblate!)\n* File level Deduplication for storage optimization (does store duplicate files only once, but generate multiple links)\n* Optional data encryption\n* Small administration interface\n* CLI script to remove expired files automatically with a cronjob\n* Basic API\n* Bash script to upload files via command line\n* Themes\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: (no username)<br/>\n**Password**: changeme123<br/>\n\n",
+        "changelog": "* Update Jirafeau to 4.7.1\n* [Full Changelog](https://gitlab.com/jirafeau/Jirafeau/-/blob/master/CHANGELOG.md#version-471)\n* Fixed another possibility to bypass the checks for [CVE-2022-30110](https://www.cve.org/CVERecord?id=CVE-2022-30110), [CVE-2024-12326](https://www.cve.org/CVERecord?id=CVE-2024-12326) and [CVE-2025-7066](https://www.cve.org/CVERecord?id=CVE-2025-7066) (prevent preview of SVG images and other critical files) by sending a manipulated HTTP request with a MIME type like \"image\". When doing the preview, the browser tries to automatically detect the MIME type resulting in detecting SVG and possibly executing JavaScript code. To prevent this, MIME sniffing is disabled.\n* The default value of `max_upload_chunk_size_bytes` was set to `5000000`. Higher values could trigger a bug Chromium-based browsers on servers with HTTP/3 enabled, causing asynchronous uploads to fail.\n",
+        "configurePath": "/admin.php",
+        "tags": [
+            "share",
+            "filesharing"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/net.jirafeau.cloudronapp/jirafeau-01.png"
+        ],
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "scheduler": {
+                "housekeeping": {
+                    "schedule": "12 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password by editing `custom.php` using [File Manager](/filemanager.html?type=app&id=$CLOUDRON-APP-ID)"
+            },
+            "restrict-uploads": {
+                "message": "By default, anyone can upload. [Protect your instance](https://docs.cloudron.io/apps/jirafeau/#restricting-uploads)"
+            }
+        },
+        "documentationUrl": "https://docs.cloudron.io/packages/jirafeau",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/121/jirafeau",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/net.jirafeau.cloudronapp:202601260220500000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/net.jirafeau.cloudronapp/versions/1.12.1/icon",
+    "featured": false,
+    "ranking": 0
+}

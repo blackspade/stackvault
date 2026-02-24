@@ -1,0 +1,74 @@
+{
+    "id": "org.joinpeertube.cloudronapp",
+    "creationDate": "2026-01-28T11:02:28.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-10-15T05:54:06.000Z",
+    "publishedAt": "2020-10-15T05:54:06.000Z",
+    "manifest": {
+        "version": "4.5.2",
+        "upstreamVersion": "8.0.2",
+        "id": "org.joinpeertube.cloudronapp",
+        "title": "PeerTube",
+        "author": "PeerTube developers",
+        "description": "## About\n\nPeerTube is a free, decentralized and federated video platform developed as an alternative to other platforms that centralize our data and attention, such as YouTube, Dailymotion or Vimeo.\n\nBut one organization hosting PeerTube alone may not have enough money to pay for bandwidth and video storage of its servers, all servers of PeerTube are interoperable as a federated network, and non-PeerTube servers can be part of the larger Vidiverse (federated video network) by talking our implementation of ActivityPub. Video load is reduced thanks to P2P in the web browser using WebTorrent or p2p-media-loader.\n\n## Features\n\n* Video streaming - Just upload your videos, and be sure they will stream anywhere. Add a description, some tags and your video will be discoverable by the entire video fediverse, not just your instance. You can even embed a player on your favorite website!\n\n* Keep in touch with video creators - Follow your favorite channels from PeerTube or really any other place. No need to have an account on the instance you watched a video to follow its author, you can do all of that from the Fediverse (Mastodon, Pleroma, and plenty others), or just with good ol' RSS.\n\n* An interface to call home - Be it as a user or an instance administrator, you can decide what your experience will be like. Don't like the colors? They are easy to change. Don't want to list videos of an instance but let your users subscribe to them? Don't like the regular web client? All of that can be changed, and much more. No UX dark pattern, no mining your data, no video recommendation bullshit™.\n\n* Communities that help each other - In addition to visitors using WebTorrent to share the load among them, instances can help each other by caching one another's videos. This way even small instances have a way to show content to a wider audience, as they will be shouldered by friend instances (more about that in our redundancy guide). Content creators can get help from their viewers in the simplest way possible: a support button showing a message linking to their donation accounts or really anything else. No more pay-per-view and advertisements that hurt visitors and incentivize alter creativity (more about that in our FAQ). \n\n",
+        "website": "https://joinpeertube.org/",
+        "contactEmail": "support@cloudron.io",
+        "tagline": "Take back control of your videos",
+        "icon": "file://logo.png",
+        "healthCheckPath": "/",
+        "httpPort": 80,
+        "tcpPorts": {
+            "RTMP_PORT": {
+                "title": "RTMP Port",
+                "description": "RTMP Port for livestreaming",
+                "defaultValue": 1935,
+                "containerPort": 1935
+            }
+        },
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "redis": [],
+            "sendmail": {
+                "supportsDisplayName": false
+            },
+            "oidc": {
+                "loginRedirectUri": "/plugins/auth-openid-connect/router/code-cb"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "memoryLimit": 1073741824,
+        "forumUrl": "https://forum.cloudron.io/category/91/peertube",
+        "optionalSso": true,
+        "tags": [
+            "video",
+            "youtube",
+            "vimeo",
+            "blog",
+            "instagram",
+            "media",
+            "federated"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.joinpeertube.cloudronapp/peertube-screenshot.jpg",
+            "https://screenshots.cloudron.io/org.joinpeertube.cloudronapp/home.png",
+            "https://screenshots.cloudron.io/org.joinpeertube.cloudronapp/subscribe.png"
+        ],
+        "changelog": "* Update PeerTube to 8.0.2\n* [Full Changelog](https://github.com/Chocobozzz/PeerTube/releases/tag/v8.0.2)\n* Fix PostgreSQL CPU usage and broken PeerTube instance on instances with a many subscriptions or big federation  \n* Fix login URL in registration email  \n* Remove the trailing comma in the plugins `package.json` files that broke the update/installation process  \n* Fix broken channel sync if private privacy is removed by a plugin  \n* Fix restoring *My Videos* sort after a search\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: root<br/>\n**Password**: changeme<br/>\n\nIMPORTANT: PeerTube does not support changing the location of the app after installation. Doing so, will\nbreak the installation.\n\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/peertube/",
+        "minBoxVersion": "8.1.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.joinpeertube.cloudronapp:202601280848080000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.joinpeertube.cloudronapp/versions/4.5.2/icon",
+    "featured": false,
+    "ranking": 0
+}

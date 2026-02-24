@@ -1,0 +1,68 @@
+{
+    "id": "dev.beszel.cloudronapp",
+    "creationDate": "2026-02-02T06:00:07.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2025-06-04T16:31:48.000Z",
+    "publishedAt": "2025-06-04T16:31:48.000Z",
+    "manifest": {
+        "id": "dev.beszel.cloudronapp",
+        "version": "1.6.2",
+        "title": "Beszel",
+        "author": "Beszel Authors",
+        "upstreamVersion": "0.18.3",
+        "contactEmail": "support@cloudron.io",
+        "description": "### About\n\nA lightweight server monitoring platform that includes Docker statistics, historical data, and alert functions.\n\nIt has a friendly web interface, simple configuration, and is ready to use out of the box. It supports automatic backup, multi-user, OAuth authentication, and API access.\n\n### Features\n\n* **Lightweight:** Smaller and less resource-intensive than leading solutions.\n* **Simple:** Easy setup, no need for public internet exposure.\n* **Docker stats:** Tracks CPU, memory, and network usage history for each container.\n* **Alerts:** Configurable alerts for CPU, memory, disk, bandwidth, temperature, and status.\n* **Multi-user:** Users manage their own systems. Admins can share systems across users.\n* **OAuth / OIDC:** Supports many OAuth2 providers. Password auth can be disabled.\n* **Automatic backups:** Save and restore data from disk or S3-compatible storage.\n* **REST API:** Use or update your data in your own scripts and applications.",
+        "postInstallMessage": "This app is pre-setup with a super-admin account. The initial credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: changeme<br/>\n\n<sso>\nBy default, Cloudron users have regular users permissions. You can make users admins by assigning the `admin` role in the admin UI at: `/_/#/collections`\n</sso>\n\nYou can disable email & password authentication by setting the `DISABLE_PASSWORD_AUTH` to `true` in `/app/data/env`\n\n**It is strongly discouraged to [install the agent](https://docs.cloudron.io/packages/beszel#agent-installation) daemon on Cloudron itself.**\n",
+        "tagline": "Simple, lightweight server monitoring",
+        "forumUrl": "https://forum.cloudron.io/category/208/beszel",
+        "documentationUrl": "https://docs.cloudron.io/packages/beszel/",
+        "icon": "file://logo.png",
+        "website": "https://beszel.dev",
+        "changelog": "* Update beszel to 0.18.3\n* [Full Changelog](https://github.com/henrygd/beszel/releases/tag/v0.18.3)\n* The Windows agent's updated version of `LibreHardwareMonitorLib` now uses [PawnIO](https://pawnio.eu/) instead of WinRing0. If you lose temperature sensors, make sure PawnIO is installed. (See [#1657](https://github.com/henrygd/beszel/issues/1657) and [#1697](https://github.com/henrygd/beszel/issues/1697).)\n* Container `NetworkSent` and `NetworkRecv` fields have been deprecated in favor of `Bandwidth`. Agents will stop populating those fields in 0.19.0, so please update any integrations to prefer `Bandwidth`. It's available for all containers on hubs >= 0.18.3.\n* Add experimental sysfs AMD GPU collector. ([#737](https://github.com/henrygd/beszel/issues/737), [#1569](https://github.com/henrygd/beszel/issues/1569))\n* Improve container network stats accuracy.\n* Fix `SHARE_ALL_SYSTEMS` for system\\_details, smart\\_devices, and systemd\\_services. ([#1660](https://github.com/henrygd/beszel/issues/1660))\n* Improve CJK truncation in UI.\n* Fix container uptime sorting edge case. ([#1696](https://github.com/henrygd/beszel/issues/1696))\n* Remove stale systemd services from tracking after deletion. ([#1594](https://github.com/henrygd/beszel/issues/1594))\n* Update honeypot field name and autofill ignores. ([#1011](https://github.com/henrygd/beszel/issues/1011))\n* Write health\\_file to `/dev/shm` instead of `/tmp` if available. ([#1455](https://github.com/henrygd/beszel/issues/1455))\n",
+        "tags": [
+            "monitoring",
+            "analytics",
+            "status"
+        ],
+        "optionalSso": true,
+        "healthCheckPath": "/",
+        "httpPort": 8090,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/data/data.db",
+                        "/app/data/data/auxiliary.db"
+                    ]
+                }
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/api/oauth2-redirect",
+                "logoutRedirectUri": "/",
+                "tokenSignatureAlgorithm": "RS256"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/dev.beszel.cloudronapp/home-alerts.png",
+            "https://screenshots.cloudron.io/dev.beszel.cloudronapp/home-dashboard.png",
+            "https://screenshots.cloudron.io/dev.beszel.cloudronapp/home-system.png"
+        ],
+        "minBoxVersion": "8.2.0",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/dev.beszel.cloudronapp:202602012058580000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/dev.beszel.cloudronapp/versions/1.6.2/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,65 @@
+{
+    "id": "com.github.bitwardenrs",
+    "creationDate": "2026-02-11T09:46:26.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-04-22T14:28:01.000Z",
+    "publishedAt": "2020-04-22T14:28:01.000Z",
+    "manifest": {
+        "id": "com.github.bitwardenrs",
+        "title": "Vaultwarden",
+        "author": "Daniel García",
+        "description": "### Overview\n\nThis is the Rust implementation of the Bitwarden backend, *not* the official server backend, but fully compatible with the Client apps.\n\nVaultwarden is a self-hosted password manager. It allows you to store and manage your passwords, credit cards, and other private information in a secure way while still allowing you to access it from your browser, phone, or desktop.\n\n### Client Apps\n\nThe official client apps from bitwarden.com are all supported. In fact the webfrontend, packaged together with this app, is also the official one.\n\nClients can be downloaded at [bitwarden.com](https://bitwarden.com/#download)\n\nThose apps are a lot of effort to maintain, so please consider supporting the upstream project.\n",
+        "changelog": "* Update vaultwarden to 1.35.3\n* [Full Changelog](https://github.com/dani-garcia/vaultwarden/releases/tag/1.35.3)\n* [GHSA-h265-g7rm-h337](https://github.com/dani-garcia/vaultwarden/security/advisories/GHSA-h265-g7rm-h337) (Publication in process, waiting for CVE assignment)\n* This vulnerability would allow an authenticated attacker that is part of an organization to access items from collections to which the attacker does not belong.\n* Fix User API Key login by [@&#8203;BlackDex](https://github.com/BlackDex) in [#&#8203;6712](https://github.com/dani-garcia/vaultwarden/pull/6712)\n* use email instead of empty name for webauhn by [@&#8203;stefan0xC](https://github.com/stefan0xC) in [#&#8203;6733](https://github.com/dani-garcia/vaultwarden/pull/6733)\n* hide password hints via CSS by [@&#8203;stefan0xC](https://github.com/stefan0xC) in [#&#8203;6726](https://github.com/dani-garcia/vaultwarden/pull/6726)\n* fix email as 2fa with auth requests by [@&#8203;stefan0xC](https://github.com/stefan0xC) in [#&#8203;6736](https://github.com/dani-garcia/vaultwarden/pull/6736)\n* Update crates, web-vault, js, workflows by [@&#8203;BlackDex](https://github.com/BlackDex) in [#&#8203;6749](https://github.com/dani-garcia/vaultwarden/pull/6749)\n* refactor: improve tooltips in diagnostics page by [@&#8203;tessus](https://github.com/tessus) in [#&#8203;6765](https://github.com/dani-garcia/vaultwarden/pull/6765)\n* Empty AccountKeys when no private key by [@&#8203;Timshel](https://github.com/Timshel) in [#&#8203;6761](https://github.com/dani-garcia/vaultwarden/pull/6761)\n* fix error message for purging auth requests by [@&#8203;stefan0xC](https://github.com/stefan0xC) in [#&#8203;6776](https://github.com/dani-garcia/vaultwarden/pull/6776)\n",
+        "postInstallMessage": "<sso>\nIn the Vaultwarden login form, the email field is required by the UI but ignored when using Single Sign-On.\n</sso>\n<nosso>\nOn first visit, register yourself and start using Vaultwarden.\n<nosso>\n",
+        "tagline": "Rust implementation of the Bitwarden API",
+        "version": "1.24.2",
+        "upstreamVersion": "1.35.3",
+        "healthCheckPath": "/alive",
+        "httpPort": 3000,
+        "configurePath": "/admin",
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/identity/connect/oidc-signin"
+            }
+        },
+        "optionalSso": true,
+        "checklist": {
+            "disable-registration": {
+                "sso": false,
+                "message": "[Disable registration](https://docs.cloudron.io/packages/vaultwarden/#disable-registration), if required, to prevent misuse"
+            }
+        },
+        "memoryLimit": 1073741824,
+        "manifestVersion": 2,
+        "website": "https://github.com/dani-garcia/vaultwarden",
+        "documentationUrl": "https://docs.cloudron.io/packages/vaultwarden/",
+        "forumUrl": "https://forum.cloudron.io/category/64/bitwardenrs",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "1password",
+            "password",
+            "bitwarden",
+            "lastpass",
+            "manager"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.github.bitwardenrs/bitwardenrs_01.png",
+            "https://screenshots.cloudron.io/com.github.bitwardenrs/bitwardenrs_02.png",
+            "https://screenshots.cloudron.io/com.github.bitwardenrs/bitwardenrs_03.png"
+        ],
+        "minBoxVersion": "8.0.0",
+        "dockerImage": "cloudron/com.github.bitwardenrs:202602110021200000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.github.bitwardenrs/versions/1.24.2/icon",
+    "featured": false,
+    "ranking": 0
+}

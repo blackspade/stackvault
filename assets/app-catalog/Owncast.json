@@ -1,0 +1,61 @@
+{
+    "id": "online.owncast.cloudronapp",
+    "creationDate": "2026-01-11T16:01:34.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-05-05T20:13:20.000Z",
+    "publishedAt": "2022-05-05T20:13:20.000Z",
+    "manifest": {
+        "id": "online.owncast.cloudronapp",
+        "title": "Owncast",
+        "author": "Owncast Developers",
+        "description": "## About\n\nOwncast is a self-hosted live video and web chat server for use with existing popular broadcasting software. Point your live stream at a server you personally control and regain ownership over your content.\n\n## Features\n\n* Self hosted and Independent - Have complete control and ownership over your stream, allowing you to create the content and community you want.\n* Chat - The frictionless built-in chat allows your viewers to be a part of the action. Include custom emotes and build chat bots to encourage engagement from your viewers.\n* Works with your software - Point your existing broadcasting software at your Owncast server and begin streaming.\n* External Storage - Owncast can work with different storage providers to optionally scale your videos to many viewers using only low-powered hardware.\n\n",
+        "tagline": "Take control over your content and stream it yourself.",
+        "version": "1.6.1",
+        "upstreamVersion": "0.2.4",
+        "healthCheckPath": "/",
+        "httpPort": 8080,
+        "manifestVersion": 2,
+        "configurePath": "/admin",
+        "website": "http://owncast.online/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "memoryLimit": 262144000,
+        "tcpPorts": {
+            "RTMP_PORT": {
+                "title": "RTMP Port",
+                "description": "RTMP Port for livestreaming",
+                "defaultValue": 1935
+            }
+        },
+        "addons": {
+            "localstorage": []
+        },
+        "checklist": {
+            "change-default-stream-key": {
+                "message": "Change the stream key (which is your admin password) immediately in `Configuration` -> `Server Setup`."
+            }
+        },
+        "tags": [
+            "golang",
+            "livestream",
+            "rtmp",
+            "obs"
+        ],
+        "changelog": "* Update owncast to 0.2.4\n* [Full Changelog](https://github.com/owncast/owncast/releases/tag/v0.2.4)\n* Lots of localization changes, both in how they work across the web application, and adding more support for them. So more places should show more languages.\n* The backend refactor continues with more splitting things off into standalone data repositories and services.\n* Higher bitrates can now be selected in the video encoding settings.\n* There's a new webhook that fires when you get a new Fediverse follower.\n* Admin: add line divider in sidebar [#4098](https://github.com/owncast/owncast/issues/4098)\n* Display shortcut keys of hide/show chat in Dropdown menu  [#4096](https://github.com/owncast/owncast/issues/4096)\n* Create a custom Translation component [#4428](https://github.com/owncast/owncast/issues/4428)\n* Add support for pluralization in the new Translation component [#4440](https://github.com/owncast/owncast/issues/4440)\n* Add support for translations in the web project [#3950](https://github.com/owncast/owncast/issues/3950)\n* Add server status as a default field in all webhooks [#4384](https://github.com/owncast/owncast/issues/4384)\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password and stream key**: abc123<br/>\n\nThe admin page of OwnCast is located at the $CLOUDRON-APP-ORIGIN/admin .\n\nPlease change the stream key (which is your admin password) immediately in `Configuration` -> `Server Setup`.\n\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/online.owncast.cloudronapp/owncast-splash-loading.png",
+            "https://screenshots.cloudron.io/online.owncast.cloudronapp/admin-settings-tags-social.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/143/owncast",
+        "documentationUrl": "https://docs.cloudron.io/packages/owncast/",
+        "dockerImage": "cloudron/online.owncast.cloudronapp:202601110420090000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/online.owncast.cloudronapp/versions/1.6.1/icon",
+    "featured": false,
+    "ranking": 0
+}

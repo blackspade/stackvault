@@ -1,0 +1,54 @@
+{
+    "id": "nu.sogo.cloudronapp2",
+    "creationDate": "2025-10-07T07:08:31.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2018-05-14T13:33:43.000Z",
+    "publishedAt": "2018-05-14T13:33:43.000Z",
+    "manifest": {
+        "id": "nu.sogo.cloudronapp2",
+        "title": "SOGo",
+        "author": "SOGo developers",
+        "description": "### Overview\n\nSOGo offers multiple ways to access the calendaring, address book data and is integrated with Cloudron email.\nYour users can either use a web browser, Microsoft Outlook, Mozilla Thunderbird, Apple iCal, or a mobile device to access the same information.\n\n### Features\n\n * Setup for Cloudron email usage\n * CardDav and CalDav synchronisation server\n * Calendar and address book sharing\n * Recurring Events\n * Reminders\n * Free/Busy time\n * Notifications\n * Resource Reservation\n * Categories\n * Material Design Webinterface\n\n### Desktop Clients\n\nSOGo provides perfect integration with desktop clients such as:\n\n * Mozilla Thunderbird\n * Microsoft Outlook\n * Apple iCal and AddressBook\n\n### Mobile Clients\n\nWith SOGo, data access goes beyond the Web and native interfaces. SOGo supports virtually every mobile devices such as:\n\n * Apple iPhone/iPad and BlackBerry 10 devices are supported natively through the use of the CalDAV and CardDAV protocols, which are well supported by SOGo\n * Windows Phone and Android devices can use 3rdparty CalDAV and CardDAV apps\n",
+        "tagline": "Webmail, Contacts & Calendar",
+        "version": "2.18.4",
+        "upstreamVersion": "5.12.4",
+        "healthCheckPath": "/healthcheck",
+        "httpPort": 3000,
+        "addons": {
+            "mysql": [],
+            "ldap": [],
+            "localstorage": [],
+            "email": []
+        },
+        "manifestVersion": 2,
+        "website": "http://www.sogo.nu/",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* Update sogo to 5.12.4\n* [Full Changelog](https://github.com/Alinto/sogo/releases/tag/SOGo-5.12.4)\n* mail: Add a setting to show the attachments above the mail body ([5d61660](https://github.com/Alinto/sogo/commit/5d616600dfa6258e4eebcb5c065e393ebfae8f3a))\n* calendar: fetch our own iana timezone instead of trusting VTIMEZONE ([244d138](https://github.com/Alinto/sogo/commit/244d1388eb00c060c5302e5bfd997fd397820bc0))\n* curl: properly close curl connection ([42f620e](https://github.com/Alinto/sogo/commit/42f620e56201e17391532507c02ae370f117c574))\n* eas: use proper imap mech for EAS request when using openid ([a7f7950](https://github.com/Alinto/sogo/commit/a7f7950d91c83acd75c0b0d55dec74ab85d38d6c))\n* ldap: don't try to fetch for a nobody user ([4d8cca1](https://github.com/Alinto/sogo/commit/4d8cca10f63aff9499b71d61d59d6f81570eb659))\n* label: ensure the translation kept is not null ([0fb3db0](https://github.com/Alinto/sogo/commit/0fb3db060871a14e2abd8c6963ccd812cbacf200))\n* label: missing trad ([23c8648](https://github.com/Alinto/sogo/commit/23c8648169b4893aaafa2e369259d94d56c76831))\n* ldap: fetch the correct user source when creating an event with an attendee ([736d758](https://github.com/Alinto/sogo/commit/736d7589b16be4ebcf9fc6931a79187888c3b444))\n* login: Only remember the login if the auth was successful ([9e20190](https://github.com/Alinto/sogo/commit/9e20190fad1a437f7e1307f0adcfe19a8d45184c))\n* log: remove the ics from the log line ([86d94ab](https://github.com/Alinto/sogo/commit/86d94ab8fefaf3aa5ba99e13c28a0b24036d94ff))\n",
+        "icon": "logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/nu.sogo.cloudronapp2/0.png",
+            "https://screenshots.cloudron.io/nu.sogo.cloudronapp2/1.png",
+            "https://screenshots.cloudron.io/nu.sogo.cloudronapp2/2.png"
+        ],
+        "tags": [
+            "calendar",
+            "contacts",
+            "addressbook",
+            "carddav",
+            "caldav",
+            "sync",
+            "groupware",
+            "email"
+        ],
+        "minBoxVersion": "7.6.0",
+        "forumUrl": "https://forum.cloudron.io/category/58/sogo",
+        "documentationUrl": "https://docs.cloudron.io/packages/sogo/",
+        "dockerImage": "cloudron/nu.sogo.cloudronapp2:202510062123170000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/nu.sogo.cloudronapp2/versions/2.18.4/icon",
+    "featured": true,
+    "ranking": 0
+}

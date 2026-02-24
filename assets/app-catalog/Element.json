@@ -1,0 +1,53 @@
+{
+    "id": "im.riot.cloudronapp",
+    "creationDate": "2026-02-11T09:40:32.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-04-25T20:52:27.000Z",
+    "publishedAt": "2020-04-25T20:52:27.000Z",
+    "manifest": {
+        "id": "im.riot.cloudronapp",
+        "version": "1.11.10",
+        "upstreamVersion": "1.12.10",
+        "title": "Element",
+        "tagline": "Liberate your communication",
+        "description": "## About\n\nElement is for everyone, from casual chat to high powered collaboration. Communicate the way you want with\nElement - a universal secure chat app entirely under your control.\n\nWhether you’re a team, a family, a community.\n\nWhether you’re after one-to-one chats, small private groups, big public ones.\n\nWhether you want to be visible to attract more members, flexible to gather users across different entities and apps, independent and confidential to keep your privacy.\n\nOr if you’re after all of these at the same time. Element is where you’ll feel at home. Join or create rooms per topic, per group, per event.\n\nDecide the level of access control you want to provide (invite only, if one has the link, public), how visible the history should be. Create your own private communities to group your rooms by topic and filter them.\n\nDark theme or light theme - make Element your own!\n\n## Features\n\n* Choose who you trust with your data\n* Share Files\n* Intelligent Notifications\n* Other Apps, Stickers, Widgets & Bots\n* Bridge other apps and networks\n* Open Source & Open Standard - Open source, and built on Matrix. Own your own data by hosting your own server.\n\n",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "website": "https://element.io",
+        "contactEmail": "support@cloudron.io",
+        "author": "Element Authors",
+        "addons": {
+            "localstorage": []
+        },
+        "manifestVersion": 2,
+        "icon": "file://logo.png",
+        "tags": [
+            "chat",
+            "webchat",
+            "slack",
+            "matrix",
+            "synapse",
+            "teams",
+            "riot",
+            "federated"
+        ],
+        "changelog": "* Update element-web to 1.12.10\n* [Full Changelog](https://github.com/element-hq/element-web/releases/tag/v1.12.10)\n* Support additional\\_creators in /upgraderoom (MSC4289) ([#&#8203;31934](https://github.com/element-hq/element-web/pull/31934)). Contributed by [@&#8203;andybalaam](https://github.com/andybalaam).\n* Update room header icon for world_readable rooms ([#&#8203;31915](https://github.com/element-hq/element-web/pull/31915)). Contributed by [@&#8203;richvdh](https://github.com/richvdh).\n* Show an icon in the room header for shared history ([#&#8203;31879](https://github.com/element-hq/element-web/pull/31879)). Contributed by [@&#8203;richvdh](https://github.com/richvdh).\n* Remove \"history may be shared\" banner. ([#&#8203;31881](https://github.com/element-hq/element-web/pull/31881)). Contributed by [@&#8203;kaylendog](https://github.com/kaylendog).\n* Allow dismissing 'Key storage out of sync' temporarily ([#&#8203;31455](https://github.com/element-hq/element-web/pull/31455)). Contributed by [@&#8203;andybalaam](https://github.com/andybalaam).\n* Add `resolutions` entry for `matrix-widget-api` to package.json ([#&#8203;31851](https://github.com/element-hq/element-web/pull/31851)). Contributed by [@&#8203;toger5](https://github.com/toger5).\n* Improve visibility under contrast control mode ([#&#8203;31847](https://github.com/element-hq/element-web/pull/31847)). Contributed by [@&#8203;t3chguy](https://github.com/t3chguy).\n* Unread Sorting - Add option for sorting in `OptionsMenuView` ([#&#8203;31754](https://github.com/element-hq/element-web/pull/31754)). Contributed by [@&#8203;MidhunSureshR](https://github.com/MidhunSureshR).\n* Unread sorting - Implement sorter and use it in the room list store ([#&#8203;31723](https://github.com/element-hq/element-web/pull/31723)). Contributed by [@&#8203;MidhunSureshR](https://github.com/MidhunSureshR).\n* Allow Element Call widgets to receive sticky events ([#&#8203;31843](https://github.com/element-hq/element-web/pull/31843)). Contributed by [@&#8203;robintown](https://github.com/robintown).\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/im.riot.cloudronapp/home-communication.png",
+            "https://screenshots.cloudron.io/im.riot.cloudronapp/feature-notifications.png",
+            "https://screenshots.cloudron.io/im.riot.cloudronapp/feature-encryption.png",
+            "https://screenshots.cloudron.io/im.riot.cloudronapp/feature-call-p-1080.png"
+        ],
+        "minBoxVersion": "7.1.2",
+        "forumUrl": "https://forum.cloudron.io/category/50/matrix-synapse-element",
+        "documentationUrl": "https://docs.cloudron.io/packages/element/",
+        "postInstallMessage": "Matrix consists of two components - backend and frontend. This app only provides a web frontend\nfor Matrix. If you haven't done so already, please install the [Synapse](/#/appstore/org.matrix.synapse)\nMatrix backend (home server) in a subdomain like `matrix.$CLOUDRON-APP-DOMAIN`.\n\nThis app is pre-configured to use the matrix installation at `matrix.$CLOUDRON-APP-DOMAIN`.\nIf you installed Synapse at another location, use the [Web Terminal](https://cloudron.io/documentation/apps/#web-terminal)\nto edit `/app/data/config.json` to set the home server.\n\n",
+        "dockerImage": "cloudron/im.riot.cloudronapp:202602110121570000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/im.riot.cloudronapp/versions/1.11.10/icon",
+    "featured": false,
+    "ranking": 0
+}

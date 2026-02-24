@@ -1,0 +1,58 @@
+{
+    "id": "com.documenso.cloudronapp",
+    "creationDate": "2025-07-04T19:55:57.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.documenso.cloudronapp",
+        "title": "Documenso",
+        "version": "1.6.0",
+        "upstreamVersion": "1.12.1",
+        "author": "Documenso Authors",
+        "description": "### About\n\nSigning documents digitally should be fast and easy and should be the best practice for every document signed worldwide. This is technically quite easy today, but it also introduces a new party to every signature: The signing tool providers. While this is not a problem in itself, it should make us think about how we want these providers of trust to work. Documenso aims to be the world's most trusted document-signing tool. This trust is built by empowering you to self-host Documenso and review how it works under the hood.\n\n### Features\n\n* Fast. When it comes to sending or receiving a contract, you can count on lightning-fast speeds.\n* Beautiful. Because signing should be celebrated. That’s why we care about the smallest detail in our product.\n* Smart. Our custom templates come with smart rules that can help you save time and energy.\n* Easy Sharing (Soon). Receive your personal link to share with everyone you care about.\n* Connections. Create connections and automations with Zapier and more to integrate with your favorite tools.\n* Get paid (Soon). Integrated payments with Stripe so you don’t have to worry about getting paid.\n* React Widget (Soon). Easily embed Documenso into your product. Simply copy and paste our react widget into your application.\n\n",
+        "changelog": "* Update documenso to 1.12.1\n* [Full Changelog](https://github.com/documenso/documenso/releases/tag/v1.12.1)\n* fix: documents failing to seal by [@Mythie](https://github.com/Mythie) in https://github.com/documenso/documenso/pull/1821\n* feat: multisign embedding by [@Mythie](https://github.com/Mythie) in https://github.com/documenso/documenso/pull/1823\n* feat: password reauthentication for documents and recipients by [@Mythie](https://github.com/Mythie) in https://github.com/documenso/documenso/pull/1827\n* feat: add organisations by [@dguyen](https://github.com/dguyen) in https://github.com/documenso/documenso/pull/1820\n* Update README.md by [@damidani](https://github.com/damidani) in https://github.com/documenso/documenso/pull/1811\n* feat: show field coordinates in devmode by [@catalinpit](https://github.com/catalinpit) in https://github.com/documenso/documenso/pull/1802\n* fix: duplicate field bugs by [@ephraimduncan](https://github.com/ephraimduncan) in https://github.com/documenso/documenso/pull/1685\n* feat: sitemap auto-generation for docs by [@ShubhamPalriwala](https://github.com/ShubhamPalriwala) in https://github.com/documenso/documenso/pull/1822\n* feat: sign out of all sessions by [@ephraimduncan](https://github.com/ephraimduncan) in https://github.com/documenso/documenso/pull/1797\n* fix: rework documents limits logic by [@dguyen](https://github.com/dguyen) in https://github.com/documenso/documenso/pull/1836\n",
+        "tagline": "The Open Source DocuSign Alternative",
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin@cloudron.local<br/>\n**Password**: changeme<br/>\n",
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            },
+            "create-signing-cert": {
+                "message": "Create signature certificate, see [docs](https://docs.cloudron.io/apps/documenso/#signing-certificate)"
+            }
+        },
+        "minBoxVersion": "8.0.0",
+        "healthCheckPath": "/",
+        "icon": "file://logo.png",
+        "httpPort": 3000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "oidc": {
+                "loginRedirectUri": "/api/auth/callback/oidc"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "manifestVersion": 2,
+        "optionalSso": true,
+        "website": "https://documenso.com",
+        "forumUrl": "https://forum.cloudron.io/category/192/documenso",
+        "documentationUrl": "https://docs.cloudron.io/packages/documenso/",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.documenso.cloudronapp/documenso_img0.png"
+        ],
+        "memoryLimit": 536870912,
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "docusign",
+            "digital",
+            "signning",
+            "documents"
+        ],
+        "dockerImage": "cloudron/com.documenso.cloudronapp:202507041357390000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.documenso.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

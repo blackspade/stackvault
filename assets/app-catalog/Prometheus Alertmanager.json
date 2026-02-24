@@ -1,0 +1,47 @@
+{
+    "id": "io.prometheus.alertmanager.cloudronapp",
+    "creationDate": "2026-02-12T09:18:22.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-11T19:26:33.000Z",
+    "publishedAt": "2020-11-11T19:26:33.000Z",
+    "manifest": {
+        "id": "io.prometheus.alertmanager.cloudronapp",
+        "title": "Prometheus Alertmanager",
+        "author": "Erik Tadevosyan",
+        "description": "## About\n\nThe Alertmanager handles alerts sent by client applications such as the Prometheus server. \nIt takes care of deduplicating, grouping, and routing them to the correct receiver \nintegration such as email, PagerDuty, or OpsGenie. \nIt also takes care of silencing and inhibition of alerts.\n\n## Features\n\n* Grouping categorizes alerts of similar nature into a single notification.\n* Inhibition is a concept of suppressing notifications for certain alerts if certain other alerts are already firing.\n* Silences are a straightforward way to simply mute alerts for a given time.\n* Alertmanager supports configuration to create a cluster for high availability.\n",
+        "tagline": "Alert manager for Prometheus",
+        "version": "1.14.1",
+        "upstreamVersion": "0.31.1",
+        "healthCheckPath": "/",
+        "httpPort": 9093,
+        "icon": "logo.png",
+        "addons": {
+            "localstorage": [],
+            "proxyAuth": []
+        },
+        "manifestVersion": 2,
+        "website": "https://prometheus.io/",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "alert",
+            "metrics",
+            "analytics",
+            "graphs"
+        ],
+        "changelog": "* Update alertmanager to 0.31.1\n* [Full Changelog](https://github.com/prometheus/alertmanager/releases/tag/v0.31.1)\n* \\[BUGFIX] docs: Fix email TLS configuration example. [#&#8203;4976](https://github.com/prometheus/alertmanager/issues/4976)\n* \\[BUGFIX] docs: Add telegram bot token options to global config docs. [#&#8203;4999](https://github.com/prometheus/alertmanager/issues/4999)\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/prometheus/",
+        "minBoxVersion": "7.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/112/prometheus",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.prometheus.alertmanager.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/io.prometheus.alertmanager.cloudronapp/2.png"
+        ],
+        "dockerImage": "cloudron/io.prometheus.alertmanager.cloudronapp:202602120050180000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.prometheus.alertmanager.cloudronapp/versions/1.14.1/icon",
+    "featured": false,
+    "ranking": 0
+}

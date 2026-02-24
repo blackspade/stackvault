@@ -1,0 +1,59 @@
+{
+    "id": "com.onlyoffice.coudronapp",
+    "creationDate": "2025-12-18T09:28:23.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-11-25T13:41:33.000Z",
+    "publishedAt": "2019-11-25T13:41:33.000Z",
+    "manifest": {
+        "id": "com.onlyoffice.coudronapp",
+        "title": "ONLYOFFICE Docs",
+        "author": "Cloudron Team",
+        "description": "### Overview\n\nONLYOFFICE provides you with the most secure way to create, edit and collaborate on business documents online.\nIt is 100% compatible with MS Office formats.\n\nUse this together with Nextcloud to build a powerfull collaboration suite or integrate with many other [3rdparty solutions](https://www.onlyoffice.com/all-connectors.aspx)\n",
+        "changelog": "* Update DocumentServer to 9.2.1\n",
+        "tagline": "Open source office and productivity suite",
+        "version": "1.24.1",
+        "upstreamVersion": "9.2.1",
+        "healthCheckPath": "/healthcheck",
+        "httpPort": 80,
+        "addons": {
+            "localstorage": [],
+            "redis": {
+                "noPassword": true
+            },
+            "postgresql": []
+        },
+        "checklist": {
+            "change-default-secret": {
+                "message": "Change the default secret in `/app/data/config/production-linux.json`. There are two places in the file where you need to change the secret."
+            }
+        },
+        "manifestVersion": 2,
+        "memoryLimit": 2147483648,
+        "website": "https://www.onlyoffice.com/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "postInstallMessage": "This app has to be setup alongside NextCloud to provide a document editor.\n\nIn your NextCloud installation, install the OnlyOffice app and configure it\nto use this app's domain and use `changeme` as the secret key.\n\n",
+        "tags": [
+            "office",
+            "nextcloud",
+            "collaboration",
+            "document",
+            "googledocs",
+            "office365"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.onlyoffice.coudronapp/onlyoffice_00.png",
+            "https://screenshots.cloudron.io/com.onlyoffice.coudronapp/onlyoffice_01.png"
+        ],
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/13/onlyoffice",
+        "documentationUrl": "https://docs.cloudron.io/packages/onlyoffice/",
+        "dockerImage": "cloudron/com.onlyoffice.coudronapp:202512180420150000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.onlyoffice.coudronapp/versions/1.24.1/icon",
+    "featured": false,
+    "ranking": 0
+}

@@ -1,0 +1,60 @@
+{
+    "id": "org.ampache.cloudronapp",
+    "creationDate": "2025-12-22T09:58:10.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-03T00:05:01.000Z",
+    "publishedAt": "2020-11-03T00:05:01.000Z",
+    "manifest": {
+        "id": "org.ampache.cloudronapp",
+        "title": "Ampache",
+        "author": "Ampache authors",
+        "description": "## About\n\nAmpache is a web based audio/video streaming application and file manager allowing you to access your\nmusic & videos from anywhere, using almost any internet enabled device.\n\nAmpache's usefulness is heavily dependent on being able to extract correct metadata from embedded tags in your\nfiles and/or the file name. Ampache is not a media organiser; it is meant to be a tool which presents an already\norganised collection in a useful way. It assumes that you know best how to manage your files and are capable of\nchoosing a suitable method for doing so.\n\n## Features\n\n* Music collection - Browse and manage your music collection through a simple web interface. Synchronize local and remote catalogs to an unique consistent collection.\n* Music streaming - Stream your music to your preferred player, control it with Localplay or directly listen on the web page with HTML5 player.\n* Open source - Completely Free and Open Source since 2001, AGPLv3 license. Get involved and take control.\n* Ampache everywhere - Listen to your music from your phone, tablet or television. At home, at work or in vacation: get Ampache everywhere using a compatible client!\n\n",
+        "changelog": "* Update dependency ampache/ampache to v7.8.0\n",
+        "tagline": "For the love of music",
+        "version": "1.24.0",
+        "upstreamVersion": "7.8.0",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "memoryLimit": 268435456,
+        "addons": {
+            "localstorage": [],
+            "ldap": [],
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "http://www.ampache.org",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "music player",
+            "streaming",
+            "media",
+            "mp3"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.ampache.cloudronapp/home.png",
+            "https://screenshots.cloudron.io/org.ampache.cloudronapp/album_trending.png",
+            "https://screenshots.cloudron.io/org.ampache.cloudronapp/lumm-music-player.png",
+            "https://screenshots.cloudron.io/org.ampache.cloudronapp/subsonic_playlists.png"
+        ],
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "postInstallMessage": "This app is pre-setup with an admin account.\n\nThe initial credentials are:\n\n**Username**: admin<br/>\n**Password**: changeme<br/>\n**Email**: admin@cloudron.local<br/>\n",
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/110/ampache",
+        "documentationUrl": "https://docs.cloudron.io/packages/ampache/",
+        "dockerImage": "cloudron/org.ampache.cloudronapp:202512220943180000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.ampache.cloudronapp/versions/1.24.0/icon",
+    "featured": false,
+    "ranking": 0
+}

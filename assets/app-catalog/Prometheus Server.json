@@ -1,0 +1,51 @@
+{
+    "id": "io.prometheus.cloudronapp",
+    "creationDate": "2026-01-08T07:52:54.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-11-11T00:38:38.000Z",
+    "publishedAt": "2020-11-11T00:38:38.000Z",
+    "manifest": {
+        "version": "2.9.1",
+        "upstreamVersion": "3.9.1",
+        "id": "io.prometheus.cloudronapp",
+        "title": "Prometheus Server",
+        "author": "Prometheus Developers",
+        "description": "## About\n\nPrometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system.\nIt collects metrics from configured targets at given intervals, evaluates rule expressions, displays\nthe results, and can trigger alerts when specified conditions are observed.\n\n## Features\n\nThe features that distinguish Prometheus from other metrics and monitoring systems are:\n\n* A multi-dimensional data model (time series defined by metric name and set of key/value dimensions)\n* PromQL, a powerful and flexible query language to leverage this dimensionality\n* No dependency on distributed storage; single server nodes are autonomous\n* An HTTP pull model for time series collection\n* Pushing time series is supported via an intermediary gateway for batch jobs\n* Targets are discovered via service discovery or static configuration\n* Multiple modes of graphing and dashboarding support\n* Support for hierarchical and horizontal federation\n\n",
+        "tagline": "From metrics to insight",
+        "healthCheckPath": "/",
+        "httpPort": 9090,
+        "icon": "logo.png",
+        "addons": {
+            "localstorage": [],
+            "proxyAuth": {
+                "basicAuth": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://prometheus.io/",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "metrics",
+            "analytics",
+            "graphite",
+            "collect",
+            "graphs"
+        ],
+        "changelog": "* Update prometheus to 3.9.1\n* [Full Changelog](https://github.com/prometheus/prometheus/releases/tag/v3.9.1)\n* [BUGFIX] Agent: fix crash shortly after startup from invalid type of object. [#&#8203;17802](https://github.com/prometheus/prometheus/issues/17802)\n* [BUGFIX] Scraping: fix relabel keep/drop not working. [#&#8203;17807](https://github.com/prometheus/prometheus/issues/17807)\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/prometheus/",
+        "minBoxVersion": "7.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/112/prometheus",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.prometheus.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/io.prometheus.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/io.prometheus.cloudronapp/3.png"
+        ],
+        "dockerImage": "cloudron/io.prometheus.cloudronapp:202601080521120000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.prometheus.cloudronapp/versions/2.9.1/icon",
+    "featured": false,
+    "ranking": 0
+}

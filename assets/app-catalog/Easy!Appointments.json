@@ -1,0 +1,61 @@
+{
+    "id": "org.easyappointments.cloudronapp",
+    "creationDate": "2025-08-27T07:27:10.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-02-03T16:56:38.000Z",
+    "publishedAt": "2021-02-03T16:56:38.000Z",
+    "manifest": {
+        "id": "org.easyappointments.cloudronapp",
+        "version": "1.7.1",
+        "upstreamVersion": "1.5.2",
+        "title": "Easy!Appointments",
+        "tagline": "Appointment Scheduler",
+        "website": "https://easyappointments.org",
+        "author": "Easy!Appointments developers",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "description": "## About\n\nEasy!Appointments is a web appointment scheduler.\n\nUsers will be able to reach the application through their web browsers by using an active internet connection, just like visiting a normal website.\nIt allows your customers to book appointments with you via the web.\n\nMoreover, it provides the ability to sync your data with Google Calendar so you can use them with other services.\n\n## Easy To Use\n\nMade with simplicity in mind Easy!Appointments feels directly familiar, with the right actions placed in the right positions you will only have to concentrate on your work.\n\n## Performance\n\nActively maintained by experienced developers and battle tested by big organizations, Easy!Appointments has an ecosystem you can trust.\n\n## Highly Customizable\n\nEasy!Appointments has a very flexible and versatile codebase that can be customized to serve custom use cases and external system integrations.\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: administrator<br/>\n**Password**: administrator<br/>\n\n",
+        "changelog": "* Update easyappointments to 1.5.2\n* [Full Changelog](https://github.com/alextselegidis/easyappointments/releases/tag/1.5.2)\n* Fix the GTag script URL html rendering ([#&#8203;1666](https://github.com/alextselegidis/easyappointments/issues/1666))  \n* Fix the \"Load More\" JS error in secretaries page ([#&#8203;1677](https://github.com/alextselegidis/easyappointments/issues/1677))  \n* Fix the PHP compatibility error of the appointments index API endpoint ([#&#8203;1678](https://github.com/alextselegidis/easyappointments/issues/1678))  \n* Catch individual email delivery exceptions ([#&#8203;1670](https://github.com/alextselegidis/easyappointments/issues/1670))  \n* Apply permission checks to the appointment and unavailability search ([#&#8203;1753](https://github.com/alextselegidis/easyappointments/issues/1753))  \n* Make sure the sync button is visible on provider log in ([#&#8203;1749](https://github.com/alextselegidis/easyappointments/issues/1749))  \n* Update unavailable dates after applying appointment data while rescheduling ([#&#8203;1662](https://github.com/alextselegidis/easyappointments/issues/1662))  \n* Make sure that any-provider does not include hidden providers while generating availability ([#&#8203;1733](https://github.com/alextselegidis/easyappointments/issues/1733))  \n* Provide \"text\" version of the emails in addition to HTML ([#&#8203;1711](https://github.com/alextselegidis/easyappointments/issues/1711))  \n* Trigger webhook requests when managing records via the API ([#&#8203;1676](https://github.com/alextselegidis/easyappointments/issues/1676))\n",
+        "tags": [
+            "appointments",
+            "organize",
+            "scheduler"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.easyappointments.cloudronapp/easyappointments-01.png"
+        ],
+        "healthCheckPath": "/",
+        "configurePath": "/index.php/backend",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "scheduler": {
+                "sync": {
+                    "schedule": "*/5 * * * *",
+                    "command": "/app/pkg/cron.sh"
+                }
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password immediately."
+            }
+        },
+        "documentationUrl": "https://docs.cloudron.io/packages/easyappointments",
+        "minBoxVersion": "8.0.0",
+        "forumUrl": "https://forum.cloudron.io/category/123/easy-appointments",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.easyappointments.cloudronapp:202508270023250000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.easyappointments.cloudronapp/versions/1.7.1/icon",
+    "featured": false,
+    "ranking": 0
+}

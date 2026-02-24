@@ -1,0 +1,61 @@
+{
+    "id": "io.cloudron.surfer",
+    "creationDate": "2026-01-12T10:15:59.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2015-07-01T01:12:42.000Z",
+    "publishedAt": "2015-07-01T01:12:42.000Z",
+    "manifest": {
+        "id": "io.cloudron.surfer",
+        "title": "Surfer",
+        "author": "Cloudron Team",
+        "version": "6.4.6",
+        "upstreamVersion": "6.4.0",
+        "description": "### Overview\n\nSurfer is a Simple static file server. It comes with a webinterface and commandline tooling to manage files.\n\nAny `index.html` file in a directory will be served up automatically.\n\nAdditionaly, the public site can be password or user protected.\n\n### Webinterface\n\n * Upload files\n * Create directories\n * Remove files and directories\n\n### Commandline tool\n\nFirst, install the surfer cli tool using npm.\n\n    sudo npm -g install cloudron-surfer\n\n\nConfigure cli using your app domain and an API token created via the surfer admin user interface:\n\n    surfer config --server <appdomain> --token <apiAccessToken>\n\n\nPut some files:\n\n    surfer put [file]\n",
+        "tagline": "Static file server",
+        "tags": [
+            "fileserver",
+            "webserver",
+            "hosting",
+            "server",
+            "ftp",
+            "sftp",
+            "webdav"
+        ],
+        "healthCheckPath": "/api/healthcheck",
+        "configurePath": "/_admin",
+        "httpPort": 3000,
+        "minBoxVersion": "7.5.2",
+        "manifestVersion": 2,
+        "multiDomain": true,
+        "website": "https://git.cloudron.io/cloudron/surfer",
+        "documentationUrl": "https://docs.cloudron.io/packages/surfer/",
+        "forumUrl": "https://forum.cloudron.io/category/28/surfer",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "addons": {
+            "oidc": {
+                "loginRedirectUri": "/api/oidc/callback"
+            },
+            "localstorage": {
+                "ftp": {
+                    "uid": 1000,
+                    "uname": "cloudron"
+                }
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.cloudron.surfer/img01.png",
+            "https://screenshots.cloudron.io/io.cloudron.surfer/img02.png",
+            "https://screenshots.cloudron.io/io.cloudron.surfer/img03.png"
+        ],
+        "changelog": "* Update surfer to 6.4.0\n* Fix breadcrumbs in public folder listing\n",
+        "postInstallMessage": "To access the admin interface, visit `/_admin`.\n\n",
+        "dockerImage": "cloudron/io.cloudron.surfer:202601121002470000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.cloudron.surfer/versions/6.4.6/icon",
+    "featured": true,
+    "ranking": 0
+}

@@ -1,0 +1,63 @@
+{
+    "id": "media.emby.cloudronapp",
+    "creationDate": "2026-01-09T08:17:21.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-06-12T13:53:00.000Z",
+    "publishedAt": "2019-06-12T13:53:00.000Z",
+    "manifest": {
+        "id": "media.emby.cloudronapp",
+        "title": "Emby",
+        "author": "Emby Developers",
+        "description": "### Overview\n\nEmby Server is a personal media server with apps on just about every device.\n\nBringing all of your home videos, music, and photos together into one place has\nnever been easier. Your personal Emby Server automatically converts and streams\nyour media on-the-fly to play on any device.\n\n### Features\n* Your Media on Any Device\n* Easy Access\n* Live TV\n* Mobile Sync\n* Manage Your Home\n* Chromecast\n* Beautiful Displays\n* Parental Controls\n* Cloud Sync\n* Manage Your Media\n* Easy DLNA\n* Web-Based Management\n",
+        "changelog": "* Update Emby.Releases to 4.9.3.0\n* [Full Changelog](https://github.com/MediaBrowser/Emby.Releases/releases/tag/4.9.3.0)\n* Add user option to set user's auto remote quality  \n* Add library option to use legacy folder scanning method  \n* Music transcoding fixes  \n* Add landing tab option for book libraries  \n* Support volume control with youtube trailer player  \n* Update mixed content tabs to combine Movies & Shows  \n* Fix maintenance mode blocking some settings screens  \n* Fix embedded audio fields not getting rescanned on file changes  \n* Fix loss of genre and collection images after deleting a movie  \n* Fix latest section not showing items for some channel plugins\n",
+        "postInstallMessage": "This package is setup to have libraries in the following directories:\n\n* Movies - `/app/data/libraries/movies`\n* Shows - `/app/data/libraries/shows`\n* Photos - `/app/data/libraries/photos`\n* Music - `/app/data/libraries/music`\n\nContent has to be uploaded into Emby using SFTP or the File Manager.\n\n",
+        "tagline": "Take your Media anywhere",
+        "version": "1.18.2",
+        "upstreamVersion": "4.9.3.0",
+        "healthCheckPath": "/",
+        "httpPort": 8096,
+        "addons": {
+            "localstorage": {
+                "ftp": {
+                    "uid": 1000,
+                    "uname": "cloudron"
+                }
+            }
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first visit, set up an admin account in Emby."
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://emby.media/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "movies",
+            "mediacenter",
+            "plex",
+            "photos",
+            "videos",
+            "media"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/media.emby.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/media.emby.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/media.emby.cloudronapp/3.png"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/emby",
+        "forumUrl": "https://forum.cloudron.io/category/62/emby",
+        "minBoxVersion": "8.0.0",
+        "capabilities": [
+            "vaapi"
+        ],
+        "dockerImage": "cloudron/media.emby.cloudronapp:202601090121570000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/media.emby.cloudronapp/versions/1.18.2/icon",
+    "featured": false,
+    "ranking": 0
+}

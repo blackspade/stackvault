@@ -1,0 +1,42 @@
+{
+    "id": "org.openwebcalendar.cloudronapp",
+    "creationDate": "2025-08-18T05:12:08.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-12-16T17:59:27.000Z",
+    "publishedAt": "2023-12-16T17:59:27.000Z",
+    "manifest": {
+        "id": "org.openwebcalendar.cloudronapp",
+        "title": "Open Web Calendar",
+        "author": "Nicco Kunzmann",
+        "tagline": "Embed a web calendar into your website",
+        "version": "1.13.0",
+        "upstreamVersion": "1.51",
+        "minBoxVersion": "7.5.0",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "description": "### Overview\n\nThe Open Web Calendar uses ICS/ICal calendars online and displays them in one calendar. You can use it with Nextcloud, Outlook, Google Calendar, Meetup and other calendar systems using the ICS standard.\n",
+        "forumUrl": "https://forum.cloudron.io/category/180/open-web-calendar",
+        "documentationUrl": "https://docs.cloudron.io/packages/openwebcalendar/",
+        "website": "https://github.com/niccokunzmann/open-web-calendar/",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "embed",
+            "calendar",
+            "ics"
+        ],
+        "changelog": "* Update open-web-calendar to 1.51\n* [Full Changelog](https://open-web-calendar.quelltext.eu/changelog/#v151)\n* Update dependencies\n* Update Dutch translation by Mark Kuiphuis and michte, Finnish by Ricky Tigg, Tamil by தமிழ்நேரம், Icelandic by Sveinn í Felli, Ukrainian by Максим Горпиніч, Slovak by Warder, Kabyle by ButterflyOfFire, Chinese (Simplified Han script) by Alioc\n",
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.openwebcalendar.cloudronapp/owc_00.png"
+        ],
+        "addons": [],
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.openwebcalendar.cloudronapp:202508180319360000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.openwebcalendar.cloudronapp/versions/1.13.0/icon",
+    "featured": false,
+    "ranking": 0
+}

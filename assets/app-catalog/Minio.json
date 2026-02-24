@@ -1,0 +1,62 @@
+{
+    "id": "io.minio.cloudronapp",
+    "creationDate": "2025-10-21T10:04:30.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-01-24T16:35:30.000Z",
+    "publishedAt": "2017-01-24T16:35:30.000Z",
+    "manifest": {
+        "id": "io.minio.cloudronapp",
+        "title": "Minio",
+        "author": "Minio Developers",
+        "description": "## About\n\nMinio is a distributed object storage server built for cloud applications and devops.\n\n## Features\n\n### Amazon S3 Compatible\n\nMinio implements Amazon S3 v4 APIs. Minio also includes client SDKs and a console utility.\n\n### Minimalist Design\n\nMinio is deeply influenced by minimalism. We believe that only simple things scale.\n\n### Apache License 2.0\n\nMinio is free software, released under Apache license v2.0. Minio has an active developer and user community.\n\n### Lambda Functions\n\nMinio triggers Lambda functions through event notification service. In addition Minio also supports simple queueing service for AMQP, Elasticsearch, Redis, NATS and Postgres targets.\n\n### Erasure Code & Bitrot Protection\n\nMinio protects data against hardware failures and silent data corruption using erasure code and checksums. You may lose half the number of drives and still recover from it.\n\n### Written in Go\n\nGo is an emerging language of choice for modern cloud infrastructure projects. Go language enables Minio to be highly concurrent and lightweight.\n",
+        "changelog": "* Update minio to RELEASE.2025-10-15T17-29-55Z\n* [Full Changelog](https://github.com/minio/minio/releases/tag/RELEASE.2025-10-15T17-29-55Z)\n* A CVE was reported [Privilege Escalation via Session Policy Bypass in Service Accounts and STS](https://github.com/minio/minio/security/advisories/GHSA-jjjj-jwhf-8rgr) and fixed in this release,\n* fix: remove unnecessary replication checks by [@0xMALVEE](https://github.com/0xMALVEE) in [#21569](https://github.com/minio/minio/pull/21569)\n* LDAP TLS handshake fails with StartTLS and tls_skip_verify=off by [@mosesdd](https://github.com/mosesdd) in [#21582](https://github.com/minio/minio/pull/21582)\n* fix: incorrect poolID when after decommission adding pools by [@jiuker](https://github.com/jiuker) in [#21590](https://github.com/minio/minio/pull/21590)\n* fix: after saveRebalanceStats cancel will be empty by [@jiuker](https://github.com/jiuker) in [#21597](https://github.com/minio/minio/pull/21597)\n* Use new gofumpt by [@klauspost](https://github.com/klauspost) in [#21613](https://github.com/minio/minio/pull/21613)\n* fix: timeN function return final closure not be called by [@drivebyer](https://github.com/drivebyer) in [#21615](https://github.com/minio/minio/pull/21615)\n* fix: allow trailing slash in AWS S3 POST policies by [@cduzer](https://github.com/cduzer) in [#21612](https://github.com/minio/minio/pull/21612)\n* fix: check sub-policy properly when present by [@donatello](https://github.com/donatello) in [#21642](https://github.com/minio/minio/pull/21642)\n",
+        "tagline": "Distributed object storage",
+        "version": "5.3.0",
+        "upstreamVersion": "RELEASE.2025-10-15T17-29-55Z",
+        "healthCheckPath": "/minio/login",
+        "memoryLimit": 2147483648,
+        "httpPort": 8000,
+        "httpPorts": {
+            "API_SERVER_DOMAIN": {
+                "title": "API Server Domain",
+                "description": "The domain name for MinIO (S3) API requests",
+                "containerPort": 9000,
+                "defaultValue": "minio-api"
+            }
+        },
+        "addons": {
+            "localstorage": []
+        },
+        "optionalSso": true,
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin credentials by following this [guide](https://cloudron.io/documentation/apps/minio/#admin-credentials)"
+            }
+        },
+        "manifestVersion": 2,
+        "website": "http://www.minio.io",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/69/minio",
+        "documentationUrl": "https://docs.cloudron.io/packages/minio/",
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "tags": [
+            "storage",
+            "hosting",
+            "s3",
+            "objectstore"
+        ],
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.minio.cloudronapp/pic1.png",
+            "https://screenshots.cloudron.io/io.minio.cloudronapp/pic2.png"
+        ],
+        "postInstallMessage": "Please use the following credentials to login:\n\n**Username**: minioadmin<br/>\n**Password**: minioadmin<br/>\n\n",
+        "dockerImage": "cloudron/io.minio.cloudronapp:202510210937550000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.minio.cloudronapp/versions/5.3.0/icon",
+    "featured": false,
+    "ranking": 0
+}

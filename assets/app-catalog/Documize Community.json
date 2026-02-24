@@ -1,0 +1,48 @@
+{
+    "id": "com.documize.cloudronapp",
+    "creationDate": "2023-10-13T04:14:30.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.documize.cloudronapp",
+        "title": "Documize Community",
+        "author": "Documize Inc",
+        "description": "Documize is an open source modern, lightweight and comprehensive alternative to Confluence and other such solutions.",
+        "tagline": "Knowledge Management Software",
+        "version": "1.6.0",
+        "upstreamVersion": "5.10.0",
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "contactEmail": "support@cloudron.io",
+        "addons": {
+            "ldap": [],
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "manifestVersion": 2,
+        "icon": "file://logo.png",
+        "tags": [
+            "wiki",
+            "notes",
+            "confluence",
+            "docs",
+            "knowledgebase"
+        ],
+        "changelog": "* Update base image to 4.2.0\n",
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Email**:    admin@cloudron.local<br/>\n**Password**: changeme<br/>\n\nPlease change the admin password and email immediately.\n\n**LDAP must by synced manually by the admin in the User Management page for Cloudron users to login.**\n",
+        "website": "https://documize.com",
+        "minBoxVersion": "7.2.0",
+        "forumUrl": "https://forum.cloudron.io/category/150/documize",
+        "documentationUrl": "https://docs.cloudron.io/apps/documize",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.documize.cloudronapp/home.png",
+            "https://screenshots.cloudron.io/com.documize.cloudronapp/zerabase.png"
+        ],
+        "dockerImage": "cloudron/com.documize.cloudronapp:20231013-034957-067bda72a"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.documize.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

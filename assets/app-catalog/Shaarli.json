@@ -1,0 +1,52 @@
+{
+    "id": "com.github.shaarli",
+    "creationDate": "2026-01-24T17:51:22.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2017-02-21T07:02:28.000Z",
+    "publishedAt": "2017-02-21T07:02:28.000Z",
+    "manifest": {
+        "id": "com.github.shaarli",
+        "author": "Shaarli Community",
+        "title": "Shaarli",
+        "description": "### About\n\nShaarli is a personal, minimalist, super-fast, database free, bookmarking service.\n\nDo you want to share the links you discover? Shaarli is a minimalist delicious clone\nthat you can install on your own server.\n\nIt is designed to be personal (single-user), fast and handy.\n\n",
+        "tagline": "The personal, minimalist, bookmarking service",
+        "version": "2.18.1",
+        "upstreamVersion": "0.16.1",
+        "website": "https://github.com/shaarli/Shaarli",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "manifestVersion": 2,
+        "contactEmail": "support@cloudron.io",
+        "icon": "logo.png",
+        "changelog": "* Update Shaarli to 0.16.1\n* [Full Changelog](https://github.com/shaarli/Shaarli/releases/tag/v0.16.1)\n* fix Docker container failing to start (`/bin/s6-svscan: no such file or directory`)\n",
+        "addons": {
+            "localstorage": []
+        },
+        "checklist": {
+            "register-admin": {
+                "message": "On first vist, set up an username and password"
+            }
+        },
+        "tags": [
+            "bookmark",
+            "delicous"
+        ],
+        "postInstallMessage": "Shaarli is a single user application.\n",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.github.shaarli/img-01.png",
+            "https://screenshots.cloudron.io/com.github.shaarli/img-02.png",
+            "https://screenshots.cloudron.io/com.github.shaarli/img-03.png"
+        ],
+        "minBoxVersion": "8.0.0",
+        "memoryLimit": 268435456,
+        "forumUrl": "https://forum.cloudron.io/category/82/shaarli",
+        "documentationUrl": "https://docs.cloudron.io/packages/shaarli/",
+        "dockerImage": "cloudron/com.github.shaarli:202601241723380000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.github.shaarli/versions/2.18.1/icon",
+    "featured": false,
+    "ranking": 0
+}

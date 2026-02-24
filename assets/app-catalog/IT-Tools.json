@@ -1,0 +1,51 @@
+{
+    "id": "tech.ittools.cloudron",
+    "creationDate": "2026-01-13T12:21:12.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-06-08T08:08:59.000Z",
+    "publishedAt": "2023-06-08T08:08:59.000Z",
+    "manifest": {
+        "id": "tech.ittools.cloudron",
+        "title": "IT-Tools",
+        "author": "Corentin Thomasset",
+        "description": "## About\n\nIT Tools is a free and open-source collection of handy online tools for developers & people working in IT. It includes a token generator, case converter, base converter QR code generator, Git cheatsheet, lorem ipsum generator,.. and many more !\n\n",
+        "tagline": "online tools for developers",
+        "version": "1.8.0",
+        "contactEmail": "support@cloudron.io",
+        "upstreamVersion": "2025.12.7",
+        "healthCheckPath": "/",
+        "optionalSso": true,
+        "httpPort": 80,
+        "addons": {
+            "proxyAuth": []
+        },
+        "icon": "logo.png",
+        "manifestVersion": 2,
+        "tags": [
+            "tools",
+            "development",
+            "productivity",
+            "converter",
+            "automation",
+            "nocode",
+            "devops"
+        ],
+        "changelog": "* Move app to maintained fork - https://github.com/sharevb/it-tools\n",
+        "website": "https://it-tools.tech",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/tech.ittools.cloudron/qrcode-generator.png",
+            "https://screenshots.cloudron.io/tech.ittools.cloudron/network-tools.png",
+            "https://screenshots.cloudron.io/tech.ittools.cloudron/token-generator.png"
+        ],
+        "minBoxVersion": "7.3.0",
+        "forumUrl": "https://forum.cloudron.io/category/165/it-tools",
+        "documentationUrl": "https://docs.cloudron.io/packages/it-tools/",
+        "dockerImage": "cloudron/tech.ittools.cloudron:202601131115250000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/tech.ittools.cloudron/versions/1.8.0/icon",
+    "featured": false,
+    "ranking": 0
+}

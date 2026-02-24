@@ -1,0 +1,54 @@
+{
+    "id": "io.cloudron.cubby",
+    "creationDate": "2026-01-14T12:27:21.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-05-26T12:26:37.000Z",
+    "publishedAt": "2021-05-26T12:26:37.000Z",
+    "manifest": {
+        "id": "io.cloudron.cubby",
+        "title": "Cubby",
+        "author": "Cloudron Team",
+        "tagline": "Collaborative filemanager",
+        "version": "2.7.0",
+        "upstreamVersion": "2.7.0",
+        "minBoxVersion": "7.5.0",
+        "healthCheckPath": "/api/healthcheck",
+        "icon": "file://logo.png",
+        "description": "### Overview\n\nManage files on your server together.\n",
+        "forumUrl": "https://forum.cloudron.io/category/132/cubby",
+        "documentationUrl": "https://docs.cloudron.io/packages/cubby/",
+        "website": "https://getcubby.org",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "file",
+            "sharing",
+            "documents",
+            "dropbox",
+            "cloud"
+        ],
+        "changelog": "* Update cubby to 2.7.0\n",
+        "httpPort": 3000,
+        "memoryLimit": 536870912,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/api/v1/callback,/api/v1/mobile/callback,org.getcubby://auth/callback"
+            }
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.cloudron.cubby/cubby_01.png"
+        ],
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/io.cloudron.cubby:202601141100590000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.cloudron.cubby/versions/2.7.0/icon",
+    "featured": false,
+    "ranking": 0
+}

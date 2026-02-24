@@ -1,0 +1,63 @@
+{
+    "id": "io.mealie.cloudronapp",
+    "creationDate": "2026-02-05T07:49:28.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-03-30T12:49:30.000Z",
+    "publishedAt": "2023-03-30T12:49:30.000Z",
+    "manifest": {
+        "id": "io.mealie.cloudronapp",
+        "title": "Mealie",
+        "author": "Hayden",
+        "description": "## Overview\n\nMealie is a recipe manager and meal planner for the whole family.\nEasily add recipes into your database by providing the url and Mealie will automatically import the relevant data or add a family recipe with the UI editor.\n",
+        "tagline": "Recipe Management",
+        "version": "1.33.1",
+        "upstreamVersion": "3.10.2",
+        "memoryLimit": 2147483648,
+        "healthCheckPath": "/",
+        "httpPort": 9000,
+        "addons": {
+            "localstorage": [],
+            "postgresql": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "oidc": {
+                "loginRedirectUri": "/login"
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the default admin password"
+            }
+        },
+        "optionalSso": true,
+        "manifestVersion": 2,
+        "website": "https://mealie.io",
+        "contactEmail": "support@clourdon.io",
+        "icon": "file://logo.png",
+        "tags": [
+            "recipe",
+            "household",
+            "food",
+            "cooking",
+            "cookbook",
+            "meal-planner"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: changeme@example.com<br/>\n**Password**: MyPassword<br/>\n\n",
+        "changelog": "* Update mealie to 3.10.2\n* [Full Changelog](https://github.com/mealie-recipes/mealie/releases/tag/v3.10.2)\n* fix: use BASE\\_URL config for redirect\\_url  if available [@&#8203;whattheschnell](https://github.com/whattheschnell) ([#&#8203;6995](https://github.com/mealie-recipes/mealie/issues/6995))\n* fix: OIDC caching [@&#8203;michael-genson](https://github.com/michael-genson) ([#&#8203;7009](https://github.com/mealie-recipes/mealie/issues/7009))\n* fix(deps): update dependency fastapi to v0.128.1 [@&#8203;renovate](https://github.com/renovate) ([#&#8203;7008](https://github.com/mealie-recipes/mealie/issues/7008))\n",
+        "minBoxVersion": "8.0.0",
+        "documentationUrl": "https://docs.cloudron.io/packages/mealie/",
+        "forumUrl": "https://forum.cloudron.io/category/161/mealie",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.mealie.cloudronapp/mealie_00.png",
+            "https://screenshots.cloudron.io/io.mealie.cloudronapp/mealie_01.png"
+        ],
+        "dockerImage": "cloudron/io.mealie.cloudronapp:202602050020330000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.mealie.cloudronapp/versions/1.33.1/icon",
+    "featured": false,
+    "ranking": 0
+}

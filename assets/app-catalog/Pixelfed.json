@@ -1,0 +1,73 @@
+{
+    "id": "org.pixelfed.cloudronapp",
+    "creationDate": "2025-09-04T06:08:19.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2020-07-02T04:59:35.000Z",
+    "publishedAt": "2020-07-02T04:59:35.000Z",
+    "manifest": {
+        "id": "org.pixelfed.cloudronapp",
+        "title": "Pixelfed",
+        "author": "Pixelfed developers",
+        "description": "## About\n\nPixelfed is a free and ethical photo sharing platform, powered by ActivityPub federation.\n\n## Features\n\n* Ad-Free - No ads in timelines, or anywhere\n* Chronological - Timelines properly ordered, no algorithms\n* Discover - Explore new content and creators\n* Filters - Add optional filters to your photos\n* Photo Albums - Share your photos, one post at a time\n* Privacy Focused - No 3rd party analytics or tracking included\n\n",
+        "tagline": "Photo Sharing. For Everyone.",
+        "version": "1.22.2",
+        "upstreamVersion": "0.12.6",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "memoryLimit": 1073741824,
+        "manifestVersion": 2,
+        "website": "https://pixelfed.org/",
+        "configurePath": "/i/admin/dashboard",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "addons": {
+            "mysql": [],
+            "localstorage": [],
+            "sendmail": {
+                "supportsDisplayName": true
+            },
+            "redis": [],
+            "scheduler": {
+                "runner": {
+                    "schedule": "*/5 * * * *",
+                    "command": "echo '==> Running schduler' && sudo -E -u www-data php artisan schedule:run"
+                }
+            }
+        },
+        "tags": [
+            "photos",
+            "sharing",
+            "instagram",
+            "pictures",
+            "activitypub",
+            "federated",
+            "flickr",
+            "gallery"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/pixelfed/",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.pixelfed.cloudronapp/1.png",
+            "https://screenshots.cloudron.io/org.pixelfed.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.pixelfed.cloudronapp/3.png"
+        ],
+        "changelog": "* Update pixelfed to 0.12.6\n* [Full Changelog](https://github.com/pixelfed/pixelfed/releases/tag/v0.12.6)\n* Pinned Posts ([2f655d000](https://github.com/pixelfed/pixelfed/commit/2f655d000))\n* Custom Filters ([#&#8203;5928](https://github.com/pixelfed/pixelfed/pull/5928)) ([437d742ac](https://github.com/pixelfed/pixelfed/commit/437d742ac))\n* Legal Notice page ([#&#8203;5606](https://github.com/pixelfed/pixelfed/pull/5606)) ([c72fa0529](https://github.com/pixelfed/pixelfed/commit/c72fa0529))\n* OIDC Support ([#&#8203;5608](https://github.com/pixelfed/pixelfed/pull/5608)) ([c72fa0529](https://github.com/pixelfed/pixelfed/commit/c72fa0529))\n* Avif, HEIC, webp, libvips support + Preserve ICC color profiles  ([ab9c13fe0](https://github.com/pixelfed/pixelfed/commit/ab9c13fe0))\n* Added StoryIndexService, an optimized fan-out-on-write service for story carousel generation/rendering ([950fc0474](https://github.com/pixelfed/pixelfed/commit/950fc0474))\n* Update PublicApiController, use pixelfed entities for /api/pixelfed/v1/accounts/id/statuses with bookmarked state ([5ddb6d842](https://github.com/pixelfed/pixelfed/commit/5ddb6d842))\n* Update Profile.vue, fix pagination ([2ea107805](https://github.com/pixelfed/pixelfed/commit/2ea107805))\n* Update ProfileMigrationController, fix race condition by chaining batched jobs ([3001365025](https://github.com/pixelfed/pixelfed/commit/3001365025))\n* Update Instance total post, add optional estimation for huge status tables ([5a5821fe8](https://github.com/pixelfed/pixelfed/commit/5a5821fe8))\n",
+        "postInstallMessage": "On first visit, register yourself and sign in.\n\n",
+        "checklist": {
+            "register-admin": {
+                "message": "[Make](https://docs.cloudron.io/packages/pixelfed/#admin) one of the registered users an admin"
+            },
+            "disable-registration": {
+                "message": "[Disable registration](https://docs.cloudron.io/packages/pixelfed/#disable-registration), if required, to prevent misuse"
+            }
+        },
+        "forumUrl": "https://forum.cloudron.io/category/90/pixelfed",
+        "minBoxVersion": "8.0.1",
+        "dockerImage": "cloudron/org.pixelfed.cloudronapp:202509031326430000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.pixelfed.cloudronapp/versions/1.22.2/icon",
+    "featured": false,
+    "ranking": 0
+}

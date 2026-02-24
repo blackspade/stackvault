@@ -1,0 +1,65 @@
+{
+    "id": "com.mirotalksfu.cloudronapp",
+    "creationDate": "2025-01-24T11:44:16.000Z",
+    "publishState": "approved",
+    "manifest": {
+        "id": "com.mirotalksfu.cloudronapp",
+        "title": "MiroTalk SFU",
+        "version": "1.6.0",
+        "upstreamVersion": "1.7.10",
+        "tagline": "Real-time video calls",
+        "description": "## About\n\nSimple, Secure, Fast Real-Time Video Conferences Up to 4k and 60fps, compatible with all browsers and platforms.\n\nApp flavor with a [Selective Forwarding Unit](https://mediasoup.org/documentation/overview/).\n \n## License\n\nMiroTalk SFU is free and open-source under the terms of AGPLv3 (GNU Affero General Public License v3.0). \n\nTo obtain a MiroTalk SFU license with terms different from the AGPLv3, you can conveniently make your purchase on [CodeCanyon](https://codecanyon.net/user/miroslavpejic85/portfolio). This allows you to tailor the licensing conditions to better suit your specific requirements.\n\n## Feature\n\n* Is 100% Free - Open Source - Self Hosted and PWA!\n* No download, plug-in, or login required, entirely browser-based\n* Unlimited number of conference rooms without call time limitation\n* Translated in 133 languages\n* Host protection to ensure unauthorized access to your host\n* Possibility to Password protect the Room for the meeting\n* Desktop and Mobile compatible\n* Optimized Room URL Sharing for mobile\n* Webcam Streaming (Front - Rear for mobile)\n* Audio Streaming crystal clear with detect speaking and volume indicator\n* Screen Sharing to present documents, slides, and more...\n* File Sharing (with drag-and-drop), share any files to your participants in the room\n* Select Audio Input - Output and Video source\n* Ability to set video quality up to 4K and 60 FPS\n* Recording your Screen, Audio and Video\n* Snapshot the video frame and save it as image png\n* Chat with Emoji Picker to show you feeling, private messages, Markdown support, possibility to Save the conversations, and many more\n* ChatGPT (openAI), designed to answer users' questions, provide relevant information, and connect them with relevant resources\n* Speech recognition to send the speeches\n* Push to talk, like a walkie-talkie.\n* Advance collaborative whiteboard for the teachers\n* Share any YT Embed video, video mp4, webm, ogg and audio mp3 in real-time\n* Full-Screen Mode on mouse click on the Video element, Pin/Unpin, Zoom in-out video element\n* Possibility to Change UI Themes\n* Right-click on the Video elements for more options\n* Direct peer-to-peer connection ensures the lowest latency thanks to WebRTC\n* Supports REST API (Application Programming Interface)\n* Slack API integration\n* Sentry for error reporting\n* ...\n",
+        "changelog": "* Update mirotalksfu to 1.7.10\n",
+        "author": "Miroslav Pejic",
+        "healthCheckPath": "/",
+        "httpPort": 3010,
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "minBoxVersion": "8.1.0",
+        "multiDomain": true,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/auth/callback"
+            }
+        },
+        "optionalSso": true,
+        "tcpPorts": {
+            "SFU_TCP": {
+                "title": "SFU TCP Ports",
+                "description": "Selective Forwarding Unit TCP Ports",
+                "defaultValue": 40000,
+                "portCount": 100,
+                "containerPort": 40000
+            }
+        },
+        "udpPorts": {
+            "SFU_UDP": {
+                "title": "SFU UDP Ports (must be same as TCP ports)",
+                "description": "Selective Forwarding Unit UDP Ports",
+                "defaultValue": 40000,
+                "portCount": 100,
+                "containerPort": 40000
+            }
+        },
+        "tags": [
+            "zoom",
+            "video",
+            "conference",
+            "broadcast",
+            "communication",
+            "sfu"
+        ],
+        "website": "https://sfu.mirotalk.com/",
+        "documentationUrl": "https://docs.cloudron.io/apps/mirotalk/",
+        "forumUrl": "https://forum.cloudron.io/category/183/mirotalk",
+        "contactEmail": "support@cloudron.io",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/com.mirotalksfu.cloudronapp/mirotalksfu_00.png"
+        ],
+        "dockerImage": "cloudron/com.mirotalksfu.cloudronapp:202501240120390000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/com.mirotalksfu.cloudronapp/versions/1.6.0/icon",
+    "featured": false,
+    "ranking": 0
+}

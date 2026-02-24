@@ -1,0 +1,65 @@
+{
+    "id": "org.mautic.cloudronapp",
+    "creationDate": "2025-12-03T08:19:40.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2019-06-10T13:51:22.000Z",
+    "publishedAt": "2019-06-10T13:51:22.000Z",
+    "manifest": {
+        "id": "org.mautic.cloudronapp",
+        "title": "Mautic",
+        "author": "Mautic developers",
+        "description": "## Overview\n\nMautic is an Open Source Marketing Automation Software.\n\nMarketing automation has historically been a difficult tool to implement in a business. The Mautic community is a rich environment for you to learn from others and share your knowledge as well. Open source means more than open code. Open source is providing equality for all and a chance to improve. If you have questions then the Mautic community can help provide the answers.\n\nReady to get started with the community? You can get more involved on the Mautic website. Or follow Mautic on social media just to stay current with what's happening!\n\n### Contact Info\n\n* https://www.mautic.org\n* [@MauticCommunity](https://twitter.com/MauticCommunity) [Twitter]\n* [@MauticCommunity](https://www.facebook.com/MauticCommunity/) [Facebook]\n\n## Bug reports\n\nOpen bugs on [GitHub](https://github.com/mautic/mautic)\n",
+        "changelog": "* Update mautic to 6.0.7\n* [Full Changelog](https://github.com/mautic/mautic/releases/tag/6.0.7)\n* This release addresses several security issues. Please update at your earliest convenience after taking a backup and ensuring that it's working.\n* https://github.com/mautic/mautic/security/advisories/GHSA-3fq7-c5m8-g86x - [CVE-2025-13828](https://www.cve.org/CVERecord?id=CVE-2025-13828) - Fixed privilege escalation vulnerability in Marketplace - Reported and fixed by [@driskell](https://github.com/driskell), reviewed by [@escopecz](https://github.com/escopecz) and [@patrykgruszka](https://github.com/patrykgruszka).\n* https://github.com/mautic/mautic/security/advisories/GHSA-5xw2-57jx-pgjp - [CVE-2025-13827](https://www.cve.org/CVERecord?id=CVE-2025-13827) - Fixed file upload restriction bypass in GrapesJsBuilder  - Reported and fixed by [@driskell](https://github.com/driskell), reviewed by [@escopecz](https://github.com/escopecz) and [@patrykgruszka](https://github.com/patrykgruszka).\n* Update dependencies for M6 by [@patrykgruszka](https://github.com/patrykgruszka) in [#15666](https://github.com/mautic/mautic/pull/15666)\n* Bump guzzlehttp/oauth-subscriber to 0.8.1by [@patrykgruszka](https://github.com/patrykgruszka) in [#15678](https://github.com/mautic/mautic/pull/15678)\n",
+        "tagline": "Marketing automation for everyone",
+        "version": "5.1.4",
+        "upstreamVersion": "6.0.7",
+        "healthCheckPath": "/index.php/s/login",
+        "httpPort": 8000,
+        "memoryLimit": 1073741824,
+        "addons": {
+            "localstorage": [],
+            "mysql": [],
+            "sendmail": {
+                "optional": true,
+                "supportsDisplayName": true
+            }
+        },
+        "checklist": {
+            "change-default-password": {
+                "message": "Change the admin email and password credentials immediately."
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://www.mautic.org/",
+        "contactEmail": "support@cloudron.io",
+        "configurePath": "/s/login",
+        "icon": "file://logo.png",
+        "tags": [
+            "marketing",
+            "email",
+            "newsletter",
+            "campaigns",
+            "mailchimp",
+            "salesforce",
+            "pipedrive"
+        ],
+        "postInstallMessage": "This app is pre-setup with an admin account. The initial credentials are:\n\n**Username**: admin<br/>\n**Password**: Changeme?1234<br/>\n**Email**: admin@cloudron.local<br/>\n\n<sso>\n**IMPORTANT:** All users start as Mautic admins\n</sso>\n",
+        "documentationUrl": "https://docs.cloudron.io/packages/mautic/",
+        "minBoxVersion": "8.1.0",
+        "multiDomain": true,
+        "forumUrl": "https://forum.cloudron.io/category/46/mautic",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.mautic.cloudronapp/campaign_overview_19.png",
+            "https://screenshots.cloudron.io/org.mautic.cloudronapp/landing_page_19.png",
+            "https://screenshots.cloudron.io/org.mautic.cloudronapp/leads_list_19.png",
+            "https://screenshots.cloudron.io/org.mautic.cloudronapp/social_overview_19.png"
+        ],
+        "dockerImage": "cloudron/org.mautic.cloudronapp:202512030021140000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.mautic.cloudronapp/versions/5.1.4/icon",
+    "featured": false,
+    "ranking": 0
+}

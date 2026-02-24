@@ -1,0 +1,59 @@
+{
+    "id": "louislam.uptimekuma.app",
+    "creationDate": "2026-02-09T08:51:11.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2021-07-21T21:44:13.000Z",
+    "publishedAt": "2021-07-21T21:44:13.000Z",
+    "manifest": {
+        "id": "louislam.uptimekuma.app",
+        "title": "Uptime Kuma",
+        "author": "Uptime Kuma Team",
+        "description": "## About\n\nIt is a self-hosted monitoring tool like \"Uptime Robot\".\n \n## Feature\n\n* Monitoring uptime for HTTP(s) / TCP / Ping.\n* Fancy, Reactive, Fast UI/UX.\n* Notifications via Webhook, Telegram, Discord and email (SMTP).\n* 20 seconds interval.\n\n",
+        "tagline": "Self-hosted monitoring tool like Uptime Robot",
+        "version": "2.1.0",
+        "upstreamVersion": "2.1.0",
+        "healthCheckPath": "/",
+        "httpPort": 3001,
+        "addons": {
+            "localstorage": {
+                "sqlite": {
+                    "paths": [
+                        "/app/data/data/kuma.db"
+                    ]
+                }
+            }
+        },
+        "multiDomain": true,
+        "manifestVersion": 2,
+        "icon": "logo.png",
+        "tags": [
+            "uptime",
+            "ping",
+            "status",
+            "pingdom",
+            "pingdown",
+            "monitoring"
+        ],
+        "documentationUrl": "https://docs.cloudron.io/packages/uptime-kuma/",
+        "changelog": "* Update uptime-kuma to 2.1.0\n* [Full Changelog](https://github.com/louislam/uptime-kuma/releases/tag/2.1.0)\n* [#&#8203;6830](https://github.com/louislam/uptime-kuma/issues/6830) feat(notification): add Jira Service Management as a notification provider (Thanks [@&#8203;jankal](https://github.com/jankal))\n* [#&#8203;6777](https://github.com/louislam/uptime-kuma/issues/6777) feat: add google sheets notification provider (Thanks [@&#8203;dharunashokkumar](https://github.com/dharunashokkumar))\n* [#&#8203;6843](https://github.com/louislam/uptime-kuma/issues/6843) feat(discord): add custom message and format presets for notifications (Thanks [@&#8203;epifeny](https://github.com/epifeny))\n* [#&#8203;6804](https://github.com/louislam/uptime-kuma/issues/6804) feat(ntfy): add custom title and message templates for notifications (Thanks [@&#8203;epifeny](https://github.com/epifeny))\n* [#&#8203;6845](https://github.com/louislam/uptime-kuma/issues/6845) fix: certificate expiry (use Settings.set instead of Settings.setSetting) (Thanks [@&#8203;epifeny](https://github.com/epifeny))\n* [#&#8203;6841](https://github.com/louislam/uptime-kuma/issues/6841) fix: weblate conflict (Thanks [@&#8203;Aluisio](https://github.com/Aluisio) [@&#8203;AnnAngela](https://github.com/AnnAngela) [@&#8203;cyril59310](https://github.com/cyril59310) [@&#8203;dodog](https://github.com/dodog) [@&#8203;FunNikita](https://github.com/FunNikita) [@&#8203;Kf637](https://github.com/Kf637) [@&#8203;kurama](https://github.com/kurama) [@&#8203;mafen](https://github.com/mafen) [@&#8203;michi-onl](https://github.com/michi-onl) [@&#8203;MrEddX](https://github.com/MrEddX) [@&#8203;pmontp19](https://github.com/pmontp19))\n* [#&#8203;6835](https://github.com/louislam/uptime-kuma/issues/6835) feat(slack): Add option to include monitor group name in notifications (Thanks [@&#8203;dovansy1998](https://github.com/dovansy1998))\n* [#&#8203;6822](https://github.com/louislam/uptime-kuma/issues/6822) fix: improve monitor list selection behavior (Thanks [@&#8203;frozenflux2](https://github.com/frozenflux2))\n* [#&#8203;6805](https://github.com/louislam/uptime-kuma/issues/6805) fix: RSS pubDate timezone issue with backend test ([#&#8203;6422](https://github.com/louislam/uptime-kuma/issues/6422)) (Thanks [@&#8203;Aqudi](https://github.com/Aqudi))\n* [#&#8203;6795](https://github.com/louislam/uptime-kuma/issues/6795) fix: monitor names hidden by tags (Thanks [@&#8203;bittoby](https://github.com/bittoby))\n",
+        "postInstallMessage": "On first visit, you will be asked to set up an admin account.\n",
+        "website": "https://github.com/louislam/uptime-kuma",
+        "forumUrl": "https://forum.cloudron.io/category/133/uptime-kuma",
+        "contactEmail": "support@cloudron.io",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/louislam.uptimekuma.app/dashboard.jpg"
+        ],
+        "configurePath": "/dashboard",
+        "capabilities": [
+            "ping"
+        ],
+        "minBoxVersion": "8.2.0",
+        "dockerImage": "cloudron/louislam.uptimekuma.app:202602090716130000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/louislam.uptimekuma.app/versions/2.1.0/icon",
+    "featured": false,
+    "ranking": 0
+}

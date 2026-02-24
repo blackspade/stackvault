@@ -1,0 +1,53 @@
+{
+    "id": "org.dokuwiki.cloudronapp",
+    "creationDate": "2025-10-24T08:26:04.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2015-12-09T09:59:32.000Z",
+    "publishedAt": "2015-12-09T09:59:32.000Z",
+    "manifest": {
+        "id": "org.dokuwiki.cloudronapp",
+        "title": "DokuWiki",
+        "author": "Andreas Gohr and the DokuWiki Community",
+        "description": "DokuWiki is a simple to use and highly versatile Open Source wiki software.\n\nIt is loved by users for its clean and readable syntax. Wikis are quick to\nupdate and new pages are easily added. Designed for collaboration while \nmaintaining a history of every change, DokuWiki could be used as\n\n* Corporate Knowledge Base\n* Private notebook\n* Software manual\n* Project workspace\n* CMS – intranet\n\n#### Accounts\n\nThis app allows edits by any Cloudron user. Cloudron administrators are automatically\nmade wiki administrators.\n\n#### Changing the Logo\n\nTo change the logo upload a file named `logo.png` at the root of the wiki.\n\n#### Links\n\n* [Submit bugs and feature wishes](https://github.com/splitbrain/dokuwiki/issues)\n* [Forum](http://forum.dokuwiki.org/)\n\n",
+        "tagline": "It's better when it's simple",
+        "version": "1.26.0",
+        "upstreamVersion": "2025-10-23",
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": [],
+            "oidc": {
+                "loginRedirectUri": "/doku.php"
+            },
+            "sendmail": {
+                "supportsDisplayName": true
+            }
+        },
+        "manifestVersion": 2,
+        "website": "https://www.dokuwiki.org",
+        "contactEmail": "support@cloudron.io",
+        "tags": [
+            "wiki",
+            "collaboration"
+        ],
+        "icon": "file://logo.png",
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.dokuwiki.cloudronapp/1.gif",
+            "https://screenshots.cloudron.io/org.dokuwiki.cloudronapp/2.png",
+            "https://screenshots.cloudron.io/org.dokuwiki.cloudronapp/3.png"
+        ],
+        "changelog": "* Update dokuwiki-plugin-oauth to 2025-10-23\n",
+        "optionalSso": true,
+        "postInstallMessage": "<nosso>\nUser registration is enabled. To get started, register a new user.\n</nosso>\n\n",
+        "minBoxVersion": "8.1.0",
+        "forumUrl": "https://forum.cloudron.io/category/60/dokuwiki",
+        "documentationUrl": "https://docs.cloudron.io/packages/dokuwiki",
+        "dockerImage": "cloudron/org.dokuwiki.cloudronapp:202510240519460000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.dokuwiki.cloudronapp/versions/1.26.0/icon",
+    "featured": false,
+    "ranking": 0
+}

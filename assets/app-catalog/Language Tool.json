@@ -1,0 +1,55 @@
+{
+    "id": "org.languagetool.cloudronapp",
+    "creationDate": "2026-02-12T10:55:45.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2023-01-26T21:10:35.000Z",
+    "publishedAt": "2023-01-26T21:10:35.000Z",
+    "manifest": {
+        "id": "org.languagetool.cloudronapp",
+        "title": "Language Tool",
+        "tagline": "Intelligent writing assistant",
+        "author": "Language Tool community",
+        "description": "### Overview\n\nLanguageTool is an Open Source proofreading software for English, French, German, Polish, Russian, and more than 20 other languages.\nIt finds many errors that a simple spell checker cannot detect.\n",
+        "version": "1.29.0",
+        "upstreamVersion": "NewVersionIsNotSet",
+        "tags": [
+            "translation",
+            "translate",
+            "grammar",
+            "checking",
+            "writing"
+        ],
+        "website": "https://languagetool.org",
+        "documentationUrl": "https://docs.cloudron.io/packages/languagetool",
+        "forumUrl": "https://forum.cloudron.io/category/157/languagetool",
+        "contactEmail": "support@cloudron.io",
+        "changelog": "* Update languagetool to b3d204f\n",
+        "memoryLimit": 3758096384,
+        "healthCheckPath": "/",
+        "httpPort": 8000,
+        "addons": {
+            "localstorage": []
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/org.languagetool.cloudronapp/languagetool_00.png"
+        ],
+        "checklist": {
+            "change-url": {
+                "message": "App uses `/v2` as the API URL. Please [change](https://docs.cloudron.io/apps/languagetool/#security) it immediately to prevent misuse"
+            },
+            "setup-ngrams": {
+                "message": "Setup [ngrams](https://docs.cloudron.io/apps/languagetool/#n-grams) to reliably detect typos"
+            }
+        },
+        "minBoxVersion": "8.2.0",
+        "icon": "file://logo.png",
+        "manifestVersion": 2,
+        "dockerImage": "cloudron/org.languagetool.cloudronapp:202602120921580000"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/org.languagetool.cloudronapp/versions/1.29.0/icon",
+    "featured": false,
+    "ranking": 0
+}

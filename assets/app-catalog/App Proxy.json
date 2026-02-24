@@ -1,0 +1,45 @@
+{
+    "id": "io.cloudron.builtin.appproxy",
+    "creationDate": "2023-07-10T11:12:17.000Z",
+    "publishState": "approved",
+    "userId": "2098c1bb-8a98-48cd-ab8c-6137d23cacb2",
+    "visibility": "listed",
+    "releaseState": "stable",
+    "ts": "2022-06-07T20:32:59.000Z",
+    "publishedAt": "2022-06-07T20:32:59.000Z",
+    "manifest": {
+        "id": "io.cloudron.builtin.appproxy",
+        "title": "App Proxy",
+        "author": "Cloudron Team",
+        "version": "1.0.2",
+        "upstreamVersion": "1.0.2",
+        "description": "App Proxy is a service that lets one publish a public HTTPS URL endpoint for a non-Cloudron hosted application.\nWhen a user visits the public endpoint, App Proxy proxies requests to the hosted application.\n",
+        "tagline": "Proxy an app through Cloudron",
+        "tags": [
+            "proxy",
+            "external"
+        ],
+        "healthCheckPath": "/",
+        "httpPort": 3000,
+        "minBoxVersion": "7.4.2",
+        "dockerImage": "cloudron/io.cloudron.builtin.appproxy:20220505-110926-799094b01",
+        "manifestVersion": 2,
+        "multiDomain": true,
+        "website": "https://cloudron.io",
+        "documentationUrl": "https://docs.cloudron.io/apps/#app-proxy",
+        "forumUrl": "https://forum.cloudron.io",
+        "contactEmail": "support@cloudron.io",
+        "icon": "file://logo.png",
+        "optionalSso": true,
+        "addons": {
+            "proxyAuth": []
+        },
+        "mediaLinks": [
+            "https://screenshots.cloudron.io/io.cloudron.builtin.appproxy/diagram.png"
+        ],
+        "changelog": "* Fix documentation URL typo\n \n"
+    },
+    "iconUrl": "https://api.cloudron.io/api/v1/apps/io.cloudron.builtin.appproxy/versions/1.0.2/icon",
+    "featured": false,
+    "ranking": 0
+}
