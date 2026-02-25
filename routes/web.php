@@ -24,6 +24,7 @@ use App\Controllers\DnsTemplateController;
 use App\Controllers\DnsApplyTemplateController;
 use App\Controllers\ExportController;
 use App\Controllers\ReminderController;
+use App\Controllers\TerminalController;
 
 // ─── Public routes (no auth required) ────────────────────────────────────────
 
@@ -152,6 +153,11 @@ Router::middleware(['auth'])->group(function () {
     Router::post('/email/{id}/update',  [EmailAccountController::class, 'update']);
     Router::post('/email/{id}/delete',  [EmailAccountController::class, 'delete']);
     Router::post('/email/{id}/reveal',  [EmailAccountController::class, 'reveal']);
+
+    // ── Terminal (Stage 19) ──────────────────────────────────────────────────
+    // NOTE: /terminal/client-data registered before /terminal (no wildcard, but explicit order)
+    Router::get('/terminal/client-data', [TerminalController::class, 'clientData']);
+    Router::get('/terminal',             [TerminalController::class, 'index']);
 
     // ── Reminders (Stage 18) ─────────────────────────────────────────────────
     // NOTE: /reminders/create registered before /reminders/{id} wildcard

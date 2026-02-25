@@ -223,6 +223,121 @@ SESSION_SECURE=true      # Set true when running HTTPS
 
 ---
 
+## Terminal Setup
+
+The Terminal view embeds a live shell session alongside client reference data (docs, IP tables, servers, DNS records). It uses [ttyd](https://github.com/tsl0922/ttyd) as a WebSocket terminal backend and [xterm.js](https://xtermjs.org/) (stored locally in `assets/xterm/`) as the browser client.
+
+The terminal is **disabled by default**. Set these values in `.env` to enable it:
+
+```ini
+TERMINAL_ENABLED=true
+TERMINAL_WS_URL=wss://yourdomain.com/terminal/ws
+```
+
+### 1. Install ttyd on Ubuntu
+
+```bash
+# Option A — apt (Ubuntu 22.04+)
+sudo apt update && sudo apt install -y ttyd
+
+# Option B — download prebuilt binary
+sudo wget -O /usr/local/bin/ttyd \
+  https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64
+sudo chmod +x /usr/local/bin/ttyd
+```
+
+### 2. Run ttyd as a systemd service
+
+Create `/etc/systemd/system/ttyd.service`:
+
+```ini
+[Unit]
+Description=ttyd WebSocket terminal
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ttyd --port 7681 --interface 127.0.0.1 bash
+Restart=always
+User=www-data
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable and start:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable --now ttyd
+```
+
+> `--interface 127.0.0.1` binds ttyd to localhost only. It is never exposed directly to the internet — traffic goes through the web server proxy below.
+
+---
+
+### 3. WebSocket proxy — Apache
+
+Enable the required modules:
+
+```bash
+sudo a2enmod proxy proxy_http proxy_wstunnel
+sudo systemctl restart apache2
+```
+
+Add to your VirtualHost (or to `.htaccess` if `AllowOverride All` is set):
+
+```apache
+# Proxy WebSocket requests to ttyd
+ProxyPass        /stackvault/terminal/ws  ws://127.0.0.1:7681
+ProxyPassReverse /stackvault/terminal/ws  ws://127.0.0.1:7681
+```
+
+Then set in `.env`:
+
+```ini
+TERMINAL_WS_URL=wss://yourdomain.com/stackvault/terminal/ws
+```
+
+---
+
+### 3. WebSocket proxy — Nginx
+
+Add to your `server {}` block:
+
+```nginx
+location /stackvault/terminal/ws {
+    proxy_pass         http://127.0.0.1:7681;
+    proxy_http_version 1.1;
+    proxy_set_header   Upgrade    $http_upgrade;
+    proxy_set_header   Connection "upgrade";
+    proxy_set_header   Host       $host;
+    proxy_read_timeout 3600s;
+}
+```
+
+Then set in `.env`:
+
+```ini
+TERMINAL_WS_URL=wss://yourdomain.com/stackvault/terminal/ws
+```
+
+---
+
+### Security notes
+
+- ttyd is bound to `127.0.0.1` — only reachable via the web server proxy.
+- Access to `/terminal` is protected by the app's `AuthMiddleware` (requires login).
+- The WebSocket URL should always use `wss://` (TLS) in production.
+- The shell runs as the `www-data` user (or whichever user you configure in the systemd unit). Limit permissions accordingly.
+
+---
+
+### Local development (WAMP / Windows)
+
+ttyd is a Linux binary and does not run natively on Windows. Leave `TERMINAL_ENABLED=false` during local development — the terminal pane shows a configuration placeholder while the client info panel (docs, IP tables, servers, DNS) remains fully functional.
+
+---
+
 ## Updating
 
 StackVault has no migration system yet. For updates:

@@ -25,6 +25,7 @@ $navItems = [
     ['icon' => 'ti-file-code',        'label' => 'Host Files',       'path' => '/hosts'],
     ['icon' => 'ti-archive',          'label' => 'File Manager',     'path' => '/files'],
     ['divider' => true],
+    ['icon' => 'ti-terminal-2',       'label' => 'Terminal',         'path' => '/terminal'],
     ['icon' => 'ti-bell',             'label' => 'Reminders',        'path' => '/reminders'],
     ['icon' => 'ti-settings',         'label' => 'Settings',         'path' => '/settings'],
 ];

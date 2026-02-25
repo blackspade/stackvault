@@ -361,6 +361,9 @@ SESSION_SECURE=false
 
 LOG_LEVEL=error
 LOG_PATH=storage/logs
+
+TERMINAL_ENABLED=false
+TERMINAL_WS_URL=
 ENV;
 }
 
