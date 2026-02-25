@@ -232,7 +232,7 @@ TERMINAL_WS_URL=ws://localhost:7681</pre>
         var el    = document.getElementById('docs-content');
         var empty = document.getElementById('docs-empty');
         if (content && content.trim()) {
-            el.innerHTML = esc(content);
+            el.innerHTML = content;
             el.classList.remove('d-none');
             empty.classList.add('d-none');
         } else {
