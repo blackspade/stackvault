@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\ClientModel;
+use App\Models\DatalistPresetModel;
 use App\Models\ReminderModel;
 use App\Services\AuthService;
 
@@ -42,7 +43,7 @@ class ReminderController extends Controller
             'reminders'    => $reminders,
             'overdueCount' => $overdueCount,
             'filters'      => compact('status', 'type', 'clientId'),
-            'types'        => ReminderModel::TYPES,
+            'types'        => $this->buildTypes(),
             'typeIcons'    => ReminderModel::TYPE_ICONS,
             'typeColors'   => ReminderModel::TYPE_COLORS,
             'clients'      => ClientModel::getForSelect(),
@@ -59,7 +60,7 @@ class ReminderController extends Controller
                 ['label' => 'Reminders', 'url' => '/reminders'],
                 ['label' => 'New Reminder'],
             ],
-            'types'   => ReminderModel::TYPES,
+            'types'   => $this->buildTypes(),
             'clients' => ClientModel::getForSelect(),
         ]);
     }
@@ -106,7 +107,7 @@ class ReminderController extends Controller
                 ['label' => e($reminder['title'])],
             ],
             'reminder' => $reminder,
-            'types'    => ReminderModel::TYPES,
+            'types'    => $this->buildTypes(),
             'clients'  => ClientModel::getForSelect(),
         ]);
     }
@@ -198,10 +199,30 @@ class ReminderController extends Controller
         return $reminder;
     }
 
+    /**
+     * Merge built-in reminder types with any user-defined types from DB.
+     * Built-ins use their slug as key; custom DB types use their label as key.
+     */
+    private function buildTypes(): array
+    {
+        DatalistPresetModel::init();
+        $types         = ReminderModel::TYPES;
+        $builtinLabels = array_values(ReminderModel::TYPES);
+
+        foreach (DatalistPresetModel::getValues('reminder_type') as $label) {
+            if (!in_array($label, $builtinLabels, true)) {
+                $types[$label] = $label;
+            }
+        }
+
+        return $types;
+    }
+
     private function collectPost(): array
     {
-        $type = trim((string) $this->request->post('type', 'custom'));
-        if (!array_key_exists($type, ReminderModel::TYPES)) {
+        $type       = trim((string) $this->request->post('type', 'custom'));
+        $validTypes = $this->buildTypes();
+        if (!array_key_exists($type, $validTypes)) {
             $type = 'custom';
         }
 

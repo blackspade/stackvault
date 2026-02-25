@@ -12,6 +12,7 @@ class DatalistPresetModel
         'server_os'       => 'Server OS Versions',
         'server_provider' => 'Server Providers',
         'app_deployment'  => 'App Deployment Methods',
+        'reminder_type'   => 'Reminder Types',
     ];
 
     /** Built-in defaults per group — these are seeded and cannot be deleted. */
@@ -49,6 +50,13 @@ class DatalistPresetModel
             'Manual',
             'CI/CD',
             'FTP / SFTP',
+        ],
+        'reminder_type' => [
+            'Custom',
+            'Domain Expiry',
+            'SSL Expiry',
+            'Server Maintenance',
+            'License Renewal',
         ],
     ];
 
