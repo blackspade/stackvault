@@ -26,6 +26,7 @@ $navItems = [
     ['icon' => 'ti-archive',          'label' => 'File Manager',     'path' => '/files'],
     ['divider' => true],
     ['icon' => 'ti-bell',             'label' => 'Reminders',        'path' => '/reminders'],
+    ['icon' => 'ti-settings',         'label' => 'Settings',         'path' => '/settings'],
 ];
 
 $userName  = $user['username'] ?? 'Admin';

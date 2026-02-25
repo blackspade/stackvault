@@ -53,6 +53,7 @@ Router::middleware(['auth'])->group(function () {
     Router::get('/clients',                [ClientController::class, 'index']);
     Router::get('/clients/create',         [ClientController::class, 'showCreate']);
     Router::post('/clients/store',         [ClientController::class, 'store']);
+    Router::post('/clients/{id}/docs/save', [ClientController::class, 'saveDocs']);
     Router::get('/clients/{id}',           [ClientController::class, 'show']);
     Router::get('/clients/{id}/edit',      [ClientController::class, 'showEdit']);
     Router::post('/clients/{id}/update',   [ClientController::class, 'update']);

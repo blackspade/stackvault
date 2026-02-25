@@ -47,30 +47,14 @@ StackVault is a secure, single-admin web application for managing clients, serve
 
 Copy the project folder to your web server's document root (e.g. `/var/www/html/stackvault` or `C:/wamp64/www/stackvault`).
 
-### 2. Download Tabler assets
-
-The app uses **Tabler 1.0.0** locally (no CDN in production). Download and extract the Tabler release into `assets/tabler/`:
-
-```
-assets/
-  tabler/
-    css/
-      tabler.min.css
-      tabler-icons.min.css
-    js/
-      tabler.min.js
-```
-
-Download: https://github.com/tabler/tabler/releases/tag/v1.0.0
-
-### 3. Set directory permissions
+### 2. Set directory permissions
 
 ```bash
 chmod -R 755 storage/
 chmod -R 755 assets/
 ```
 
-### 4. Run the installer
+### 3. Run the installer
 
 Navigate to `setup.php` in your browser:
 
@@ -96,7 +80,7 @@ The wizard will:
 > ```
 > Then update `APP_KEY=` in your `.env` file. Note: rotating APP_KEY does not affect vault encryption (the vault key uses a separate PBKDF2 derivation).
 
-### 5. Access the app
+### 4. Access the app
 
 ```
 http://yourdomain.com/stackvault/

@@ -1,8 +1,16 @@
 <?php
 /**
  * Client detail view — tabbed
- * Vars: $client[], $domains[], $servers[], $credentials[], $applications[], $activity[]
+ * Vars: $client[], $domains[], $servers[], $credentials[], $applications[], $activity[], $doc
  */
+
+// Server-side active tab — avoids bootstrap.Tab() JS dependency
+$activeTab = $_GET['tab'] ?? 'overview';
+$tab = fn(string $t): string => $activeTab === $t ? 'active show' : '';
+$navTab = fn(string $t): string => $activeTab === $t ? 'active' : '';
+?>
+<link rel="stylesheet" href="<?= asset('css/quill.snow.css') ?>">
+<?php
 
 $credTypeLabel = function(string $type): string {
     return match($type) {
@@ -122,12 +130,12 @@ $actionIcon = function(string $a): string {
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs">
             <li class="nav-item">
-                <a href="#tab-overview" class="nav-link active" data-bs-toggle="tab">
+                <a href="#tab-overview" class="nav-link <?= $navTab('overview') ?>" data-bs-toggle="tab">
                     <i class="ti ti-info-circle me-1"></i>Overview
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#tab-domains" class="nav-link" data-bs-toggle="tab">
+                <a href="#tab-domains" class="nav-link <?= $navTab('domains') ?>" data-bs-toggle="tab">
                     <i class="ti ti-world me-1"></i>Domains
                     <?php if (count($domains)): ?>
                     <span class="badge bg-blue text-white ms-1"><?= count($domains) ?></span>
@@ -135,7 +143,7 @@ $actionIcon = function(string $a): string {
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#tab-servers" class="nav-link" data-bs-toggle="tab">
+                <a href="#tab-servers" class="nav-link <?= $navTab('servers') ?>" data-bs-toggle="tab">
                     <i class="ti ti-server me-1"></i>Servers
                     <?php if (count($servers)): ?>
                     <span class="badge bg-blue text-white ms-1"><?= count($servers) ?></span>
@@ -143,7 +151,7 @@ $actionIcon = function(string $a): string {
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#tab-credentials" class="nav-link" data-bs-toggle="tab">
+                <a href="#tab-credentials" class="nav-link <?= $navTab('credentials') ?>" data-bs-toggle="tab">
                     <i class="ti ti-key me-1"></i>Credentials
                     <?php if (count($credentials)): ?>
                     <span class="badge bg-blue text-white ms-1"><?= count($credentials) ?></span>
@@ -151,7 +159,7 @@ $actionIcon = function(string $a): string {
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#tab-applications" class="nav-link" data-bs-toggle="tab">
+                <a href="#tab-applications" class="nav-link <?= $navTab('applications') ?>" data-bs-toggle="tab">
                     <i class="ti ti-apps me-1"></i>Applications
                     <?php if (count($applications)): ?>
                     <span class="badge bg-blue text-white ms-1"><?= count($applications) ?></span>
@@ -159,8 +167,18 @@ $actionIcon = function(string $a): string {
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#tab-activity" class="nav-link" data-bs-toggle="tab">
+                <a href="#tab-activity" class="nav-link <?= $navTab('activity') ?>" data-bs-toggle="tab">
                     <i class="ti ti-activity me-1"></i>Activity
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#tab-docs" class="nav-link <?= $navTab('docs') ?>" data-bs-toggle="tab">
+                    <i class="ti ti-file-text me-1"></i>Documentation
+                    <?php if (!empty($doc['content']) || !empty($doc['ip_tables']) && $doc['ip_tables'] !== '[]'): ?>
+                    <span class="badge bg-green text-white ms-1">
+                        <i class="ti ti-check" style="font-size:0.7rem;"></i>
+                    </span>
+                    <?php endif; ?>
                 </a>
             </li>
         </ul>
@@ -169,7 +187,7 @@ $actionIcon = function(string $a): string {
     <div class="card-body tab-content">
 
         <!-- ── Overview ─────────────────────────────────────────────────────── -->
-        <div class="tab-pane active show" id="tab-overview">
+        <div class="tab-pane <?= $tab('overview') ?>" id="tab-overview">
             <div class="row g-4">
 
                 <!-- Contact details -->
@@ -221,21 +239,19 @@ $actionIcon = function(string $a): string {
                     </table>
                 </div>
 
-                <!-- Notes -->
+                <!-- Documentation link -->
                 <div class="col-md-6">
-                    <h4 class="mb-3">Notes</h4>
-                    <?php if ($client['notes']): ?>
-                    <div class="bg-light rounded p-3" style="white-space:pre-wrap; font-size:0.875rem;"><?= e($client['notes']) ?></div>
-                    <?php else: ?>
-                    <p class="text-muted">No notes.</p>
-                    <?php endif; ?>
+                    <h4 class="mb-3">Documentation</h4>
+                    <a href="<?= url('/clients/' . $client['id'] . '?tab=docs') ?>" class="text-primary">
+                        <i class="ti ti-file-text me-1"></i>View Documentation
+                    </a>
                 </div>
 
             </div>
         </div>
 
         <!-- ── Domains ───────────────────────────────────────────────────────── -->
-        <div class="tab-pane" id="tab-domains">
+        <div class="tab-pane <?= $tab('domains') ?>" id="tab-domains">
             <?php if (empty($domains)): ?>
             <div class="text-center text-muted py-5">
                 <i class="ti ti-world fs-1 d-block mb-2"></i>
@@ -274,7 +290,7 @@ $actionIcon = function(string $a): string {
         </div>
 
         <!-- ── Servers ───────────────────────────────────────────────────────── -->
-        <div class="tab-pane" id="tab-servers">
+        <div class="tab-pane <?= $tab('servers') ?>" id="tab-servers">
             <?php if (empty($servers)): ?>
             <div class="text-center text-muted py-5">
                 <i class="ti ti-server fs-1 d-block mb-2"></i>
@@ -309,7 +325,7 @@ $actionIcon = function(string $a): string {
         </div>
 
         <!-- ── Credentials ───────────────────────────────────────────────────── -->
-        <div class="tab-pane" id="tab-credentials">
+        <div class="tab-pane <?= $tab('credentials') ?>" id="tab-credentials">
             <?php if (!vault_unlocked()): ?>
             <div class="alert alert-warning d-flex align-items-center gap-2 mb-4">
                 <i class="ti ti-lock fs-3"></i>
@@ -359,7 +375,7 @@ $actionIcon = function(string $a): string {
         </div>
 
         <!-- ── Applications ──────────────────────────────────────────────────── -->
-        <div class="tab-pane" id="tab-applications">
+        <div class="tab-pane <?= $tab('applications') ?>" id="tab-applications">
             <?php if (empty($applications)): ?>
             <div class="text-center text-muted py-5">
                 <i class="ti ti-apps fs-1 d-block mb-2"></i>
@@ -394,7 +410,7 @@ $actionIcon = function(string $a): string {
         </div>
 
         <!-- ── Activity ──────────────────────────────────────────────────────── -->
-        <div class="tab-pane" id="tab-activity">
+        <div class="tab-pane <?= $tab('activity') ?>" id="tab-activity">
             <?php if (empty($activity)): ?>
             <div class="text-center text-muted py-5">
                 <i class="ti ti-activity fs-1 d-block mb-2"></i>
@@ -433,6 +449,39 @@ $actionIcon = function(string $a): string {
             <?php endif; ?>
         </div>
 
+        <!-- ── Documentation ─────────────────────────────────────────────────── -->
+        <div class="tab-pane <?= $tab('docs') ?>" id="tab-docs">
+
+            <form method="POST" action="<?= url('/clients/' . $client['id'] . '/docs/save') ?>" id="docs-form">
+                <?= csrf_field() ?>
+                <input type="hidden" name="doc_content" id="doc_content">
+                <input type="hidden" name="ip_tables" id="ip_tables_input">
+
+                <!-- Save button row -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0">Documentation</h4>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="ti ti-device-floppy me-1"></i>Save Documentation
+                    </button>
+                </div>
+
+                <!-- Quill editor (full width) -->
+                <div id="sv-doc-editor" style="min-height:320px;"></div>
+
+                <!-- IP Tables (full width, below editor) -->
+                <div class="mt-4 pt-3 border-top">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="mb-0"><i class="ti ti-network me-1"></i>IP Tables</h5>
+                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="svAddTable()">
+                            <i class="ti ti-plus me-1"></i>Add IP Table
+                        </button>
+                    </div>
+                    <div id="sv-ip-tables"></div>
+                </div>
+
+            </form>
+        </div>
+
     </div><!-- /tab-content -->
 </div><!-- /card -->
 
@@ -448,4 +497,115 @@ function confirmDelete(id, name) {
     form.action = '<?= url('/clients/') ?>' + id + '/delete';
     form.submit();
 }
+</script>
+
+<!-- ── Documentation tab JS (Quill + IP Table manager) ──────────────────── -->
+<script src="<?= asset('js/quill.min.js') ?>"></script>
+<script>
+(function () {
+    // ── Quill init ────────────────────────────────────────────────────────
+    const quill = new Quill('#sv-doc-editor', {
+        theme: 'snow',
+        placeholder: 'Document this client…',
+        modules: {
+            toolbar: [
+                [{ header: [2, 3, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                ['blockquote', 'code-block', 'link'],
+                ['clean']
+            ]
+        }
+    });
+
+    // Pre-fill with existing content
+    const existingContent = <?= json_encode($doc['content'] ?? '') ?>;
+    if (existingContent) {
+        quill.root.innerHTML = existingContent;
+    }
+
+    // ── IP Tables init ────────────────────────────────────────────────────
+    const existingTables = <?= json_encode(json_decode($doc['ip_tables'] ?? '[]', true) ?? []) ?>;
+    const container = document.getElementById('sv-ip-tables');
+
+    function esc(str) {
+        return String(str ?? '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function svMakeRow(ip, label, port, mac, notes) {
+        const row = document.createElement('div');
+        row.className = 'sv-ip-row row g-1 mb-1 align-items-center';
+        row.innerHTML =
+            '<div class="col-2"><input class="form-control form-control-sm sv-ip" value="' + esc(ip) + '" placeholder="IP Address"></div>' +
+            '<div class="col-3"><input class="form-control form-control-sm sv-label" value="' + esc(label) + '" placeholder="Label / Device"></div>' +
+            '<div class="col-1"><input class="form-control form-control-sm sv-port" value="' + esc(port) + '" placeholder="Port"></div>' +
+            '<div class="col-2"><input class="form-control form-control-sm sv-mac" value="' + esc(mac) + '" placeholder="MAC Address"></div>' +
+            '<div class="col-3"><input class="form-control form-control-sm sv-notes" value="' + esc(notes) + '" placeholder="Notes"></div>' +
+            '<div class="col-1 text-end"><button type="button" class="btn btn-sm btn-ghost-danger px-1" onclick="svDeleteRow(this)" title="Remove row"><i class="ti ti-x"></i></button></div>';
+        return row;
+    }
+
+    function svMakeTable(name, rows) {
+        const wrap = document.createElement('div');
+        wrap.className = 'sv-table-block card mb-3';
+        wrap.innerHTML =
+            '<div class="card-body p-3">' +
+            '<div class="d-flex gap-2 mb-3 align-items-center">' +
+            '<input class="form-control form-control-sm sv-table-name fw-semibold" value="' + esc(name) + '" placeholder="Table name (e.g. LAN – 192.168.30.x)">' +
+            '<button type="button" class="btn btn-sm btn-ghost-danger flex-shrink-0" onclick="svDeleteTable(this)" title="Remove table"><i class="ti ti-trash"></i></button>' +
+            '</div>' +
+            '<div class="row g-1 mb-1 text-muted" style="font-size:0.75rem;">' +
+            '<div class="col-2">IP Address</div><div class="col-3">Label / Device</div><div class="col-1">Port</div><div class="col-2">MAC Address</div><div class="col-3">Notes</div><div class="col-1"></div>' +
+            '</div>' +
+            '<div class="sv-rows"></div>' +
+            '<button type="button" class="btn btn-sm btn-ghost-secondary mt-2" onclick="svAddRow(this)"><i class="ti ti-plus me-1"></i>Add Row</button>' +
+            '</div>';
+        const rowsEl = wrap.querySelector('.sv-rows');
+        (rows || []).forEach(function (r) {
+            rowsEl.appendChild(svMakeRow(r.ip, r.label, r.port, r.mac, r.notes));
+        });
+        return wrap;
+    }
+
+    // Render existing tables on load
+    existingTables.forEach(function (t) {
+        container.appendChild(svMakeTable(t.name, t.rows));
+    });
+
+    // Public functions used by onclick attributes
+    window.svAddTable = function () {
+        container.appendChild(svMakeTable('', []));
+    };
+    window.svAddRow = function (btn) {
+        const rowsEl = btn.closest('.sv-table-block').querySelector('.sv-rows');
+        rowsEl.appendChild(svMakeRow('', '', '', '', ''));
+    };
+    window.svDeleteRow = function (btn) {
+        btn.closest('.sv-ip-row').remove();
+    };
+    window.svDeleteTable = function (btn) {
+        btn.closest('.sv-table-block').remove();
+    };
+
+    // ── Form submit: sync hidden inputs ──────────────────────────────────
+    document.getElementById('docs-form').addEventListener('submit', function () {
+        document.getElementById('doc_content').value = quill.root.innerHTML;
+
+        const tables = [];
+        document.querySelectorAll('.sv-table-block').forEach(function (block) {
+            const rows = [];
+            block.querySelectorAll('.sv-ip-row').forEach(function (row) {
+                rows.push({
+                    ip:    row.querySelector('.sv-ip').value.trim(),
+                    label: row.querySelector('.sv-label').value.trim(),
+                    port:  row.querySelector('.sv-port').value.trim(),
+                    mac:   row.querySelector('.sv-mac').value.trim(),
+                    notes: row.querySelector('.sv-notes').value.trim()
+                });
+            });
+            tables.push({ name: block.querySelector('.sv-table-name').value.trim(), rows: rows });
+        });
+        document.getElementById('ip_tables_input').value = JSON.stringify(tables);
+    });
+})();
 </script>

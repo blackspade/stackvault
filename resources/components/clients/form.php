@@ -60,13 +60,6 @@ $v = fn(string $key): string => e($client[$key] ?? '');
                    maxlength="500">
         </div>
 
-        <!-- Notes -->
-        <div class="col-12">
-            <label for="notes" class="form-label">Notes</label>
-            <textarea id="notes" name="notes" class="form-control" rows="4"
-                      placeholder="Internal notes about this client…"><?= $v('notes') ?></textarea>
-        </div>
-
         <!-- Active -->
         <div class="col-12">
             <label class="form-check">

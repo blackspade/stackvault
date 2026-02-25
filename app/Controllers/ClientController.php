@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\ClientModel;
+use App\Models\ClientDocModel;
 use App\Services\AuthService;
 
 class ClientController extends Controller
@@ -73,6 +74,9 @@ class ClientController extends Controller
     public function show(): void
     {
         $client = $this->resolveClient();
+        ClientDocModel::ensureSchema();
+        $id  = (int) $client['id'];
+        $doc = ClientDocModel::getByClient($id);
 
         $this->view('clients/show', [
             'title'        => e($client['name']),
@@ -81,12 +85,40 @@ class ClientController extends Controller
                 ['label' => $client['name']],
             ],
             'client'       => $client,
-            'domains'      => ClientModel::getDomains((int) $client['id']),
-            'servers'      => ClientModel::getServers((int) $client['id']),
-            'credentials'  => ClientModel::getCredentials((int) $client['id']),
-            'applications' => ClientModel::getApplications((int) $client['id']),
-            'activity'     => ClientModel::getActivity((int) $client['id']),
+            'domains'      => ClientModel::getDomains($id),
+            'servers'      => ClientModel::getServers($id),
+            'credentials'  => ClientModel::getCredentials($id),
+            'applications' => ClientModel::getApplications($id),
+            'activity'     => ClientModel::getActivity($id),
+            'doc'          => $doc,
         ]);
+    }
+
+    // ─── POST /clients/{id}/docs/save ─────────────────────────────────────────
+
+    public function saveDocs(): void
+    {
+        $this->validateCsrf();
+
+        $client = $this->resolveClient();
+        $id     = (int) $client['id'];
+
+        $content      = (string) $this->request->post('doc_content', '');
+        $ipTablesRaw  = (string) $this->request->post('ip_tables', '[]');
+
+        // Validate ip_tables is valid JSON
+        $decoded = json_decode($ipTablesRaw, true);
+        if (!is_array($decoded)) {
+            $ipTablesRaw = '[]';
+        }
+
+        ClientDocModel::ensureSchema();
+        ClientDocModel::save($id, $content, $ipTablesRaw);
+
+        $this->logActivity('client_docs_saved', $id,
+            "Documentation saved for: {$client['name']}");
+
+        $this->redirect("/clients/{$id}?tab=docs");
     }
 
     // ─── GET /clients/{id}/edit ───────────────────────────────────────────────
@@ -184,7 +216,6 @@ class ClientController extends Controller
             'contact_email' => trim((string) $this->request->post('contact_email', '')),
             'contact_phone' => trim((string) $this->request->post('contact_phone', '')),
             'website'       => trim((string) $this->request->post('website',       '')),
-            'notes'         => trim((string) $this->request->post('notes',         '')),
             'is_active'     => (bool) $this->request->post('is_active', false),
         ];
     }
