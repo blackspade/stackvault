@@ -150,6 +150,26 @@ class DatalistPresetModel
         return $affected > 0;
     }
 
+    /**
+     * Count how many records reference this preset's value.
+     * Returns 0 for groups that are free-text (no referential constraint).
+     */
+    public static function getInUseCount(int $id): int
+    {
+        $row = Database::fetchOne(
+            "SELECT `group`, `value` FROM `datalist_presets` WHERE id = ?", [$id]
+        );
+        if (!$row) return 0;
+
+        return match ($row['group']) {
+            'reminder_type' => (int) (Database::fetchOne(
+                "SELECT COUNT(*) AS cnt FROM `reminders` WHERE `type` = ?",
+                [$row['value']]
+            )['cnt'] ?? 0),
+            default => 0,
+        };
+    }
+
     /** Delete a custom preset (is_default=0 only). */
     public static function delete(int $id): bool
     {

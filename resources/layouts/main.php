@@ -316,8 +316,37 @@ $userEmail = $user['email']    ?? '';
 </div><!-- /page -->
 
 <script src="<?= asset('tabler/js/tabler.min.js') ?>"></script>
+
+<!-- Toast container (appended dynamically by showToast) -->
+<div id="sv-toast-container" class="toast-container position-fixed top-0 end-0 p-3" style="z-index:9999"></div>
+
 <script>
-// Press "/" to focus global search (skip if already in a text field)
+// ── Global CSRF token for AJAX requests ───────────────────────────────────
+var SV_CSRF = '<?= csrf_token() ?>';
+
+// ── Global toast helper ───────────────────────────────────────────────────
+function showToast(msg, type) {
+    var colors = { success: 'bg-success', error: 'bg-danger', warning: 'bg-warning', info: 'bg-azure' };
+    var icons  = { success: 'ti-circle-check', error: 'ti-alert-circle', warning: 'ti-alert-triangle', info: 'ti-info-circle' };
+    var container = document.getElementById('sv-toast-container');
+    var el = document.createElement('div');
+    el.className = 'toast align-items-center text-white border-0 ' + (colors[type] || 'bg-secondary');
+    el.setAttribute('role', 'alert');
+    el.innerHTML =
+        '<div class="d-flex">' +
+            '<div class="toast-body d-flex align-items-center gap-2">' +
+                '<i class="ti ' + (icons[type] || 'ti-bell') + '"></i>' +
+                '<span>' + msg + '</span>' +
+            '</div>' +
+            '<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>' +
+        '</div>';
+    container.appendChild(el);
+    var t = new bootstrap.Toast(el, { delay: 4000 });
+    t.show();
+    el.addEventListener('hidden.bs.toast', function () { el.remove(); });
+}
+
+// ── Press "/" to focus global search (skip if already in a text field) ───
 document.addEventListener('keydown', function (e) {
     if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
         e.preventDefault();

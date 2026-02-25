@@ -124,17 +124,42 @@ class SettingsController extends Controller
     {
         $this->validateCsrf();
 
-        $id = (int) $this->request->param('id', 0);
+        $id     = (int) $this->request->param('id', 0);
+        $isAjax = ($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'XMLHttpRequest';
 
         DatalistPresetModel::ensureSchema();
-        $deleted = $id > 0 && DatalistPresetModel::delete($id);
 
-        if ($deleted) {
-            flash('success', 'Preset removed.');
-        } else {
-            flash('error', 'Cannot remove a built-in default preset.');
+        if ($id <= 0) {
+            $this->presetResponse($isAjax, false, 'Invalid preset.');
+            return;
         }
 
+        $inUse = DatalistPresetModel::getInUseCount($id);
+        if ($inUse > 0) {
+            $noun = $inUse === 1 ? 'reminder is' : 'reminders are';
+            $this->presetResponse($isAjax, false, "Cannot delete — {$inUse} {$noun} using this type.");
+            return;
+        }
+
+        $deleted = DatalistPresetModel::delete($id);
+
+        if ($deleted) {
+            $this->presetResponse($isAjax, true, 'Preset removed.');
+        } else {
+            $this->presetResponse($isAjax, false, 'Cannot remove a built-in default preset.');
+        }
+    }
+
+    /** Send JSON for AJAX requests or flash+redirect for standard form posts. */
+    private function presetResponse(bool $isAjax, bool $success, string $message): void
+    {
+        if ($isAjax) {
+            header('Content-Type: application/json');
+            echo json_encode(['success' => $success, 'message' => $message]);
+            exit;
+        }
+
+        flash($success ? 'success' : 'error', $message);
         $this->redirect('/settings?tab=general');
     }
 

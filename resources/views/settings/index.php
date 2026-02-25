@@ -109,9 +109,9 @@
                     <div class="card-body pb-2">
 
                         <!-- Preset list -->
-                        <div class="d-flex flex-wrap gap-2 mb-3">
+                        <div class="d-flex flex-wrap gap-2 mb-3" id="preset-list-<?= e($group) ?>">
                             <?php foreach ($presets as $preset): ?>
-                            <div class="d-flex align-items-center gap-1">
+                            <div class="d-flex align-items-center gap-1" data-preset-id="<?= (int)$preset['id'] ?>">
                                 <span class="badge bg-secondary-lt text-secondary py-1 px-2"
                                       style="font-size:12px; font-weight:400">
                                     <?= e($preset['value']) ?>
@@ -120,16 +120,13 @@
                                     <?php endif; ?>
                                 </span>
                                 <?php if (!$preset['is_default']): ?>
-                                <form method="post"
-                                      action="<?= url('/settings/presets/' . $preset['id'] . '/delete') ?>"
-                                      onsubmit="return confirm('Remove preset &quot;<?= e(addslashes($preset['value'])) ?>&quot;?')">
-                                    <?= csrf_field() ?>
-                                    <button type="submit" class="btn btn-xs btn-ghost-danger p-0"
-                                            style="line-height:1; width:18px; height:18px; font-size:11px"
-                                            title="Remove">
-                                        <i class="ti ti-x"></i>
-                                    </button>
-                                </form>
+                                <button type="button" class="btn btn-xs btn-ghost-danger p-0"
+                                        style="line-height:1; width:18px; height:18px; font-size:11px"
+                                        title="Remove"
+                                        data-url="<?= url('/settings/presets/' . $preset['id'] . '/delete') ?>"
+                                        onclick="svDeletePreset(this)">
+                                    <i class="ti ti-x"></i>
+                                </button>
                                 <?php endif; ?>
                             </div>
                             <?php endforeach; ?>
@@ -986,4 +983,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+// ── AJAX preset delete ────────────────────────────────────────────────────
+function svDeletePreset(btn) {
+    var url  = btn.dataset.url;
+    var wrap = btn.closest('[data-preset-id]');
+
+    btn.disabled = true;
+
+    var fd = new FormData();
+    fd.append('_token', SV_CSRF);
+
+    fetch(url, {
+        method: 'POST',
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        body: fd,
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+        if (data.success) {
+            wrap.remove();
+            showToast(data.message, 'success');
+        } else {
+            btn.disabled = false;
+            showToast(data.message, 'error');
+        }
+    })
+    .catch(function () {
+        btn.disabled = false;
+        showToast('Request failed. Please try again.', 'error');
+    });
+}
 </script>
