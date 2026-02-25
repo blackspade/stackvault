@@ -272,7 +272,11 @@ $actionIcon = function(string $a): string {
                     <tbody>
                         <?php foreach ($domains as $d): ?>
                         <tr>
-                            <td class="fw-medium"><?= e($d['root_domain']) ?></td>
+                            <td class="fw-medium">
+                                <a href="<?= url('/domains/' . $d['id']) ?>" class="text-reset text-decoration-none">
+                                    <?= e($d['root_domain']) ?>
+                                </a>
+                            </td>
                             <td class="text-muted"><?= $d['registrar'] ? e($d['registrar']) : '—' ?></td>
                             <td class="text-muted small"><?= $d['expiry_date'] ?? '—' ?></td>
                             <td class="text-muted small"><?= $d['ssl_expiry']  ?? '—' ?></td>
@@ -355,7 +359,11 @@ $actionIcon = function(string $a): string {
                     <tbody>
                         <?php foreach ($credentials as $cr): ?>
                         <tr>
-                            <td class="fw-medium"><?= e($cr['label']) ?></td>
+                            <td class="fw-medium">
+                                <a href="<?= url('/credentials/' . $cr['id']) ?>" class="text-reset text-decoration-none">
+                                    <?= e($cr['label']) ?>
+                                </a>
+                            </td>
                             <td>
                                 <span class="badge bg-<?= $credTypeColor($cr['credential_type']) ?>-lt
                                                       text-<?= $credTypeColor($cr['credential_type']) ?>">

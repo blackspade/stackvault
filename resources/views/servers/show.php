@@ -112,7 +112,7 @@ ob_start(); ?>
                 <a href="#tab-apps" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-apps me-1"></i>Applications
                     <?php if (count($applications)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($applications) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($applications) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -120,7 +120,7 @@ ob_start(); ?>
                 <a href="#tab-databases" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-database me-1"></i>Databases
                     <?php if (count($databases)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($databases) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($databases) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -128,7 +128,7 @@ ob_start(); ?>
                 <a href="#tab-domains" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-world me-1"></i>Domains
                     <?php if (count($domains)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($domains) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($domains) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -136,7 +136,7 @@ ob_start(); ?>
                 <a href="#tab-credentials" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-key me-1"></i>Credentials
                     <?php if (count($credentials)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($credentials) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($credentials) ?></span>
                     <?php endif; ?>
                 </a>
             </li>

@@ -131,7 +131,7 @@ ob_start(); ?>
                 <a href="#tab-dns" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-sitemap me-1"></i>DNS
                     <?php if (count($dnsRecords)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($dnsRecords) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($dnsRecords) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -139,7 +139,7 @@ ob_start(); ?>
                 <a href="#tab-email" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-mail me-1"></i>Email
                     <?php if (count($emailAccounts)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($emailAccounts) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($emailAccounts) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -147,7 +147,7 @@ ob_start(); ?>
                 <a href="#tab-apps" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-apps me-1"></i>Applications
                     <?php if (count($applications)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($applications) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($applications) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -155,7 +155,7 @@ ob_start(); ?>
                 <a href="#tab-servers" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-server me-1"></i>Servers
                     <?php if (count($servers)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($servers) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($servers) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -163,7 +163,7 @@ ob_start(); ?>
                 <a href="#tab-databases" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-database me-1"></i>Databases
                     <?php if (count($databases)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($databases) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($databases) ?></span>
                     <?php endif; ?>
                 </a>
             </li>
@@ -171,7 +171,7 @@ ob_start(); ?>
                 <a href="#tab-credentials" class="nav-link" data-bs-toggle="tab">
                     <i class="ti ti-key me-1"></i>Credentials
                     <?php if (count($credentials)): ?>
-                    <span class="badge bg-secondary ms-1"><?= count($credentials) ?></span>
+                    <span class="badge bg-blue text-white ms-1"><?= count($credentials) ?></span>
                     <?php endif; ?>
                 </a>
             </li>

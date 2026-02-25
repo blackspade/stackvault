@@ -68,7 +68,7 @@ ob_start(); ?>
         <a href="#tab-activity" class="nav-link" data-bs-toggle="tab" role="tab">
             <i class="ti ti-history me-1"></i>Activity
             <?php if (!empty($activity)): ?>
-            <span class="badge bg-secondary ms-1"><?= count($activity) ?></span>
+            <span class="badge bg-blue text-white ms-1"><?= count($activity) ?></span>
             <?php endif; ?>
         </a>
     </li>

@@ -43,7 +43,7 @@ ob_start(); ?>
         <a href="#tab-credentials" class="nav-link" data-bs-toggle="tab" role="tab" id="tab-cred-link">
             <i class="ti ti-key me-1"></i>Credentials
             <?php if (!empty($credentials)): ?>
-            <span class="badge bg-secondary ms-1"><?= count($credentials) ?></span>
+            <span class="badge bg-blue text-white ms-1"><?= count($credentials) ?></span>
             <?php endif; ?>
         </a>
     </li>
