@@ -160,7 +160,6 @@ ob_start(); ?>
 </div>
 
 <script>
-const SV_CSRF          = <?= json_encode(csrf_token()) ?>;
 const SV_VAULT_OPEN    = <?= json_encode(vault_unlocked()) ?>;
 const SV_UNLOCK_URL    = <?= json_encode(url('/vault/unlock')) ?>;
 const SV_REVEAL_BASE   = <?= json_encode(url('/credentials/')) ?>;

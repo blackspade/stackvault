@@ -284,7 +284,6 @@ ob_start(); ?>
 
 <?php if (vault_unlocked()): ?>
 <script>
-const SV_CSRF        = <?= json_encode(csrf_token()) ?>;
 const SV_REVEAL_URL  = <?= json_encode(url('/credentials/' . $id . '/reveal')) ?>;
 let   svAutoHideTimer = null;
 
