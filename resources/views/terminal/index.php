@@ -378,32 +378,61 @@ TERMINAL_WS_URL=ws://localhost:7681</pre>
     term.loadAddon(fitAddon);
     term.open(document.getElementById('xterm-mount'));
     fitAddon.fit();
+    term.focus();
 
-    var ws = new WebSocket(WS_URL);
+    // Re-focus terminal when clicking anywhere in the pane
+    document.getElementById('xterm-mount').addEventListener('click', function () {
+        term.focus();
+    });
+
+    // 'tty' is the WebSocket subprotocol ttyd expects
+    var ws = new WebSocket(WS_URL, ['tty']);
     ws.binaryType = 'arraybuffer';
+
+    var encoder = new TextEncoder();
 
     function sendResize() {
         if (ws.readyState === WebSocket.OPEN) {
-            ws.send('1' + JSON.stringify({ columns: term.cols, rows: term.rows }));
+            ws.send(encoder.encode('1' + JSON.stringify({ columns: term.cols, rows: term.rows })));
         }
     }
 
     ws.onopen = function () {
+        // Send auth immediately — token is empty string when ttyd has no --credential flag.
+        // Sending proactively avoids a race between onopen and the auth challenge arriving.
+        ws.send(JSON.stringify({ AuthToken: '' }));
+        fitAddon.fit();
+        sendResize();
         var statusEl = document.getElementById('terminal-status');
         statusEl.textContent = 'Connected';
         statusEl.className = 'badge bg-success-lt text-success ms-1';
-        fitAddon.fit();
-        sendResize();
     };
 
     ws.onmessage = function (evt) {
-        if (!(evt.data instanceof ArrayBuffer)) return;
-        var uint8 = new Uint8Array(evt.data);
-        var type  = String.fromCharCode(uint8[0]);
-        if (type === '1') {
-            term.write(uint8.slice(1));
+        var raw = evt.data;
+
+        // Text frames: ttyd sends auth challenge {"AuthToken":"..."} as text.
+        // We already responded proactively in onopen, but echo back if needed.
+        if (typeof raw === 'string') {
+            try {
+                var msg = JSON.parse(raw);
+                if (msg.AuthToken !== undefined) {
+                    ws.send(JSON.stringify({ AuthToken: msg.AuthToken }));
+                }
+            } catch (e) {}
+            return;
         }
-        // type '2' = ping, '3' = set_window_title, '4' = set_preferences — not needed
+
+        // Binary frames:
+        //   0x30 ('0') = OUTPUT from terminal → write to xterm
+        //   0x31 ('1') = SET_WINDOW_TITLE     → ignore
+        //   0x32 ('2') = SET_PREFERENCES      → ignore
+        if (raw instanceof ArrayBuffer) {
+            var uint8 = new Uint8Array(raw);
+            if (uint8[0] === 0x30) {
+                term.write(uint8.slice(1));
+            }
+        }
     };
 
     ws.onerror = function () {
@@ -419,7 +448,7 @@ TERMINAL_WS_URL=ws://localhost:7681</pre>
 
     term.onData(function (data) {
         if (ws.readyState === WebSocket.OPEN) {
-            ws.send('0' + data);
+            ws.send(encoder.encode('0' + data));
         }
     });
 

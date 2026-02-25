@@ -47,6 +47,8 @@ $userEmail = $user['email']    ?? '';
     <link rel="stylesheet" href="<?= asset('tabler/css/tabler.min.css') ?>">
     <link rel="stylesheet" href="<?= asset('tabler/css/tabler-icons.min.css') ?>">
     <link rel="stylesheet" href="<?= asset('xterm/xterm.css') ?>">
+    <script src="<?= asset('xterm/xterm.js') ?>"></script>
+    <script src="<?= asset('xterm/addon-fit.js') ?>"></script>
 
     <style>
         :root { --tblr-font-sans-serif: 'Inter', system-ui, -apple-system, sans-serif; }
@@ -72,7 +74,7 @@ $userEmail = $user['email']    ?? '';
 
         /* Left info panel */
         .sv-info-panel {
-            width: 380px;
+            width: 38%;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
@@ -271,8 +273,6 @@ $userEmail = $user['email']    ?? '';
 </div><!-- /page -->
 
 <script src="<?= asset('tabler/js/tabler.min.js') ?>"></script>
-<script src="<?= asset('xterm/xterm.js') ?>"></script>
-<script src="<?= asset('xterm/addon-fit.js') ?>"></script>
 
 <div id="sv-toast-container" class="toast-container position-fixed top-0 end-0 p-3" style="z-index:9999"></div>
 <script>
