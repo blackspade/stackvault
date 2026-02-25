@@ -74,6 +74,20 @@
                 </a>
             </li>
 
+            <?php if ($isAdmin ?? false): ?>
+            <li class="nav-item" role="presentation">
+                <a href="#tab-users"
+                   class="nav-link <?= $activeTab === 'users' ? 'active' : '' ?>"
+                   data-bs-toggle="tab" data-bs-target="#tab-users"
+                   role="tab" aria-selected="<?= $activeTab === 'users' ? 'true' : 'false' ?>">
+                    <i class="ti ti-users me-1"></i>Users
+                    <?php if (($userCount ?? 0) < 2): ?>
+                    <span class="badge bg-azure-lt text-azure ms-1" style="font-size:10px; padding:2px 5px;"><?= (int)($userCount ?? 1) ?>/2</span>
+                    <?php endif; ?>
+                </a>
+            </li>
+            <?php endif; ?>
+
             <li class="nav-item" role="presentation">
                 <a href="#tab-export"
                    class="nav-link <?= $activeTab === 'export' ? 'active' : '' ?>"
@@ -977,6 +991,153 @@
                 </div><!-- /.row -->
 
             </div><!-- /tab-export -->
+
+            <?php if ($isAdmin ?? false): ?>
+            <!-- ── Users ─────────────────────────────────────────────────────── -->
+            <div class="tab-pane fade <?= $activeTab === 'users' ? 'show active' : '' ?>"
+                 id="tab-users" role="tabpanel">
+
+                <h3 class="card-title mb-1">User Accounts</h3>
+                <p class="text-muted mb-4" style="font-size:13px;">
+                    Manage access to StackVault. Maximum 2 accounts.
+                    New users are required to set up Two-Factor Authentication on first login.
+                </p>
+
+                <?php /* ── Current users list ── */ ?>
+                <div class="table-responsive mb-4">
+                    <table class="table table-vcenter">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>2FA</th>
+                                <th>Last Login</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($allUsers as $u): ?>
+                        <tr>
+                            <td class="fw-medium">
+                                <?= e($u['username']) ?>
+                                <?php if ((int)$u['id'] === (int)$_SESSION['user_id']): ?>
+                                <span class="badge bg-blue-lt ms-1" style="font-size:10px;">you</span>
+                                <?php endif; ?>
+                                <?php if (!empty($u['must_setup_2fa'])): ?>
+                                <span class="badge bg-warning-lt text-warning ms-1" style="font-size:10px;">2FA pending</span>
+                                <?php endif; ?>
+                            </td>
+                            <td class="text-muted"><?= e($u['email']) ?></td>
+                            <td><span class="badge bg-purple-lt text-purple"><?= e($u['role']) ?></span></td>
+                            <td>
+                                <?php if (!empty($u['totp_enabled'])): ?>
+                                <span class="badge bg-success-lt text-success"><i class="ti ti-check me-1"></i>On</span>
+                                <?php else: ?>
+                                <span class="badge bg-secondary-lt text-secondary">Off</span>
+                                <?php endif; ?>
+                            </td>
+                            <td class="text-muted" style="font-size:12px;">
+                                <?= $u['last_login_at'] ? e(date('M j, Y g:ia', strtotime($u['last_login_at']))) : '—' ?>
+                            </td>
+                            <td class="text-end">
+                                <?php if ((int)$u['id'] !== (int)$_SESSION['user_id']): ?>
+                                <form method="post"
+                                      action="<?= url('/settings/users/' . (int)$u['id'] . '/delete') ?>"
+                                      onsubmit="return confirm('Delete user <?= e(addslashes($u['username'])) ?>? This cannot be undone.')">
+                                    <?= csrf_field() ?>
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                                        <i class="ti ti-trash me-1"></i>Delete
+                                    </button>
+                                </form>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <?php /* ── Create user form (only shown if < 2 users) ── */ ?>
+                <?php if (($userCount ?? 1) < 2): ?>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0"><i class="ti ti-user-plus me-2"></i>Add Second User</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <?php if (!vault_unlocked()): ?>
+                        <div class="alert alert-warning">
+                            <i class="ti ti-lock me-2"></i>
+                            The vault must be unlocked before creating a new user.
+                            <a href="<?= url('/vault/unlock') ?>" class="alert-link">Unlock vault</a>
+                        </div>
+                        <?php else: ?>
+
+                        <form method="post" action="<?= url('/settings/users/create') ?>" novalidate>
+                            <?= csrf_field() ?>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Username <span class="text-danger">*</span></label>
+                                    <input type="text" name="username" class="form-control"
+                                           placeholder="e.g. jdoe"
+                                           maxlength="32" required
+                                           pattern="[a-zA-Z0-9_.\\-]+"
+                                           autocomplete="off">
+                                    <div class="form-hint">Letters, numbers, underscores, hyphens, dots. Max 32 chars.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email <span class="text-muted">(optional)</span></label>
+                                    <input type="email" name="email" class="form-control"
+                                           placeholder="Leave blank to auto-generate"
+                                           autocomplete="off">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Login Password <span class="text-danger">*</span></label>
+                                    <input type="password" name="login_password" class="form-control"
+                                           placeholder="Min 8 characters"
+                                           minlength="8" required autocomplete="new-password">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Confirm Login Password <span class="text-danger">*</span></label>
+                                    <input type="password" name="confirm_password" class="form-control"
+                                           placeholder="Repeat login password"
+                                           minlength="8" required autocomplete="new-password">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Vault Password <span class="text-danger">*</span></label>
+                                    <input type="password" name="vault_password" class="form-control"
+                                           placeholder="Min 8 characters"
+                                           minlength="8" required autocomplete="new-password">
+                                    <div class="form-hint">Separate password to unlock the shared vault.</div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-info mt-3 mb-0" style="font-size:13px;">
+                                <i class="ti ti-info-circle me-1"></i>
+                                The new user will see a reminder on their dashboard to set up 2FA.
+                                Share their username and both passwords securely.
+                            </div>
+
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="ti ti-user-plus me-1"></i>Create User
+                                </button>
+                            </div>
+                        </form>
+
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php else: ?>
+                <div class="alert alert-secondary">
+                    <i class="ti ti-users me-2"></i>Maximum of 2 user accounts reached.
+                </div>
+                <?php endif; ?>
+
+            </div><!-- /tab-users -->
+            <?php endif; ?>
 
         </div><!-- /tab-content -->
     </div><!-- /card-body -->

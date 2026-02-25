@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\SettingsModel;
+use App\Models\TotpRememberModel;
 use App\Models\UserModel;
 use App\Services\AuthService;
 use App\Services\TotpService;
@@ -92,9 +93,29 @@ class AuthController extends Controller
         // ── Check 2FA ─────────────────────────────────────────────────────────
         try {
             TotpService::migrate();
+            UserModel::ensureNewColumns();
             $fullUser = UserModel::findById((int) $result['user']['id']);
 
             if (!empty($fullUser['totp_enabled']) && !empty($fullUser['totp_secret'])) {
+                // Check for a valid remember-me cookie before requiring 2FA
+                $rememberedUserId = TotpRememberModel::validate();
+                if ($rememberedUserId === (int) $result['user']['id']) {
+                    // Trusted device — skip 2FA, complete login directly
+                    session_regenerate_id(true);
+                    $_SESSION['user_id']       = $result['user']['id'];
+                    $_SESSION['user']          = array_merge($result['user'], [
+                        'must_setup_2fa' => (int) ($fullUser['must_setup_2fa'] ?? 0),
+                    ]);
+                    $_SESSION['last_activity'] = time();
+                    $_SESSION['csrf_token']    = bin2hex(random_bytes(32));
+                    AuthService::log(
+                        (int) $result['user']['id'], 'login_2fa_remembered', 'user',
+                        (int) $result['user']['id'], 'Login via trusted device (2FA remembered)',
+                        $ip, $ua
+                    );
+                    $this->redirect('/dashboard');
+                }
+
                 // 2FA required — park a minimal pending state and redirect
                 session_regenerate_id(true);
                 $_SESSION['2fa_pending'] = [
@@ -178,10 +199,22 @@ class AuthController extends Controller
 
         session_regenerate_id(true);
 
+        // Fetch fresh user row so must_setup_2fa is current
+        $fullUser = UserModel::findById((int) $user['id']);
+
         $_SESSION['user_id']       = $user['id'];
-        $_SESSION['user']          = $user;
+        $_SESSION['user']          = array_merge($user, [
+            'must_setup_2fa' => (int) ($fullUser['must_setup_2fa'] ?? 0),
+        ]);
         $_SESSION['last_activity'] = time();
         $_SESSION['csrf_token']    = bin2hex(random_bytes(32));
+
+        // Issue remember cookie if user opted in
+        if ($this->request->post('remember_device') === '1') {
+            try {
+                TotpRememberModel::issue((int) $user['id']);
+            } catch (\Throwable) {}
+        }
 
         AuthService::log(
             (int) $user['id'],
@@ -212,6 +245,11 @@ class AuthController extends Controller
                 $this->request->userAgent()
             );
         }
+
+        // Revoke the remember-me cookie for this browser only
+        try {
+            TotpRememberModel::revokeCurrentCookie();
+        } catch (\Throwable) {}
 
         // Explicitly wipe the vault key from memory before session destruction
         if (isset($_SESSION['vault_key'])) {

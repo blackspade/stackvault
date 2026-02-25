@@ -61,6 +61,22 @@ $urgencyClass = function(int $days): string {
 };
 ?>
 
+<?php /* ─── 2FA setup reminder ──────────────────────────────────────────────── */ ?>
+<?php if (!empty($user['must_setup_2fa'])): ?>
+<div class="alert alert-warning d-flex align-items-center justify-content-between gap-3 mb-4">
+    <div class="d-flex align-items-center gap-2">
+        <i class="ti ti-shield-exclamation fs-3 flex-shrink-0"></i>
+        <div>
+            <strong>Action required: set up Two-Factor Authentication.</strong>
+            Your account requires 2FA. Please configure it to secure your access.
+        </div>
+    </div>
+    <a href="<?= url('/settings?tab=2fa') ?>" class="btn btn-warning btn-sm text-nowrap">
+        <i class="ti ti-device-mobile-code me-1"></i>Set Up 2FA
+    </a>
+</div>
+<?php endif; ?>
+
 <?php /* ─── Vault status banner ────────────────────────────────────────────── */ ?>
 <?php if (!vault_unlocked()): ?>
 <div class="alert alert-warning d-flex align-items-center justify-content-between gap-3 mb-4">

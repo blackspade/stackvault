@@ -232,4 +232,6 @@ Router::middleware(['auth'])->group(function () {
     Router::post('/settings/2fa/setup',                     [SettingsController::class, 'setup2fa']);
     Router::post('/settings/2fa/confirm',                   [SettingsController::class, 'confirm2fa']);
     Router::post('/settings/2fa/disable',                   [SettingsController::class, 'disable2fa']);
+    Router::post('/settings/users/create',                  [SettingsController::class, 'createUser']);
+    Router::post('/settings/users/{id}/delete',             [SettingsController::class, 'deleteUser']);
 });

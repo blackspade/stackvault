@@ -8,6 +8,7 @@ use App\Core\Config;
 use App\Models\ActivityLogModel;
 use App\Models\DatalistPresetModel;
 use App\Models\SettingsModel;
+use App\Models\TotpRememberModel;
 use App\Models\UserModel;
 use App\Services\AuthService;
 use App\Services\TotpService;
@@ -22,12 +23,13 @@ class SettingsController extends Controller
         $user   = UserModel::findById($userId);
 
         $activeTab = $this->request->get('tab', 'general');
-        if (!in_array($activeTab, ['general', 'profile', 'vault', 'whitelist', '2fa', 'logs', 'export'], true)) {
+        if (!in_array($activeTab, ['general', 'profile', 'vault', 'whitelist', '2fa', 'users', 'logs', 'export'], true)) {
             $activeTab = 'general';
         }
 
         SettingsModel::migrate();
         TotpService::migrate();
+        UserModel::ensureNewColumns();
         DatalistPresetModel::ensureSchema();
         DatalistPresetModel::seedDefaults();
 
@@ -56,11 +58,18 @@ class SettingsController extends Controller
         $logs          = ActivityLogModel::getAll($logFilters, $logPage);
         $entityTypes   = ActivityLogModel::getDistinctEntityTypes();
 
+        // Users tab data (admin only)
+        $isAdmin  = ($user['role'] ?? '') === 'admin';
+        $allUsers = $isAdmin ? UserModel::getAll() : [];
+
         $this->view('settings/index', [
             'title'            => 'Settings',
             'breadcrumbs'      => [['label' => 'Settings']],
             'activeTab'        => $activeTab,
             'currentUser'      => $user,
+            'isAdmin'          => $isAdmin,
+            'allUsers'         => $allUsers,
+            'userCount'        => count($allUsers),
             'appNameValue'     => SettingsModel::get('app_name', Config::get('APP_NAME', 'StackVault')),
             'whitelistEnabled' => SettingsModel::isWhitelistEnabled(),
             'whitelistIps'     => SettingsModel::getWhitelistIps(),
@@ -410,6 +419,10 @@ class SettingsController extends Controller
         $encrypted = TotpService::encryptSecret($secret);
         UserModel::updateTotp($userId, $encrypted, true);
 
+        // Clear the must_setup_2fa reminder flag now that 2FA is configured
+        UserModel::setMustSetup2fa($userId, false);
+        $_SESSION['user']['must_setup_2fa'] = 0;
+
         unset($_SESSION['2fa_setup_secret']);
 
         AuthService::log(
@@ -459,6 +472,140 @@ class SettingsController extends Controller
 
         flash('success', 'IP address removed from whitelist.');
         $this->redirect('/settings?tab=whitelist');
+    }
+
+    // ─── POST /settings/users/create ─────────────────────────────────────────
+
+    public function createUser(): void
+    {
+        $this->validateCsrf();
+
+        if (($_SESSION['user']['role'] ?? '') !== 'admin') {
+            $this->forbidden();
+        }
+
+        UserModel::ensureNewColumns();
+
+        // ── Max 2 users ───────────────────────────────────────────────────────
+        if (UserModel::count() >= 2) {
+            flash('error', 'Maximum of 2 user accounts allowed.');
+            $this->redirect('/settings?tab=users');
+        }
+
+        // ── Vault must be unlocked to encrypt the vault key for the new user ─
+        if (!vault_unlocked()) {
+            flash('error', 'Unlock the vault before creating a new user — their vault access requires it.');
+            $this->redirect('/settings?tab=users');
+        }
+
+        $username     = trim((string) $this->request->post('username',       ''));
+        $email        = trim((string) $this->request->post('email',          ''));
+        $loginPw      =       (string) $this->request->post('login_password',  '');
+        $vaultPw      =       (string) $this->request->post('vault_password',  '');
+        $confirmPw    =       (string) $this->request->post('confirm_password','');
+
+        // ── Validate username ─────────────────────────────────────────────────
+        if ($username === '') {
+            flash('error', 'Username is required.');
+            $this->redirect('/settings?tab=users');
+        }
+        if (mb_strlen($username) > 32 || !preg_match('/^[a-zA-Z0-9_.\\-]+$/', $username)) {
+            flash('error', 'Username must be 1–32 characters and contain only letters, numbers, underscores, hyphens, or dots.');
+            $this->redirect('/settings?tab=users');
+        }
+        if (UserModel::usernameExists($username)) {
+            flash('error', 'That username is already taken.');
+            $this->redirect('/settings?tab=users');
+        }
+
+        // ── Email (optional — generate placeholder if blank) ──────────────────
+        if ($email === '') {
+            $email = $username . '@stackvault.local';
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            flash('error', 'The email address is not valid.');
+            $this->redirect('/settings?tab=users');
+        } elseif (UserModel::emailExists($email)) {
+            flash('error', 'That email address is already in use.');
+            $this->redirect('/settings?tab=users');
+        }
+
+        // ── Passwords ─────────────────────────────────────────────────────────
+        if (strlen($loginPw) < 8) {
+            flash('error', 'Login password must be at least 8 characters.');
+            $this->redirect('/settings?tab=users');
+        }
+        if ($loginPw !== $confirmPw) {
+            flash('error', 'Login password and confirmation do not match.');
+            $this->redirect('/settings?tab=users');
+        }
+        if (strlen($vaultPw) < 8) {
+            flash('error', 'Vault password must be at least 8 characters.');
+            $this->redirect('/settings?tab=users');
+        }
+
+        // ── Hash + encrypt ────────────────────────────────────────────────────
+        $argonOpts       = ['memory_cost' => 65536, 'time_cost' => 4, 'threads' => 1];
+        $loginHash       = password_hash($loginPw, PASSWORD_ARGON2ID, $argonOpts);
+        $vaultHash       = password_hash($vaultPw, PASSWORD_ARGON2ID, $argonOpts);
+        $vaultKeyEncrypted = SettingsModel::encryptVaultKey($_SESSION['vault_key'], $vaultPw);
+
+        $newId = UserModel::create(
+            $username, $email, $loginHash,
+            $vaultKeyEncrypted, $vaultHash,
+            'admin', true
+        );
+
+        AuthService::log(
+            (int) $_SESSION['user_id'], 'user_created', 'user', $newId,
+            "Created user account: {$username}",
+            $this->request->ip(), $this->request->userAgent()
+        );
+
+        flash('success', "User <strong>" . e($username) . "</strong> created. They will be prompted to set up 2FA on first login.");
+        $this->redirect('/settings?tab=users');
+    }
+
+    // ─── POST /settings/users/{id}/delete ─────────────────────────────────────
+
+    public function deleteUser(): void
+    {
+        $this->validateCsrf();
+
+        if (($_SESSION['user']['role'] ?? '') !== 'admin') {
+            $this->forbidden();
+        }
+
+        $targetId  = (int) $this->request->param('id', 0);
+        $currentId = (int) $_SESSION['user_id'];
+
+        if ($targetId <= 0) {
+            $this->notFound();
+        }
+        if ($targetId === $currentId) {
+            flash('error', 'You cannot delete your own account.');
+            $this->redirect('/settings?tab=users');
+        }
+
+        $target = UserModel::findById($targetId);
+        if (!$target) {
+            $this->notFound();
+        }
+
+        // Revoke all remember tokens for the deleted user
+        try {
+            TotpRememberModel::revokeAll($targetId);
+        } catch (\Throwable) {}
+
+        UserModel::deleteById($targetId);
+
+        AuthService::log(
+            $currentId, 'user_deleted', 'user', $targetId,
+            "Deleted user account: {$target['username']}",
+            $this->request->ip(), $this->request->userAgent()
+        );
+
+        flash('success', 'User account deleted.');
+        $this->redirect('/settings?tab=users');
     }
 
     // ─── POST /settings/logs/clear ────────────────────────────────────────────

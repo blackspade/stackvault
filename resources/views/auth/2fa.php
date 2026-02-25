@@ -59,6 +59,19 @@
                        style="letter-spacing: .35em; font-size: 1.5rem; font-family: monospace;">
             </div>
 
+            <div class="mb-3">
+                <label class="form-check">
+                    <input type="checkbox" class="form-check-input"
+                           name="remember_device" id="remember_device" value="1">
+                    <span class="form-check-label text-muted" style="font-size: 13px;">
+                        Remember this device for 15 days
+                    </span>
+                </label>
+                <div class="text-muted mt-1" style="font-size: 11px; padding-left: 1.5rem;">
+                    Check before entering your code to skip 2FA on this device.
+                </div>
+            </div>
+
             <div class="form-footer">
                 <button type="submit" class="btn btn-primary w-100">
                     <i class="ti ti-shield-check me-1"></i>Verify
