@@ -464,6 +464,8 @@
                 </div>
 
                 <div class="row g-4">
+
+                    <!-- ── Left: manual key + verify ────────────────────────── -->
                     <div class="col-md-6">
 
                         <!-- Step 1: manual key -->
@@ -472,8 +474,8 @@
                                 Step 1 — Add to your authenticator app
                             </h4>
                             <p class="text-muted mb-2" style="font-size: 13px;">
-                                Open your authenticator app, choose <em>Add account</em> or
-                                <em>Enter setup key</em>, and enter the key below.
+                                Scan the QR code on the right with your authenticator app, or choose
+                                <em>Enter setup key</em> and type the key below manually.
                             </p>
 
                             <label class="form-label form-label-sm text-muted">Secret Key (manual entry)</label>
@@ -545,7 +547,49 @@
                         </div>
 
                     </div>
+
+                    <!-- ── Right: QR code ────────────────────────────────────── -->
+                    <div class="col-md-6 d-flex flex-column align-items-start">
+                        <h4 class="mb-2" style="font-size: 14px; font-weight: 600;">
+                            Scan QR Code
+                        </h4>
+                        <p class="text-muted mb-3" style="font-size: 13px;">
+                            Point your authenticator app camera at the code below.
+                        </p>
+                        <div id="sv-2fa-qr"
+                             class="p-2 bg-white rounded border mb-3"
+                             style="display:inline-block; line-height:0;">
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"
+                                onclick="svDownloadQr()">
+                            <i class="ti ti-download me-1"></i>Download QR Code
+                        </button>
+                    </div>
+
                 </div>
+
+                <script src="<?= asset('js/qrcode.min.js') ?>"></script>
+                <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    new QRCode(document.getElementById('sv-2fa-qr'), {
+                        text:         <?= json_encode($totpSetupUri) ?>,
+                        width:        200,
+                        height:       200,
+                        colorDark:    '#000000',
+                        colorLight:   '#ffffff',
+                        correctLevel: QRCode.CorrectLevel.M
+                    });
+                });
+
+                function svDownloadQr() {
+                    var canvas = document.querySelector('#sv-2fa-qr canvas');
+                    if (!canvas) return;
+                    var a = document.createElement('a');
+                    a.download = 'stackvault-2fa-qr.png';
+                    a.href    = canvas.toDataURL('image/png');
+                    a.click();
+                }
+                </script>
 
                 <?php else: ?>
                 <!-- ── Not enabled, no setup in progress ─────────────────── -->

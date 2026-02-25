@@ -19,7 +19,7 @@ class TotpService
     private const DIGITS       = 6;
     private const PERIOD       = 30;
     private const SECRET_BYTES = 20;     // 160 bits → 32 base32 chars
-    private const WINDOW       = 1;      // allow ±1 time-step (30s each side)
+    private const WINDOW       = 3;      // allow ±3 time-steps (90s each side)
     private const BASE32_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 
     // ─── DB migration ─────────────────────────────────────────────────────────
@@ -154,15 +154,20 @@ class TotpService
     /** HOTP(key, counter) → 6-digit string (RFC 4226). */
     private static function hotp(string $key, int $counter): string
     {
-        $data = pack('J', $counter);                          // big-endian 64-bit
-        $hash = hash_hmac('sha1', $data, $key, true);        // 20-byte binary
+        // Explicit big-endian 64-bit counter — no pack() format ambiguity
+        $data = chr(0) . chr(0) . chr(0) . chr(0)
+              . chr(($counter >> 24) & 0xFF)
+              . chr(($counter >> 16) & 0xFF)
+              . chr(($counter >>  8) & 0xFF)
+              . chr( $counter        & 0xFF);
 
-        $offset = ord($hash[19]) & 0x0F;                     // dynamic truncation
+        $hash   = hash_hmac('sha1', $data, $key, true);     // 20-byte binary
+        $offset = ord($hash[19]) & 0x0F;                    // dynamic truncation
 
         $otp = (
             ((ord($hash[$offset])     & 0x7F) << 24) |
             ((ord($hash[$offset + 1]) & 0xFF) << 16) |
-            ((ord($hash[$offset + 2]) & 0xFF) << 8)  |
+            ((ord($hash[$offset + 2]) & 0xFF) <<  8) |
              (ord($hash[$offset + 3]) & 0xFF)
         ) % 1_000_000;
 
@@ -199,28 +204,27 @@ class TotpService
         return $result;
     }
 
-    /** Base32-decode a string (RFC 4648). Returns raw bytes or false on invalid input. */
+    /**
+     * Base32-decode a string (RFC 4648).
+     * Uses a binary-string intermediary — no integer accumulation, no overflow risk.
+     * Returns raw bytes or false on invalid input.
+     */
     private static function base32Decode(string $data): string|false
     {
-        $chars  = self::BASE32_CHARS;
-        $data   = rtrim(strtoupper($data), '=');
-        $result = '';
-        $bits   = 0;
-        $value  = 0;
+        $charMap = array_flip(str_split(self::BASE32_CHARS));
+        $data    = rtrim(strtoupper($data), '=');
+        $binary  = '';
 
         for ($i = 0, $len = strlen($data); $i < $len; $i++) {
-            $pos = strpos($chars, $data[$i]);
-            if ($pos === false) {
+            if (!isset($charMap[$data[$i]])) {
                 return false;   // invalid character
             }
+            $binary .= str_pad(decbin($charMap[$data[$i]]), 5, '0', STR_PAD_LEFT);
+        }
 
-            $value = ($value << 5) | $pos;
-            $bits += 5;
-
-            if ($bits >= 8) {
-                $result .= chr(($value >> ($bits - 8)) & 0xFF);
-                $bits   -= 8;
-            }
+        $result = '';
+        for ($i = 0, $binLen = strlen($binary); $i + 8 <= $binLen; $i += 8) {
+            $result .= chr((int) bindec(substr($binary, $i, 8)));
         }
 
         return $result;
