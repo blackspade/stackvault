@@ -252,49 +252,30 @@ Create `/etc/systemd/system/ttyd.service`:
 
 ```ini
 [Unit]
-Description=ttyd WebSocket terminal for StackVault
+Description=ttyd WebSocket terminal
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/ttyd --port 7681 --interface 127.0.0.1 --writable bash -c "cd /home/YOUR_USER && exec bash -i"
+ExecStart=/usr/bin/ttyd --port 7681 --interface 127.0.0.1 bash
 Restart=always
-RestartSec=5
-User=YOUR_USER
-WorkingDirectory=/home/YOUR_USER
+User=www-data
 
 [Install]
 WantedBy=multi-user.target
 ```
-
-Replace `YOUR_USER` with your hosting account username (e.g. `bcrwebdev`). Using the hosting account user instead of `www-data` avoids PTY permission errors on shared hosting environments.
-
-> **`--writable` is required.** Without it ttyd starts in read-only mode — the terminal displays output but ignores all keyboard input.
-
-> To start the shell in a specific directory, replace the `cd` path in `ExecStart` with the desired path.
 
 Enable and start:
 
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable --now ttyd
-sudo systemctl status ttyd   # confirm: active (running)
 ```
 
-> `--interface 127.0.0.1` binds ttyd to localhost only. It is never exposed directly to the internet — all access goes through the web server proxy below.
+> `--interface 127.0.0.1` binds ttyd to localhost only. It is never exposed directly to the internet — traffic goes through the web server proxy below.
 
 ---
 
-### 3. Install `dig` and DNS tools (optional)
-
-The terminal is useful for `dig` and `nslookup` lookups. If `dig` is not available:
-
-```bash
-sudo apt install -y dnsutils
-```
-
----
-
-### 4. WebSocket proxy — Apache
+### 3. WebSocket proxy — Apache
 
 Enable the required modules:
 
@@ -303,37 +284,28 @@ sudo a2enmod proxy proxy_http proxy_wstunnel
 sudo systemctl restart apache2
 ```
 
-Add these lines **inside your SSL `<VirtualHost *:443>` block** (not the HTTP block — wss:// requires the SSL vhost):
+Add to your VirtualHost (or to `.htaccess` if `AllowOverride All` is set):
 
 ```apache
-# StackVault Terminal — WebSocket proxy to ttyd
-ProxyPass        /terminal/ws  ws://127.0.0.1:7681
-ProxyPassReverse /terminal/ws  ws://127.0.0.1:7681
-```
-
-> On Virtualmin: go to **Server Configuration → Edit Apache Configuration**, find the `<VirtualHost *:443>` block, add the two lines inside it, then save and apply.
-
-Verify modules loaded after restart:
-
-```bash
-apache2ctl -M | grep proxy
-# Should show: proxy_module, proxy_http_module, proxy_wstunnel_module
+# Proxy WebSocket requests to ttyd
+ProxyPass        /stackvault/terminal/ws  ws://127.0.0.1:7681
+ProxyPassReverse /stackvault/terminal/ws  ws://127.0.0.1:7681
 ```
 
 Then set in `.env`:
 
 ```ini
-TERMINAL_WS_URL=wss://yourdomain.com/terminal/ws
+TERMINAL_WS_URL=wss://yourdomain.com/stackvault/terminal/ws
 ```
 
 ---
 
-### 4. WebSocket proxy — Nginx
+### 3. WebSocket proxy — Nginx
 
-Add to your `server {}` block (the SSL server block on port 443):
+Add to your `server {}` block:
 
 ```nginx
-location /terminal/ws {
+location /stackvault/terminal/ws {
     proxy_pass         http://127.0.0.1:7681;
     proxy_http_version 1.1;
     proxy_set_header   Upgrade    $http_upgrade;
@@ -346,7 +318,7 @@ location /terminal/ws {
 Then set in `.env`:
 
 ```ini
-TERMINAL_WS_URL=wss://yourdomain.com/terminal/ws
+TERMINAL_WS_URL=wss://yourdomain.com/stackvault/terminal/ws
 ```
 
 ---
@@ -355,18 +327,8 @@ TERMINAL_WS_URL=wss://yourdomain.com/terminal/ws
 
 - ttyd is bound to `127.0.0.1` — only reachable via the web server proxy.
 - Access to `/terminal` is protected by the app's `AuthMiddleware` (requires login).
-- Always use `wss://` (not `ws://`) in `TERMINAL_WS_URL` when SSL is active. A browser on `https://` will refuse to open an insecure `ws://` connection.
-- The shell runs as the user set in the systemd `User=` directive. Limit that account's permissions accordingly.
-
-### Troubleshooting
-
-| Symptom | Fix |
-|---|---|
-| Status shows "Connecting…" forever | ttyd is not running — `sudo systemctl status ttyd` |
-| Status shows "Connected" but keyboard does nothing | `--writable` flag missing from `ExecStart` |
-| WebSocket error in terminal pane | SSL mismatch — ensure `TERMINAL_WS_URL` uses `wss://` not `ws://` |
-| "Disconnected" immediately after connecting | `ProxyPass` not in the SSL (443) VirtualHost, or proxy modules not loaded |
-| `dig` command not found | `sudo apt install -y dnsutils` |
+- The WebSocket URL should always use `wss://` (TLS) in production.
+- The shell runs as the `www-data` user (or whichever user you configure in the systemd unit). Limit permissions accordingly.
 
 ---
 
