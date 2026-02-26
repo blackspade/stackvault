@@ -265,7 +265,7 @@ TERMINAL_WS_URL=ws://localhost:7681</pre>
                     + '<td class="font-monospace">' + esc(row.ip)    + '</td>'
                     + '<td>' + esc(row.label) + '</td>'
                     + '<td class="text-muted">' + esc(row.port) + '</td>'
-                    + '<td class="text-muted">' + esc(row.notes) + '</td>'
+                    + '<td class="text-muted" style="white-space:normal; word-break:break-word;">' + esc(row.notes) + '</td>'
                     + '</tr>';
             });
 
