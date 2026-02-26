@@ -74,31 +74,32 @@ class TotpRememberModel
 
         try {
             self::ensureSchema();
+
+            $hash = hash('sha256', $raw);
+            $row  = Database::fetchOne(
+                "SELECT id, user_id FROM `totp_remember_tokens`
+                 WHERE token_hash = ? AND expires_at > NOW()
+                 LIMIT 1",
+                [$hash]
+            );
+
+            if ($row === null) {
+                return null;
+            }
+
+            // Slide the window
+            $newExpires = time() + (self::DAYS * 86400);
+            Database::execute(
+                "UPDATE `totp_remember_tokens` SET expires_at = FROM_UNIXTIME(?) WHERE id = ?",
+                [$newExpires, (int) $row['id']]
+            );
+            self::setCookie($raw, $newExpires);
+
+            return (int) $row['user_id'];
         } catch (\Throwable) {
+            // Any DB error must not propagate — treat as no valid token
             return null;
         }
-
-        $hash = hash('sha256', $raw);
-        $row  = Database::fetchOne(
-            "SELECT id, user_id FROM `totp_remember_tokens`
-             WHERE token_hash = ? AND expires_at > NOW()
-             LIMIT 1",
-            [$hash]
-        );
-
-        if ($row === null) {
-            return null;
-        }
-
-        // Slide the window
-        $newExpires = time() + (self::DAYS * 86400);
-        Database::execute(
-            "UPDATE `totp_remember_tokens` SET expires_at = FROM_UNIXTIME(?) WHERE id = ?",
-            [$newExpires, (int) $row['id']]
-        );
-        self::setCookie($raw, $newExpires);
-
-        return (int) $row['user_id'];
     }
 
     // ─── Revoke ───────────────────────────────────────────────────────────────

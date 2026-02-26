@@ -43,6 +43,16 @@
         <form action="<?= url('/login/2fa') ?>" method="post" autocomplete="off" novalidate>
             <?= csrf_field() ?>
 
+            <div class="mb-3">
+                <label class="form-check">
+                    <input type="checkbox" class="form-check-input"
+                           name="remember_device" id="remember_device" value="1">
+                    <span class="form-check-label text-muted" style="font-size: 13px;">
+                        Remember this device for 15 days
+                    </span>
+                </label>
+            </div>
+
             <div class="mb-4">
                 <label for="totp_code" class="form-label">Verification Code</label>
                 <input type="text"
@@ -57,19 +67,6 @@
                        autofocus
                        required
                        style="letter-spacing: .35em; font-size: 1.5rem; font-family: monospace;">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-check">
-                    <input type="checkbox" class="form-check-input"
-                           name="remember_device" id="remember_device" value="1">
-                    <span class="form-check-label text-muted" style="font-size: 13px;">
-                        Remember this device for 15 days
-                    </span>
-                </label>
-                <div class="text-muted mt-1" style="font-size: 11px; padding-left: 1.5rem;">
-                    Check before entering your code to skip 2FA on this device.
-                </div>
             </div>
 
             <div class="form-footer">
@@ -93,12 +90,16 @@
 </div>
 
 <script>
-// Auto-submit when 6 digits entered
+// Auto-submit when 6 digits entered, with a brief delay so the user can
+// tick "Remember this device" before the form fires.
+var _autoSubmitTimer = null;
 document.getElementById('totp_code').addEventListener('input', function () {
     var val = this.value.replace(/\D/g, '');
     this.value = val;
+    clearTimeout(_autoSubmitTimer);
     if (val.length === 6) {
-        this.closest('form').submit();
+        var form = this.closest('form');
+        _autoSubmitTimer = setTimeout(function () { form.submit(); }, 800);
     }
 });
 </script>

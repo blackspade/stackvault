@@ -125,8 +125,11 @@ class AuthController extends Controller
                 ];
                 $this->redirect('/login/2fa');
             }
-        } catch (\Throwable) {
-            // If TOTP check fails (e.g. column not yet migrated), skip 2FA gracefully
+        } catch (\Throwable $e) {
+            // Log the failure but never silently bypass 2FA
+            error_log('[StackVault][2FA] Check failed for user ' . ($result['user']['id'] ?? '?') . ': ' . $e->getMessage());
+            flash('error', 'A server error occurred during login. Please try again.');
+            $this->redirect('/login');
         }
 
         // ── No 2FA — complete login normally ──────────────────────────────────
