@@ -216,6 +216,7 @@ class ClientController extends Controller
             'contact_email' => trim((string) $this->request->post('contact_email', '')),
             'contact_phone' => trim((string) $this->request->post('contact_phone', '')),
             'website'       => trim((string) $this->request->post('website',       '')),
+            'notes'         => trim((string) $this->request->post('notes',         '')),
             'is_active'     => (bool) $this->request->post('is_active', false),
         ];
     }
