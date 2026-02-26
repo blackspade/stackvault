@@ -49,8 +49,9 @@
                                    class="form-control"
                                    placeholder="••••••••••••"
                                    autofocus required>
-                            <button type="button" class="btn btn-outline-secondary pw-toggle"
-                                    data-pw-toggle="vault_password" tabindex="-1">
+                            <button type="button" id="vault-pw-peek"
+                                    class="btn btn-outline-secondary" tabindex="-1"
+                                    title="Hold to reveal">
                                 <i class="ti ti-eye"></i>
                             </button>
                         </div>
@@ -71,3 +72,27 @@
         </div>
     </div>
 </div>
+
+<script>
+(function () {
+    var btn   = document.getElementById('vault-pw-peek');
+    var input = document.getElementById('vault_password');
+    var icon  = btn.querySelector('i');
+
+    function reveal() {
+        input.type  = 'text';
+        icon.className = 'ti ti-eye-off';
+    }
+    function hide() {
+        input.type  = 'password';
+        icon.className = 'ti ti-eye';
+    }
+
+    btn.addEventListener('mousedown',   function (e) { e.preventDefault(); reveal(); });
+    btn.addEventListener('mouseup',     hide);
+    btn.addEventListener('mouseleave',  hide);
+    btn.addEventListener('touchstart',  function (e) { e.preventDefault(); reveal(); }, { passive: false });
+    btn.addEventListener('touchend',    hide);
+    btn.addEventListener('touchcancel', hide);
+}());
+</script>
