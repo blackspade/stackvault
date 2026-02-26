@@ -2,13 +2,13 @@
 
 **Self-hosted DevOps client and infrastructure manager.**
 
-StackVault is a secure, single-admin web application for managing clients, servers, domains, credentials, databases, DNS records, email accounts, bookmarks, and files — all in one place. Credentials are encrypted with AES-256-GCM using a per-user vault key that never touches the database unencrypted.
+StackVault is a secure, dual-admin web application for managing clients, servers, domains, credentials, databases, DNS records, email accounts, bookmarks, and files — all in one place. Credentials are encrypted with AES-256-GCM using a per-user vault key that never touches the database unencrypted.
 
 ---
 
 ## Features
 
-- **Vault encryption** — AES-256-GCM with PBKDF2-derived keys. Credentials are unreadable without the vault password.
+- **Vault encryption** — Credentials are unreadable without the vault password.
 - **Client profiles** — Track clients, contacts, and export full reports to PDF.
 - **Servers** — IP, hostname, provider, OS, SSH port, firewall notes, installed stacks.
 - **Domains** — Expiry tracking, SSL monitoring, 30-day dashboard alerts.
