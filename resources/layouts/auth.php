@@ -27,11 +27,9 @@
         }
         .vault-info p { color: #90b4d4; margin: 0; font-size: .825rem; line-height: 1.5; }
         .vault-info .title { color: #fff; font-weight: 600; font-size: .875rem; margin-bottom: 4px; }
-        .pw-toggle { position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
-                     background: none; border: none; cursor: pointer; color: #9aa0ac; padding: 0;
-                     line-height: 1; }
-        .pw-toggle:hover { color: var(--tblr-primary); }
-        .input-group-text-icon { position: relative; }
+        .pw-toggle { background: none; border: 1px solid #dee2e6; cursor: pointer;
+                     color: #9aa0ac; padding: 0 0.6rem; line-height: 1; }
+        .pw-toggle:hover { color: var(--tblr-primary); background: none; }
     </style>
 </head>
 <body class="d-flex flex-column antialiased">
