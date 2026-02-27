@@ -25,6 +25,7 @@ $navItems = [
     ['divider' => true],
     ['icon' => 'ti-terminal-2',       'label' => 'Terminal',         'path' => '/terminal'],
     ['icon' => 'ti-bell',             'label' => 'Reminders',        'path' => '/reminders'],
+    ['icon' => 'ti-brand-windows',    'label' => 'M365 Licenses',    'path' => '/m365'],
     ['icon' => 'ti-settings',         'label' => 'Settings',         'path' => '/settings'],
 ];
 
@@ -64,48 +65,153 @@ $userEmail = $user['email']    ?? '';
             flex-direction: column;
         }
 
-        /* Terminal body fills remaining space after topbar */
+        /* Terminal body fills remaining space after topbar — position:relative for overlay */
         .sv-terminal-body {
             flex: 1;
             min-height: 0;
             overflow: hidden;
-            display: flex;
+            position: relative;
         }
 
-        /* Left info panel */
-        .sv-info-panel {
-            width: 38%;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid var(--tblr-border-color);
-            overflow: hidden;
-        }
-
-        .sv-info-panel-header {
-            padding: 0.75rem 1rem 0;
-            flex-shrink: 0;
-        }
-
-        .sv-info-panel-tabs {
-            flex-shrink: 0;
-            padding: 0 1rem;
-        }
-
-        .sv-info-panel-content {
-            flex: 1;
-            overflow-y: auto;
-            padding: 0.75rem 1rem;
-        }
-
-        /* Right terminal pane */
+        /* Terminal pane fills the entire body */
         .sv-terminal-pane {
-            flex: 1;
-            min-width: 0;
+            position: absolute;
+            inset: 0;
             display: flex;
             flex-direction: column;
             background: #1a1b1e;
         }
+
+        /* ── Floating panel ─────────────────────────────────────────────── */
+        #sv-float-panel {
+            position: absolute;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            background: var(--tblr-bg-surface);
+            border: 1px solid var(--tblr-border-color);
+            box-shadow: 0 8px 32px rgba(0,0,0,.28);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: border-radius .15s;
+            /* Default: docked right */
+            top: 0; right: 0; bottom: 0;
+            width: 360px;
+            border-radius: 0;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+
+        /* Dock states */
+        #sv-float-panel.dock-left {
+            top: 0; left: 0; right: auto; bottom: 0;
+            width: 360px; height: auto;
+            border-radius: 0;
+            border-top: none; border-left: none; border-bottom: none;
+            border-right: 1px solid var(--tblr-border-color);
+        }
+        #sv-float-panel.dock-right {
+            top: 0; right: 0; left: auto; bottom: 0;
+            width: 360px; height: auto;
+            border-radius: 0;
+            border-top: none; border-right: none; border-bottom: none;
+            border-left: 1px solid var(--tblr-border-color);
+        }
+        #sv-float-panel.dock-bottom {
+            bottom: 0; left: 0; right: 0; top: auto;
+            width: auto; height: 38%;
+            border-radius: 0;
+            border-left: none; border-right: none; border-bottom: none;
+            border-top: 1px solid var(--tblr-border-color);
+        }
+        #sv-float-panel.floating {
+            border-radius: 6px;
+            border: 1px solid var(--tblr-border-color);
+            /* position/size set by JS */
+        }
+
+        /* Minimized: only toolbar visible */
+        #sv-float-panel.minimized .sv-float-body {
+            display: none;
+        }
+        #sv-float-panel.minimized {
+            height: auto !important;
+        }
+        #sv-float-panel.dock-right.minimized,
+        #sv-float-panel.dock-left.minimized {
+            bottom: auto;
+        }
+
+        /* Toolbar */
+        .sv-float-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.6rem;
+            background: var(--tblr-bg-surface-secondary);
+            border-bottom: 1px solid var(--tblr-border-color);
+            flex-shrink: 0;
+            user-select: none;
+        }
+        .sv-float-toolbar .sv-drag-handle {
+            cursor: grab;
+            color: var(--tblr-muted);
+            font-size: 1rem;
+            margin-right: 0.2rem;
+        }
+        .floating .sv-float-toolbar .sv-drag-handle { cursor: grabbing; }
+        .sv-float-toolbar .sv-panel-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--tblr-body-color);
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .sv-float-toolbar .btn-panel {
+            border: none;
+            background: none;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: var(--tblr-muted);
+            font-size: 0.8125rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .sv-float-toolbar .btn-panel:hover { background: var(--tblr-border-color); color: var(--tblr-body-color); }
+        .sv-float-toolbar .btn-panel.active { color: var(--tblr-primary); }
+
+        /* Panel body */
+        .sv-float-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .sv-float-client-row {
+            padding: 0.5rem 0.75rem 0;
+            flex-shrink: 0;
+        }
+
+        .sv-float-tabs {
+            flex-shrink: 0;
+            padding: 0 0.75rem;
+        }
+
+        .sv-float-content {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 0.6rem 0.75rem;
+            font-size: 0.8125rem;
+        }
+
+        /* Info panel table */
+        .sv-ip-table { font-size: 0.8125rem; }
+        .sv-ip-table th { font-weight: 600; white-space: nowrap; }
+        .sv-ip-table td { vertical-align: middle; }
 
         .sv-terminal-toolbar {
             background: #16181c;
@@ -128,11 +234,6 @@ $userEmail = $user['email']    ?? '';
         /* xterm overrides */
         .xterm { height: 100%; }
         .xterm-viewport { border-radius: 0; }
-
-        /* Info panel table */
-        .sv-ip-table { font-size: 0.8125rem; }
-        .sv-ip-table th { font-weight: 600; white-space: nowrap; }
-        .sv-ip-table td { vertical-align: middle; }
 
         /* DNS badge colours (mirrored from DnsRecordModel) */
         .dns-A     { background: #dbe7fd; color: #1862ab; }
