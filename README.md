@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="assets/banner.png" alt="StackVault Banner" width="100%">
+</p>
 # StackVault
 
 **Self-hosted DevOps client and infrastructure manager.**
