@@ -21,7 +21,7 @@ StackVault is a secure, dual-admin web application for managing clients, servers
 - **Bookmarks** — Organise links in nested folders per collection.
 - **Host Files** — Manage `/etc/hosts`-style machine files.
 - **Reminders** — Due-date alerts with dashboard widget.
-- **M365 Licenses** — Track Microsoft 365 plans per client with recurring billing, stacked unpaid period alerts, and dashboard integration.
+- **M365 Licenses** — Track Microsoft 365 plans per client with recurring billing.
 - **Activity Log** — Full audit trail of every action.
 - **2FA** — TOTP-based two-factor authentication.
 - **IP Whitelist** — Restrict login to trusted IP addresses.
