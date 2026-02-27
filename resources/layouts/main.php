@@ -27,6 +27,7 @@ $navItems = [
     ['divider' => true],
     ['icon' => 'ti-terminal-2',       'label' => 'Terminal',         'path' => '/terminal'],
     ['icon' => 'ti-bell',             'label' => 'Reminders',        'path' => '/reminders'],
+    ['icon' => 'ti-brand-windows',    'label' => 'M365 Licenses',    'path' => '/m365'],
     ['icon' => 'ti-settings',         'label' => 'Settings',         'path' => '/settings'],
 ];
 

@@ -376,6 +376,112 @@ $overdueCount      = count($overdueReminders);
 </div>
 <?php endif; ?>
 
+<?php /* ─── Row 3c: M365 Billing Due Widget ─────────────────────────────── */ ?>
+<?php if (!empty($m365BillingDue)): ?>
+<?php
+$m365OverdueCount = count(array_filter($m365BillingDue, fn($r) => (int) $r['days_until'] < 0));
+$m365UnpaidTotal  = array_sum(array_column($m365BillingDue, 'amount'));
+?>
+<div class="row row-cards mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="ti ti-brand-windows me-1 text-blue"></i>
+                    M365 Billing Due
+                </h3>
+                <div class="card-options d-flex gap-2">
+                    <?php if ($m365OverdueCount > 0): ?>
+                    <span class="badge bg-danger"><?= $m365OverdueCount ?> overdue</span>
+                    <?php endif; ?>
+                    <span class="badge bg-secondary-lt text-muted">
+                        $<?= number_format($m365UnpaidTotal, 2) ?> outstanding
+                    </span>
+                    <a href="<?= url('/m365') ?>" class="btn btn-sm btn-ghost-secondary">View all</a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-vcenter card-table table-sm">
+                    <thead>
+                        <tr>
+                            <th style="width:100px">Due</th>
+                            <th>Client / Period</th>
+                            <th style="width:220px">Plan</th>
+                            <th style="width:90px" class="text-end">Amount</th>
+                            <th style="width:1%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($m365BillingDue as $rec): ?>
+                    <?php
+                        $days = (int) $rec['days_until'];
+                        if ($days < 0) {
+                            $dueStr   = abs($days) . 'd overdue';
+                            $dueClass = 'text-danger fw-bold';
+                        } elseif ($days === 0) {
+                            $dueStr   = 'Today';
+                            $dueClass = 'text-danger fw-bold';
+                        } elseif ($days <= 7) {
+                            $dueStr   = 'In ' . $days . 'd';
+                            $dueClass = 'text-orange fw-semibold';
+                        } else {
+                            $dueStr   = 'In ' . $days . 'd';
+                            $dueClass = 'text-muted';
+                        }
+                    ?>
+                    <tr>
+                        <td>
+                            <span class="<?= $dueClass ?>"><?= $dueStr ?></span>
+                            <div class="text-muted small"><?= e($rec['due_date']) ?></div>
+                        </td>
+                        <td>
+                            <div class="fw-medium"><?= e($rec['client_name']) ?></div>
+                            <div class="text-muted small"><?= e($rec['period_label']) ?></div>
+                        </td>
+                        <td>
+                            <span class="badge bg-blue-lt text-blue">
+                                <i class="ti ti-brand-windows me-1"></i><?= e($rec['plan']) ?>
+                            </span>
+                        </td>
+                        <td class="text-end fw-medium">
+                            $<?= number_format((float) $rec['amount'], 2) ?>
+                        </td>
+                        <td>
+                            <div class="d-flex gap-1 justify-content-end">
+                                <!-- Mark Paid -->
+                                <form method="post"
+                                      action="<?= url('/m365/billing/' . $rec['id'] . '/pay') ?>">
+                                    <?= csrf_field() ?>
+                                    <input type="hidden" name="from" value="dashboard">
+                                    <button type="submit"
+                                            class="btn btn-sm btn-ghost-success"
+                                            title="Mark as paid">
+                                        <i class="ti ti-circle-check"></i>
+                                    </button>
+                                </form>
+                                <!-- Dismiss -->
+                                <form method="post"
+                                      action="<?= url('/m365/billing/' . $rec['id'] . '/dismiss') ?>">
+                                    <?= csrf_field() ?>
+                                    <input type="hidden" name="from" value="dashboard">
+                                    <button type="submit"
+                                            class="btn btn-sm btn-ghost-secondary"
+                                            title="Dismiss from dashboard">
+                                        <i class="ti ti-eye-off"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
 <?php /* ─── Row 4: Recent Credentials + Server OS Breakdown ─────────────── */ ?>
 <div class="row row-cards mb-4">
 

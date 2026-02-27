@@ -26,6 +26,7 @@ class DashboardController extends Controller
         $failedLogins       = DashboardModel::getRecentFailedLogins(8);
         $recentActivity     = DashboardModel::getRecentActivity(10);
         $upcomingReminders  = DashboardModel::getUpcomingReminders(30);
+        $m365BillingDue     = DashboardModel::getM365BillingDue();
 
         $this->view('dashboard/index', [
             'title'              => 'Dashboard',
@@ -38,6 +39,7 @@ class DashboardController extends Controller
             'failedLogins'       => $failedLogins,
             'recentActivity'     => $recentActivity,
             'upcomingReminders'  => $upcomingReminders,
+            'm365BillingDue'     => $m365BillingDue,
         ]);
     }
 }

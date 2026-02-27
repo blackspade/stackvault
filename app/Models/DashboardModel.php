@@ -167,6 +167,19 @@ class DashboardModel
     }
 
     /**
+     * M365 billing records due within their license's remind_days window (or overdue),
+     * not yet paid and not acknowledged. Returns empty array if tables don't exist.
+     */
+    public static function getM365BillingDue(): array
+    {
+        try {
+            return \App\Models\M365BillingModel::getDueDashboard();
+        } catch (\Throwable) {
+            return [];
+        }
+    }
+
+    /**
      * Most recent activity log entries with username.
      */
     public static function getRecentActivity(int $limit = 10): array

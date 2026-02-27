@@ -25,6 +25,7 @@ use App\Controllers\DnsApplyTemplateController;
 use App\Controllers\ExportController;
 use App\Controllers\ReminderController;
 use App\Controllers\TerminalController;
+use App\Controllers\M365Controller;
 
 // ─── Public routes (no auth required) ────────────────────────────────────────
 
@@ -158,6 +159,20 @@ Router::middleware(['auth'])->group(function () {
     // NOTE: /terminal/client-data registered before /terminal (no wildcard, but explicit order)
     Router::get('/terminal/client-data', [TerminalController::class, 'clientData']);
     Router::get('/terminal',             [TerminalController::class, 'index']);
+
+    // ── M365 Licenses ────────────────────────────────────────────────────────
+    // NOTE: /m365/create and /m365/billing/* registered before /m365/{id} wildcard
+    Router::get('/m365',                         [M365Controller::class, 'index']);
+    Router::get('/m365/create',                  [M365Controller::class, 'showCreate']);
+    Router::post('/m365/store',                  [M365Controller::class, 'store']);
+    Router::post('/m365/billing/{id}/pay',       [M365Controller::class, 'markPaid']);
+    Router::post('/m365/billing/{id}/dismiss',   [M365Controller::class, 'dismiss']);
+    Router::post('/m365/billing/{id}/restore',   [M365Controller::class, 'restore']);
+    Router::get('/m365/{id}',                    [M365Controller::class, 'show']);
+    Router::get('/m365/{id}/edit',               [M365Controller::class, 'showEdit']);
+    Router::post('/m365/{id}/update',            [M365Controller::class, 'update']);
+    Router::post('/m365/{id}/delete',            [M365Controller::class, 'delete']);
+    Router::post('/m365/{id}/toggle',            [M365Controller::class, 'toggleActive']);
 
     // ── Reminders (Stage 18) ─────────────────────────────────────────────────
     // NOTE: /reminders/create registered before /reminders/{id} wildcard
