@@ -269,6 +269,7 @@ Enable and start:
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable --now ttyd
+sudo systemctl restart ttyd
 ```
 
 > `--interface 127.0.0.1` binds ttyd to localhost only. It is never exposed directly to the internet — traffic goes through the web server proxy below.
