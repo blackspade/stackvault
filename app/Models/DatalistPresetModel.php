@@ -13,6 +13,7 @@ class DatalistPresetModel
         'server_provider' => 'Server Providers',
         'app_deployment'  => 'App Deployment Methods',
         'reminder_type'   => 'Reminder Types',
+        'credential_type' => 'Credential Types',
     ];
 
     /** Built-in defaults per group — these are seeded and cannot be deleted. */
@@ -57,6 +58,16 @@ class DatalistPresetModel
             'SSL Expiry',
             'Server Maintenance',
             'License Renewal',
+        ],
+        'credential_type' => [
+            'SSH',
+            'cPanel',
+            'Database',
+            'Email',
+            'API Key',
+            'Registrar',
+            'Cloud',
+            'Other',
         ],
     ];
 
@@ -164,6 +175,10 @@ class DatalistPresetModel
         return match ($row['group']) {
             'reminder_type' => (int) (Database::fetchOne(
                 "SELECT COUNT(*) AS cnt FROM `reminders` WHERE `type` = ?",
+                [$row['value']]
+            )['cnt'] ?? 0),
+            'credential_type' => (int) (Database::fetchOne(
+                "SELECT COUNT(*) AS cnt FROM `credentials` WHERE `credential_type` = ?",
                 [$row['value']]
             )['cnt'] ?? 0),
             default => 0,

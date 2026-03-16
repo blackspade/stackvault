@@ -524,7 +524,7 @@ function sv_get_schema(): array
             `domain_id`             INT UNSIGNED DEFAULT NULL,
             `app_id`                INT UNSIGNED DEFAULT NULL,
             `label`                 VARCHAR(255) NOT NULL,
-            `credential_type`       ENUM('ssh','cpanel','database','email','api_key','registrar','cloud','other') NOT NULL DEFAULT 'other',
+            `credential_type`       VARCHAR(100) NOT NULL DEFAULT 'other',
             `username`              VARCHAR(255) DEFAULT NULL,
             `password_encrypted`    TEXT         DEFAULT NULL COMMENT 'AES-256-GCM with vault key',
             `port`                  SMALLINT UNSIGNED DEFAULT NULL,

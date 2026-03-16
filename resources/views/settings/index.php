@@ -109,7 +109,7 @@
 
                 <h3 class="card-title mb-1">Dropdown Presets</h3>
                 <p class="text-muted mb-4" style="font-size:13px;">
-                    Manage the suggestion lists and type options shown on Server, Application, and Reminder forms.
+                    Manage the suggestion lists and type options shown on Server, Application, Reminder, and Credential forms.
                     Built-in defaults cannot be removed.
                 </p>
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Core\Database;
+use App\Models\DatalistPresetModel;
 
 class CredentialModel
 {
@@ -19,6 +20,49 @@ class CredentialModel
         'cloud'     => 'Cloud',
         'other'     => 'Other',
     ];
+
+    /**
+     * Migrates the credential_type column from ENUM to VARCHAR if needed.
+     * Safe to call multiple times per request (runs only once via static flag).
+     */
+    public static function migrate(): void
+    {
+        static $done = false;
+        if ($done) return;
+        $done = true;
+
+        $col = Database::fetchOne(
+            "SELECT COLUMN_TYPE FROM information_schema.COLUMNS
+             WHERE TABLE_SCHEMA = DATABASE()
+               AND TABLE_NAME   = 'credentials'
+               AND COLUMN_NAME  = 'credential_type'"
+        );
+        if ($col && stripos((string) ($col['COLUMN_TYPE'] ?? ''), 'enum') !== false) {
+            Database::execute(
+                "ALTER TABLE `credentials`
+                 MODIFY COLUMN `credential_type` VARCHAR(100) NOT NULL DEFAULT 'other'"
+            );
+        }
+    }
+
+    /**
+     * Returns the full list of credential types: hardcoded defaults merged
+     * with any custom types added via Settings > Dropdown Presets.
+     * Custom types use their display text as both key and value.
+     */
+    public static function getTypes(): array
+    {
+        self::migrate();
+        DatalistPresetModel::init();
+        $types          = self::TYPES;
+        $defaultLabels  = array_values($types);
+        foreach (DatalistPresetModel::getValues('credential_type') as $value) {
+            if (!in_array($value, $defaultLabels, true)) {
+                $types[$value] = $value;
+            }
+        }
+        return $types;
+    }
 
     /** Return a Tabler badge CSS class for a credential type. */
     public static function typeBadgeClass(string $type): string

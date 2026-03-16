@@ -28,7 +28,7 @@ class CredentialController extends Controller
             'title'        => 'Credentials',
             'credentials'  => $credentials,
             'clients'      => $clients,
-            'types'        => CredentialModel::TYPES,
+            'types'        => CredentialModel::getTypes(),
             'search'       => $search,
             'filterType'   => $type,
             'filterClient' => $clientId,
@@ -50,7 +50,7 @@ class CredentialController extends Controller
             ],
             'old'     => $old,
             'errors'  => $errors,
-            'types'   => CredentialModel::TYPES,
+            'types'   => CredentialModel::getTypes(),
             'clients' => ClientModel::getForSelect(),
             'servers' => ServerModel::getForSelect(),
             'domains' => DomainModel::getForSelect(),
@@ -109,7 +109,7 @@ class CredentialController extends Controller
                 ['label' => $credential['label']],
             ],
             'credential' => $credential,
-            'types'      => CredentialModel::TYPES,
+            'types'      => CredentialModel::getTypes(),
             'activity'   => CredentialModel::getActivity((int) $credential['id']),
         ]);
     }
@@ -133,7 +133,7 @@ class CredentialController extends Controller
             ],
             'credential' => $merged,
             'errors'     => $errors,
-            'types'      => CredentialModel::TYPES,
+            'types'      => CredentialModel::getTypes(),
             'clients'    => ClientModel::getForSelect(),
             'servers'    => ServerModel::getForSelect(),
             'domains'    => DomainModel::getForSelect(),
@@ -281,7 +281,7 @@ class CredentialController extends Controller
             $errors[] = 'Label must be 255 characters or fewer.';
         }
 
-        if (!array_key_exists($data['credential_type'], CredentialModel::TYPES)) {
+        if (!array_key_exists($data['credential_type'], CredentialModel::getTypes())) {
             $errors[] = 'Invalid credential type.';
         }
 
