@@ -178,6 +178,64 @@
 
                 <h3 class="card-title mb-4">Profile</h3>
 
+                <!-- Avatar -->
+                <?php
+                $avatarFile = $currentUser['avatar'] ?? null;
+                $avatarPath = SV_ROOT . '/assets/uploads/avatars/' . $avatarFile;
+                $hasAvatar  = $avatarFile && file_exists($avatarPath);
+                $initials   = strtoupper(substr($currentUser['username'] ?? 'U', 0, 2));
+                ?>
+                <div class="mb-4 pb-4 border-bottom">
+                    <label class="form-label d-block mb-3">Profile Image</label>
+                    <div class="d-flex align-items-center gap-4">
+
+                        <!-- Current avatar preview -->
+                        <?php if ($hasAvatar): ?>
+                        <img src="<?= asset('uploads/avatars/' . e($avatarFile)) ?>"
+                             alt="Profile image"
+                             class="rounded"
+                             style="width:80px;height:80px;object-fit:cover;border:2px solid var(--tblr-border-color)">
+                        <?php else: ?>
+                        <span class="avatar"
+                              style="width:80px;height:80px;font-size:1.6rem;font-weight:600;background-color:var(--tblr-primary);color:#fff;border-radius:var(--tblr-border-radius);flex-shrink:0">
+                            <?= e($initials) ?>
+                        </span>
+                        <?php endif; ?>
+
+                        <div>
+                            <!-- Upload form -->
+                            <form method="post"
+                                  action="<?= url('/settings/profile/avatar') ?>"
+                                  enctype="multipart/form-data"
+                                  class="d-flex align-items-center gap-2 mb-2">
+                                <?= csrf_field() ?>
+                                <input type="file"
+                                       name="avatar"
+                                       id="avatarInput"
+                                       class="form-control form-control-sm"
+                                       accept="image/jpeg,image/png,image/gif,image/webp"
+                                       style="max-width:260px"
+                                       required>
+                                <button type="submit" class="btn btn-sm btn-primary">
+                                    <i class="ti ti-upload me-1"></i>Upload
+                                </button>
+                            </form>
+                            <div class="text-muted" style="font-size:12px">JPEG, PNG, GIF, or WebP · max 2 MB · cropped to square</div>
+                            <?php if ($hasAvatar): ?>
+                            <form method="post"
+                                  action="<?= url('/settings/profile/avatar/remove') ?>"
+                                  class="mt-2"
+                                  onsubmit="return confirm('Remove your profile image?')">
+                                <?= csrf_field() ?>
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="ti ti-trash me-1"></i>Remove image
+                                </button>
+                            </form>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
                 <form method="post" action="<?= url('/settings/profile') ?>">
                     <?= csrf_field() ?>
                     <div class="row g-3">

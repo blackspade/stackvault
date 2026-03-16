@@ -205,10 +205,20 @@ $userEmail = $user['email']    ?? '';
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link d-flex lh-1 text-reset p-0"
                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php
+                            $userAvatar     = $user['avatar'] ?? null;
+                            $avatarFilePath = SV_ROOT . '/assets/uploads/avatars/' . $userAvatar;
+                            $hasAvatar      = $userAvatar && file_exists($avatarFilePath);
+                            ?>
+                            <?php if ($hasAvatar): ?>
+                            <span class="avatar avatar-sm"
+                                  style="background-image: url('<?= asset('uploads/avatars/' . e($userAvatar)) ?>'); background-size: cover;"></span>
+                            <?php else: ?>
                             <span class="avatar avatar-sm"
                                   style="background-image: none; background-color: var(--tblr-primary);">
                                 <?= strtoupper(substr($userName, 0, 2)) ?>
                             </span>
+                            <?php endif; ?>
                             <div class="d-none d-md-block ms-2 lh-1">
                                 <div class="fw-bold" style="font-size: 13px;"><?= e($userName) ?></div>
                                 <div class="mt-1 text-muted" style="font-size: 11px;"><?= e($userEmail) ?></div>

@@ -240,6 +240,8 @@ Router::middleware(['auth'])->group(function () {
     Router::post('/settings/presets/{id}/delete',           [SettingsController::class, 'deletePreset']);
     Router::get('/settings',                                [SettingsController::class, 'index']);
     Router::post('/settings/profile',                       [SettingsController::class, 'saveProfile']);
+    Router::post('/settings/profile/avatar',                [SettingsController::class, 'uploadAvatar']);
+    Router::post('/settings/profile/avatar/remove',         [SettingsController::class, 'removeAvatar']);
     Router::post('/settings/vault-password',                [SettingsController::class, 'saveVaultPassword']);
     Router::post('/settings/whitelist/toggle',              [SettingsController::class, 'toggleWhitelist']);
     Router::post('/settings/whitelist/add',                 [SettingsController::class, 'addWhitelistIp']);

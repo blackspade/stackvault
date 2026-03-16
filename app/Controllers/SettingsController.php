@@ -30,6 +30,7 @@ class SettingsController extends Controller
         SettingsModel::migrate();
         TotpService::migrate();
         UserModel::ensureNewColumns();
+        UserModel::ensureAvatarColumn();
         DatalistPresetModel::ensureSchema();
         DatalistPresetModel::seedDefaults();
 
@@ -606,6 +607,119 @@ class SettingsController extends Controller
 
         flash('success', 'User account deleted.');
         $this->redirect('/settings?tab=users');
+    }
+
+    // ─── POST /settings/profile/avatar ───────────────────────────────────────
+
+    public function uploadAvatar(): void
+    {
+        $this->validateCsrf();
+
+        $userId  = (int) $_SESSION['user_id'];
+        $upload  = $_FILES['avatar'] ?? null;
+
+        if (!$upload || $upload['error'] !== UPLOAD_ERR_OK) {
+            flash('error', 'No file uploaded or upload error occurred.');
+            $this->redirect('/settings?tab=profile');
+        }
+
+        // Validate MIME type via finfo
+        $finfo    = new \finfo(FILEINFO_MIME_TYPE);
+        $mime     = $finfo->file($upload['tmp_name']);
+        $allowed  = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+
+        if (!in_array($mime, $allowed, true)) {
+            flash('error', 'Only JPEG, PNG, GIF, and WebP images are allowed.');
+            $this->redirect('/settings?tab=profile');
+        }
+
+        if ($upload['size'] > 2 * 1024 * 1024) {
+            flash('error', 'Image must be 2 MB or smaller.');
+            $this->redirect('/settings?tab=profile');
+        }
+
+        // Load image with GD
+        $src = match ($mime) {
+            'image/jpeg' => @imagecreatefromjpeg($upload['tmp_name']),
+            'image/png'  => @imagecreatefrompng($upload['tmp_name']),
+            'image/gif'  => @imagecreatefromgif($upload['tmp_name']),
+            'image/webp' => @imagecreatefromwebp($upload['tmp_name']),
+            default      => false,
+        };
+
+        if ($src === false) {
+            flash('error', 'Could not process the image. Please try another file.');
+            $this->redirect('/settings?tab=profile');
+        }
+
+        // Crop to square from centre, then resize to 200×200
+        $srcW = imagesx($src);
+        $srcH = imagesy($src);
+        $side = min($srcW, $srcH);
+        $srcX = (int) (($srcW - $side) / 2);
+        $srcY = (int) (($srcH - $side) / 2);
+
+        $canvas = imagecreatetruecolor(200, 200);
+        imagecopyresampled($canvas, $src, 0, 0, $srcX, $srcY, 200, 200, $side, $side);
+        imagedestroy($src);
+
+        // Save — one file per user, overwritten on re-upload
+        $filename = $userId . '.jpg';
+        $destDir  = SV_ROOT . '/assets/uploads/avatars/';
+        $destPath = $destDir . $filename;
+
+        if (!imagejpeg($canvas, $destPath, 90)) {
+            imagedestroy($canvas);
+            flash('error', 'Failed to save the avatar. Check directory permissions.');
+            $this->redirect('/settings?tab=profile');
+        }
+        imagedestroy($canvas);
+
+        UserModel::ensureAvatarColumn();
+        UserModel::updateAvatar($userId, $filename);
+
+        // Keep session in sync
+        $_SESSION['user']['avatar'] = $filename;
+
+        AuthService::log(
+            $userId, 'avatar_updated', 'user', $userId,
+            'Profile avatar updated',
+            $this->request->ip(), $this->request->userAgent()
+        );
+
+        flash('success', 'Profile image updated.');
+        $this->redirect('/settings?tab=profile');
+    }
+
+    // ─── POST /settings/profile/avatar/remove ─────────────────────────────────
+
+    public function removeAvatar(): void
+    {
+        $this->validateCsrf();
+
+        $userId   = (int) $_SESSION['user_id'];
+        $user     = UserModel::findById($userId);
+        $filename = $user['avatar'] ?? null;
+
+        if ($filename) {
+            $path = SV_ROOT . '/assets/uploads/avatars/' . $filename;
+            if (file_exists($path)) {
+                @unlink($path);
+            }
+        }
+
+        UserModel::ensureAvatarColumn();
+        UserModel::updateAvatar($userId, null);
+        $_SESSION['user']['avatar'] = null;
+
+        AuthService::log(
+            $userId, 'avatar_removed', 'user', $userId,
+            'Profile avatar removed',
+            $this->request->ip(), $this->request->userAgent()
+        );
+
+        flash('success', 'Profile image removed.');
+        $this->redirect('/settings?tab=profile');
     }
 
     // ─── POST /settings/logs/clear ────────────────────────────────────────────

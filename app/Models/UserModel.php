@@ -165,6 +165,14 @@ class UserModel
         );
     }
 
+    public static function updateAvatar(int $id, ?string $filename): void
+    {
+        Database::execute(
+            "UPDATE `users` SET avatar = ?, updated_at = NOW() WHERE id = ?",
+            [$filename, $id]
+        );
+    }
+
     // ─── Multi-user schema migration ──────────────────────────────────────────
 
     /**
@@ -178,6 +186,20 @@ class UserModel
             );
         } catch (\Throwable) {
             // Column already exists — ignore duplicate column error
+        }
+    }
+
+    /**
+     * Lazy-add avatar column (idempotent).
+     */
+    public static function ensureAvatarColumn(): void
+    {
+        try {
+            Database::execute(
+                "ALTER TABLE `users` ADD COLUMN `avatar` VARCHAR(255) NULL DEFAULT NULL"
+            );
+        } catch (\Throwable) {
+            // Column already exists
         }
     }
 
