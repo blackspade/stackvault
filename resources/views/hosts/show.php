@@ -130,6 +130,12 @@ ob_start(); ?>
                 </div>
                 <?php endif; ?>
             </div>
+            <?php if ($hasContent): ?>
+            <script>
+            // Embed raw text safely as a JS string for the viewer
+            window.__hostsRawText = <?= json_encode($machine['hosts_file'] ?? '') ?>;
+            </script>
+            <?php endif; ?>
 
             <?php if (!$hasContent): ?>
             <div class="card-body text-center text-muted py-5">
@@ -142,10 +148,34 @@ ob_start(); ?>
                 </div>
             </div>
             <?php else: ?>
+            <!-- Search bar -->
+            <div class="px-3 py-2 border-bottom d-flex align-items-center gap-2" style="background:#f8f9fa">
+                <div class="input-group input-group-sm" style="max-width:380px">
+                    <span class="input-group-text bg-white border-end-0">
+                        <i class="ti ti-search text-muted" style="font-size:.85rem"></i>
+                    </span>
+                    <input id="hostsSearch"
+                           type="text"
+                           class="form-control border-start-0 ps-0"
+                           placeholder="Search hosts file…"
+                           autocomplete="off"
+                           spellcheck="false">
+                    <button id="hostsClear" class="btn btn-outline-secondary d-none" type="button" title="Clear search">
+                        <i class="ti ti-x" style="font-size:.8rem"></i>
+                    </button>
+                </div>
+                <button id="hostsPrev" class="btn btn-sm btn-outline-secondary d-none" type="button" title="Previous match">
+                    <i class="ti ti-chevron-up"></i>
+                </button>
+                <button id="hostsNext" class="btn btn-sm btn-outline-secondary d-none" type="button" title="Next match">
+                    <i class="ti ti-chevron-down"></i>
+                </button>
+                <span id="hostsMatchCount" class="text-muted small d-none"></span>
+            </div>
             <div class="card-body p-0">
                 <pre id="hostsFileContent"
                      class="m-0 p-3 font-monospace"
-                     style="background:#1e1e2e;color:#cdd6f4;font-size:.8rem;white-space:pre;overflow-x:auto;min-height:200px;border-radius:0 0 var(--tblr-card-border-radius) var(--tblr-card-border-radius)"><?= e($machine['hosts_file']) ?></pre>
+                     style="background:#1e1e2e;color:#cdd6f4;font-size:.8rem;white-space:pre;overflow-x:auto;overflow-y:auto;height:calc(100vh - 260px);min-height:300px;border-radius:0 0 var(--tblr-card-border-radius) var(--tblr-card-border-radius)"></pre>
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between text-muted small">
                 <span><?= number_format($lineCount) ?> line<?= $lineCount !== 1 ? 's' : '' ?></span>
@@ -160,14 +190,28 @@ ob_start(); ?>
 <?php if ($hasContent): ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+
+    // ── Viewer init ────────────────────────────────────────────────────────
+    const pre       = document.getElementById('hostsFileContent');
+    const rawText   = window.__hostsRawText || '';
+
+    // Escape HTML entities for safe innerHTML rendering
+    function escapeHtml(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    // Render plain escaped content on load
+    pre.innerHTML = escapeHtml(rawText);
+
+    // ── Copy button ────────────────────────────────────────────────────────
     document.querySelectorAll('.copy-btn[data-copy]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-            const targetId  = btn.getAttribute('data-copy');
-            const target    = document.getElementById(targetId);
-            const text      = target ? target.innerText : '';
-            const origHtml  = btn.innerHTML;
-
-            navigator.clipboard.writeText(text).then(function () {
+            const origHtml = btn.innerHTML;
+            navigator.clipboard.writeText(rawText).then(function () {
                 btn.innerHTML = '<i class="ti ti-check me-1"></i>Copied!';
                 btn.classList.add('btn-success');
                 btn.classList.remove('btn-outline-secondary');
@@ -182,6 +226,98 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    // ── Search ─────────────────────────────────────────────────────────────
+    const searchInput  = document.getElementById('hostsSearch');
+    const clearBtn     = document.getElementById('hostsClear');
+    const prevBtn      = document.getElementById('hostsPrev');
+    const nextBtn      = document.getElementById('hostsNext');
+    const matchCounter = document.getElementById('hostsMatchCount');
+
+    let marks        = [];
+    let currentMatch = 0;
+    let debounceTimer;
+
+    function applySearch(query) {
+        if (!query) {
+            pre.innerHTML = escapeHtml(rawText);
+            marks = [];
+            updateUI(false);
+            return;
+        }
+
+        // Split raw text by query with a capturing group — odd indices are matches
+        const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex        = new RegExp('(' + escapedQuery + ')', 'gi');
+        const parts        = rawText.split(regex);
+
+        let html     = '';
+        let matchIdx = 0;
+        parts.forEach(function (part, i) {
+            if (i % 2 === 1) {
+                // Odd index = captured match
+                html += '<mark id="hm' + matchIdx + '" style="background:#f9e04b;color:#1e1e2e;border-radius:2px">'
+                      + escapeHtml(part) + '</mark>';
+                matchIdx++;
+            } else {
+                html += escapeHtml(part);
+            }
+        });
+
+        pre.innerHTML = html;
+        marks         = pre.querySelectorAll('mark');
+        currentMatch  = 0;
+
+        updateUI(marks.length > 0);
+        if (marks.length) scrollToMatch(0);
+    }
+
+    function scrollToMatch(idx) {
+        if (!marks.length) return;
+        currentMatch = (idx + marks.length) % marks.length;
+        marks.forEach(function (m) { m.style.outline = ''; });
+        const active = marks[currentMatch];
+        active.style.outline = '2px solid #f9e04b';
+        active.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        matchCounter.textContent = (currentMatch + 1) + ' / ' + marks.length;
+    }
+
+    function updateUI(hasMatches) {
+        const hasQuery = searchInput.value.length > 0;
+        clearBtn.classList.toggle('d-none', !hasQuery);
+        prevBtn.classList.toggle('d-none', !hasMatches);
+        nextBtn.classList.toggle('d-none', !hasMatches);
+        matchCounter.classList.toggle('d-none', !hasMatches);
+        if (!hasMatches && hasQuery) {
+            matchCounter.textContent = 'No matches';
+            matchCounter.classList.remove('d-none');
+        }
+    }
+
+    searchInput.addEventListener('input', function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function () {
+            applySearch(searchInput.value.trim());
+        }, 150);
+    });
+
+    searchInput.addEventListener('keydown', function (e) {
+        if (!marks.length) return;
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            scrollToMatch(e.shiftKey ? currentMatch - 1 : currentMatch + 1);
+        }
+    });
+
+    prevBtn.addEventListener('click', function () { scrollToMatch(currentMatch - 1); });
+    nextBtn.addEventListener('click', function () { scrollToMatch(currentMatch + 1); });
+
+    clearBtn.addEventListener('click', function () {
+        searchInput.value = '';
+        applySearch('');
+        searchInput.focus();
+    });
+
 });
 </script>
 <?php endif; ?>
